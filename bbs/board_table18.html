@@ -420,6 +420,7 @@ $('#subBnr .txt_area').stop().delay(0).animate({"opacity":"1","padding-top":"0"}
                     document.addEventListener('DOMContentLoaded', function() {
                         axios.get(`https://api-dev.balhea.kr/homebe/post/notice`)
                         .then(response => {
+                            console.log(response)
                             initPagination({
                                 data: response.data.content,
                                 containerSelector: '.test_list',

@@ -225,19 +225,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             const params = getQueryParams();
             axios.get(`https://api-dev.balhea.kr/homebe/post/notice/${params.param1}`)
             .then(response => {
-                document.querySelector("#sh_bo_v .tit").textContent = `${response.data.content.hr_title} (${response.data.content.hr_status})`;
-                document.getElementById('date').insertAdjacentHTML('afterend', `${response.data.content.hr_create_dt}`);
-                sharedUrl = response.data.hr_post_url;
+                document.querySelector("#sh_bo_v .tit").textContent = `${response.data.content.hn_title}`;
+                document.getElementById('date').insertAdjacentHTML('afterend', `${response.data.content.hn_create_dt}`);
+                sharedUrl = response.data.hn_post_url;
                 const data = {
                     "content": [
                         {
-                        "hr_post_sn": 1,
-                        "hr_title": "AI 기반 시스템 개발 데이터엔지니어 채용",
-                        "hr_writer_sn": "관리자",
-                        "hr_post_url": "https://balhea.kr/",
-                        "hr_status": "채용중",
-                        "hr_create_dt": "2025-04-01",
-                        "hr_view": 1
+                        "hn_post_sn": 1,
+                        "hn_title": "AI 기반 시스템 개발 데이터엔지니어 채용",
+                        "hn_writer_sn": "관리자",
+                        "hn_post_url": "https://balhea.kr/",
+                        "hn_status": "채용중",
+                        "hn_create_dt": "2025-04-01",
+                        "hn_view": 1
                         }
                     ],
                     "page": 0,

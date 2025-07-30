@@ -222,12 +222,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-        //     axios.get('https://api-tony-dev.balhea.kr/bidlist/ongoing')
-        //     .then(response => {
+            const params = getQueryParams();
+            axios.get(`https://api-dev.balhea.kr/homebe/post/news/${params.param1}`)
+            .then(response => {
                 const params = getQueryParams();
-                document.querySelector("#sh_bo_v .tit").textContent = `${params.param2} (${params.param4})`;
-                document.getElementById('date').insertAdjacentHTML('afterend', `${params.param5}`);
-                sharedUrl = response.data.hr_post_url;
+                document.querySelector("#sh_bo_v .tit").textContent = `${response.data.content.ha_title}`;
+                document.getElementById('date').insertAdjacentHTML('afterend', `${response.data.content.ha_create_dt}`);
+                sharedUrl = response.data.ha_post_url;
                 const {images, text, attachments} = {
                     "images": [
                         "/upload/img1.jpg",
@@ -272,10 +273,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 }).join('');
                 fileBox.innerHTML = `<h4>첨부파일</h4><ul>${listItems}</ul>`;
                 }
-            // })
-            // .catch(error => {
-            //     console.error('데이터 로드 실패:', error);
-            // });
+            })
+            .catch(error => {
+                console.error('데이터 로드 실패:', error);
+            });
         });
     </script>
     

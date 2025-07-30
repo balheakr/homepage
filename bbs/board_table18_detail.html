@@ -225,8 +225,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             const params = getQueryParams();
             axios.get(`https://api-dev.balhea.kr/homebe/post/notice/${params.param1}`)
             .then(response => {
-                document.querySelector("#sh_bo_v .tit").textContent = `${response.data.content.hn_title}`;
-                document.getElementById('date').insertAdjacentHTML('afterend', `${response.data.content.hn_create_dt}`);
+                document.querySelector("#sh_bo_v .tit").textContent = `${response.data.hn_title}`;
+                document.getElementById('date').insertAdjacentHTML('afterend', `${response.data.hn_create_dt}`);
                 sharedUrl = response.data.hn_post_url;
                 const data = {
                     "content": [
@@ -271,7 +271,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 // 텍스트 출력 (XSS 방지 + 줄바꿈 처리)
                 const textBox = document.getElementById('bo_v_text');
-                const safeText = escapeHTML(text).replace(/\n/g, '<br />');
+                const safeText = escapeHTML(response.data.hn_text).replace(/\n/g, '<br />');
                 textBox.innerHTML = `<div>${safeText}</div>`;
 
                 // 첨부파일 출력

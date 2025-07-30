@@ -201,15 +201,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             return { param1 };
         }
 
-        // 페이지 로드 시 파라미터를 읽고 표시
-        // document.addEventListener('DOMContentLoaded', function() {
-        //     const params = getQueryParams();
-        //     console.log(JSON.stringify(params.param3).length);
-        //     document.querySelector("#sh_bo_v .tit").textContent = `${params.param2} (${params.param4})`;
-        //     document.getElementById('date').insertAdjacentHTML('afterend', `${params.param5}`);
-        //     document.getElementById('body1').innerHTML = `${params.body1}`;
-        // });
-
         function goToSaramin() {
             const params = getQueryParams();
             window.open("about:blank").location.href = `${sharedUrl}`;
@@ -426,7 +417,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p>
                         "우리는 물류 유통 업계에서 쌓아온 경험을 바탕으로, 소프트웨어 개발을 하려고 합니다. 
                         <br />
-                        고객의 비즈니스 요구를 충족시키기 위해 AI 솔루션을 개발하여물류와 유통의 효율성을 높이고자 합니다."
+                        고객의 비즈니스 요구를 충족시키기 위해 AI 솔루션을 개발하여 물류와 유통의 효율성을 높이고자 합니다."
                         <br />
                         <br />
                         [주요업무]
@@ -446,6 +437,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <p id="body4"></p>
 
                     </p>    
+                    <div id="bo_v_file"></div>
                 </div>
                     <!-- <ul class="v_page">
                             <li><span><i class="fa fa-angle-down"></i></span><a href="./board_table18&wr_id=46.html">한국지배구조원 ESG 평가서 'A' 등급</a></li>    </ul>

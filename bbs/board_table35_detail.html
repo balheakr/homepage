@@ -215,6 +215,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 document.getElementById('body1').innerHTML = `${response.data.hr_text}`;
                 sharedUrl = response.data.hr_post_url;
 
+
+                const {images, text, attachments} = {
+                    "images": [
+                        "/upload/img1.jpg",
+                        "/upload/img2.png"
+                    ],
+                    "text": "AI 시스템 개발에 참여할 인재를 찾습니다.\n백엔드/프론트엔드 포지션을 채용 중입니다.",
+                    "attachments": [
+                        {
+                        "name": "공고문.pdf",
+                        "url": "/files/공고문.pdf",
+                        "size": 1048576
+                        },
+                        {
+                        "name": "채용안내.docx",
+                        "url": "/files/채용안내.docx",
+                        "size": 26400
+                        }
+                    ]
+                };
+
                 // 이미지 출력
                 const imgBox = document.getElementById('bo_v_img');
                 imgBox.innerHTML = '';
@@ -234,18 +255,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 // 첨부파일 출력
                 const fileBox = document.getElementById('bo_v_file');
+                fileBox.innerHTML = ''; // 기존 내용 초기화
+
                 if (attachments && attachments.length > 0) {
-                const listItems = attachments.map(file => {
-                    const size = formatFileSize(file.size || 0);
-                    return `
-                    <li>
-                        <a href="${file.url}" download="${file.name}">
-                        📎 ${file.name} <span style="color:gray; font-size: 0.9em;">(${size})</span>
-                        </a>
-                    </li>
-                    `;
-                }).join('');
-                fileBox.innerHTML = `<h4>첨부파일</h4><ul>${listItems}</ul>`;
+                    const heading = document.createElement('h4');
+                    heading.textContent = '첨부파일';
+                    fileBox.appendChild(heading);
+
+                    const ul = document.createElement('ul');
+
+                    attachments.forEach(file => {
+                        const li = document.createElement('li');
+
+                        const a = document.createElement('a');
+                        a.href = file.url;
+                        a.download = file.name;
+                        a.textContent = `📎 ${file.name} `;
+
+                        const span = document.createElement('span');
+                        span.textContent = `(${formatFileSize(file.size || 0)})`;
+                        span.style.color = 'gray';
+                        span.style.fontSize = '0.9em';
+
+                        a.appendChild(span);
+                        li.appendChild(a);
+                        ul.appendChild(li);
+                    });
+                    fileBox.appendChild(ul);
                 }
             })
             .catch(error => {

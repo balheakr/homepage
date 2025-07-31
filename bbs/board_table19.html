@@ -440,7 +440,13 @@ $('#subBnr .txt_area').stop().delay(0).animate({"opacity":"1","padding-top":"0"}
                                     `
                                 });
                             } else {
-                                document.querySelector('.test_list').appendChild('<tr><td style="text-align: center;">조회된 목록이 없습니다.</td></tr>')
+                                const tr = document.createElement('tr');
+                                const td = document.createElement('td');
+                                td.colSpan = 5;
+                                td.style.textAlign = 'center';
+                                td.textContent = '조회된 목록이 없습니다.';
+                                tr.appendChild(td);
+                                document.querySelector('.test_list').appendChild(tr);
                             }
                         })
                         .catch(error => {

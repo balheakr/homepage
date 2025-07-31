@@ -251,7 +251,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 // 이미지 출력
                 const imgBox = document.getElementById('bo_v_img');
-                imgBox.innerHTML = images.map(src => `<img src="${src}" alt="" style="max-width:100%; margin-bottom:10px;" />`).join('');
+                imgBox.innerHTML = images.map(src => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = "";
+                    img.style.maxWidth = '100%';
+                    img.style.marginBottom = '10px';
+                    return `${img}`
+                }).join('');
 
                 // 텍스트 출력 (XSS 방지 + 줄바꿈 처리)
                 const textBox = document.getElementById('bo_v_text');

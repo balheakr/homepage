@@ -273,7 +273,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     img.alt = "";
                     img.style.maxWidth = '100%';
                     img.style.marginBottom = '10px';
-                    `${img}`
+                    return img;
                 }).join('');
 
                 // 텍스트 출력 (XSS 방지 + 줄바꿈 처리)

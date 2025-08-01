@@ -212,7 +212,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 .replace(/</g, '&lt;')
                 .replace(/>/g, '&gt;')
                 .replace(/"/g, '&quot;')
-                .replace(/'/g, '&#039;');
+                .replace(/'/g, '&#039;')
+                .replace(/\n/g, "<br />");
         }
 
         function formatFileSize(bytes) {
@@ -263,7 +264,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 // 텍스트 출력 (XSS 방지 + 줄바꿈 처리)
                 const textBox = document.getElementById('bo_v_text');
-                const safeText = escapeHTML(response.data.hn_text).replace(/\n/g, '<br />');
+                const safeText = escapeHTML(response.data.hn_text);
                 textBox.innerHTML = `<div>${safeText}</div>`;
 
                 // 첨부파일 출력

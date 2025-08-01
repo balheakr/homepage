@@ -212,7 +212,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 .replace(/</g, '&lt;')
                 .replace(/>/g, '&gt;')
                 .replace(/"/g, '&quot;')
-                .replace(/'/g, '&#039;');
+                .replace(/'/g, '&#039;')
+                .replace(/\n/g, "<br />");
         }
 
         function formatFileSize(bytes) {

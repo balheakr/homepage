@@ -237,12 +237,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 document.getElementById('date').insertAdjacentHTML('afterend', `${response.data.hr_create_dt}`);
                 sharedUrl = response.data.hr_post_url;
 
-                const {images, text, attachments} = {
+                const {images, attachments} = {
                     "images": [
                         "/upload/img1.jpg",
                         "/upload/img2.png"
                     ],
-                    "text": "AI 시스템 개발에 참여할 인재를 찾습니다.\n백엔드/프론트엔드 포지션을 채용 중입니다.",
                     "attachments": [
                         {
                         "name": "공고문.pdf",
@@ -270,12 +269,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 });
 
                 // 텍스트 출력 (XSS 방지 + 줄바꿈 처리)
-                document.getElementById('body1').innerHTML ? `${escapeHTML(response.data.hr_text.body1).replace(/\n/g, '<br />')}` : "";
-                document.getElementById('body2').innerHTML ? `${escapeHTML(response.data.hr_text.body2).replace(/\n/g, '<br />')}` : "";
-                document.getElementById('body3').innerHTML ? `${escapeHTML(response.data.hr_text.body3).replace(/\n/g, '<br />')}` : "";
-                document.getElementById('body4').innerHTML ? `${escapeHTML(response.data.hr_text.body4).replace(/\n/g, '<br />')}` : "";
-                document.getElementById('body5').innerHTML ? `${escapeHTML(response.data.hr_text.body5).replace(/\n/g, '<br />')}` : "";
-                document.getElementById('body6').innerHTML ? `${escapeHTML(response.data.hr_text.body6).replace(/\n/g, '<br />')}` : "";
+                const text = JSON.parse(response.data.hr_text);
+                document.getElementById('body1').innerHTML ? `${escapeHTML(text.body1).replace(/\n/g, '<br />')}` : "";
+                document.getElementById('body2').innerHTML ? `${escapeHTML(text.body2).replace(/\n/g, '<br />')}` : "";
+                document.getElementById('body3').innerHTML ? `${escapeHTML(text.body3).replace(/\n/g, '<br />')}` : "";
+                document.getElementById('body4').innerHTML ? `${escapeHTML(text.body4).replace(/\n/g, '<br />')}` : "";
+                document.getElementById('body5').innerHTML ? `${escapeHTML(text.body5).replace(/\n/g, '<br />')}` : "";
+                document.getElementById('body6').innerHTML ? `${escapeHTML(text.body6).replace(/\n/g, '<br />')}` : "";
 
                 // 첨부파일 출력
                 const fileBox = document.getElementById('bo_v_file');
@@ -511,13 +511,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         [유의사항]
                         <br />
                         <p id="body6"></p>
+                        <br />
 
                     </p>    
                     <div id="bo_v_file"></div>
                 </div>
-                    <!-- <ul class="v_page">
-                            <li><span><i class="fa fa-angle-down"></i></span><a href="./board_table18&wr_id=46.html">한국지배구조원 ESG 평가서 'A' 등급</a></li>    </ul>
-                -->
                 <div class="btn_area">
                     <ul class="left">
                         <li><button class="btn_line" onclick="goToSaramin()">사람인 바로가기</button></li>

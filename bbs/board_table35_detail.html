@@ -270,7 +270,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 // 텍스트 출력 (XSS 방지 + 줄바꿈 처리)
                 const text = JSON.parse(response.data.hr_text);
-                console.log(text)
+                console.log(text.body1)
                 document.getElementById('body1').innerHTML ? `${escapeHTML(text.body1).replace(/\n/g, '<br />')}` : "";
                 document.getElementById('body2').innerHTML ? `${escapeHTML(text.body2).replace(/\n/g, '<br />')}` : "";
                 document.getElementById('body3').innerHTML ? `${escapeHTML(text.body3).replace(/\n/g, '<br />')}` : "";

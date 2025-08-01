@@ -270,13 +270,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 // 텍스트 출력 (XSS 방지 + 줄바꿈 처리)
                 const text = JSON.parse(response.data.hr_text);
-                console.log(text.body1)
-                document.getElementById('body1').innerHTML ? `${escapeHTML(text.body1).replace(/\n/g, '<br />')}` : "";
-                document.getElementById('body2').innerHTML ? `${escapeHTML(text.body2).replace(/\n/g, '<br />')}` : "";
-                document.getElementById('body3').innerHTML ? `${escapeHTML(text.body3).replace(/\n/g, '<br />')}` : "";
-                document.getElementById('body4').innerHTML ? `${escapeHTML(text.body4).replace(/\n/g, '<br />')}` : "";
-                document.getElementById('body5').innerHTML ? `${escapeHTML(text.body5).replace(/\n/g, '<br />')}` : "";
-                document.getElementById('body6').innerHTML ? `${escapeHTML(text.body6).replace(/\n/g, '<br />')}` : "";
+                if(text) {
+                    document.getElementById('body1').innerHTML = `${escapeHTML(text.body1).replace(/\n/g, '<br />')}`;
+                    document.getElementById('body2').innerHTML = `${escapeHTML(text.body2).replace(/\n/g, '<br />')}`;
+                    document.getElementById('body3').innerHTML = `${escapeHTML(text.body3).replace(/\n/g, '<br />')}`;
+                    document.getElementById('body4').innerHTML = `${escapeHTML(text.body4).replace(/\n/g, '<br />')}`;
+                    document.getElementById('body5').innerHTML = `${escapeHTML(text.body5).replace(/\n/g, '<br />')}`;
+                    document.getElementById('body6').innerHTML = `${escapeHTML(text.body6).replace(/\n/g, '<br />')}`;
+                }
 
                 // 첨부파일 출력
                 const fileBox = document.getElementById('bo_v_file');

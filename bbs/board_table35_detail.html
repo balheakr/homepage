@@ -206,6 +206,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             window.open("about:blank").location.href = `${sharedUrl}`;
         }
 
+        function escapeHTML(str) {
+            return str
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes >= 1048576) return (bytes / 1048576).toFixed(1) + ' MB';
+            if (bytes >= 1024) return (bytes / 1024).toFixed(1) + ' KB';
+            return bytes + ' B';
+        }
+
         const testData = [
             { id: "관리자", title: "AI 기반 시스템 개발 데이터엔지니어 채용", no: 5, url: 'https://www.saramin.co.kr/zf_user/company-info/view-inner-recruit?csn=NjlIand4MmhBclc2c0JtTmF4bGtEUT09', end: '채용중', body1: '- 부품 관련 AI/ML모델 개발 및 서빙<br />- 데이터 정제부터 모델 서빙, 재학습, 고도화까지 AI/ML LifeCycle을 담당하며 지속적으로 자동화, 고도화<br />- ML모델의 성능과 시스템 안정성을 모니터링하여 서비스 품질 유지<br />', body2: '- Python 기반의 ML/DL프레임워크(PyTorch, TensorFlow 등)활용 및 모델 개발 경험을 보유하신 분<br />- Docker 기반 컨테이너 환경에서의 ML 시스템 개발/운영 및 CI/CD파이프라인 구축 경험을 보유하신 분<br />- 새로운 기술과 도메인에 대한 학습을 즐기며, 문제 해결을 위해 능동적으로 도전하시는 분<br />', body3: '- 하둡시스템 구축/운영 경험을 보유하신 분<br />- ksql, flink 등 realtime streaming system 개발 경험을 보유하신 분<br />- 대용량 데이터 ETL 경험이 있으신 분<br />- AWS/GCP 등 Cloud 환경에서 개발 및 배포 경험이 있으신 분<br />- 컴퓨터 공학, 소프트웨어 공학 등 관련학과 졸업자<br />', body4: '- 주요 기술 : Airflow, MLflow, Spark, Docker, Kubernetes(k8s)<br />- 사용 언어 : Python, SQL, Go, Java 등<br />- 업무 도구 : Github, Confluence(wiki), Jira, Slack<br />', date: "2025-04-01"  },
             { id: "관리자", title: "AI 기반 시스템 개발 백엔드 채용", no: 4, url: 'https://www.saramin.co.kr/zf_user/company-info/view-inner-recruit?csn=NjlIand4MmhBclc2c0JtTmF4bGtEUT09', end: '채용중', body1: '- AI 플랫폼(백엔드) 개발 및 운영<br />- 사내 Infra 시스템 개발 및 운영<br />- REST API 개발 및 운영<br />- AI 플랫폼 설계/개발 및 데이터 파이프라인 개발<br />- 프로젝트 PM/PL 역할 수행<br />', body2: '- 개발 경험 5년 이상, 10년 이상이신 분(Python, Java, Go 등)<br />- mongodb, mysql 등 RDB 혹은 NoSQL DB 개발 경험을 보유하신 분<br />- 요구 사항 기반 데이터 및 API설계 & 개발 경험을 보유하신 분<br />', body3: '- 웹크롤링 개발 경험이 있으신 분<br />- 데이터 파이프라인 구축 또는 모니터링 개발 구축 경험이 있으신 분<br />- 대용량 서비스 개발 및 운영 경험이 있으신 분<br />- Kafka 활용 경험이 있으신 분<br />- 고성능/고가용성 시스템에 대한 개발 및 운영 경험이 있으신 분<br />- AWS/GCP 등 Cloud 환경에서 개발 및 배포 경험이 있으신 분<br />- 컴퓨터 공학, 소프트웨어 공학 등 관련학과 졸업자<br />', body4: '- 주요 기술 : Spring Boot, Nginx, MySQL, Kafka, Elasticsearch, Kubernetes(k8s)<br />- 사용 언어 : Java/Kotlin/Go/Python 등<br />- 업무 도구 : Github, Confluence(wiki), Jira, Slack<br />', date: "2025-04-01"  },

@@ -245,14 +245,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     ],
                     "attachments": [
                         // {
-                        // "name": "공고문.pdf",
-                        // "url": "/files/공고문.pdf",
-                        // "size": 1048576
+                        //     "name": "공고문.pdf",
+                        //     "url": "/files/공고문.pdf",
+                        //     "size": 1048576
                         // },
                         // {
-                        // "name": "채용안내.docx",
-                        // "url": "/files/채용안내.docx",
-                        // "size": 26400
+                        //     "name": "채용안내.docx",
+                        //     "url": "/files/채용안내.docx",
+                        //     "size": 26400
                         // }
                     ]
                 };
@@ -270,7 +270,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 });
 
                 // 텍스트 출력 (XSS 방지 + 줄바꿈 처리)
-                const text = JSON.parse(response.data.hr_text);
+                const text = response.data.hr_text;
                 if(text) {
                     document.getElementById('body1').innerHTML = `${escapeHTML(text.body1).replace(/\n/g, '<br />')}`;
                     document.getElementById('body2').innerHTML = `${escapeHTML(text.body2).replace(/\n/g, '<br />')}`;

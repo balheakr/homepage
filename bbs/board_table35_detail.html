@@ -255,8 +255,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 // 텍스트 출력 (XSS 방지 + 줄바꿈 처리)
                 const text = response.data.hr_text;
                 if(text) {
-                    console.log(text, escapeHTML(text))
-                    document.getElementById('bo_v_text').textContent = `"우리는 물류 유통 업계에서 쌓아온 경험을 바탕으로, 소프트웨어 개발을 하려고 합니다.<br />고객의 비즈니스 요구를 충족시키기 위해 AI 솔루션을 개발하여 물류와 유통의 효율성을 높이고자 합니다."<br /><br />${escapeHTML(text)}`;
+                    document.getElementById('bo_v_text').innerHTML = `"우리는 물류 유통 업계에서 쌓아온 경험을 바탕으로, 소프트웨어 개발을 하려고 합니다.<br />고객의 비즈니스 요구를 충족시키기 위해 AI 솔루션을 개발하여 물류와 유통의 효율성을 높이고자 합니다."<br /><br />${escapeHTML(text)}`;
                 }
 
                 // 첨부파일 출력

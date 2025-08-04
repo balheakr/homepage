@@ -234,14 +234,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 // 이미지 출력
                 const imgBox = document.getElementById('bo_v_img');
                 imgBox.innerHTML = '';
-                response.data.ha_image_urls.forEach(src => {
-                    const img = document.createElement('img');
-                    img.src = src;
-                    img.alt = "";
-                    img.style.maxWidth = '100%';
-                    img.style.marginBottom = '10px';
-                    imgBox.appendChild(img);
-                });
+                if(response.data.ha_image_urls && response.data.ha_image_urls.length > 0) {
+                    response.data.ha_image_urls.forEach(src => {
+                        const img = document.createElement('img');
+                        img.src = src;
+                        img.alt = "";
+                        img.style.maxWidth = '100%';
+                        img.style.marginBottom = '10px';
+                        imgBox.appendChild(img);
+                    });
+                };
 
                 // 텍스트 출력 (XSS 방지 + 줄바꿈 처리)
                 const text = response.data.ha_text;

@@ -384,7 +384,13 @@ $('#subBnr .txt_area').stop().delay(0).animate({"opacity":"1","padding-top":"0"}
         <input type="hidden" name="page" value="1">
         <input type="hidden" name="sw" value="">
             
-        <div id="sh_list_tbl" class="sh_tbl_common">
+        <!-- <div id="sh_list_tbl" class="sh_tbl_common"> -->
+        <div id="faq_wrap" class="sh_tbl_common">
+            <div class="cont_faq" style="display: flex;justify-content: center;">
+                <span class="num">
+                </span>
+                <p>서비스 준비 중 입니다.</p>
+            </div>
             <table cellpadding="0" cellspacing="0">
                 <caption class="sound_only">채용 목록</caption>
                 <thead>
@@ -398,7 +404,7 @@ $('#subBnr .txt_area').stop().delay(0).animate({"opacity":"1","padding-top":"0"}
                 </thead>
                 <tbody class="test_list"></tbody>
 
-                <script type="module">
+                <!-- <script type="module">
                     import axios from 'https://cdn.jsdelivr.net/npm/axios@1.6.8/+esm';
                     import { initPagination } from '/js/pagination.js';
 
@@ -454,7 +460,7 @@ $('#subBnr .txt_area').stop().delay(0).animate({"opacity":"1","padding-top":"0"}
                             console.error('데이터 로드 실패:', error);
                         });
                     });
-                </script>
+                </script> -->
             </table>
         </div>
         <div class="pagination-wrapper">

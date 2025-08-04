@@ -238,29 +238,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 document.getElementById('date').insertAdjacentHTML('afterend', `${response.data.hr_create_dt}`);
                 sharedUrl = response.data.hr_post_url;
 
-                const {images, attachments} = {
-                    "images": [
-                        "/upload/img1.jpg",
-                        "/upload/img2.png"
-                    ],
-                    "attachments": [
-                        // {
-                        //     "name": "공고문.pdf",
-                        //     "url": "/files/공고문.pdf",
-                        //     "size": 1048576
-                        // },
-                        // {
-                        //     "name": "채용안내.docx",
-                        //     "url": "/files/채용안내.docx",
-                        //     "size": 26400
-                        // }
-                    ]
-                };
-
                 // 이미지 출력
                 const imgBox = document.getElementById('bo_v_img');
                 imgBox.innerHTML = '';
-                images.forEach(src => {
+                response.data.hr_image_urls.forEach(src => {
                     const img = document.createElement('img');
                     img.src = src;
                     img.alt = "";
@@ -272,26 +253,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 // 텍스트 출력 (XSS 방지 + 줄바꿈 처리)
                 const text = response.data.hr_text;
                 if(text) {
-                    document.getElementById('body1').innerHTML = `${escapeHTML(text.body1).replace(/\n/g, '<br />')}`;
-                    document.getElementById('body2').innerHTML = `${escapeHTML(text.body2).replace(/\n/g, '<br />')}`;
-                    document.getElementById('body3').innerHTML = `${escapeHTML(text.body3).replace(/\n/g, '<br />')}`;
-                    document.getElementById('body4').innerHTML = `${escapeHTML(text.body4).replace(/\n/g, '<br />')}`;
-                    document.getElementById('body5').innerHTML = `${escapeHTML(text.body5).replace(/\n/g, '<br />')}`;
-                    document.getElementById('body6').innerHTML = `${escapeHTML(text.body6).replace(/\n/g, '<br />')}`;
+                    document.getElementById('bo_v_text').textContent = `${escapeHTML(text)}`;
                 }
 
                 // 첨부파일 출력
                 const fileBox = document.getElementById('bo_v_file');
                 fileBox.innerHTML = ''; // 기존 내용 초기화
 
-                if (attachments && attachments.length > 0) {
+                if(response.data.hr_attachments_urls && response.data.hr_attachments_urls.length > 0) {
                     const heading = document.createElement('h4');
                     heading.textContent = '첨부파일';
                     fileBox.appendChild(heading);
 
                     const ul = document.createElement('ul');
 
-                    attachments.forEach(file => {
+                    response.data.hr_attachments_urls.forEach(file => {
                         const li = document.createElement('li');
 
                         const a = document.createElement('a');
@@ -485,38 +461,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p class="sound_only">본문</p>
                     
                     <div id="bo_v_img"></div>
-                    <p>
-                        "우리는 물류 유통 업계에서 쌓아온 경험을 바탕으로, 소프트웨어 개발을 하려고 합니다. 
-                        <br />
-                        고객의 비즈니스 요구를 충족시키기 위해 AI 솔루션을 개발하여 물류와 유통의 효율성을 높이고자 합니다."
-                        <br />
-                        <br />
-                        [주요업무]
-                        <br />
-                        <p id="body1"></p>
-                        <br />
-                        [자격요건]
-                        <br />
-                        <p id="body2"></p>
-                        <br />
-                        [우대사항]
-                        <br />
-                        <p id="body3"></p>
-                        <br />
-                        [근무조건]
-                        <br />
-                        <p id="body4"></p>
-                        <br />
-                        [채용절차]
-                        <br />
-                        <p id="body5"></p>
-                        <br />
-                        [유의사항]
-                        <br />
-                        <p id="body6"></p>
-                        <br />
-
-                    </p>    
+                    <div id="bo_v_text"></div>
                     <div id="bo_v_file"></div>
                 </div>
                 <div class="btn_area">

@@ -231,30 +231,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 document.getElementById('date').insertAdjacentHTML('afterend', `${response.data.ha_create_dt}`);
                 sharedUrl = response.data.ha_post_url;
 
-                const {images, text, attachments} = {
-                    "images": [
-                        "/upload/img1.jpg",
-                        "/upload/img2.png"
-                    ],
-                    "text": "AI 시스템 개발에 참여할 인재를 찾습니다.\n백엔드/프론트엔드 포지션을 채용 중입니다.",
-                    "attachments": [
-                        {
-                        "name": "공고문.pdf",
-                        "url": "/files/공고문.pdf",
-                        "size": 1048576
-                        },
-                        {
-                        "name": "채용안내.docx",
-                        "url": "/files/채용안내.docx",
-                        "size": 26400
-                        }
-                    ]
-                };
-
                 // 이미지 출력
                 const imgBox = document.getElementById('bo_v_img');
                 imgBox.innerHTML = '';
-                images.forEach(src => {
+                response.data.ha_image_urls.forEach(src => {
                     const img = document.createElement('img');
                     img.src = src;
                     img.alt = "";
@@ -264,22 +244,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 });
 
                 // 텍스트 출력 (XSS 방지 + 줄바꿈 처리)
-                const textBox = document.getElementById('bo_v_text');
-                const safeText = escapeHTML(response.data.ha_text);
-                textBox.innerHTML = `<div>${safeText}</div>`;
+                const text = response.data.ha_text;
+                if(text) {
+                    document.getElementById('bo_v_text').textContent = `${escapeHTML(text)}`;
+                }
 
                 // 첨부파일 출력
                 const fileBox = document.getElementById('bo_v_file');
                 fileBox.innerHTML = ''; // 기존 내용 초기화
 
-                if (attachments && attachments.length > 0) {
+                if(response.data.ha_attachments_urls && response.data.ha_attachments_urls.length > 0) {
                     const heading = document.createElement('h4');
                     heading.textContent = '첨부파일';
                     fileBox.appendChild(heading);
 
                     const ul = document.createElement('ul');
 
-                    attachments.forEach(file => {
+                    response.data.ha_attachments_urls.forEach(file => {
                         const li = document.createElement('li');
 
                         const a = document.createElement('a');

@@ -226,7 +226,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             const params = getQueryParams();
             axios.get(`https://api-dev.balhea.kr/homebe/post/notice/${params.param1}`)
             .then(response => {
-                document.querySelector("#sh_bo_v .tit").textContent = `${response.data.hn_title}`;
+                document.querySelector("#sh_bo_v .tit").textContent = `${response.data.hn_status ? escapeHTML(response.data.hn_title)+" "+"("+response.data.hn_status+")" : escapeHTML(response.data.hn_title)}`;
                 document.getElementById('date').insertAdjacentHTML('afterend', `${response.data.hn_create_dt}`);
                 sharedUrl = response.data.hn_post_url;
 

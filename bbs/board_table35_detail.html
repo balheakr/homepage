@@ -234,7 +234,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             const params = getQueryParams();
             axios.get(`https://api-dev.balhea.kr/homebe/post/recruit/${params.param1}`)
             .then(response => {
-                document.querySelector("#sh_bo_v .tit").textContent = `${response.data.hr_title} (${response.data.hr_status})`;
+                document.querySelector("#sh_bo_v .tit").textContent = `${response.data.hr_status ? escapeHTML(response.data.hr_title)+" "+"("+response.data.hr_status+")" : escapeHTML(response.data.hr_title)}`;
                 document.getElementById('date').insertAdjacentHTML('afterend', `${response.data.hr_create_dt}`);
                 sharedUrl = response.data.hr_post_url;
 

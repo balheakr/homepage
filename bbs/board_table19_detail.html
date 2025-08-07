@@ -227,7 +227,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             axios.get(`https://api-dev.balhea.kr/homebe/post/news/${params.param1}`)
             .then(response => {
                 const params = getQueryParams();
-                document.querySelector("#sh_bo_v .tit").textContent = `${response.data.ha_title}`;
+                document.querySelector("#sh_bo_v .tit").textContent = `${response.data.ha_status ? escapeHTML(response.data.ha_title)+" "+"("+response.data.ha_status+")" : escapeHTML(response.data.ha_title)}`;
                 document.getElementById('date').insertAdjacentHTML('afterend', `${response.data.ha_create_dt}`);
                 sharedUrl = response.data.ha_post_url;
 

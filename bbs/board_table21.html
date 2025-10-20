@@ -294,8 +294,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="cs">
             <p class="tit">Contact us</p>
-            <p class="add">본사 : 경기 김포시 고촌읍 전호로 32 1동,2동</p>
+            <p class="add">본사 : 김포시 고촌읍 전호로 32 1동,2동</p>
             <p class="add">AI 연구동 : 서울특별시 강남구 언주로87길6 901호</p>
+            <p class="add">영업팀 : 수원시 영통구 대학4로17 에이스광교타워 1차 3층 314-1호</p>
             <p class="tel">Tel : 031-987-3069</p>
             <p class="etc">Fax . 031-998-3069 / E-mail . balhea@balhea.kr</p>
             <!--<ul class="sns">
@@ -347,68 +348,91 @@ $('#subBnr .txt_area').stop().delay(0).animate({"opacity":"1","padding-top":"0"}
             </div>
     
             <!-- 콘텐츠영역 -->
-            <div id="sh_content">
+    <div id="sh_content2">
             
-<div id="sh_map_v">
+        <div id="sh_map_v">
 
-    <div class="map_div">
-        <div class="tit_area">
-            <span>ADDRESS</span>
-            <p>본사 : 경기 김포시 고촌읍 전호로 32 1동,2동</p>
-            <p>전화 : 031-987-3069</p>
+            <div class="map_div">
+                <div class="tit_area">
+                    <span>ADDRESS</span>
+                    <p>본사 : 김포시 고촌읍 전호로 32 1동,2동</p>
+                    <p>전화 : 031-987-3069</p>
+                </div>
+
+                <div id="sh_iframe_wrap">
+                    <!--<iframe id="sh_iframe" frameborder='0' border='0' marginwidth='0' marginheight='0' scrolling='no' title="Shining 오시는길"></iframe>-->
+                    <!-- * 카카오맵 - 지도퍼가기 -->
+                    <!-- 1. 지도 노드 -->
+                    <div id="daumRoughmapContainer1742170136603" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+                    <!--
+                        2. 설치 스크립트
+                        * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+                    -->
+                    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+                    <!-- 3. 실행 스크립트 -->
+                    <script charset="UTF-8">
+                        new daum.roughmap.Lander({
+                            "timestamp" : "1742170136603",
+                            "key" : "2nchp",
+                            "mapWidth" : "640",
+                            "mapHeight" : "360"
+                        }).render();
+                    </script>
+                </div>
+            </div>
+
+            <div class="map_div">
+                <div class="tit_area">
+                    <span>ADDRESS</span>
+                    <p>AI 연구동 : 서울특별시 강남구 언주로87길6 901호</p>
+                    <p>전화 : 010-5182-9660</p>
+                </div>
+
+                <div id="sh_iframe_wrap">
+                    <!-- * 카카오맵 - 지도퍼가기 -->
+                    <!-- 1. 지도 노드 -->
+                    <div id="daumRoughmapContainer1742170220915" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+                    <!-- 3. 실행 스크립트 -->
+                    <script charset="UTF-8">
+                        new daum.roughmap.Lander({
+                            "timestamp" : "1742170220915",
+                            "key" : "2nchq",
+                            "mapWidth" : "640",
+                            "mapHeight" : "360"
+                        }).render();
+                    </script>
+                </div>
+            </div>
+
+
+            <div class="map_div">
+                <div class="tit_area">
+                    <span>ADDRESS</span>
+                    <p>영업팀 : 수원시 영통구 대학4로17 에이스광교타워 1차 3층 314-1호</p>
+                    <p>전화 : 010-9140-0164</p>
+                </div>
+
+                <div id="sh_iframe_wrap">
+                    <!-- * 카카오맵 - 지도퍼가기 -->
+                    <!-- 1. 지도 노드 -->
+                    <div id="daumRoughmapContainer1760950103931" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+                    <!-- 3. 실행 스크립트 -->
+                    <script charset="UTF-8">
+                        new daum.roughmap.Lander({
+                            "timestamp" : "1760950103931",
+                            "key" : "2ckd4ghnai4u",
+                            "mapWidth" : "640",
+                            "mapHeight" : "360"
+                        }).render();
+                    </script>
+                </div>
+            </div>
+                
         </div>
-
-        <div id="sh_iframe_wrap">
-            <!--<iframe id="sh_iframe" frameborder='0' border='0' marginwidth='0' marginheight='0' scrolling='no' title="Shining 오시는길"></iframe>-->
-            <!-- * 카카오맵 - 지도퍼가기 -->
-            <!-- 1. 지도 노드 -->
-            <div id="daumRoughmapContainer1742170136603" class="root_daum_roughmap root_daum_roughmap_landing"></div>
-
-            <!--
-                2. 설치 스크립트
-                * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
-            -->
-            <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
-
-            <!-- 3. 실행 스크립트 -->
-            <script charset="UTF-8">
-                new daum.roughmap.Lander({
-                    "timestamp" : "1742170136603",
-                    "key" : "2nchp",
-                    "mapWidth" : "640",
-                    "mapHeight" : "360"
-                }).render();
-            </script>
-        </div>
-    </div>
-
-    <div class="map_div">
-        <div class="tit_area">
-            <span>ADDRESS</span>
-            <p>AI 연구동 : 서울특별시 강남구 언주로87길6 901호</p>
-            <p>전화 : 010-5182-9660</p>
-        </div>
-
-        <div id="sh_iframe_wrap">
-            <!-- * 카카오맵 - 지도퍼가기 -->
-            <!-- 1. 지도 노드 -->
-            <div id="daumRoughmapContainer1742170220915" class="root_daum_roughmap root_daum_roughmap_landing"></div>
-
-            <!-- 3. 실행 스크립트 -->
-            <script charset="UTF-8">
-                new daum.roughmap.Lander({
-                    "timestamp" : "1742170220915",
-                    "key" : "2nchq",
-                    "mapWidth" : "640",
-                    "mapHeight" : "360"
-                }).render();
-            </script>
-        </div>
-    </div>
-
-    
-            
-    </div>
 
 
 <script>
@@ -486,8 +510,9 @@ document.getElementById("sh_iframe").src = exist_map_url+"?"+exist_map_add_url;
                         <a href="/bbs/board_table35.html">채용</a>
                     </li>
                 </ul>
-				본사 : 경기 김포시 고촌읍 전호로 32 1동,2동 <br />
+				본사 : 김포시 고촌읍 전호로 32 1동,2동 <br />
                 AI 연구동 : 서울특별시 강남구 언주로87길6 901호 <br />
+                영업팀 : 수원시 영통구 대학4로17 에이스광교타워 1차 3층 314-1호 <br />
                 사업자 번호 : 822-87-00677</div>
             
 			<!-- 메뉴 -->

@@ -33,7 +33,8 @@ body.open{overflow:hidden;position:absolute;width:100%;height:100%}
 #sh_aside_wrapper{overflow:hidden;position:relative;width:1200px;margin:0 auto;zoom:1}
 
 /* CONTENT */
-#sh_content{position:relative;z-index:4;width:1200px;min-height:580px;margin:0 auto;padding:70px 90px}
+#sh_content{position:relative;z-index:4;width:1200px;min-height:580px;margin:0 auto;padding:70px 90px; }
+#sh_content2{position:relative;z-index:4;/* width:1200px; */min-height:580px;margin:0 auto;padding:70px 90px; /*sh*/ text-align:center; }
 #sh_content:after{display:block;visibility:hidden;clear:both;content:""}
 
 /* 하단메뉴 */

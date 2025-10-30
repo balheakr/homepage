@@ -19,6 +19,172 @@
 #pageCm .stit_area{font-size:17px;line-height:1.6}
 #pageCm .stit_area h4{padding-bottom:15px;font-size:29px;font-weight:normal;line-height:1.4;font-family:'notokr-regular'}
 
+/* 제품 페이지 추가*/
+.pageCm .goods_cont_tit {
+  font-size: 29px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.pageCm .goods_cont_txt {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 4px 0;
+}
+
+/*제품 소개 페이지*/
+.video_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.video_item {
+  /* width: 560px; 기본 유튜브 비율 (16:9) 기준 */
+  width: 80%;
+  max-width: 100%;
+  text-align: center;
+}
+
+.video_wrap {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 비율 유지 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.video_wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video_title {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+/*catalog*/
+.catalog_slider {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.catalog_slider .slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.catalog_slider img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.catalog_slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.catalog_slider button span {
+  font-size: 22px;
+  color: #333;
+  line-height: 1;
+}
+
+.catalog_slider button:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.catalog_slider .prev { left: 16px; }
+.catalog_slider .next { right: 16px; }
+
+.catalog_slider {
+  position: relative; /* 버튼 위치 기준이 될 부모 */
+}
+
+.catalog_slider .download_btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, rgba(85,85,85,0.75), rgba(51,51,51,0.75));
+  color: #fff;
+  border-radius: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: all 0.25s ease;
+  z-index: 10;
+  backdrop-filter: blur(4px); /* 살짝 유리 느낌 효과 */
+}
+
+.catalog_slider .download_btn:hover {
+  background: linear-gradient(135deg, rgba(100,100,100,0.85), rgba(60,60,60,0.85));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.catalog_slider .download_btn .icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+
+
+/*제품 소개 구분선*/
+.section_divider {
+  border: none;
+  border-top: 2px solid #555; 
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto; /* 위아래 여백 */
+  opacity: 0.8;
+  display: block;
+}
+/* contact us 구분선*/
+.section_divider_contact {
+  border: none;
+  border-top: 2px solid #555; 
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto; /* 위아래 여백 */
+  opacity: 0.8;
+  display: block;
+}
+
+
+
 /* 인사말 */
 .p6{text-align:center}
 .p6 .cont_area{padding-top:250px;background:url(/sh_page/img/business.jpg) top center no-repeat;background-size: contain;}
@@ -64,6 +230,20 @@
 .p10 .txt_area li p{margin-bottom:15px;padding-bottom:15px;border-bottom:1px dashed #e1e1e1;font-size:20px;color:#222;font-family:'notokr-medium'}
 .p10 .txt_area li p .num{display:inline-block;width:40px;height:40px;margin-right:10px;border-radius:40px;font-size:16px;color:#fff;text-align:center;line-height:40px;font-family:'notokr-medium'}
 .p10 .txt_area li b{font-weight:normal;color:#222;text-decoration:underline}
+
+
+/* 제품 소개 */
+.p12 .box_area{margin-bottom:30px;text-align:center}
+.p12 .box_area li{display:inline-block;position:relative;width:18.6%;padding:50px 0;margin:0 5px 15px;border:1px solid #e1e1e1}
+.p12 .box_area li p{font-size:18px;color:#333;font-family:'notokr-medium'} 
+.p12 .box_area li:before{display:block;content:"";position:absolute;left:0;top:56px;width:8px;height:14px;background-color:#ddd}
+.p12 .box_area img{width: 80%;}
+.p12 .txt_area{padding-left:15px}
+.p12 .txt_area li{overflow:hidden;margin-bottom:50px}
+.p12 .txt_area li p{margin-bottom:15px;padding-bottom:15px;border-bottom:1px dashed #e1e1e1;font-size:20px;color:#222;font-family:'notokr-medium'}
+.p12 .txt_area li p .num{display:inline-block;width:40px;height:40px;margin-right:10px;border-radius:40px;font-size:16px;color:#fff;text-align:center;line-height:40px;font-family:'notokr-medium'}
+.p12 .txt_area li b{font-weight:normal;color:#222;text-decoration:underline}
+
 
 /* 모바일웹 */
 .p11 .box_area{height:340px;padding-top:57px;margin-bottom:70px;border-radius:40px 0 ;text-align:center;background:url(/sh_page/img/p11_img.jpg) top center no-repeat}

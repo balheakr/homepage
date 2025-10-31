@@ -78,6 +78,7 @@
   width: 80%;
   max-width: 800px;
   margin: 40px auto;
+  margin-top: 0px;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -129,15 +130,22 @@
   position: relative; /* 버튼 위치 기준이 될 부모 */
 }
 
-.catalog_slider .download_btn {
-  position: absolute;
-  top: 16px;
-  right: 16px;
+/* 카탈로그 버튼 영역 */
+.catalog_actions {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.catalog_actions .download_btn {
   display: flex;
   align-items: center;
   gap: 6px;
   padding: 8px 16px;
-  background: linear-gradient(135deg, rgba(85,85,85,0.75), rgba(51,51,51,0.75));
+  background-color: #a0a0a0; /* 밝은 회색으로 */
   color: #fff;
   border-radius: 8px;
   font-size: 14px;
@@ -145,21 +153,19 @@
   font-weight: 500;
   box-shadow: 0 2px 6px rgba(0,0,0,0.25);
   transition: all 0.25s ease;
-  z-index: 10;
-  backdrop-filter: blur(4px); /* 살짝 유리 느낌 효과 */
+  backdrop-filter: blur(4px);
 }
 
-.catalog_slider .download_btn:hover {
-  background: linear-gradient(135deg, rgba(100,100,100,0.85), rgba(60,60,60,0.85));
+.catalog_actions .download_btn:hover {
+  background-color: #b5b5b5;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-.catalog_slider .download_btn .icon {
+.catalog_actions .download_btn .icon {
   font-size: 16px;
   line-height: 1;
 }
-
 
 
 /*제품 소개 구분선*/

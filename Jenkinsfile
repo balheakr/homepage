@@ -22,14 +22,14 @@ pipeline {
     stage('Create GitHub Release') {
       when { branch 'main' }
       steps {
-        withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
+        withCredentials([string(credentialsId: 'portal_fe_release_token', variable: 'PORTAL_FE_RELEASE_TOKEN')]) {
             sh '''
                 set -e
                 REPO="${GITHUB_OWNER}/${GITHUB_REPO}"
                 TAG="${RELEASE_TAG}"
                 
                 curl -i https://api.github.com/repos/balheakr/homepage \
-                  -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+                  -H "Authorization: Bearer ${PORTAL_FE_RELEASE_TOKEN}" \
                   -H "Accept: application/vnd.github+json"
 
                 # 1) Node 로 JSON payload 생성 (자동 이스케이프)
@@ -47,13 +47,13 @@ pipeline {
 
                 # 2) 릴리즈 생성 (파일 전체를 본문으로)
                 curl -s -X POST "https://api.github.com/repos/${REPO}/releases" \
-                -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+                -H "Authorization: Bearer ${PORTAL_FE_RELEASE_TOKEN}" \
                 -H "Content-Type: application/json" \
                 -d @payload.json
 
                 # 3) upload_url 파싱
                 FULL_URL=$(curl -s \
-                -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+                -H "Authorization: Bearer ${PORTAL_FE_RELEASE_TOKEN}" \
                 "https://api.github.com/repos/${REPO}/releases/tags/${TAG}" \
                 | grep '"upload_url"' \
                 | head -n1 \
@@ -64,7 +64,7 @@ pipeline {
 
                 # 4) ZIP 아티팩트 업로드
                 curl -s --data-binary @release.zip \
-                -H "Authorization: token ${GITHUB_TOKEN}" \
+                -H "Authorization: token ${PORTAL_FE_RELEASE_TOKEN}" \
                 -H "Content-Type: application/zip" \
                 "${FULL_URL}?name=release.zip"
             '''

@@ -14,7 +14,7 @@ pipeline {
       when { branch 'main' }
       steps {
         sh '''
-          zip -r release.zip . -x "*.git*" "Jenkinsfile" "*.DS_Store"
+          zip -r release.zip . -x "*.git*" "Jenkinsfile" "*.DS_Store" "admin/*"
         '''
       }
     }

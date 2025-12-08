@@ -49,6 +49,7 @@ body.open{overflow:hidden;position:absolute;width:100%;height:100%}
 #sh_ft_wrapper{position:relative;border-bottom:solid 1px rgba(255,255,255,.1);background:#1c1c1c}
 #sh_ft .inner{position:relative;padding:90px 0;width:1495px;margin: 0 auto;overflow: hidden}
 #sh_ft .inner .tit{margin-bottom:25px;font-size:15px;font-weight:600;color: #fff;font-family:'Poppins'}
+#sh_ft .inner .tit2{margin-bottom:5px;font-size:15px;font-weight:600;color: #fff;font-family:'Poppins'}
 #sh_ft .left{float:left;width:50%}
 #sh_ft .ifm{float:right;width:30%}
 #sh_ft .ifm .info{overflow:hidden}

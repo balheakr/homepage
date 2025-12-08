@@ -13,7 +13,9 @@ pipeline {
     stage('Archive ZIP') {
       when { branch 'main' }
       steps {
-        sh 'zip -r release.zip build/'
+        sh '''
+          zip -r release.zip . -x "*.git*" "Jenkinsfile"
+        '''
       }
     }
 

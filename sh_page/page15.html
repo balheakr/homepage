@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>NeoBH</title>
+<link rel="stylesheet" href="../css/default.css">
+<link rel="stylesheet" href="../sh_img/js/aos.css">
+<link rel="stylesheet" href="../sh_img/hd/top_menu/style.css">
+<link rel="stylesheet" href="../sh_img/hd/aside/style.css">
+<link rel="stylesheet" href="../sh_img/hd/sub_main_banner/style.css">
+<link rel="stylesheet" href="../css/user.css">
+<link rel="stylesheet" href="../css/page_style.css">
+<style>
+@import url(https://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+
+/* 나눔스퀘어 */
+@font-face {
+	font-family: 'NanumSquare';
+	src: url(https://font/NanumSquareR.eot);
+	src: url(https://font/NanumSquareR.eot?#iefix) format('embedded-opentype'),
+		 url(https://font/NanumSquareR.woff) format('woff'),
+		 url(https://font/NanumSquareR.ttf) format('truetype');
+}
+
+/* 본고딕 */
+@font-face {
+	font-family: 'notokr-thin';
+	src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.eot);
+	src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.eot?#iefix) format('embedded-opentype'),
+		 url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),
+		 url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),
+		 url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.ttf) format('truetype'),
+		 url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.svg#notokr-thin) format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: 'notokr-regular';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.svg#notokr-regular) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-medium';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.svg#notokr-medium) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-light';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.ttf) format('truetype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.svg#notokr-light) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-demilight';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.eot?) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.ttf) format('truetype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.svg) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-bold';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.svg#notokr-bold) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'notokr-black';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.ttf) format('truetype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.svg#notokr-black) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* 아리따 */
+@font-face {
+	font-family: 'arita-thin';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Thin.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Thin.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Thin.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Thin.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-light';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Light.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Light.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Light.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Light.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-medium';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Medium.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Medium.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Medium.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Medium.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-semibold';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-SemiBold.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-SemiBold.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-SemiBold.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-SemiBold.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-bold';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Bold.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Bold.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Bold.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Bold.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+</style><!--[if lte IE 8]>
+<![endif]-->
+<script>
+// 자바스크립트에서 사용하는 전역변수 선언
+var g5_url       = "";
+var g5_bbs_url   = "";
+var g5_is_member = "";
+var g5_is_admin  = "";
+var g5_is_mobile = "";
+var g5_bo_table  = "";
+var g5_sca       = "";
+var g5_editor    = "";
+var g5_cookie_domain = "";
+</script>
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script src="../js/jquery.menu.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/wrest.js"></script>
+<script src="../js/placeholders.min.js"></script>
+<link rel="stylesheet" href="../js/font-awesome/css/font-awesome.min.css">
+<script src="../sh_img/js/feather.min.js"></script>
+<script src="../sh_img/js/aos.js"></script>
+<script src="../sh_img/hd/top_menu/script.js"></script>
+</head>
+<body>
+
+
+<!-- } -->
+<script>
+AOS.init();
+</script>
+<div id="sh_wrapper">
+	<!-- 상단 시작 { -->
+	<div id="sh_hd">	
+        <div class="sh_lnb_bg"></div>
+		<h1 id="hd_h1">NeoBH</h1>
+		<div id="skip_to_container"><a href="page15.html#sh_container">본문 바로가기</a></div>
+				<div id="sh_hd_wrapper">
+			
+<div id="app-sub-menu"></div>
+</div>
+<!-- 반응형메뉴 [e] -->	
+		</div>
+	</div>
+	<!-- } 상단 끝 -->
+    
+	<!-- 콘텐츠 시작 { -->
+	<div id="sh_container">
+		<div id="sh_container_wrapper" class='sub'>
+			            <!-- 콘텐츠영역 -->
+            <div id="sh_aside">
+<div id="shSnb">
+    <ul>
+    	<li><a href="../index.html">홈</a></li>
+                <li class='on'>
+            <a href="page15.html">마케팅 최적화</a>
+        </li>
+            </ul>
+</div></div>
+			
+<div id="shSubBnr">
+	<p><span>마케팅 최적화</span></p>
+    <div class="bg" data-aos="fade-in" data-aos-duration="800" style="background-image:url(../sh_img/hd/sub_main_banner/bg_13.jpg);"></div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('#shSubBnr p span').delay(0).animate({"bottom":"0","opacity":"1"},600);
+});
+</script>            <div id="sh_content">
+					
+
+<div id="pageCm" class="p15">
+
+	<div class="tit_area t_center">
+    	<span class="pg_color">marketing</span>
+        <p>
+            홈페이지를 어떻게 만드느냐도 굉장히 중요하지만,<br />
+            <p class="c_black"><strong class="pg_color">잘 관리하고 마케팅을 하는것</strong> 또한 굉장히 중요합니다.</p>
+        </p>
+    </div>
+    
+	<p class="t_center">메이크24는 기본적인 마케팅 관련 서비스를 무료로 진행해 드리고 있으며, <br />
+	서비스 외의 마케팅 관련 자문서비스 또한 함께 해드리고 있습니다.</p>    
+    
+    <div class="cont_area">
+    	<div class="cont_left">
+        	<div class="tit">
+            	<h4>마케팅에 최적화된 홈페이지</h4>
+	            진화하는 홈페이지, 마케팅에 최적화된 메이킹 A Develop Web Making.
+				메이크24에서는 단순한 홈페이지가 아닌 <br />
+				마케팅에 최적화된 홈페이지를 제공해 드립니다.
+            </div>
+        </div>
+        <ul class="cont_right">
+            <li>
+                <h5>웹표준</h5>
+                IE뿐 아니라 크롬, 파이어폭스, 오페라,사파리 등 <b>다양한 브라우저의 사용량 증가에 따른 표준화</b>된 디자인과 프로그래밍으로 원활한 접근이 가능하도록 제작되어야 합니다. 특히 모바일 기기 같은 경우 단시간 내에 빠른 발전으로 인하여 아직 PC와 많이 다른 환경으로 인하여 기존의 웹사이트들의 원활한 접근이 어려워진 현실입니다. 
+                다양한 환경에서 언제 어디서나 내 홈페이지가 가장 잘 보일수 있도록 <b>선택이 아닌 필수</b>로 자리매김 하고 있습니다.
+            </li>
+            <li class="right">        
+                <h5>웹문서</h5>
+                홈페이지내의 게시물 또는 텍스트정보를 <b>검색엔진 사이트에 ‘웹문서’ 영역에 노출</b>될 수 있게 하는 준비된 홈페이지설계가 필요합니다. 이를 수집하는 로봇이라는 프로그램은 인터넷을 스스로 돌아다니며 수집하며 국내는 물론 국외의 정보까지 모두 수집합니다. 이 넘치는 인터넷 정보 홍수 속에서 꼭 필요한 내정보 내이야기만 웹문서에 노출하기 위해서는 <b>전문적인 기획과 설계가 필요</b>하며 흔히 웹문서광고라는 서비스로 광고하는 회사들의 웹문서관리는 준비되어 있지 못한 홈페이지로는 제대로된 웹문서 최적화가 될수 없습니다.
+            </li>    
+        </ul>
+    </div>
+    
+	<div class="stit_area t_center">
+		<h4 class="c_black">방문<strong class="pg_color">경로</strong></h4>
+        방문자는 다양한 경로를 통해 홈페이지에 접속하여 다양한 정보를 수집하게 되고<br /> 그로 인한 올바른 홈페이지 제작이 무엇보다 중요합니다.
+    </div>  
+    
+	<ul class="route">
+        <li><b>광고</b>로 인한 방문</li>
+        <li><b>검색</b>을 통한 방문</li>
+        <li><b>웹문서</b> 수집으로인한 방문</li>
+        <li class="last"><b>블로깅</b>을 통한 방문</li>
+	</ul>
+    <ul class="route2">
+         <li class="arr">방문 OK<span class="pg_bgcolor"></span></li>
+         <li class="txt">가독성과 편리함을 고려한 메인디자인과<br /> 구성으로 <b>오랜 체류기간유도</b></li>
+         <li class="arr">페이지뷰 OK<span class="pg_bgcolor"></span></li>
+         <li class="txt">고객사에서 준비해두신 상품 및 <br />서비스 상담을 통하여 <b>수익창출</b></li>
+    </ul> 
+             
+</div>    
+
+
+        </div><!-- sh_content -->
+   
+	</div><!-- sh_container_wrapper --> 
+</div><!-- sh_container -->
+<!-- } 콘텐츠 끝 -->
+
+<div id="sh_ft_btns">
+   	<div class="btns">
+		        <a class="tel" href="tel:15446062"><i class="fa fa-phone"></i>1544-6062</a>
+            </div>
+</div>
+<a id="fix_tel" href="tel:15446062"><i class="fa fa-phone"></i></a>
+<script>
+$(window).on("scroll",function(){
+    if($(window).scrollTop() > 100) { 
+        $('#fix_tel').addClass('active');}
+    else{
+        $('#fix_tel').removeClass('active');}
+    return false;
+});
+</script> 
+
+<div id="app-footer"></div>
+    
+    <div id="toTop">
+        <i data-feather="arrow-up"></i>
+    </div>
+    
+    </div>
+    <script>
+        feather.replace();
+        var pageup = $("html").innerHeight();
+        $(window).on("scroll",function(){
+            if($(window).scrollTop() > pageup/3) { 
+                $('#toTop').addClass("on");
+            } else{
+                $('#toTop').removeClass("on");
+            }
+            return false;
+        });	
+        $('#toTop').click(function(){
+            $("html, body").animate({scrollTop:0}, 400);
+            return false;
+        });	 
+    </script>
+
+
+
+<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+<!--[if lte IE 7]>
+<script>
+$(function() {
+    var $sv_use = $(".sv_use");
+    var count = $sv_use.length;
+
+    $sv_use.each(function() {
+        $(this).css("z-index", count);
+        $(this).css("position", "relative");
+        count = count - 1;
+    });
+});
+</script>
+<![endif]-->
+
+</body>
+<script src=""></script>
+</html>

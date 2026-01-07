@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>NeoBH</title>
+<link rel="stylesheet" href="../css/default.css">
+<link rel="stylesheet" href="../sh_img/js/aos.css">
+<link rel="stylesheet" href="../sh_img/hd/top_menu/style.css">
+<link rel="stylesheet" href="../sh_img/hd/aside/style.css">
+<link rel="stylesheet" href="../sh_img/hd/sub_main_banner/style.css">
+<link rel="stylesheet" href="../css/user.css">
+<link rel="stylesheet" href="../css/page_style.css">
+<style>
+@import url(https://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+
+/* 나눔스퀘어 */
+@font-face {
+	font-family: 'NanumSquare';
+	src: url(https://font/NanumSquareR.eot);
+	src: url(https://font/NanumSquareR.eot?#iefix) format('embedded-opentype'),
+		 url(https://font/NanumSquareR.woff) format('woff'),
+		 url(https://font/NanumSquareR.ttf) format('truetype');
+}
+
+/* 본고딕 */
+@font-face {
+	font-family: 'notokr-thin';
+	src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.eot);
+	src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.eot?#iefix) format('embedded-opentype'),
+		 url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),
+		 url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),
+		 url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.ttf) format('truetype'),
+		 url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.svg#notokr-thin) format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: 'notokr-regular';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.svg#notokr-regular) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-medium';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.svg#notokr-medium) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-light';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.ttf) format('truetype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.svg#notokr-light) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-demilight';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.eot?) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.ttf) format('truetype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.svg) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-bold';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.svg#notokr-bold) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'notokr-black';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.ttf) format('truetype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.svg#notokr-black) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* 아리따 */
+@font-face {
+	font-family: 'arita-thin';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Thin.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Thin.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Thin.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Thin.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-light';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Light.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Light.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Light.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Light.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-medium';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Medium.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Medium.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Medium.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Medium.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-semibold';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-SemiBold.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-SemiBold.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-SemiBold.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-SemiBold.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-bold';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Bold.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Bold.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Bold.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Bold.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+</style><!--[if lte IE 8]>
+<![endif]-->
+<script>
+// 자바스크립트에서 사용하는 전역변수 선언
+var g5_url       = "";
+var g5_bbs_url   = "";
+var g5_is_member = "";
+var g5_is_admin  = "";
+var g5_is_mobile = "";
+var g5_bo_table  = "";
+var g5_sca       = "";
+var g5_editor    = "";
+var g5_cookie_domain = "";
+</script>
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script src="../js/jquery.menu.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/wrest.js"></script>
+<script src="../js/placeholders.min.js"></script>
+<link rel="stylesheet" href="../js/font-awesome/css/font-awesome.min.css">
+<script src="../sh_img/js/feather.min.js"></script>
+<script src="../sh_img/js/aos.js"></script>
+<script src="../sh_img/hd/top_menu/script.js"></script>
+</head>
+<body>
+
+
+<!-- } -->
+<script>
+AOS.init();
+</script>
+<div id="sh_wrapper">
+	<!-- 상단 시작 { -->
+	<div id="sh_hd">	
+        <div class="sh_lnb_bg"></div>
+		<h1 id="hd_h1">NeoBH</h1>
+		<div id="skip_to_container"><a href="page11.html#sh_container">본문 바로가기</a></div>
+				<div id="sh_hd_wrapper">
+			
+<div id="app-sub-menu"></div>
+</div>
+<!-- 반응형메뉴 [e] -->	
+		</div>
+	</div>
+	<!-- } 상단 끝 -->
+    
+	<!-- 콘텐츠 시작 { -->
+	<div id="sh_container">
+		<div id="sh_container_wrapper" class='sub'>
+			            <!-- 콘텐츠영역 -->
+            <div id="sh_aside">
+<div id="shSnb">
+    <ul>
+    	<li><a href="../index.html">홈</a></li>
+                <li >
+            <a href="page10.html">홈페이지제작</a>
+        </li>
+                <li class='on'>
+            <a href="page11.html">모바일웹</a>
+        </li>
+            </ul>
+</div></div>
+			
+<div id="shSubBnr">
+	<p><span>사업영역</span></p>
+    <div class="bg" data-aos="fade-in" data-aos-duration="800" style="background-image:url(../sh_img/hd/sub_main_banner/bg_11.jpg);"></div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('#shSubBnr p span').delay(0).animate({"bottom":"0","opacity":"1"},600);
+});
+</script>            <div id="sh_content">
+					
+
+<div id="pageCm" class="p11">
+
+	<div class="tit_area t_center">
+    	<span class="pg_color">mobile web</span>
+        <p>
+            손안에서 모든 것이 이루어지는 무한모바일 경쟁시대<i>!</i><br />
+            <p class="c_black">이제는 <strong class="pg_color">모바일최적화</strong>가 홈페이지제작의 중요한 요소가 되었습니다</p>
+        </p>
+    </div>
+
+	<div class="box_area">
+    	<div class="box">
+            이곳 저곳 알아보면 천차만별의 가격과 가격대비 크게 떨어지는 퀄리티에<br />
+			여러 고객님들이 피해를 받고 있습니다. <br />
+            <p>그래서 샤이닝에서는 저희와 함께 하시는 모든 고객분들께<br />
+			<span class="pg_bgcolor">모바일웹 무료제공 이벤트</span>를 실시하고 있습니다.</p>
+        </div>
+	</div>
+    
+	<div class="stit_area t_center">
+		<h4 class="c_black">모바일웹의 <strong class="pg_color">장점</strong></h4>
+        찾아오는 사람들의 접근성을 용이하고 편리하게 하여<br /> 유입율을 높이고 쉽게 접근할수 있는 모바일웹의 장점입니다.
+    </div>    
+
+    <ul class="benefit">
+        <li>
+        	<p class="icon icon01"></p>
+            <p class="tit"><span class="pg_color">Compact</span> 간편한</p>
+            언제 어디서나 인터넷 접속이 가능하므로<br /> 원하는 정보를 쉽고 간편하게<br /> 습득할 수 있습니다.
+        </li>
+        <li>
+        	<p class="icon icon02"></p>
+            <p class="tit"><span class="pg_color">Simple</span> 쉬운</p>
+            쉽고 간편하게 구성된 내용위주로 <br />사용자 인터페이스를<br /> 가지고 있습니다.
+        </li>
+        <li>
+        	<p class="icon icon03"></p>
+            <p class="tit"><span class="pg_color">Accessibillity</span> 접근성</p>
+            웹과 모바일웹 동시에 접속 가능하여<br /> 접근성이 높아 <br />커뮤니티가 빨라집니다.
+        </li>
+    </ul>
+    
+	<div class="stit_area t_center">
+		<h4 class="c_black">샤이닝의 <strong class="pg_color">강점</strong></h4>
+        PC홈페이지의 내용을 기반으로 부가서비스로 제작하는 경우가 많으며 요즘엔 모바일만을 제작하는 업체도 꽤많이 늘었습니다.<br />
+		하지만 모바일만을 제작하는 신생업체들보다는 PC홈페이지를 전통적으로 제작하던 업체의 <br />
+		신뢰있는 서비스를 받는것도 안전한 홈페이지 투자의 한 방법입니다.
+    </div>      
+
+    <ul class="point">
+    	<li>
+        	<p><span class="num pg_bgcolor">01</span>QR코드와의 호환성</p>
+            명함 / 인쇄홍보물 / 각종 지면광고 / 또는 네이버, <br />
+			Daum의 인터넷 카페 등에 <b>자신의 홈페이지와 연동된 <br />
+			QR코드</b>를 삽입하여 <b>접근성 극대화</b>
+        </li>
+    	<li class="right">
+        	<p><span class="num pg_bgcolor">02</span>PC홈페이지와의 연동시스템</p>
+           	갤러리 및 게시판이 <b>실시간으로 PC홈페이지와 모바일웹이 <br />
+			연동</b>되어 있어 모바일웹으로 방문하는 사람들에게도 <br />
+			홈페이지의 활성화와 <b>쉬운 상담요청</b> 유도 가능합니다.
+        </li>
+	</ul>
+    
+    <div class="attention">
+    	<p class="tit pg_color">모바일웹 제작 시 유의해야 할점</p>
+        편화,최소화를 목적으로 내용이나 메뉴를 간단히 하다 보면 업체의 퀄리티에 영향이 올 수도 있습니다.<br />
+        빠르고 쉽게 찾아오는 컨텐츠임을 감안하여서 어떻게 어디서 제작을 하던 우리 기업의 이미지를 UP!시켜줄수있는 <br />
+        모바일웹을 제작하는 것이 가장 중요합니다.<br /><br />
+        
+        <p class="st">활용도를 미리 생각해야 합니다!</p>
+        모바일웹을 제작하기만 한다고 해서 모든 사람들이 찾아와주는 것은 아닙니다.<br />
+        QR코드,모바일웹광고컨텐츠,SNS컨텐츠등을 얼마나 활용할 수 있고 그에 대한 지식이 얼마나 있는가도 고려해보셔야 합니다.<br /><br />
+        
+        때문에 마케팅에 대한 상의 및 자문을 위해 언제나 열려있는 전통홈페이지제작 샤이닝과 함께하시면<br />
+        위와 같은 위험요소가 줄어들게 됩니다.
+    </div>
+    
+</div>
+
+
+        </div><!-- sh_content -->
+   
+	</div><!-- sh_container_wrapper --> 
+</div><!-- sh_container -->
+<!-- } 콘텐츠 끝 -->
+
+<div id="sh_ft_btns">
+   	<div class="btns">
+		        <a class="tel" href="tel:15446062"><i class="fa fa-phone"></i>1544-6062</a>
+            </div>
+</div>
+<a id="fix_tel" href="tel:15446062"><i class="fa fa-phone"></i></a>
+<script>
+$(window).on("scroll",function(){
+    if($(window).scrollTop() > 100) { 
+        $('#fix_tel').addClass('active');}
+    else{
+        $('#fix_tel').removeClass('active');}
+    return false;
+});
+</script> 
+
+<div id="app-footer"></div>
+    
+    <div id="toTop">
+        <i data-feather="arrow-up"></i>
+    </div>
+    
+    </div>
+    <script>
+        feather.replace();
+        var pageup = $("html").innerHeight();
+        $(window).on("scroll",function(){
+            if($(window).scrollTop() > pageup/3) { 
+                $('#toTop').addClass("on");
+            } else{
+                $('#toTop').removeClass("on");
+            }
+            return false;
+        });	
+        $('#toTop').click(function(){
+            $("html, body").animate({scrollTop:0}, 400);
+            return false;
+        });	 
+    </script>
+
+
+
+<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+<!--[if lte IE 7]>
+<script>
+$(function() {
+    var $sv_use = $(".sv_use");
+    var count = $sv_use.length;
+
+    $sv_use.each(function() {
+        $(this).css("z-index", count);
+        $(this).css("position", "relative");
+        count = count - 1;
+    });
+});
+</script>
+<![endif]-->
+
+</body>
+<script src=""></script>
+</html>

@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>NeoBH</title>
+<link rel="stylesheet" href="../css/default.css">
+<link rel="stylesheet" href="../sh_img/js/aos.css">
+<link rel="stylesheet" href="../sh_img/hd/top_menu/style.css">
+<link rel="stylesheet" href="../sh_img/hd/aside/style.css">
+<link rel="stylesheet" href="../sh_img/hd/sub_main_banner/style.css">
+<link rel="stylesheet" href="../css/user.css">
+<link rel="stylesheet" href="../css/page_style.css">
+<style>
+@import url(https://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+
+/* 나눔스퀘어 */
+@font-face {
+	font-family: 'NanumSquare';
+	src: url(https://font/NanumSquareR.eot);
+	src: url(https://font/NanumSquareR.eot?#iefix) format('embedded-opentype'),
+		 url(https://font/NanumSquareR.woff) format('woff'),
+		 url(https://font/NanumSquareR.ttf) format('truetype');
+}
+
+/* 본고딕 */
+@font-face {
+	font-family: 'notokr-thin';
+	src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.eot);
+	src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.eot?#iefix) format('embedded-opentype'),
+		 url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),
+		 url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),
+		 url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.ttf) format('truetype'),
+		 url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.svg#notokr-thin) format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: 'notokr-regular';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.svg#notokr-regular) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-medium';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.svg#notokr-medium) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-light';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.ttf) format('truetype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.svg#notokr-light) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-demilight';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.eot?) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.ttf) format('truetype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.svg) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-bold';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.svg#notokr-bold) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'notokr-black';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.ttf) format('truetype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.svg#notokr-black) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* 아리따 */
+@font-face {
+	font-family: 'arita-thin';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Thin.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Thin.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Thin.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Thin.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-light';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Light.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Light.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Light.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Light.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-medium';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Medium.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Medium.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Medium.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Medium.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-semibold';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-SemiBold.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-SemiBold.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-SemiBold.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-SemiBold.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-bold';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Bold.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Bold.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Bold.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Bold.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+</style><!--[if lte IE 8]>
+<![endif]-->
+<script>
+// 자바스크립트에서 사용하는 전역변수 선언
+var g5_url       = "";
+var g5_bbs_url   = "";
+var g5_is_member = "";
+var g5_is_admin  = "";
+var g5_is_mobile = "";
+var g5_bo_table  = "";
+var g5_sca       = "";
+var g5_editor    = "";
+var g5_cookie_domain = "";
+</script>
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script src="../js/jquery.menu.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/wrest.js"></script>
+<script src="../js/placeholders.min.js"></script>
+<link rel="stylesheet" href="../js/font-awesome/css/font-awesome.min.css">
+<script src="../sh_img/js/feather.min.js"></script>
+<script src="../sh_img/js/aos.js"></script>
+<script src="../sh_img/hd/top_menu/script.js"></script>
+</head>
+<body>
+
+
+<!-- } -->
+<script>
+AOS.init();
+</script>
+<div id="sh_wrapper">
+	<!-- 상단 시작 { -->
+	<div id="sh_hd">	
+        <div class="sh_lnb_bg"></div>
+		<h1 id="hd_h1">NeoBH</h1>
+		<div id="skip_to_container"><a href="page10.html#sh_container">본문 바로가기</a></div>
+				<div id="sh_hd_wrapper">
+			
+<div id="app-sub-menu"></div>
+</div>
+<!-- 반응형메뉴 [e] -->	
+		</div>
+	</div>
+	<!-- } 상단 끝 -->
+    
+	<!-- 콘텐츠 시작 { -->
+	<div id="sh_container">
+		<div id="sh_container_wrapper" class='sub'>
+			            <!-- 콘텐츠영역 -->
+            <div id="sh_aside">
+<div id="shSnb">
+    <ul>
+    	<li><a href="../index.html">홈</a></li>
+        <li class='on'>
+            <a href="#obtain">공공영역 물품 조달</a>
+        </li>
+        <li >
+            <a href="#manufacture">공공영역 기자재 제조</a>
+        </li>
+        <li >
+            <a href="#ai">AI 솔루션(MRO & SRM)개발</a>
+        </li>
+        <li >
+            <a href="#sales">개인 보호 장비 생산</a>
+        </li>
+            </ul>
+</div></div>
+			
+<div id="shSubBnr">
+	<p><span>사업영역</span></p>
+    <div class="bg" data-aos="fade-in" data-aos-duration="800" style="background-image:url(../sh_img/hd/sub_main_banner/bg_11.jpg);"></div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('#shSubBnr p span').delay(0).animate({"bottom":"0","opacity":"1"},600);
+});
+</script>            <div id="sh_content">
+					
+
+    <div id="obtain">
+        <div id="pageCm" class="p10">
+            <div class="tit_area t_center">
+                <span class="pg_color">Business Area</span>
+                <p class="c_black"><strong class="pg_color">공공영역 물품 조달</strong></p>
+            </div>
+            <ul class="box_area">
+                <img src="/sh_page/img/CK_pc002273170.jpg" alt="사업 영역 이미지" />
+                <!--<li>전통 웹에이전시의<p>제작 Know-how</p></li> 
+                <li>다양한<p>무료샘플디자인</p></li>
+                <li>어렵지 않은<p>1:1디자이너 배정</p></li>
+                <li>이미 준비되어 있는<p>무료 프로그램 및 폼</p></li>
+                <li>믿음이가는<p>투명한 유지보수관리</p></li>
+                <li>친구같은 멘토<p>항상 열려있는 CS센터</p></li>
+                <li>비용부담은 NO<p>무료모바일웹 이벤트</p></li>
+                <li>바이럴 마케팅의 시작<p>블로그 기본셋팅 제공</p></li>
+                <li>이미 준비되어 있는<p>무료 프로그램 및 폼</p></li>
+                <li>홈페이지제작 전문<p>SHINING샤이닝</p></li>-->
+            </ul>
+            <ul class="txt_area">
+                <li>
+                    <p><span class="num pg_bgcolor">01</span>공공영역 물품 조달의 신뢰와 혁신을 이끄는 조달 부서</p>
+                    공공영역 물품 조달 부서는 정부 및 공공기관이 필요로 하는 물품과 용역을 <b>투명하고 효율적으로 조달</b>하는 핵심 역할을 담당합니다.<br />
+                    전자조달 시스템과 체계적인 계약 관리를 통해 공공서비스 품질 향상과 예산 효율화를 실현합니다
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="manufacture">
+        <div id="pageCm" class="p10">
+            <div class="tit_area t_center">
+                <span class="pg_color">Business Area</span>
+                <p class="c_black"><strong class="pg_color">공공영역 기자재 제조</strong></p>
+            </div>
+            <ul class="box_area">
+                <img src="/sh_page/img/CK_pc002074144.jpg" alt="사업 영역 이미지" />
+            </ul>
+            <ul class="txt_area">
+                <li>
+                <p><span class="num pg_bgcolor">01</span>최첨단 공공영역 기자재 제조 혁신팀</p>
+                우리 부서는 공공영역 기자재를 설계부터 제작, <b>품질관리까지 일괄 수행</b>하며, 첨단 기술과 철저한 품질 기준으로 신뢰받는 제품을 제공합니다.<br />
+                안정적인 전력 공급과 친환경 발전을 위한 지속적인 기술 개발에 앞장서고 있습니다.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="ai">
+        <div id="pageCm" class="p10">
+            <div class="tit_area t_center">
+                <span class="pg_color">Business Area</span>
+                <p class="c_black"><strong class="pg_color">AI 솔루션(MRO & SRM)개발</strong></p>
+            </div>
+
+            <ul class="box_area">
+                <img src="/sh_page/img/CK_tica101j17050863.jpg" alt="사업 영역 이미지" />
+            </ul>
+            <ul class="txt_area">
+                <li>
+                    <p><span class="num pg_bgcolor">01</span>AI와 데이터로 혁신하는 MRO & SRM 효율화 개발팀</p>
+                    우리 개발 부서는 AI와 빅데이터 분석을 활용해 MRO(소모성 자재 관리)와 SRM(공급업체 관계 관리) 프로세스를 <b>혁신적으로 자동화하고 최적화합니다.</b><br />
+                    이를 통해 비용 절감과 운영 효율성 증대, 그리고 공급망 리스크 최소화를 실현합니다.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="sales">
+        <div id="pageCm" class="p10">
+            <div class="tit_area t_center">
+                <span class="pg_color">Business Area</span>
+                <p class="c_black"><strong class="pg_color">개인 보호 장비 생산</strong></p>
+            </div>
+
+            <ul class="box_area">
+                <img src="/sh_page/img/business area_sales.jpg" alt="사업 영역 이미지" />
+            </ul>
+            <ul class="txt_area">
+                <li>
+                <p><span class="num pg_bgcolor">01</span>고객을 위한 고소 안전 솔루션을 제시하는 영업부서</p>
+                우리 부서는 고품질의 안전 제품을 발굴·개발·생산함으로써 모든 고소 작업 현장의 위험을 최소화하고 안전 수준을 향상시키는 데 기여하고 있습니다. 이를 통해 고객의 생명과 안전을 최우선 가치로 삼고 있습니다.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+        </div><!-- sh_content -->
+   
+	</div><!-- sh_container_wrapper --> 
+</div><!-- sh_container -->
+<!-- } 콘텐츠 끝 -->
+
+<div id="sh_ft_btns">
+   	<div class="btns">
+		        <a class="tel" href="tel:15446062"><i class="fa fa-phone"></i>1544-6062</a>
+            </div>
+</div>
+<a id="fix_tel" href="tel:15446062"><i class="fa fa-phone"></i></a>
+<script>
+$(window).on("scroll",function(){
+    if($(window).scrollTop() > 100) { 
+        $('#fix_tel').addClass('active');}
+    else{
+        $('#fix_tel').removeClass('active');}
+    return false;
+});
+</script> 
+
+<div id="app-footer"></div>
+    
+    <div id="toTop">
+        <i data-feather="arrow-up"></i>
+    </div>
+    
+    </div>
+    <script>
+        feather.replace();
+        var pageup = $("html").innerHeight();
+        $(window).on("scroll",function(){
+            if($(window).scrollTop() > pageup/3) { 
+                $('#toTop').addClass("on");
+            } else{
+                $('#toTop').removeClass("on");
+            }
+            return false;
+        });	
+        $('#toTop').click(function(){
+            $("html, body").animate({scrollTop:0}, 400);
+            return false;
+        });	 
+    </script>
+
+
+
+<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+<!--[if lte IE 7]>
+<script>
+$(function() {
+    var $sv_use = $(".sv_use");
+    var count = $sv_use.length;
+
+    $sv_use.each(function() {
+        $(this).css("z-index", count);
+        $(this).css("position", "relative");
+        count = count - 1;
+    });
+});
+</script>
+<![endif]-->
+
+</body>
+<script src=""></script>
+</html>

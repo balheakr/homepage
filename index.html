@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>NeoBH</title>
+<link rel="stylesheet" href="css/default.css">
+<link rel="stylesheet" href="sh_img/js/aos.css">
+<link rel="stylesheet" href="sh_img/hd/top_menu/style.css">
+<link rel="stylesheet" href="js/swiper/swiper.min.css">
+<link rel="stylesheet" href="sh_img/include/inc01/style.css">
+<link rel="stylesheet" href="sh_img/include/inc02/style.css">
+<link rel="stylesheet" href="sh_img/include/inc03/style.css">
+<link rel="stylesheet" href="sh_img/index/main_banner/style.css">
+<link rel="stylesheet" href="css/user.css">
+<style>
+@import url(https://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+
+/* 나눔스퀘어 */
+@font-face {
+	font-family: 'NanumSquare';
+	src: url(https://font/NanumSquareR.eot);
+	src: url(https://font/NanumSquareR.eot?#iefix) format('embedded-opentype'),
+		 url(https://font/NanumSquareR.woff) format('woff'),
+		 url(https://font/NanumSquareR.ttf) format('truetype');
+}
+
+/* 본고딕 */
+@font-face {
+	font-family: 'notokr-thin';
+	src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.eot);
+	src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.eot?#iefix) format('embedded-opentype'),
+		 url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),
+		 url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),
+		 url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.ttf) format('truetype'),
+		 url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.svg#notokr-thin) format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: 'notokr-regular';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.svg#notokr-regular) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-medium';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.svg#notokr-medium) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-light';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.ttf) format('truetype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.svg#notokr-light) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-demilight';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.eot?) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.ttf) format('truetype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.svg) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-bold';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.svg#notokr-bold) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'notokr-black';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.ttf) format('truetype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.svg#notokr-black) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* 아리따 */
+@font-face {
+	font-family: 'arita-thin';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Thin.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Thin.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Thin.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Thin.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-light';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Light.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Light.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Light.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Light.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-medium';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Medium.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Medium.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Medium.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Medium.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-semibold';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-SemiBold.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-SemiBold.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-SemiBold.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-SemiBold.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-bold';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Bold.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Bold.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Bold.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Bold.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+</style><!--[if lte IE 8]>
+<![endif]-->
+<script>
+// 자바스크립트에서 사용하는 전역변수 선언
+var g5_url       = "";
+var g5_bbs_url   = "";
+var g5_is_member = "";
+var g5_is_admin  = "";
+var g5_is_mobile = "";
+var g5_bo_table  = "";
+var g5_sca       = "";
+var g5_editor    = "";
+var g5_cookie_domain = "";
+</script>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.menu.js"></script>
+<script src="js/common.js"></script>
+<script src="js/wrest.js"></script>
+<script src="js/placeholders.min.js"></script>
+<link rel="stylesheet" href="js/font-awesome/css/font-awesome.min.css">
+<script src="sh_img/js/feather.min.js"></script>
+<script src="sh_img/js/aos.js"></script>
+<script src="sh_img/hd/top_menu/script.js"></script>
+<script src="js/swiper/swiper.min.js"></script>
+</head>
+<body>
+
+
+<!-- } -->
+<script>
+AOS.init();
+</script>
+<div id="sh_wrapper">
+	<!-- 상단 시작 { -->
+	<div id="sh_hd">	
+        <div class="sh_lnb_bg"></div>
+		<h1 id="hd_h1">NeoBH</h1>
+		<div id="skip_to_container"><a href="index.html#sh_container">본문 바로가기</a></div>
+		
+        <!-- 팝업레이어 시작 { -->
+        <div id="hd_pop">
+            <h2>팝업레이어 알림</h2>
+
+            <span class="sound_only">팝업레이어 알림이 없습니다.</span>
+        </div>
+
+        <script>
+        $(function() {
+            $(".hd_pops_reject").click(function() {
+                var id = $(this).attr('class').split(' ');
+                var ck_name = id[1];
+                var exp_time = parseInt(id[2]);
+                $("#"+id[1]).css("display", "none");
+                set_cookie(ck_name, 1, exp_time, g5_cookie_domain);
+            });
+            $('.hd_pops_close').click(function() {
+                var idb = $(this).attr('class').split(' ');
+                $('#'+idb[1]).css('display','none');
+            });
+            $("#hd").css("z-index", 1000);
+        });
+        </script>
+        <div id="sh_hd_wrapper">
+            <div id="app-menu"></div>
+        </div>
+        <!-- } 팝업레이어 끝 -->		
+    </div>
+</div>
+	<!-- } 상단 끝 -->
+    
+	<!-- 콘텐츠 시작 { -->
+	<div id="sh_container">
+		<div id="sh_container_wrapper" >
+					
+
+<nav id="navbar">
+    <ul class="nav-menu">
+        <li><a data-scroll="mainbanner" href="index.html#mainbanner">메인</a></li>
+        <li><a data-scroll="section01" href="index.html#section01">사업영역</a></li>
+        <li><a data-scroll="section02" href="index.html#section02">제품</a></li>
+        <li><a data-scroll="section03" href="index.html#section03">뉴스</a></li>
+    </ul>
+</nav> 
+<script>
+$(function(){
+    var link = $('#navbar a');
+    link.on('click',function(e){
+        var target = $($(this).attr('href')); 
+        $('html, body').animate({
+            scrollTop: target.offset().top
+        },600);
+        $(this).parent('li').addClass('active');
+        e.preventDefault();
+    });
+    $(window).on('scroll',function(){
+        findPosition();	
+	});
+    function findPosition(){
+        $('section').each(function(){
+            if( ($(this).offset().top - $(window).scrollTop() ) < 500){
+                $('#navbar').removeClass();
+				link.parent('li').removeClass('active');
+				$('#navbar').find('[data-scroll="'+ $(this).attr('id') +'"]').parent('li').addClass('active');
+				$('#navbar').addClass($(this).attr('id'));
+			}
+        });
+        if($("#sh_ft").offset().top - $(window).scrollTop() < 700){
+            $('#navbar').removeClass();
+            $('#navbar').addClass('section02');
+        }
+    }
+    findPosition()
+});
+</script>
+
+<section id="mainbanner">
+<div id="mainVisual">
+	<div class="main_txt" data-aos="fade-in">
+		<span data-aos="fade-left">NeoBH</span>
+        <p data-aos="fade-right">신뢰받는 조달 솔루션
+		<b>지속 가능한 물류 혁신</b></p>
+        NeoBH는 지속 가능한 운영 체계와 전문성을 기반으로 고객과 함께 성장합니다.
+    </div>
+	<div class="swiper main_slide">
+		<ul class="swiper-wrapper">
+			<li class="swiper-slide bg01"></li>
+			<li class="swiper-slide bg02"></li>
+			<li class="swiper-slide bg03"></li>
+		</ul>
+		<div class="pager"></div>
+	</div>
+</div>
+
+<script>
+var mainSwiper = new Swiper(".main_slide", {
+	loop:true,
+	speed:800,
+	pagination: {
+		el: "#mainVisual .pager",
+		bulletActiveClass: 'on',
+		clickable: true
+	},
+	autoplay: {
+		delay: 3200,
+		disableOnInteraction: false,
+	},
+});
+</script>
+</section>
+
+<div id="sh_section">
+	<section id="section01">
+<article id="inc01">
+	<div class="sh_cont_box" data-aos="fade-left">
+		<p class="s_tit">사업영역</p>
+		<div class="txt_group">
+			<p>신뢰 가능한 공공조달과 전문 솔루션으로
+            지속 가능한 가치를 제공합니다.</p>
+			기술 혁신과 솔루션으로 지속가능한 성장을 실현하는 글로벌 기업
+			<a href="bbs/board%3Fbo_table=table13.html" class="more_btn">자세히 보기<i data-feather="arrow-right"></i></a>
+		</div>
+    </div>
+    <div class="slide_wrap" data-aos="fade-left">
+        <div class="swiper-container inc01_slide">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                	<a href="sh_page/page10.html">
+                    	<div class="info">
+    	                    <p>공공 조달 운영 솔루션</p>
+                            <span>PUBLIC PROCUREMENT SOLUTION</span>
+	                        <div>발해는 공공,산업 분야의 디지털 전환을 선도하는 기업으로서 신회성 높은 솔루션과 기술 역량을 통해 다양한 현장을 지원하고 있습니다. 차별화된 품질과 신속한 기술 대응으로 고객 만족을 약속드립니다.</div>
+                        </div>
+                    </a>
+                </li>	      
+                <li class="swiper-slide img02">
+                	<a href="sh_page/page10.html">
+                    	<div class="info">
+    	                    <p>산업 안전 관리 솔루션</p>
+                            <span>SMART SAFETY MANAGEMENT SOLUTION</span>
+	                        <div>발해는 공공·산업 분야의 디지털 전환을 선도하는 기업으로서 신회성 높은 솔루션과 기술 역량을 통해 다양한 현장을 지원하고 있습니다. 차별화된 품질과 신속한 기술 대응으로 고객 만족을 약속드립니다.</div>
+                        </div>
+                    </a>
+                </li>	   
+                <li class="swiper-slide img03">
+                	<a href="sh_page/page10.html">
+                    	<div class="info">
+    	                    <p>AI·데이터 지원 솔루션</p>
+                            <span>AI & DATA INSIGHT SOLUTION</span>
+	                        <div>발해는 공공,산업 분야의 디지털 전환을 선도하는 기업으로서 신회성 높은 솔루션과 기술 역량을 통해 다양한 현장을 지원하고 있습니다. 차별화된 품질과 신속한 기술 대응으로 고객 만족을 약속드립니다.</div>
+                        </div>
+                    </a>
+                </li>	
+                <li class="swiper-slide img04">
+                	<a href="sh_page/page10.html">
+                    	<div class="info">
+    	                    <p>공공 맞춤 제작 솔루션</p>
+                            <span>CUSTOM PUBLIC MANUFACTURING</span>
+	                        <div>샘플은 산업용로봇 국내시장 점유율 1위로서 국내 산업용 로봇 시장을 선도하고 있습니다. 차별화된 품질과 A/S대응 으로 고객만족을 약속드립니다.</div>
+                        </div>
+                    </a>
+                </li>	
+            </ul>
+            <div class="nav_btn">        
+                <button class="next dft_btn"><i data-feather="arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+</article>
+
+<script> 
+var swiper = new Swiper("#inc01 .inc01_slide", {
+	loop: true,
+	speed:800,
+	pagination: false,
+	slidesPerView: 'auto', 
+    centeredSlides: false,
+	spaceBetween : 0,
+	pagination: false,
+	navigation: {
+		nextEl: '#inc01 .nav_btn .next'
+	}
+});
+</script>
+
+</section>
+	<section id="section02">
+<article id="inc02">
+    <div class="sh_cont_box" data-aos="fade-left">
+        <p class="s_tit">제품</p>
+        <div class="txt_group">
+            <p>산업 현장의 안전을 높이는 스마트 추락 방지 솔루션</p>
+            혁신적인 추락 방지 시스템으로 안전의 기준을 높입니다.
+        </div>
+    </div>
+    <div class="box_wrap" data-aos="fade-left">
+        <div class="active"></div>
+        <ul>
+            <li><a href="">
+                <img src="sh_img/include/inc02/img/inc02_icon01.png" alt="s-lock">
+                <span>S - LOCK</span>
+                <p>수직·수평 추락 방지 솔루션</p>
+            </a></li>
+            <!-- <li><a href="sh_page/page11.html">
+                <img src="sh_img/include/inc02/img/inc02_icon02.png" alt="공동훈련센터">
+                <span>TRAINING CENTER</span>
+                <p>공동훈련센터</p>
+            </a></li> -->
+            <li><a href="sh_page/page12.html">
+                <img src="sh_img/include/inc02/img/inc02_icon03.png" alt="제품보러가기">
+                <span>VIEW PRODUCTS</span>
+                <p>제품보러가기</p>
+            </a></li>
+        </ul>
+	</div>        
+</article>
+
+<script>
+$(function() { 
+	$("#inc02 ul li").mouseenter(function(){
+		var po_l = $(this).position().left;
+		$("#inc02 .active").css({"left": po_l});
+	});
+});
+</script></section>
+     <section id="section03">
+<article id="inc03">
+	<div class="inner">
+        <div class="sh_cont_box" data-aos="fade-left">
+            <p class="s_tit">뉴스</p>
+            <div class="txt_group">
+                <p>신뢰 기반의 조달 솔루션으로<br>미래를 준비하는 기업</p>
+                고객들에게 필요한 정보를 신뢰성 있게 제공합니다
+                <a href="bbs/board%3Fbo_table=table42.html" class="more_btn">자세히 보기<i data-feather="arrow-right"></i></a>
+            </div>
+        </div>
+        <ul class="latest" data-aos="fade-left">
+						
+            <li><a href="bbs/board%3Fbo_table=table42&amp;wr_id=4.html">
+                <div class="img" style="background-image:url(data/file/table42/thumb-1935566034_I9LWKE8O_7f1fe9eba3f67508ff2b903e7b04c89abb4536b3_250x.jpg)"></div>
+                <div class="cont">
+                    <span>2023-08-23</span>
+                    <p>모바일서비스로봇 대리점 모집 공고</p>
+                    <div>샤이닝에서 모바일서비스로봇 대리점 모집을 하고 있습니다.</div>
+                </div>
+            </a></li>
+						
+            <li><a href="bbs/board%3Fbo_table=table42&amp;wr_id=3.html">
+                <div class="img" style="background-image:url(data/file/table42/thumb-1935566034_3uwIdcgU_3001292fe59120c14d9137692840c3a9fbe6fd01_250x.jpg)"></div>
+                <div class="cont">
+                    <span>2022-12-06</span>
+                    <p>하반기 결산 안내</p>
+                    <div>우리 기업의 투명한 운영을 위하여 매 분기 결산 내역을 공개합니다.</div>
+                </div>
+            </a></li>
+			        </ul>
+    </div>
+    <div class="bnr_wrap">
+        <div class="bnr" data-aos="fade-left">
+            <div class="txt">
+                <p>NeoBH, 공공영역 물품 공급 혁신을 위한
+                조달 솔루션 협력 확대</p>
+                <div>NeoBH는 공공 조달 분야에서 검증된 공급 역량으로 
+                기관의 업무 효율화에 기여하고 있습니다.</div>
+            </div>
+        </div>
+    </div>
+</article>
+</section>
+</div>
+
+   
+	</div><!-- sh_container_wrapper --> 
+</div><!-- sh_container -->
+<!-- } 콘텐츠 끝 -->
+
+<div id="sh_ft_btns">
+   	<div class="btns">
+		        <a class="tel" href="tel:15446062"><i class="fa fa-phone"></i>1544-6062</a>
+            </div>
+</div>
+<a id="fix_tel" href="tel:15446062"><i class="fa fa-phone"></i></a>
+<script>
+$(window).on("scroll",function(){
+    if($(window).scrollTop() > 100) { 
+        $('#fix_tel').addClass('active');}
+    else{
+        $('#fix_tel').removeClass('active');}
+    return false;
+});
+</script> 
+
+<div id="app-footer"></div>
+    
+    <div id="toTop">
+        <i data-feather="arrow-up"></i>
+    </div>
+    
+    </div>
+    <script>
+        feather.replace();
+        var pageup = $("html").innerHeight();
+        $(window).on("scroll",function(){
+            if($(window).scrollTop() > pageup/3) { 
+                $('#toTop').addClass("on");
+            } else{
+                $('#toTop').removeClass("on");
+            }
+            return false;
+        });	
+        $('#toTop').click(function(){
+            $("html, body").animate({scrollTop:0}, 400);
+            return false;
+        });	 
+    </script>
+
+
+
+<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+<!--[if lte IE 7]>
+<script>
+$(function() {
+    var $sv_use = $(".sv_use");
+    var count = $sv_use.length;
+
+    $sv_use.each(function() {
+        $(this).css("z-index", count);
+        $(this).css("position", "relative");
+        count = count - 1;
+    });
+});
+</script>
+<![endif]-->
+
+</body>
+<script src=""></script>
+</html>

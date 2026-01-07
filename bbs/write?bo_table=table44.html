@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>문의하기 글쓰기 | NeoBH</title>
+<link rel="stylesheet" href="../css/default.css">
+<link rel="stylesheet" href="../sh_img/js/aos.css">
+<link rel="stylesheet" href="../sh_img/hd/top_menu/style.css">
+<link rel="stylesheet" href="../sh_img/hd/aside/style.css">
+<link rel="stylesheet" href="../sh_img/hd/sub_main_banner/style.css">
+<link rel="stylesheet" href="../skin/board/sh_basic_res/sh_style.css">
+<link rel="stylesheet" href="../css/user.css">
+<link rel="stylesheet" href="../css/page_style.css">
+<style>
+@import url(https://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+
+/* 나눔스퀘어 */
+@font-face {
+	font-family: 'NanumSquare';
+	src: url(https://font/NanumSquareR.eot);
+	src: url(https://font/NanumSquareR.eot?#iefix) format('embedded-opentype'),
+		 url(https://font/NanumSquareR.woff) format('woff'),
+		 url(https://font/NanumSquareR.ttf) format('truetype');
+}
+
+/* 본고딕 */
+@font-face {
+	font-family: 'notokr-thin';
+	src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.eot);
+	src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.eot?#iefix) format('embedded-opentype'),
+		 url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),
+		 url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),
+		 url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.ttf) format('truetype'),
+		 url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.svg#notokr-thin) format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: 'notokr-regular';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.svg#notokr-regular) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-medium';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.svg#notokr-medium) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-light';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.ttf) format('truetype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.svg#notokr-light) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-demilight';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.eot?) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.ttf) format('truetype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Demilight.svg) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'notokr-bold';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.svg#notokr-bold) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'notokr-black';
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.eot);
+    src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.eot?#iefix) format('embedded-opentype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.ttf) format('truetype'),
+         url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.svg#notokr-black) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* 아리따 */
+@font-face {
+	font-family: 'arita-thin';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Thin.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Thin.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Thin.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Thin.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-light';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Light.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Light.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Light.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Light.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-medium';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Medium.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Medium.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Medium.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Medium.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-semibold';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-SemiBold.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-SemiBold.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-SemiBold.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-SemiBold.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'arita-bold';
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Bold.eot);
+	src: url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Bold.eot?#iefix) format('embedded-opentype'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Bold.woff) format('woff'),
+		 url(https://cdn.jsdelivr.net/gh/fontbee/font@main/Apgroup/Arita-buri-Bold.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+</style><!--[if lte IE 8]>
+<![endif]-->
+<script>
+// 자바스크립트에서 사용하는 전역변수 선언
+var g5_url       = "";
+var g5_bbs_url   = "";
+var g5_is_member = "";
+var g5_is_admin  = "";
+var g5_is_mobile = "";
+var g5_bo_table  = "table44";
+var g5_sca       = "";
+var g5_editor    = "smarteditor2";
+var g5_cookie_domain = "";
+</script>
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script src="../js/jquery.menu.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/wrest.js"></script>
+<script src="../js/placeholders.min.js"></script>
+<link rel="stylesheet" href="../js/font-awesome/css/font-awesome.min.css">
+<script src="../sh_img/js/feather.min.js"></script>
+<script src="../sh_img/js/aos.js"></script>
+<script src="../sh_img/hd/top_menu/script.js"></script>
+</head>
+<body>
+
+
+<!-- } -->
+<script>
+AOS.init();
+</script>
+<div id="sh_wrapper">
+	<!-- 상단 시작 { -->
+	<div id="sh_hd">	
+        <div class="sh_lnb_bg"></div>
+		<h1 id="hd_h1">문의하기 글쓰기</h1>
+		<div id="skip_to_container"><a href="write%3Fbo_table=table44.html#sh_container">본문 바로가기</a></div>
+				<div id="sh_hd_wrapper">
+			
+<div id="app-sub-menu"></div>
+		</div>
+	</div>
+	<!-- } 상단 끝 -->
+    
+	<!-- 콘텐츠 시작 { -->
+	<div id="sh_container">
+		<div id="sh_container_wrapper" class='sub'>
+			            <!-- 콘텐츠영역 -->
+            <div id="sh_aside">
+<div id="shSnb">
+    <ul>
+    	<li><a href="../index.html">홈</a></li>
+                <li class='on'>
+            <a href="/bbs/write%3Fbo_table=table44.html">문의하기</a>
+        </li>
+            </ul>
+</div></div>
+			
+<div id="shSubBnr">
+	<p><span>문의하기</span></p>
+    <div class="bg" data-aos="fade-in" data-aos-duration="800" style="background-image:url(../sh_img/hd/sub_main_banner/bg_14.jpg);"></div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('#shSubBnr p span').delay(0).animate({"bottom":"0","opacity":"1"},600);
+});
+</script>            <div id="sh_content">
+					
+<!-- skin : sh_basic_res --><script src="https://spi.maps.daum.net/imap/map_js_init/postcode.v2.js"></script>
+<section id="sh_bo_w">
+    <h2 class="sound_only">문의하기 글쓰기</h2>
+
+    <form name="fwrite" id="fwrite" action="https://co1111-res.shiningcorp.com/bbs/write_update" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off">
+        <input type="hidden" name="uid" value="2026010214324882">
+        <input type="hidden" name="w" value="">
+        <input type="hidden" name="bo_table" value="table44">
+        <input type="hidden" name="wr_id" value="0">
+        <input type="hidden" name="sca" value="">
+        <input type="hidden" name="sfl" value="">
+        <input type="hidden" name="stx" value="">
+        <input type="hidden" name="spt" value="">
+        <input type="hidden" name="sst" value="">
+        <input type="hidden" name="sod" value="">
+        <input type="hidden" name="page" value="">
+                <input type="hidden" value="html1" name="html">        <div id="sh_write_tbl" class="sh_tbl_common">
+            <table cellpadding="0" cellspacing="0" summary="문의하기 글쓰기">
+                <caption class="sound_only">문의하기 글쓰기</caption>
+                <tbody>
+                                                            <tr>
+                        <th><label for="wr_name">이름</label></th>
+                        <td><input type="text" name="wr_name" value="" id="wr_name" required class="sh_input required" placeholder="이름"></td>
+                    </tr>
+                                                            <!-- <tr>
+                        <th>비밀번호</th>
+                        <td>
+                            <label for="wr_password" class="sound_only">비밀번호<strong>필수</strong></label>
+                            <input type="password" name="wr_password" id="wr_password" required class="sh_input required">
+                        </td>
+                    </tr> -->
+                                            
+                    <tr>
+                        <th><label for="sh_phone">연락처</label></th>
+                        <td><input type="text" required class="sh_input required" name="sh_phone" id="sh_phone" maxlength="12" value="" placeholder="연락처" onkeyup='Num_ck(this);'></td>
+                    </tr>
+                                    
+                                        <!-- <tr>
+                        <th>주 소</th>
+                        <td>
+                            <label for="sh_zip" class="sound_only">우편번호</label>
+                            <input type="text" name="sh_zip" value="" id="sh_zip" class="sh_input read zip_input" size="5" maxlength="6" readonly>
+                            <button type="button" class="zip_btn" onclick="win_zip('fwrite', 'sh_zip', 'sh_addr1', 'sh_addr2', 'sh_addr3', 'sh_addr_jibeon');">주소 검색</button><br />
+                            <label for="sh_addr1" class="sound_only">기본주소</label>
+                            <input type="text" name="sh_addr1" value="" id="sh_addr1" class="sh_input read frm_address" placeholder="주소를 검색해주세요." size="40%" readonly><br />
+                            <label for="reg_mb_addr2" class="sound_only">상세주소</label>
+                            <input type="text" name="sh_addr2" value="" id="reg_mb_addr2" class="sh_input frm_address" placeholder="상세주소" size="40%" ><br />
+                            <label for="reg_mb_addr3" class="sound_only">참고항목</label>
+                            <input type="text" name="sh_addr3" value="" id="reg_mb_addr3" class="sh_input frm_address read" placeholder="참고항목" readonly size="40%" >
+                            <input type="hidden" name="sh_addr_jibeon" value="">
+                        </td>
+                    </tr> -->
+                    
+                                        <tr>
+                        <th><label for="wr_email">이메일</label></th>
+                        <td><input type="text" name="wr_email" value="" id="wr_email" class="sh_input email required" placeholder="이메일" maxlength="100"></td>
+                    </tr>
+                    
+                                        
+                                        
+                                                            <tr>
+                        <th><label for="wr_subject">제목<strong class="sound_only">필수</strong></label></th>
+                        <td><input type="text" name="wr_subject" value="" id="wr_subject" required class="sh_input full_input required" maxlength="255"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="wr_content">내용<strong class="sound_only">필수</strong></label></th>
+                        <td class="wr_content"><span class="sound_only">웹에디터 시작</span>
+                            <!-- <script>document.write("<div class='cke_sc'><button type='button' class='btn_cke_sc'>단축키 일람</button></div>");</script> -->
+<script src="../plugin/editor/smarteditor2/js/service/HuskyEZCreator.js"></script>
+<!-- <script>var g5_editor_url = "https://co1111-res.shiningcorp.com/plugin/editor/smarteditor2", oEditors = [], ed_nonce = "r25HBEJje3|1767335568|5e2c0c3cf4528b8374a676855eab9e5659fdfcf8";</script> -->
+<script src="../plugin/editor/smarteditor2/config.js"></script>
+<!-- <script>
+        $(function(){
+            $(".btn_cke_sc").click(function(){
+                if ($(this).next("div.cke_sc_def").length) {
+                    $(this).next("div.cke_sc_def").remove();
+                    $(this).text("단축키 일람");
+                } else {
+                    $(this).after("<div class='cke_sc_def' />").next("div.cke_sc_def").load("https://co1111-res.shiningcorp.com/plugin/editor/smarteditor2/shortcut.html");
+                    $(this).text("단축키 일람 닫기");
+                }
+            });
+            $(document).on("click", ".btn_cke_sc_close", function(){
+                $(this).parent("div.cke_sc_def").remove();
+            });
+        });
+</script> -->
+<textarea id="wr_content" name="wr_content" class="smarteditor2" maxlength="65536" style="width:100%;height:300px"></textarea>
+<span class="sound_only">웹 에디터 끝</span></td>
+                    </tr>
+                                                            <!-- <tr>
+                        <th><label for="wr_link1">링크  #1</label></th>
+                        <td><input type="text" name="wr_link1" value="" id="wr_link1" class="sh_input full_input"></td>
+                    </tr>
+                                        <tr>
+                        <th><label for="wr_link2">링크  #2</label></th>
+                        <td><input type="text" name="wr_link2" value="" id="wr_link2" class="sh_input full_input"></td>
+                    </tr> -->
+                                                            <tr>
+                        <th>파일 #1</th>
+                        <td>
+                            <label for="sh_file1" class="sound_only">파일 #1</label>
+                            <input type="file" name="bf_file[]" title="파일첨부 1 : 용량 1,048,576 바이트 이하만 업로드 가능" class="frm_file sh_input" id="sh_file1">
+                                                    </td>
+                    </tr>
+                                        <tr>
+                        <th>파일 #2</th>
+                        <td>
+                            <label for="sh_file2" class="sound_only">파일 #2</label>
+                            <input type="file" name="bf_file[]" title="파일첨부 2 : 용량 1,048,576 바이트 이하만 업로드 가능" class="frm_file sh_input" id="sh_file2">
+                                                    </td>
+                    </tr>
+                                                            <!-- <tr>
+                        <th>자동등록방지</th>
+                        <td>
+                            
+<script>var g5_captcha_url  = "https://co1111-res.shiningcorp.com/plugin/kcaptcha";</script>
+<script src="../plugin/kcaptcha/kcaptcha.js"></script>
+<fieldset id="captcha" class="captcha">
+<legend><label for="captcha_key">자동등록방지</label></legend>
+<img src="../plugin/kcaptcha/img/dot.gif" alt="" id="captcha_img"><input type="text" name="captcha_key" id="captcha_key" required class="captcha_box required" size="6" maxlength="6">
+<button type="button" id="captcha_mp3"><span></span>숫자음성듣기</button>
+<button type="button" id="captcha_reload"><span></span>새로고침</button>
+<span id="captcha_info">자동등록방지 숫자를 순서대로 입력하세요.</span>
+</fieldset>                        </td>
+                    </tr> -->
+                                                            <tr>
+                        <td colspan="2">
+                            <label for="privacy" class="sound_only">개인정보취급방침</label>
+                            <textarea readonly class="sh_input txtarea privacy" id="privacy">해당 홈페이지에 맞는 개인정보처리방침을 입력합니다.</textarea>
+                            <div class="agr_area">
+                                <p><span class="ps">(필수)</span> 개인정보취급방침 내용에 동의합니다. </p>
+                                <input type=radio value=1 name="agreess" id="agree" >&nbsp;<label for="agree">동의함</label>
+                                <input type=radio value=1 name="agreess" id="no_agree">&nbsp;<label for="no_agree">동의안함</label>
+                            </div>
+                        </td>
+                    </tr>
+                                    </tbody>
+            </table>
+        </div>    
+
+        <div class="btn_area">
+            <input type="submit" value="작성완료" id="btn_submit" accesskey="s" class="btn_type01 comp_btn">
+            <a href="board%3Fbo_table=table44.html" class="cancel_btn">취소</a>
+        </div>
+    </form>
+</section>
+
+<script>
+function Num_ck(obj) { 
+    var val = obj.value; 
+    if(isNaN(val)) { 
+        alert("숫자만 입력해 주세요"); 
+        obj.value = val.replace(/[^0-9]/gi, ''); 
+    }  
+}
+
+function fwrite_submit(f){
+        
+    if (!$("#agree").is(":checked")) {
+        alert("개인정보취급방침의 내용에 동의하셔야 작성가능 합니다.");
+        return false;
+    }
+        
+    var wr_content_editor_data = oEditors.getById['wr_content'].getIR();
+oEditors.getById['wr_content'].exec('UPDATE_CONTENTS_FIELD', []);
+if(jQuery.inArray(document.getElementById('wr_content').value.toLowerCase().replace(/^\s*|\s*$/g, ''), ['&nbsp;','<p>&nbsp;</p>','<p><br></p>','<div><br></div>','<p></p>','<br>','']) != -1){document.getElementById('wr_content').value='';}
+if (!wr_content_editor_data || jQuery.inArray(wr_content_editor_data.toLowerCase(), ['&nbsp;','<p>&nbsp;</p>','<p><br></p>','<p></p>','<br>']) != -1) { alert("내용을 입력해 주십시오."); oEditors.getById['wr_content'].exec('FOCUS'); return false; }
+
+    var subject = "";
+    var content = "";
+    $.ajax({
+        url: g5_bbs_url+"/ajax.filter",
+        type: "POST",
+        data: {
+            "subject": f.wr_subject.value,
+            "content": f.wr_content.value
+        },
+        dataType: "json",
+        async: false,
+        cache: false,
+        success: function(data, textStatus) {
+            subject = data.subject;
+            content = data.content;
+        }
+    });
+
+    if (subject) {
+        alert("제목에 금지단어('"+subject+"')가 포함되어있습니다");
+        f.wr_subject.focus();
+        return false;
+    }
+
+    if (content) {
+        alert("내용에 금지단어('"+content+"')가 포함되어있습니다");
+        if (typeof(ed_wr_content) != "undefined")
+            ed_wr_content.returnFalse();
+        else
+            f.wr_content.focus();
+        return false;
+    }
+
+    if (document.getElementById("char_count")) {
+        if (char_min > 0 || char_max > 0) {
+            var cnt = parseInt(check_byte("wr_content", "char_count"));
+            if (char_min > 0 && char_min > cnt) {
+                alert("내용은 "+char_min+"글자 이상 쓰셔야 합니다.");
+                return false;
+            }
+            else if (char_max > 0 && char_max < cnt) {
+                alert("내용은 "+char_max+"글자 이하로 쓰셔야 합니다.");
+                return false;
+            }
+        }
+    }
+
+    if (!chk_captcha()) return false;
+
+    return true;
+}
+</script>        </div><!-- sh_content -->
+   
+	</div><!-- sh_container_wrapper --> 
+</div><!-- sh_container -->
+<!-- } 콘텐츠 끝 -->
+
+<div id="sh_ft_btns">
+   	<div class="btns">
+		        <a class="tel" href="tel:15446062"><i class="fa fa-phone"></i>1544-6062</a>
+            </div>
+</div>
+<a id="fix_tel" href="tel:15446062"><i class="fa fa-phone"></i></a>
+<script>
+$(window).on("scroll",function(){
+    if($(window).scrollTop() > 100) { 
+        $('#fix_tel').addClass('active');}
+    else{
+        $('#fix_tel').removeClass('active');}
+    return false;
+});
+</script> 
+
+<div id="app-footer"></div>
+    
+    <div id="toTop">
+        <i data-feather="arrow-up"></i>
+    </div>
+    
+    </div>
+    <script>
+        feather.replace();
+        var pageup = $("html").innerHeight();
+        $(window).on("scroll",function(){
+            if($(window).scrollTop() > pageup/3) { 
+                $('#toTop').addClass("on");
+            } else{
+                $('#toTop').removeClass("on");
+            }
+            return false;
+        });	
+        $('#toTop').click(function(){
+            $("html, body").animate({scrollTop:0}, 400);
+            return false;
+        });	 
+    </script>
+
+
+
+<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+<!--[if lte IE 7]>
+<script>
+$(function() {
+    var $sv_use = $(".sv_use");
+    var count = $sv_use.length;
+
+    $sv_use.each(function() {
+        $(this).css("z-index", count);
+        $(this).css("position", "relative");
+        count = count - 1;
+    });
+});
+</script>
+<![endif]-->
+
+</body>
+<script src=""></script>
+</html>

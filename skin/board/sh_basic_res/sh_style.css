@@ -81,7 +81,6 @@ a.btn_line{display:inline-block;vertical-align:top;width:75px;height:55px;border
 
 /* 검색 */
 #sh_bo_sch{float:right;padding-right:10px;border-radius:2px;border:1px solid #e1e1e1}
-/* #sh_bo_sch select{width:90px;height:40px;padding:0 0 0 10px;border:none;font-size:14px;color:#777;-webkit-appearance:none;appearance:none;background:url(https://co1111-res.shiningcorp.com/skin/board/sh_basic/img/select_arr.png) 95% center no-repeat ;font-family:'notokr-regular'} */
 #sh_bo_sch select{width:90px;height:40px;padding:0 0 0 10px;border:none;font-size:14px;color:#777;-webkit-appearance:none;appearance:none;font-family:'notokr-regular'}
 #sh_bo_sch select::-ms-expand{display:none}
 #sh_bo_sch input[type=text]{width:150px;height:40px;padding-left:5px;border:none;font-size:14px;color:#777}

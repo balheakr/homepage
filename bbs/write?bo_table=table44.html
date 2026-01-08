@@ -253,36 +253,11 @@ $(document).ready(function(){
                                                             <tr>
                         <th><label for="wr_name">이름</label></th>
                         <td><input type="text" name="wr_name" value="" id="wr_name" required class="sh_input required" placeholder="이름"></td>
-                    </tr>
-                                                            <!-- <tr>
-                        <th>비밀번호</th>
-                        <td>
-                            <label for="wr_password" class="sound_only">비밀번호<strong>필수</strong></label>
-                            <input type="password" name="wr_password" id="wr_password" required class="sh_input required">
-                        </td>
-                    </tr> -->
-                                            
+                    </tr>         
                     <tr>
                         <th><label for="sh_phone">연락처</label></th>
                         <td><input type="text" required class="sh_input required" name="sh_phone" id="sh_phone" maxlength="12" value="" placeholder="연락처" onkeyup='Num_ck(this);'></td>
                     </tr>
-                                    
-                                        <!-- <tr>
-                        <th>주 소</th>
-                        <td>
-                            <label for="sh_zip" class="sound_only">우편번호</label>
-                            <input type="text" name="sh_zip" value="" id="sh_zip" class="sh_input read zip_input" size="5" maxlength="6" readonly>
-                            <button type="button" class="zip_btn" onclick="win_zip('fwrite', 'sh_zip', 'sh_addr1', 'sh_addr2', 'sh_addr3', 'sh_addr_jibeon');">주소 검색</button><br />
-                            <label for="sh_addr1" class="sound_only">기본주소</label>
-                            <input type="text" name="sh_addr1" value="" id="sh_addr1" class="sh_input read frm_address" placeholder="주소를 검색해주세요." size="40%" readonly><br />
-                            <label for="reg_mb_addr2" class="sound_only">상세주소</label>
-                            <input type="text" name="sh_addr2" value="" id="reg_mb_addr2" class="sh_input frm_address" placeholder="상세주소" size="40%" ><br />
-                            <label for="reg_mb_addr3" class="sound_only">참고항목</label>
-                            <input type="text" name="sh_addr3" value="" id="reg_mb_addr3" class="sh_input frm_address read" placeholder="참고항목" readonly size="40%" >
-                            <input type="hidden" name="sh_addr_jibeon" value="">
-                        </td>
-                    </tr> -->
-                    
                                         <tr>
                         <th><label for="wr_email">이메일</label></th>
                         <td><input type="text" name="wr_email" value="" id="wr_email" class="sh_input email required" placeholder="이메일" maxlength="100"></td>
@@ -297,37 +272,11 @@ $(document).ready(function(){
                     <tr>
                         <th><label for="wr_content">내용<strong class="sound_only">필수</strong></label></th>
                         <td class="wr_content"><span class="sound_only">웹에디터 시작</span>
-                            <!-- <script>document.write("<div class='cke_sc'><button type='button' class='btn_cke_sc'>단축키 일람</button></div>");</script> -->
 <script src="../plugin/editor/smarteditor2/js/service/HuskyEZCreator.js"></script>
-<!-- <script>var g5_editor_url = "https://co1111-res.shiningcorp.com/plugin/editor/smarteditor2", oEditors = [], ed_nonce = "r25HBEJje3|1767335568|5e2c0c3cf4528b8374a676855eab9e5659fdfcf8";</script> -->
 <script src="../plugin/editor/smarteditor2/config.js"></script>
-<!-- <script>
-        $(function(){
-            $(".btn_cke_sc").click(function(){
-                if ($(this).next("div.cke_sc_def").length) {
-                    $(this).next("div.cke_sc_def").remove();
-                    $(this).text("단축키 일람");
-                } else {
-                    $(this).after("<div class='cke_sc_def' />").next("div.cke_sc_def").load("https://co1111-res.shiningcorp.com/plugin/editor/smarteditor2/shortcut.html");
-                    $(this).text("단축키 일람 닫기");
-                }
-            });
-            $(document).on("click", ".btn_cke_sc_close", function(){
-                $(this).parent("div.cke_sc_def").remove();
-            });
-        });
-</script> -->
 <textarea id="wr_content" name="wr_content" class="smarteditor2" maxlength="65536" style="width:100%;height:300px"></textarea>
 <span class="sound_only">웹 에디터 끝</span></td>
                     </tr>
-                                                            <!-- <tr>
-                        <th><label for="wr_link1">링크  #1</label></th>
-                        <td><input type="text" name="wr_link1" value="" id="wr_link1" class="sh_input full_input"></td>
-                    </tr>
-                                        <tr>
-                        <th><label for="wr_link2">링크  #2</label></th>
-                        <td><input type="text" name="wr_link2" value="" id="wr_link2" class="sh_input full_input"></td>
-                    </tr> -->
                                                             <tr>
                         <th>파일 #1</th>
                         <td>
@@ -342,20 +291,6 @@ $(document).ready(function(){
                             <input type="file" name="bf_file[]" title="파일첨부 2 : 용량 1,048,576 바이트 이하만 업로드 가능" class="frm_file sh_input" id="sh_file2">
                                                     </td>
                     </tr>
-                                                            <!-- <tr>
-                        <th>자동등록방지</th>
-                        <td>
-                            
-<script>var g5_captcha_url  = "https://co1111-res.shiningcorp.com/plugin/kcaptcha";</script>
-<script src="../plugin/kcaptcha/kcaptcha.js"></script>
-<fieldset id="captcha" class="captcha">
-<legend><label for="captcha_key">자동등록방지</label></legend>
-<img src="../plugin/kcaptcha/img/dot.gif" alt="" id="captcha_img"><input type="text" name="captcha_key" id="captcha_key" required class="captcha_box required" size="6" maxlength="6">
-<button type="button" id="captcha_mp3"><span></span>숫자음성듣기</button>
-<button type="button" id="captcha_reload"><span></span>새로고침</button>
-<span id="captcha_info">자동등록방지 숫자를 순서대로 입력하세요.</span>
-</fieldset>                        </td>
-                    </tr> -->
                                                             <tr>
                         <td colspan="2">
                             <label for="privacy" class="sound_only">개인정보취급방침</label>
@@ -373,7 +308,6 @@ $(document).ready(function(){
 
         <div class="btn_area">
             <input type="submit" value="작성완료" id="btn_submit" accesskey="s" class="btn_type01 comp_btn">
-            <a href="board%3Fbo_table=table44.html" class="cancel_btn">취소</a>
         </div>
     </form>
 </section>
@@ -458,10 +392,10 @@ if (!wr_content_editor_data || jQuery.inArray(wr_content_editor_data.toLowerCase
 
 <div id="sh_ft_btns">
    	<div class="btns">
-		        <a class="tel" href="tel:15446062"><i class="fa fa-phone"></i>1544-6062</a>
+		        <a class="tel" href="tel:0319873069"><i class="fa fa-phone"></i>031-987-3069</a>
             </div>
 </div>
-<a id="fix_tel" href="tel:15446062"><i class="fa fa-phone"></i></a>
+<a id="fix_tel" href="tel:0319873069"><i class="fa fa-phone"></i></a>
 <script>
 $(window).on("scroll",function(){
     if($(window).scrollTop() > 100) { 

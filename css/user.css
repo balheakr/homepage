@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
 /* =========================== CONTAINER */
 #sh_container{position:relative;z-index:10;width:100%}
 #sh_container_wrapper.sub{padding-top:160px}
-#sh_content{position:relative;z-index:4;width:1200px;min-height:580px;margin:0 auto;padding:70px 90px; }
+#sh_content{position:relative;z-index:4;/* width:1200px; */min-height:580px;margin:0 auto;padding:70px 90px; }
 #sh_content2{position:relative;z-index:4;/* width:1200px; */min-height:580px;margin:0 auto;padding:70px 90px; /*sh*/ text-align:center; }
 
 /* =========================== FOOTER */

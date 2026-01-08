@@ -1,4 +1,4 @@
-<footer class="site-footer">
+<div class="site-footer">
     <div id="sh_ft">
 
         <!-- <div class="ft_nav">
@@ -59,4 +59,35 @@
             </div>
         </div> -->
     </div> 
-</footer>
+    <script>
+        $(function(){
+            var link = $('#navbar a');
+            link.on('click',function(e){
+                var target = $($(this).attr('href')); 
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                },600);
+                $(this).parent('li').addClass('active');
+                e.preventDefault();
+            });
+            $(window).on('scroll',function(){
+                findPosition();	
+            });
+            function findPosition(){
+                $('section').each(function(){
+                    if( ($(this).offset().top - $(window).scrollTop() ) < 500){
+                        $('#navbar').removeClass();
+                        link.parent('li').removeClass('active');
+                        $('#navbar').find('[data-scroll="'+ $(this).attr('id') +'"]').parent('li').addClass('active');
+                        $('#navbar').addClass($(this).attr('id'));
+                    }
+                });
+                if($("#sh_ft").offset().top - $(window).scrollTop() < 700){
+                    $('#navbar').removeClass();
+                    $('#navbar').addClass('section02');
+                }
+            }
+            findPosition()
+        });
+    </script>
+</div>

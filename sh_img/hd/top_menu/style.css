@@ -35,7 +35,7 @@
 #m_logo{position:relative}
 #m_logo a{display:inline-block}
 /* 상단 버튼 및 오픈메뉴 */
-#m_navBtn{position:absolute;top:12px;right:15px;z-index:5;width:30px;height:30px}
+#m_navBtn{position:absolute;top:12px;right:15px;z-index:5;width:30px;height:30px;align-content: center;}
 #m_navBtn span{display:block;position:relative;top:50%;transform:translateY(-50%);width:100%;height:2px}
 #m_navBtn span:before, #m_navBtn span:after{display:block;content:"";position:absolute;top:-6px;width:30px;height:2px;background-color:#222;-webkit-transition:all .1s;transition:all .1s}
 #m_navBtn span:after{top:6px;width:16px;right:0;background-color:var(--primary)}

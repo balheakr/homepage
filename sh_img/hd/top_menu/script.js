@@ -6,7 +6,7 @@
 		$(".sh_lnb_bg").fadeIn(200);	
 	}).mouseleave(function(){
 		$("#shGnb.main").removeClass("on");
-     	$("#shGnb.main .sh_logo img").attr("src","/sh_img/hd/top_menu/balhea_logo_black.png");
+     	$("#shGnb.main .sh_logo img").attr("src","/sh_img/hd/top_menu/logo.png");
 		$('.sh_lnb_s').stop().fadeOut(200);
 	  	$('.sh_lnb_bg').stop().fadeOut(200);
 	});
@@ -19,21 +19,37 @@
         return false;
     });
     /* 반응형 [s] */
-	$("#m_navBtn").click(function(){
+	// $("#m_navBtn").click(function(){
+	// 	m++;
+	// 	if(m%2 == 1){
+	// 		$("#m_navBtn").addClass("on");
+	// 		$("#navWrap").fadeIn(300).addClass("on");	
+	// 	}else{
+	// 		navClose(); 
+	// 	}; 
+	// });	
+	// $("#topmenuM .m_bmenu").click(function(){
+	// 	$('.m_smenu').not($(this).next()).slideUp(200);
+	// 	$('.m_bmenu').removeClass('on');
+	// 	$(this).addClass('on')
+	// 	$(this).next().slideDown(200);
+	// });	
+	$(document).on('click', '#m_navBtn', function () {
 		m++;
-		if(m%2 == 1){
-			$("#m_navBtn").addClass("on");
-			$("#navWrap").fadeIn(300).addClass("on");	
-		}else{
-			navClose(); 
-		}; 
-	});	
-	$("#topmenuM .m_bmenu").click(function(){
+		if (m % 2 === 1) {
+		  $("#m_navBtn").addClass("on");
+		  $("#navWrap").fadeIn(300).addClass("on");
+		} else {
+		  navClose();
+		}
+	});
+	  
+	$(document).on('click', '#topmenuM .m_bmenu', function () {
 		$('.m_smenu').not($(this).next()).slideUp(200);
-		$('.m_bmenu').removeClass('on');
-		$(this).addClass('on')
+		$('#topmenuM .m_bmenu').removeClass('on');
+		$(this).addClass('on');
 		$(this).next().slideDown(200);
-	});	
+	});
 
 	m = 0;  
 	function navClose() { 

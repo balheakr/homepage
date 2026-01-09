@@ -316,13 +316,13 @@ $(document).ready(function(){
                                     itemsPerPage: 10,
                                     pageGroupSize: 5,
                                     useLocalStorage: true,
-                                    localStorageKey: 'lastPage-table18',
+                                    localStorageKey: 'lastPage-table45',
                                     renderItem: (data) => `
                                         <tr>
-                                            <td style="text-align: center;">${data.hn_post_sn}</td>
-                                            <td style="padding: 10px 20px;width: 600px"><a href="/bbs/board_table18_detail.html?param1=${data.hn_post_sn}">${data.hn_status ? escapeHTML(data.hn_title)+" "+"("+data.hn_status+")" : data.hn_title}</a></td>
-                                            <td style="text-align: center;">${data.hn_view}</td>
-                                            <td style="text-align: center;">${data.hn_writer_sn}</td>
+                                            <td style="text-align: center;">${data.haSn}</td>
+                                            <td style="padding: 10px 20px;width: 600px"><a href="/bbs/board?bo_table=table45_detail.html?param1=${data.haSn}">${escapeHTML(data.haTitle)}</a></td>
+                                            <td style="text-align: center;">${data.haViews}</td>
+                                            <td style="text-align: center;">${data.haWriterName}</td>
                                             <td style="text-align: center;">${data.hn_create_dt}</td>
                                         </tr>
                                     `

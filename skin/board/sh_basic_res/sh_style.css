@@ -265,7 +265,7 @@ a.cancel_btn{height:50px;line-height:50px}
 #bo_cate_ul_line li a{padding:0 3px;font-size:14px}
 #sh_list_tbl .cate_link span{padding-left:10px}
 #sh_list_tbl th{height:55px;padding:0 10px}
-#sh_list_tbl th.num, #sh_list_tbl th.name, #sh_list_tbl td.num, #sh_list_tbl td.name{display:none}
+/* #sh_list_tbl th.num, #sh_list_tbl th.name, #sh_list_tbl td.num, #sh_list_tbl td.name{display:none} */
 #sh_list_tbl th{font-size:14px}
 #sh_list_tbl td.subject{width:70%;font-size:14px}
 #sh_list_tbl td{padding:16px 10px}

@@ -230,8 +230,8 @@ AOS.init();
         .then(response => {
             const params = getQueryParams();
             document.querySelector("#sh_bo_v .tit").textContent = `${escapeHTML(response.data.haTitle)}`;
-            document.getElementById('date').insertAdjacentHTML('afterend', `${response.data.haCreateDt}`);
-            document.getElementById('update').insertAdjacentHTML('afterend', `${response.data.haUpdateeDt}`);
+            document.getElementById('date').insertAdjacentHTML('afterend', `${response.data.haCreateDt.slice(0,10)}`);
+            document.getElementById('update').insertAdjacentHTML('afterend', `${response.data.haUpdateeDt.slice(0,10) || ""}`);
             document.getElementById('view').insertAdjacentHTML('afterend', `${response.data.haViews}`);
             sharedUrl = response.data.haPostUrl;
 

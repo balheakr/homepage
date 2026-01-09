@@ -233,7 +233,7 @@ AOS.init();
             document.getElementById('date').insertAdjacentHTML('afterend', `${response.data.haCreateDt.slice(0,10)}`);
             document.getElementById('update').insertAdjacentHTML('afterend', `${response.data.haUpdateDt?.slice(0,10) || ""}`);
             document.getElementById('view').insertAdjacentHTML('afterend', `${response.data.haViews}`);
-            sharedUrl = response.data.haPostUrl;
+            sharedUrl = response.data.haUrl;
 
             // 이미지 출력
             const imgBox = document.getElementById('bo_v_img');

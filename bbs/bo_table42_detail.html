@@ -252,7 +252,7 @@ AOS.init();
             // 텍스트 출력 (XSS 방지 + 줄바꿈 처리)
             const text = response.data.haText;
             if(text) {
-                document.getElementById('bo_v_text').innerHTML = `${escapeHTML(text)}`;
+                document.getElementById('bo_v_text').innerHTML = `${text}`;
             }
 
             // 첨부파일 출력

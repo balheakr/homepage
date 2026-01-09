@@ -307,7 +307,7 @@ $(document).ready(function(){
                     }
 
                     document.addEventListener('DOMContentLoaded', function() {
-                        axios.get(`https://api-dev.balhea.kr/homebe/post/recruit`)
+                        axios.get(`https://api-dev.balhea.kr/homebe/api/recruit/posts`)
                         .then(response => {
                             if(response.data.content.length != 0) {
                                 initPagination({
@@ -317,11 +317,11 @@ $(document).ready(function(){
                                     itemsPerPage: 10,
                                     pageGroupSize: 5,
                                     useLocalStorage: true,
-                                    localStorageKey: 'lastPage-table18',
+                                    localStorageKey: 'lastPage-table44',
                                     renderItem: (data) => `
                                         <tr>
                                             <td style="text-align: center;width: 8vw">${data.haSn}</td>
-                                            <td style="padding: 10px 20px;min-width: 30vw"><a href="/bbs/board?bo_table=table45_detail.html?param1=${data.haSn}">${escapeHTML(data.haTitle)}</a></td>
+                                            <td style="padding: 10px 20px;min-width: 30vw"><a href="/bbs/board?bo_table=table44_detail.html?param1=${data.haSn}">${escapeHTML(data.haTitle)}</a></td>
                                             <td style="text-align: center;width: 8vw">${data.haViews}</td>
                                             <td style="text-align: center;width: 10vw">${data.haWriterName}</td>
                                             <td style="text-align: center;width: 12vw">${data.hn_create_dt}</td>

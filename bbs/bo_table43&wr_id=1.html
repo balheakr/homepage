@@ -6,7 +6,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>문의하기 글쓰기 | NeoBH</title>
+<title>무료 홈페이지 제작 어떻게 가능한가요? > 문의사항 | NeoBH</title>
 <link rel="shortcut icon" type="image/x-icon" href="/sh_img/hd/top_menu/balhea_logo_black.png">
 <link rel="stylesheet" href="../css/default.css">
 <link rel="stylesheet" href="../sh_img/js/aos.css">
@@ -169,7 +169,7 @@ var g5_bbs_url   = "";
 var g5_is_member = "";
 var g5_is_admin  = "";
 var g5_is_mobile = "";
-var g5_bo_table  = "table44";
+var g5_bo_table  = "table43";
 var g5_sca       = "";
 var g5_editor    = "smarteditor2";
 var g5_cookie_domain = "";
@@ -184,6 +184,7 @@ var g5_cookie_domain = "";
 <script src="../sh_img/js/feather.min.js"></script>
 <script src="../sh_img/js/aos.js"></script>
 <script src="../sh_img/hd/top_menu/script.js"></script>
+<script src="../js/viewimageresize.js"></script>
 </head>
 <body>
 
@@ -196,8 +197,8 @@ AOS.init();
 	<!-- 상단 시작 { -->
 	<div id="sh_hd">	
         <div class="sh_lnb_bg"></div>
-		<h1 id="hd_h1">문의하기 글쓰기</h1>
-		<div id="skip_to_container"><a href="write%3Fbo_table=table44.html#sh_container">본문 바로가기</a></div>
+		<h1 id="hd_h1">무료 홈페이지 제작 어떻게 가능한가요? > 문의사항</h1>
+		<div id="skip_to_container"><a href="bo_table43&amp;wr_id=1.html#sh_container">본문 바로가기</a></div>
 				<div id="sh_hd_wrapper">
 			
 <div id="app-sub-menu"></div>
@@ -213,14 +214,20 @@ AOS.init();
 <div id="shSnb">
     <ul>
     	<li><a href="/">홈</a></li>
+                <li >
+            <a href="bo_table42.html">공지사항</a>
+        </li>
+        <li>
+            <a href="bo_table45.html">뉴스</a>
+        </li>
                 <li class='on'>
-            <a href="/bbs/write%3Fbo_table=table44.html">문의하기</a>
+            <a href="bo_table44.html">채용</a>
         </li>
             </ul>
 </div></div>
 			
 <div id="shSubBnr">
-	<p><span>문의하기</span></p>
+	<p><span>소식</span></p>
     <div class="bg" data-aos="fade-in" data-aos-duration="800" style="background-image:url(../sh_img/hd/sub_main_banner/bg_14.jpg);"></div>
 </div>
 
@@ -230,160 +237,51 @@ $(document).ready(function(){
 });
 </script>            <div id="sh_content">
 					
-<!-- skin : sh_basic_res --><script src="https://spi.maps.daum.net/imap/map_js_init/postcode.v2.js"></script>
-<section id="sh_bo_w">
-    <h2 class="sound_only">문의하기 글쓰기</h2>
 
-    <form name="fwrite" id="fwrite" action="https://co1111-res.shiningcorp.com/bbs/write_update" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off">
-        <input type="hidden" name="uid" value="2026010214324882">
-        <input type="hidden" name="w" value="">
-        <input type="hidden" name="bo_table" value="table44">
-        <input type="hidden" name="wr_id" value="0">
-        <input type="hidden" name="sca" value="">
-        <input type="hidden" name="sfl" value="">
-        <input type="hidden" name="stx" value="">
-        <input type="hidden" name="spt" value="">
-        <input type="hidden" name="sst" value="">
-        <input type="hidden" name="sod" value="">
-        <input type="hidden" name="page" value="">
-                <input type="hidden" value="html1" name="html">        <div id="sh_write_tbl" class="sh_tbl_common">
-            <table cellpadding="0" cellspacing="0" summary="문의하기 글쓰기">
-                <caption class="sound_only">문의하기 글쓰기</caption>
-                <tbody>
-                                                            <tr>
-                        <th><label for="wr_name">이름</label></th>
-                        <td><input type="text" name="wr_name" value="" id="wr_name" required class="sh_input required" placeholder="이름"></td>
-                    </tr>         
-                    <tr>
-                        <th><label for="sh_phone">연락처</label></th>
-                        <td><input type="text" required class="sh_input required" name="sh_phone" id="sh_phone" maxlength="12" value="" placeholder="연락처" onkeyup='Num_ck(this);'></td>
-                    </tr>
-                                        <tr>
-                        <th><label for="wr_email">이메일</label></th>
-                        <td><input type="text" name="wr_email" value="" id="wr_email" class="sh_input email required" placeholder="이메일" maxlength="100"></td>
-                    </tr>
-                    
-                                        
-                                        
-                                                            <tr>
-                        <th><label for="wr_subject">제목<strong class="sound_only">필수</strong></label></th>
-                        <td><input type="text" name="wr_subject" value="" id="wr_subject" required class="sh_input full_input required" maxlength="255"></td>
-                    </tr>
-                    <tr>
-                        <th><label for="wr_content">내용<strong class="sound_only">필수</strong></label></th>
-                        <td class="wr_content"><span class="sound_only">웹에디터 시작</span>
-<script src="../plugin/editor/smarteditor2/js/service/HuskyEZCreator.js"></script>
-<script src="../plugin/editor/smarteditor2/config.js"></script>
-<textarea id="wr_content" name="wr_content" class="smarteditor2" maxlength="65536" style="width:100%;height:300px"></textarea>
-<span class="sound_only">웹 에디터 끝</span></td>
-                    </tr>
-                                                            <tr>
-                        <th>파일 #1</th>
-                        <td>
-                            <label for="sh_file1" class="sound_only">파일 #1</label>
-                            <input type="file" name="bf_file[]" title="파일첨부 1 : 용량 1,048,576 바이트 이하만 업로드 가능" class="frm_file sh_input" id="sh_file1">
-                                                    </td>
-                    </tr>
-                                        <tr>
-                        <th>파일 #2</th>
-                        <td>
-                            <label for="sh_file2" class="sound_only">파일 #2</label>
-                            <input type="file" name="bf_file[]" title="파일첨부 2 : 용량 1,048,576 바이트 이하만 업로드 가능" class="frm_file sh_input" id="sh_file2">
-                                                    </td>
-                    </tr>
-                                                            <tr>
-                        <td colspan="2">
-                            <label for="privacy" class="sound_only">개인정보취급방침</label>
-                            <textarea readonly class="sh_input txtarea privacy" id="privacy">해당 홈페이지에 맞는 개인정보처리방침을 입력합니다.</textarea>
-                            <div class="agr_area">
-                                <p><span class="ps">(필수)</span> 개인정보취급방침 내용에 동의합니다. </p>
-                                <input type=radio value=1 name="agreess" id="agree" >&nbsp;<label for="agree">동의함</label>
-                                <input type=radio value=1 name="agreess" id="no_agree">&nbsp;<label for="no_agree">동의안함</label>
-                            </div>
-                        </td>
-                    </tr>
-                                    </tbody>
-            </table>
-        </div>    
+<section id="sh_bo_v">
+	<p class="tit">
+		        무료 홈페이지 제작 어떻게 가능한가요?	</p>
+    
+    <div class="info">
+    	<p><b>작성자</b><span class="sv_member">최고관리자</span></p>
+        <ul>
+            <li><b>등록일</b> 22-12-05</li>		
+            <li><b>조회</b>86회</li>
+        </ul>
+    </div>
+    
+	<ul class="bo_ul">
+                                 
+        	</ul>
+    
+    <div id="bo_v_atc" class="bo_cont">
+        <p class="sound_only">본문</p>
+        
+		<div id="bo_v_img">
+</div>
+		<p>현대이지웹의 무료제작으로 등록된 모든 홈페이지는 무료 제작이 가능합니다.</p><p>사이트제작의 앞선 기술로 사이트 수정 및 세팅이 빠르고 정확합니다.<br /></p><p>고급형 부터 무료형까지 모든 사이트는 웹호스팅+도메인(1년 150,000원)가격이 필수 입니다.<br /></p><p>현대이지웹에서는 고객님들의 기업 성격에 맞는 디자인을 선택해주시면 로고, 문구, 내용, 제품안내 등 을 수정하여 납품합니다.<br /></p><p>현대이지웹에서는 웹호스팅 가격으로 수입창출을 합니다.<br /></p><p>* 타 기업의 무료제작 후 비싼 호스팅 및 관리비용이 아닌 거품없는 저렴한 가격으로 제공합니다.<br /></p><p><br /></p><p>웹호스팅이란?<br /></p><p>제작이 끝난 홈페이지의 모든 이미지 내용들은 서버라는 컴퓨터에 저장이 되어야만 전국 전세계 어디서든 볼수 있습니다. <br /></p><p>이 서버라는 컴퓨터의 저장공간 임대 비용을 웹호스팅 이라합니다.<br /></p>    </div>
 
-        <div class="btn_area">
-            <input type="submit" value="작성완료" id="btn_submit" accesskey="s" class="btn_type01 comp_btn">
-        </div>
-    </form>
+        
+            
+    
+	    <ul class="v_page">
+        <li><span><i class="fa fa-angle-up"></i></span><a href="bo_table43&amp;wr_id=2.html">디자인 시안에서만 결정하는 경우 중복되는 사이트가 많지 않을까요?</a></li>            </ul>
+    
+    <div class="btn_area">
+                <ul class="left">
+                                </ul>
+        <ul class="right">
+            <li><a href="bo_table43.html" class="btn_line"> 목록</a></li>
+			                    </ul>
+            </div>
+    
 </section>
 
 <script>
-function Num_ck(obj) { 
-    var val = obj.value; 
-    if(isNaN(val)) { 
-        alert("숫자만 입력해 주세요"); 
-        obj.value = val.replace(/[^0-9]/gi, ''); 
-    }  
-}
-
-function fwrite_submit(f){
-        
-    if (!$("#agree").is(":checked")) {
-        alert("개인정보취급방침의 내용에 동의하셔야 작성가능 합니다.");
-        return false;
-    }
-        
-    var wr_content_editor_data = oEditors.getById['wr_content'].getIR();
-oEditors.getById['wr_content'].exec('UPDATE_CONTENTS_FIELD', []);
-if(jQuery.inArray(document.getElementById('wr_content').value.toLowerCase().replace(/^\s*|\s*$/g, ''), ['&nbsp;','<p>&nbsp;</p>','<p><br></p>','<div><br></div>','<p></p>','<br>','']) != -1){document.getElementById('wr_content').value='';}
-if (!wr_content_editor_data || jQuery.inArray(wr_content_editor_data.toLowerCase(), ['&nbsp;','<p>&nbsp;</p>','<p><br></p>','<p></p>','<br>']) != -1) { alert("내용을 입력해 주십시오."); oEditors.getById['wr_content'].exec('FOCUS'); return false; }
-
-    var subject = "";
-    var content = "";
-    $.ajax({
-        url: g5_bbs_url+"/ajax.filter",
-        type: "POST",
-        data: {
-            "subject": f.wr_subject.value,
-            "content": f.wr_content.value
-        },
-        dataType: "json",
-        async: false,
-        cache: false,
-        success: function(data, textStatus) {
-            subject = data.subject;
-            content = data.content;
-        }
-    });
-
-    if (subject) {
-        alert("제목에 금지단어('"+subject+"')가 포함되어있습니다");
-        f.wr_subject.focus();
-        return false;
-    }
-
-    if (content) {
-        alert("내용에 금지단어('"+content+"')가 포함되어있습니다");
-        if (typeof(ed_wr_content) != "undefined")
-            ed_wr_content.returnFalse();
-        else
-            f.wr_content.focus();
-        return false;
-    }
-
-    if (document.getElementById("char_count")) {
-        if (char_min > 0 || char_max > 0) {
-            var cnt = parseInt(check_byte("wr_content", "char_count"));
-            if (char_min > 0 && char_min > cnt) {
-                alert("내용은 "+char_min+"글자 이상 쓰셔야 합니다.");
-                return false;
-            }
-            else if (char_max > 0 && char_max < cnt) {
-                alert("내용은 "+char_max+"글자 이하로 쓰셔야 합니다.");
-                return false;
-            }
-        }
-    }
-
-    if (!chk_captcha()) return false;
-
-    return true;
-}
+$(function() {
+    // 이미지 리사이즈
+    $("#bo_v_atc").viewimageresize();
+});
 </script>        </div><!-- sh_content -->
    
 	</div><!-- sh_container_wrapper --> 
@@ -451,3 +349,5 @@ $(function() {
 </body>
 <script src=""></script>
 </html>
+
+<!-- 사용스킨 : sh_basic_res -->

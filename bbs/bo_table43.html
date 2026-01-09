@@ -6,7 +6,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>채용 목록 | NeoBH</title>
+<title>문의사항 목록 | NeoBH</title>
 <link rel="shortcut icon" type="image/x-icon" href="/sh_img/hd/top_menu/balhea_logo_black.png">
 <link rel="stylesheet" href="../css/default.css">
 <link rel="stylesheet" href="../sh_img/js/aos.css">
@@ -16,7 +16,6 @@
 <link rel="stylesheet" href="../skin/board/sh_basic_res/sh_style.css">
 <link rel="stylesheet" href="../css/user.css">
 <link rel="stylesheet" href="../css/page_style.css">
-<link rel="stylesheet" href="/css/pagination.css">
 <style>
 @import url(https://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 @import url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
@@ -170,7 +169,7 @@ var g5_bbs_url   = "";
 var g5_is_member = "";
 var g5_is_admin  = "";
 var g5_is_mobile = "";
-var g5_bo_table  = "table44";
+var g5_bo_table  = "table43";
 var g5_sca       = "";
 var g5_editor    = "smarteditor2";
 var g5_cookie_domain = "";
@@ -197,8 +196,8 @@ AOS.init();
 	<!-- 상단 시작 { -->
 	<div id="sh_hd">	
         <div class="sh_lnb_bg"></div>
-		<h1 id="hd_h1">사내소식 1 페이지</h1>
-		<div id="skip_to_container"><a href="board%3Fbo_table=table44.html#sh_container">본문 바로가기</a></div>
+		<h1 id="hd_h1">문의사항 1 페이지</h1>
+		<div id="skip_to_container"><a href="bo_table43.html#sh_container">본문 바로가기</a></div>
 				<div id="sh_hd_wrapper">
 			
 <div id="app-sub-menu"></div>
@@ -214,20 +213,20 @@ AOS.init();
 <div id="shSnb">
     <ul>
     	<li><a href="/">홈</a></li>
-        <li >
-            <a href="board%3Fbo_table=table42.html">공지사항</a>
+                <li >
+            <a href="bo_table42.html">공지사항</a>
         </li>
         <li>
-            <a href="board%3Fbo_table=table45.html">뉴스</a>
+            <a href="bo_table45.html">뉴스</a>
         </li>
                 <li class='on'>
-            <a href="board%3Fbo_table=table44.html">채용</a>
+            <a href="bo_table44.html">채용</a>
         </li>
             </ul>
 </div></div>
 			
 <div id="shSubBnr">
-	<p><span>채용</span></p>
+	<p><span>소식</span></p>
     <div class="bg" data-aos="fade-in" data-aos-duration="800" style="background-image:url(../sh_img/hd/sub_main_banner/bg_14.jpg);"></div>
 </div>
 
@@ -241,11 +240,11 @@ $(document).ready(function(){
 <div id="sh_bo_list">
 
         
-    <!-- <div class="list_top">
+    <div class="list_top">
 		        <fieldset id="sh_bo_sch">
             <legend>게시물 검색</legend>
             <form name="fsearch" method="get">
-            <input type="hidden" name="bo_table" value="table44">
+            <input type="hidden" name="bo_table" value="table43">
             <input type="hidden" name="sca" value="">
             <input type="hidden" name="sop" value="and">
             <label for="sfl" class="sound_only">검색대상</label>
@@ -260,10 +259,10 @@ $(document).ready(function(){
             <input type="image" src="../img/sh_search.png" alt="검색" name="submit" value="submit" />
             </form>
         </fieldset>        
-    </div> -->
+    </div>
 
     <form name="fboardlist" id="fboardlist" action="" onsubmit="return fboardlist_submit(this);" method="post">
-        <input type="hidden" name="bo_table" value="table44">
+        <input type="hidden" name="bo_table" value="table43">
         <input type="hidden" name="sfl" value="">
         <input type="hidden" name="stx" value="">
         <input type="hidden" name="spt" value="">
@@ -275,86 +274,55 @@ $(document).ready(function(){
 
         <div id="sh_list_tbl" class="sh_tbl_common">
             <table cellpadding="0" cellspacing="0">
-                <caption class="sound_only">채용 목록</caption>
+                <caption class="sound_only">문의사항 목록</caption>
                 <thead>
                     <tr>
                         <th class="num" scope="col">No</th>
                         <th scope="col">제목</th>
-                        <th scope="col">조회수</th>
                         <th class="name"scope="col">작성자</th>
                         <th scope="col">등록일</th>
                     </tr>
                 </thead>
-                <tbody class="test_list"></tbody>
-                <script type="module">
-                    import axios from 'https://cdn.jsdelivr.net/npm/axios@1.6.8/+esm';
-                    import { initPagination } from '/js/pagination.js';
-
-                    function escapeHTML(str) {
-                        return str
-                            .replace(/&/g, '&amp;')
-                            .replace(/</g, '&lt;')
-                            .replace(/>/g, '&gt;')
-                            .replace(/"/g, '&quot;')
-                            .replace(/'/g, '&#039;')
-                            .replace(/\n/g, "<br />");
-                    }
-
-                    function formatFileSize(bytes) {
-                        if (bytes >= 1048576) return (bytes / 1048576).toFixed(1) + ' MB';
-                        if (bytes >= 1024) return (bytes / 1024).toFixed(1) + ' KB';
-                        return bytes + ' B';
-                    }
-
-                    document.addEventListener('DOMContentLoaded', function() {
-                        axios.get(`https://api-dev.balhea.kr/homebe/api/recruit/posts`)
-                        .then(response => {
-                            if(response.data.content.length != 0) {
-                                initPagination({
-                                    data: response.data.content,
-                                    containerSelector: '.test_list',
-                                    paginationSelector: '.pagination',
-                                    itemsPerPage: 10,
-                                    pageGroupSize: 5,
-                                    useLocalStorage: true,
-                                    localStorageKey: 'lastPage-table44',
-                                    renderItem: (data) => `
-                                        <tr>
-                                            <td style="text-align: center;width: 8vw">${data.haSn}</td>
-                                            <td style="padding: 10px 20px;min-width: 30vw"><a href="/bbs/board?bo_table=table44_detail.html?param1=${data.haSn}">${escapeHTML(data.haTitle)}</a></td>
-                                            <td style="text-align: center;width: 8vw">${data.haViews}</td>
-                                            <td style="text-align: center;width: 10vw">${data.haWriterName}</td>
-                                            <td style="text-align: center;width: 12vw">${data.hn_create_dt}</td>
-                                        </tr>
-                                    `
-                                });
-                            } else {
-                                const tr = document.createElement('tr');
-                                const td = document.createElement('td');
-                                td.colSpan = 5;
-                                td.style.textAlign = 'center';
-                                td.textContent = '조회된 목록이 없습니다.';
-                                tr.appendChild(td);
-                                document.querySelector('.test_list').appendChild(tr);
-                            }
-                        })
-                        .catch(error => {
-                            console.error('데이터 로드 실패:', error);
-                            const tr = document.createElement('tr');
-                            const td = document.createElement('td');
-                            td.colSpan = 5;
-                            td.style.textAlign = 'center';
-                            td.textContent = '조회된 목록이 없습니다.';
-                            tr.appendChild(td);
-                            document.querySelector('.test_list').appendChild(tr);
-                        });
-                    });
-                </script>
+                <tbody>
+                                        <tr class="">
+                                                <td class="num">
+                        2                        </td>
+                        
+                        <td class="subject" style="padding-left:10px">
+                            <div>
+                                    
+                                <a href="bo_table43&amp;wr_id=2.html">
+                                                                        디자인 시안에서만 결정하는 경우 중복되는 사이트가 많지 않을까요?                                </a>
+                                                            </div>
+                        </td>
+                        <td class="name sv_use"><span class="sv_member">최고관리자</span></td>
+                        <td class="datetime">12-05</td>
+                    </tr>
+                                        <tr class="">
+                                                <td class="num">
+                        1                        </td>
+                        
+                        <td class="subject" style="padding-left:10px">
+                            <div>
+                                    
+                                <a href="bo_table43&amp;wr_id=1.html">
+                                                                        무료 홈페이지 제작 어떻게 가능한가요?                                </a>
+                                                            </div>
+                        </td>
+                        <td class="name sv_use"><span class="sv_member">최고관리자</span></td>
+                        <td class="datetime">12-05</td>
+                    </tr>
+                                                        </tbody>
             </table>
         </div>
+                
         <div class="pagination-wrapper">
-            <ul class="pagination"></ul>
-        </div>
+                    <ul class="pagination"></ul>
+                </div>
+        <div class="btn_area">
+            <ul class="adm_btns">
+                                                            </ul>
+            <a href="write_table44.html" class="btn_type01 w_btn">글쓰기</a>        </div>
 
     </form>
 

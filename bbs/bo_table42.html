@@ -6,7 +6,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>채용 | NeoBH</title>
+<title>공지사항 목록 | NeoBH</title>
 <link rel="shortcut icon" type="image/x-icon" href="/sh_img/hd/top_menu/balhea_logo_black.png">
 <link rel="stylesheet" href="../css/default.css">
 <link rel="stylesheet" href="../sh_img/js/aos.css">
@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="../skin/board/sh_basic_res/sh_style.css">
 <link rel="stylesheet" href="../css/user.css">
 <link rel="stylesheet" href="../css/page_style.css">
+<link rel="stylesheet" href="/css/pagination.css">
 <style>
 @import url(https://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 @import url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
@@ -169,7 +170,7 @@ var g5_bbs_url   = "";
 var g5_is_member = "";
 var g5_is_admin  = "";
 var g5_is_mobile = "";
-var g5_bo_table  = "table44";
+var g5_bo_table  = "table42";
 var g5_sca       = "";
 var g5_editor    = "smarteditor2";
 var g5_cookie_domain = "";
@@ -184,7 +185,6 @@ var g5_cookie_domain = "";
 <script src="../sh_img/js/feather.min.js"></script>
 <script src="../sh_img/js/aos.js"></script>
 <script src="../sh_img/hd/top_menu/script.js"></script>
-<script src="../js/viewimageresize.js"></script>
 </head>
 <body>
 
@@ -193,109 +193,12 @@ var g5_cookie_domain = "";
 <script>
 AOS.init();
 </script>
-<script>
-    let sharedUrl = "";
-    // URL에서 파라미터를 추출하는 함수
-    function getQueryParams() {
-        const params = new URLSearchParams(window.location.search);
-        const param1 = params.get('param1'); // param1 값을 가져옴
-        return { param1 };
-    }
-
-    function goToRecruit() {
-        const params = getQueryParams();
-        window.open("about:blank").location.href = `${sharedUrl}`;
-    }
-
-    function escapeHTML(str) {
-        return str
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&#039;')
-            .replace(/\n/g, "<br />");
-    }
-
-    function formatFileSize(bytes) {
-        if (bytes >= 1048576) return (bytes / 1048576).toFixed(1) + ' MB';
-        if (bytes >= 1024) return (bytes / 1024).toFixed(1) + ' KB';
-        return bytes + ' B';
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const params = getQueryParams();
-        axios.get(`https://api-dev.balhea.kr/homebe/api/recruit/posts/${params.param1}`)
-        .then(response => {
-            const params = getQueryParams();
-            document.querySelector("#sh_bo_v .tit").textContent = `${escapeHTML(response.data.haTitle)}`;
-            document.getElementById('date').insertAdjacentHTML('afterend', `${response.data.haCreateDt}`);
-            document.getElementById('update').insertAdjacentHTML('afterend', `${response.data.haUpdateeDt}`);
-            document.getElementById('view').insertAdjacentHTML('afterend', `${response.data.haViews}`);
-            sharedUrl = response.data.haPostUrl;
-
-            // 이미지 출력
-            const imgBox = document.getElementById('bo_v_img');
-            imgBox.innerHTML = '';
-            if(response.data.haImageUrls && response.data.haImageUrls.length > 0) {
-                response.data.haImageUrls.forEach(src => {
-                    const img = document.createElement('img');
-                    img.src = src;
-                    img.alt = "";
-                    img.style.maxWidth = '100%';
-                    img.style.marginBottom = '10px';
-                    imgBox.appendChild(img);
-                });
-            };
-
-            // 텍스트 출력 (XSS 방지 + 줄바꿈 처리)
-            const text = response.data.haText;
-            if(text) {
-                document.getElementById('bo_v_text').innerHTML = `${escapeHTML(text)}`;
-            }
-
-            // 첨부파일 출력
-            const fileBox = document.getElementById('bo_v_file');
-            fileBox.innerHTML = ''; // 기존 내용 초기화
-
-            if(response.data.haAttachmentsUrls && response.data.haAttachmentsUrls.length > 0) {
-                const heading = document.createElement('h4');
-                heading.textContent = '첨부파일';
-                fileBox.appendChild(heading);
-
-                const ul = document.createElement('ul');
-
-                response.data.haAttachmentsUrls.forEach(file => {
-                    const li = document.createElement('li');
-
-                    const a = document.createElement('a');
-                    a.href = file.url;
-                    a.download = file.name;
-                    a.textContent = `📎 ${file.name} `;
-
-                    const span = document.createElement('span');
-                    span.textContent = `(${formatFileSize(file.size || 0)})`;
-                    span.style.color = 'gray';
-                    span.style.fontSize = '0.9em';
-
-                    a.appendChild(span);
-                    li.appendChild(a);
-                    ul.appendChild(li);
-                });
-                fileBox.appendChild(ul);
-            }
-        })
-        .catch(error => {
-            console.error('데이터 로드 실패:', error);
-        });
-    });
-</script>
 <div id="sh_wrapper">
 	<!-- 상단 시작 { -->
 	<div id="sh_hd">	
         <div class="sh_lnb_bg"></div>
-		<h1 id="hd_h1">채용</h1>
-		<div id="skip_to_container"><a href="board%3Fbo_table=table44.html#sh_container">본문 바로가기</a></div>
+		<h1 id="hd_h1">공지사항 1 페이지</h1>
+		<div id="skip_to_container"><a href="bo_table42.html#sh_container">본문 바로가기</a></div>
 				<div id="sh_hd_wrapper">
 			
 <div id="app-sub-menu"></div>
@@ -311,20 +214,20 @@ AOS.init();
 <div id="shSnb">
     <ul>
     	<li><a href="/">홈</a></li>
-                <li>
-            <a href="board%3Fbo_table=table42.html">공지사항</a>
+                <li class='on'>
+            <a href="bo_table42.html">공지사항</a>
         </li>
         <li>
-            <a href="board%3Fbo_table=table45.html">뉴스</a>
+            <a href="bo_table45.html">뉴스</a>
         </li>
-                <li class='on'>
-            <a href="board%3Fbo_table=table44.html">채용</a>
+                <li >
+            <a href="bo_table44.html">채용</a>
         </li>
             </ul>
 </div></div>
 			
 <div id="shSubBnr">
-	<p><span>소식</span></p>
+	<p><span>공지사항</span></p>
     <div class="bg" data-aos="fade-in" data-aos-duration="800" style="background-image:url(../sh_img/hd/sub_main_banner/bg_14.jpg);"></div>
 </div>
 
@@ -335,49 +238,135 @@ $(document).ready(function(){
 </script>            <div id="sh_content">
 					
 
-<section id="sh_bo_v">
-	<p class="tit"></p>
-    
-    <div class="info">
-    	<p><b>작성자</b><span class="sv_member">관리자</span></p>
-        <ul>
-            <li><b id="date">등록일</b></li>		
-            <li><b id="update">수정일</b></li>		
-            <li><b id="view">조회</b></li>
-        </ul>
-    </div>
-    
-	<ul class="bo_ul">
-                                 
-        	</ul>
-    
-    <div id="bo_v_atc" class="bo_cont">
-        <p class="sound_only">본문</p>
-        <div id="bo_v_img"></div>
-        <div id="bo_v_text"></div>
-        <div id="bo_v_file"></div>
-    </div>
-    
-	    <!-- <ul class="v_page">
-        <li><span><i class="fa fa-angle-up"></i></span><a href="board%3Fbo_table=table44.html">하반기 결산 안내</a></li>            </ul> -->
-    
-    <div class="btn_area">
-                <ul class="left">
-                    <li><button class="btn_line" onclick="goToRecruit()">채용 바로가기</button></li>
-                                </ul>
-        <ul class="right">
-            <li><a href="board%3Fbo_table=table44.html" class="btn_line"> 목록</a></li>
-			                    </ul>
-            </div>
-    
-</section>
+<div id="sh_bo_list">
 
-<script>
-$(function() {
-    // 이미지 리사이즈
-    $("#bo_v_atc").viewimageresize();
-});
-</script>        </div><!-- sh_content -->
+        
+    <!-- <div class="list_top">
+		        <fieldset id="sh_bo_sch">
+            <legend>게시물 검색</legend>
+            <form name="fsearch" method="get">
+            <input type="hidden" name="bo_table" value="table42">
+            <input type="hidden" name="sca" value="">
+            <input type="hidden" name="sop" value="and">
+            <label for="sfl" class="sound_only">검색대상</label>
+            <select name="sfl" id="sfl">
+                <option value="wr_subject">제목</option>
+                <option value="wr_content">내용</option>
+                <option value="wr_subject||wr_content">제목+내용</option>
+                <option value="wr_name,1">글쓴이</option>
+            </select>
+            <label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
+            <input type="text" name="stx" value="" required id="stx" class="sch_input" size="25" maxlength="20">
+            <input type="image" src="../img/sh_search.png" alt="검색" name="submit" value="submit" />
+            </form>
+        </fieldset>        
+    </div> -->
+
+    <form name="fboardlist" id="fboardlist" action="" onsubmit="return fboardlist_submit(this);" method="post">
+        <input type="hidden" name="bo_table" value="table42">
+        <input type="hidden" name="sfl" value="">
+        <input type="hidden" name="stx" value="">
+        <input type="hidden" name="spt" value="">
+        <input type="hidden" name="sca" value="">
+        <input type="hidden" name="sst" value="wr_num, wr_reply">
+        <input type="hidden" name="sod" value="">
+        <input type="hidden" name="page" value="1">
+        <input type="hidden" name="sw" value="">
+
+        <div id="sh_list_tbl" class="sh_tbl_common">
+            <table cellpadding="0" cellspacing="0">
+                <caption class="sound_only">공지사항 목록</caption>
+                <thead>
+                    <tr>
+                        <th class="num" scope="col">No</th>
+                        <th scope="col">제목</th>
+                        <th scope="col">조회수</th>
+                        <th class="name"scope="col">작성자</th>
+                        <th scope="col">등록일</th>
+                    </tr>
+                </thead>
+                <tbody class="test_list"></tbody>
+                <script type="module">
+                    import axios from 'https://cdn.jsdelivr.net/npm/axios@1.6.8/+esm';
+                    import { initPagination } from '/js/pagination.js';
+
+                    function escapeHTML(str) {
+                        return str
+                            .replace(/&/g, '&amp;')
+                            .replace(/</g, '&lt;')
+                            .replace(/>/g, '&gt;')
+                            .replace(/"/g, '&quot;')
+                            .replace(/'/g, '&#039;')
+                            .replace(/\n/g, "<br />");
+                    }
+
+                    function formatFileSize(bytes) {
+                        if (bytes >= 1048576) return (bytes / 1048576).toFixed(1) + ' MB';
+                        if (bytes >= 1024) return (bytes / 1024).toFixed(1) + ' KB';
+                        return bytes + ' B';
+                    }
+
+                    document.addEventListener('DOMContentLoaded', function() {
+                        axios.get(`https://api-dev.balhea.kr/homebe/api/notice/posts`)
+                        .then(response => {
+                            if(response.data.content.length != 0) {
+                                initPagination({
+                                    data: response.data.content,
+                                    containerSelector: '.test_list',
+                                    paginationSelector: '.pagination',
+                                    itemsPerPage: 10,
+                                    pageGroupSize: 5,
+                                    useLocalStorage: true,
+                                    localStorageKey: 'lastPage-table42',
+                                    renderItem: (data) => `
+                                        <tr>
+                                            <td style="text-align: center;width: 8vw">${data.haSn}</td>
+                                            <td style="padding: 10px 20px;min-width: 30vw"><a href="/bbs/board?bo_table=table42_detail.html?param1=${data.haSn}">${escapeHTML(data.haTitle)}</a></td>
+                                            <td style="text-align: center;width: 8vw">${data.haViews}</td>
+                                            <td style="text-align: center;width: 10vw">${data.haWriterName}</td>
+                                            <td style="text-align: center;width: 12vw">${data.hn_create_dt}</td>
+                                        </tr>
+                                    `
+                                });
+                            } else {
+                                const tr = document.createElement('tr');
+                                const td = document.createElement('td');
+                                td.colSpan = 5;
+                                td.style.textAlign = 'center';
+                                td.textContent = '조회된 목록이 없습니다.';
+                                tr.appendChild(td);
+                                document.querySelector('.test_list').appendChild(tr);
+                            }
+                        })
+                        .catch(error => {
+                            console.error('데이터 로드 실패:', error);
+                            const tr = document.createElement('tr');
+                            const td = document.createElement('td');
+                            td.colSpan = 5;
+                            td.style.textAlign = 'center';
+                            td.textContent = '조회된 목록이 없습니다.';
+                            tr.appendChild(td);
+                            document.querySelector('.test_list').appendChild(tr);
+                        });
+                    });
+                </script>
+            </table>
+        </div>
+        <div class="pagination-wrapper">
+                    <ul class="pagination"></ul>
+                </div>
+                
+        <div class="btn_area">
+            <ul class="adm_btns">
+                                                            </ul>
+                    </div>
+
+    </form>
+
+</div>
+
+
+        </div><!-- sh_content -->
    
 	</div><!-- sh_container_wrapper --> 
 </div><!-- sh_container -->

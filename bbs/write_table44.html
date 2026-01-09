@@ -6,7 +6,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>공지사항 목록 | NeoBH</title>
+<title>문의하기 글쓰기 | NeoBH</title>
 <link rel="shortcut icon" type="image/x-icon" href="/sh_img/hd/top_menu/balhea_logo_black.png">
 <link rel="stylesheet" href="../css/default.css">
 <link rel="stylesheet" href="../sh_img/js/aos.css">
@@ -16,7 +16,6 @@
 <link rel="stylesheet" href="../skin/board/sh_basic_res/sh_style.css">
 <link rel="stylesheet" href="../css/user.css">
 <link rel="stylesheet" href="../css/page_style.css">
-<link rel="stylesheet" href="/css/pagination.css">
 <style>
 @import url(https://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 @import url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
@@ -170,7 +169,7 @@ var g5_bbs_url   = "";
 var g5_is_member = "";
 var g5_is_admin  = "";
 var g5_is_mobile = "";
-var g5_bo_table  = "table42";
+var g5_bo_table  = "table44";
 var g5_sca       = "";
 var g5_editor    = "smarteditor2";
 var g5_cookie_domain = "";
@@ -197,8 +196,8 @@ AOS.init();
 	<!-- 상단 시작 { -->
 	<div id="sh_hd">	
         <div class="sh_lnb_bg"></div>
-		<h1 id="hd_h1">공지사항 1 페이지</h1>
-		<div id="skip_to_container"><a href="board%3Fbo_table=table42.html#sh_container">본문 바로가기</a></div>
+		<h1 id="hd_h1">문의하기 글쓰기</h1>
+		<div id="skip_to_container"><a href="write_table44.html#sh_container">본문 바로가기</a></div>
 				<div id="sh_hd_wrapper">
 			
 <div id="app-sub-menu"></div>
@@ -215,19 +214,13 @@ AOS.init();
     <ul>
     	<li><a href="/">홈</a></li>
                 <li class='on'>
-            <a href="board%3Fbo_table=table42.html">공지사항</a>
-        </li>
-        <li>
-            <a href="board%3Fbo_table=table45.html">뉴스</a>
-        </li>
-                <li >
-            <a href="board%3Fbo_table=table44.html">채용</a>
+            <a href="/bbs/write_table44.html">문의하기</a>
         </li>
             </ul>
 </div></div>
 			
 <div id="shSubBnr">
-	<p><span>공지사항</span></p>
+	<p><span>문의하기</span></p>
     <div class="bg" data-aos="fade-in" data-aos-duration="800" style="background-image:url(../sh_img/hd/sub_main_banner/bg_14.jpg);"></div>
 </div>
 
@@ -237,136 +230,161 @@ $(document).ready(function(){
 });
 </script>            <div id="sh_content">
 					
+<!-- skin : sh_basic_res --><script src="https://spi.maps.daum.net/imap/map_js_init/postcode.v2.js"></script>
+<section id="sh_bo_w">
+    <h2 class="sound_only">문의하기 글쓰기</h2>
 
-<div id="sh_bo_list">
-
-        
-    <!-- <div class="list_top">
-		        <fieldset id="sh_bo_sch">
-            <legend>게시물 검색</legend>
-            <form name="fsearch" method="get">
-            <input type="hidden" name="bo_table" value="table42">
-            <input type="hidden" name="sca" value="">
-            <input type="hidden" name="sop" value="and">
-            <label for="sfl" class="sound_only">검색대상</label>
-            <select name="sfl" id="sfl">
-                <option value="wr_subject">제목</option>
-                <option value="wr_content">내용</option>
-                <option value="wr_subject||wr_content">제목+내용</option>
-                <option value="wr_name,1">글쓴이</option>
-            </select>
-            <label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
-            <input type="text" name="stx" value="" required id="stx" class="sch_input" size="25" maxlength="20">
-            <input type="image" src="../img/sh_search.png" alt="검색" name="submit" value="submit" />
-            </form>
-        </fieldset>        
-    </div> -->
-
-    <form name="fboardlist" id="fboardlist" action="" onsubmit="return fboardlist_submit(this);" method="post">
-        <input type="hidden" name="bo_table" value="table42">
+    <form name="fwrite" id="fwrite" action="" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off">
+        <input type="hidden" name="uid" value="2026010214324882">
+        <input type="hidden" name="w" value="">
+        <input type="hidden" name="bo_table" value="table44">
+        <input type="hidden" name="wr_id" value="0">
+        <input type="hidden" name="sca" value="">
         <input type="hidden" name="sfl" value="">
         <input type="hidden" name="stx" value="">
         <input type="hidden" name="spt" value="">
-        <input type="hidden" name="sca" value="">
-        <input type="hidden" name="sst" value="wr_num, wr_reply">
+        <input type="hidden" name="sst" value="">
         <input type="hidden" name="sod" value="">
-        <input type="hidden" name="page" value="1">
-        <input type="hidden" name="sw" value="">
-
-        <div id="sh_list_tbl" class="sh_tbl_common">
-            <table cellpadding="0" cellspacing="0">
-                <caption class="sound_only">공지사항 목록</caption>
-                <thead>
+        <input type="hidden" name="page" value="">
+                <input type="hidden" value="html1" name="html">        <div id="sh_write_tbl" class="sh_tbl_common">
+            <table cellpadding="0" cellspacing="0" summary="문의하기 글쓰기">
+                <caption class="sound_only">문의하기 글쓰기</caption>
+                <tbody>
+                                                            <tr>
+                        <th><label for="wr_name">이름</label></th>
+                        <td><input type="text" name="wr_name" value="" id="wr_name" required class="sh_input required" placeholder="이름"></td>
+                    </tr>         
                     <tr>
-                        <th class="num" scope="col">No</th>
-                        <th scope="col">제목</th>
-                        <th scope="col">조회수</th>
-                        <th class="name"scope="col">작성자</th>
-                        <th scope="col">등록일</th>
+                        <th><label for="sh_phone">연락처</label></th>
+                        <td><input type="text" required class="sh_input required" name="sh_phone" id="sh_phone" maxlength="12" value="" placeholder="연락처" onkeyup='Num_ck(this);'></td>
                     </tr>
-                </thead>
-                <tbody class="test_list"></tbody>
-                <script type="module">
-                    import axios from 'https://cdn.jsdelivr.net/npm/axios@1.6.8/+esm';
-                    import { initPagination } from '/js/pagination.js';
-
-                    function escapeHTML(str) {
-                        return str
-                            .replace(/&/g, '&amp;')
-                            .replace(/</g, '&lt;')
-                            .replace(/>/g, '&gt;')
-                            .replace(/"/g, '&quot;')
-                            .replace(/'/g, '&#039;')
-                            .replace(/\n/g, "<br />");
-                    }
-
-                    function formatFileSize(bytes) {
-                        if (bytes >= 1048576) return (bytes / 1048576).toFixed(1) + ' MB';
-                        if (bytes >= 1024) return (bytes / 1024).toFixed(1) + ' KB';
-                        return bytes + ' B';
-                    }
-
-                    document.addEventListener('DOMContentLoaded', function() {
-                        axios.get(`https://api-dev.balhea.kr/homebe/api/notice/posts`)
-                        .then(response => {
-                            if(response.data.content.length != 0) {
-                                initPagination({
-                                    data: response.data.content,
-                                    containerSelector: '.test_list',
-                                    paginationSelector: '.pagination',
-                                    itemsPerPage: 10,
-                                    pageGroupSize: 5,
-                                    useLocalStorage: true,
-                                    localStorageKey: 'lastPage-table42',
-                                    renderItem: (data) => `
                                         <tr>
-                                            <td style="text-align: center;width: 8vw">${data.haSn}</td>
-                                            <td style="padding: 10px 20px;min-width: 30vw"><a href="/bbs/board?bo_table=table42_detail.html?param1=${data.haSn}">${escapeHTML(data.haTitle)}</a></td>
-                                            <td style="text-align: center;width: 8vw">${data.haViews}</td>
-                                            <td style="text-align: center;width: 10vw">${data.haWriterName}</td>
-                                            <td style="text-align: center;width: 12vw">${data.hn_create_dt}</td>
-                                        </tr>
-                                    `
-                                });
-                            } else {
-                                const tr = document.createElement('tr');
-                                const td = document.createElement('td');
-                                td.colSpan = 5;
-                                td.style.textAlign = 'center';
-                                td.textContent = '조회된 목록이 없습니다.';
-                                tr.appendChild(td);
-                                document.querySelector('.test_list').appendChild(tr);
-                            }
-                        })
-                        .catch(error => {
-                            console.error('데이터 로드 실패:', error);
-                            const tr = document.createElement('tr');
-                            const td = document.createElement('td');
-                            td.colSpan = 5;
-                            td.style.textAlign = 'center';
-                            td.textContent = '조회된 목록이 없습니다.';
-                            tr.appendChild(td);
-                            document.querySelector('.test_list').appendChild(tr);
-                        });
-                    });
-                </script>
+                        <th><label for="wr_email">이메일</label></th>
+                        <td><input type="text" name="wr_email" value="" id="wr_email" class="sh_input email required" placeholder="이메일" maxlength="100"></td>
+                    </tr>
+                    
+                                        
+                                        
+                                                            <tr>
+                        <th><label for="wr_subject">제목<strong class="sound_only">필수</strong></label></th>
+                        <td><input type="text" name="wr_subject" value="" id="wr_subject" required class="sh_input full_input required" maxlength="255"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="wr_content">내용<strong class="sound_only">필수</strong></label></th>
+                        <td class="wr_content"><span class="sound_only">웹에디터 시작</span>
+<script src="../plugin/editor/smarteditor2/js/service/HuskyEZCreator.js"></script>
+<script src="../plugin/editor/smarteditor2/config.js"></script>
+<textarea id="wr_content" name="wr_content" class="smarteditor2" maxlength="65536" style="width:100%;height:300px"></textarea>
+<span class="sound_only">웹 에디터 끝</span></td>
+                    </tr>
+                                                            <tr>
+                        <th>파일 #1</th>
+                        <td>
+                            <label for="sh_file1" class="sound_only">파일 #1</label>
+                            <input type="file" name="bf_file[]" title="파일첨부 1 : 용량 1,048,576 바이트 이하만 업로드 가능" class="frm_file sh_input" id="sh_file1">
+                                                    </td>
+                    </tr>
+                                        <tr>
+                        <th>파일 #2</th>
+                        <td>
+                            <label for="sh_file2" class="sound_only">파일 #2</label>
+                            <input type="file" name="bf_file[]" title="파일첨부 2 : 용량 1,048,576 바이트 이하만 업로드 가능" class="frm_file sh_input" id="sh_file2">
+                                                    </td>
+                    </tr>
+                                                            <tr>
+                        <td colspan="2">
+                            <label for="privacy" class="sound_only">개인정보취급방침</label>
+                            <textarea readonly class="sh_input txtarea privacy" id="privacy">해당 홈페이지에 맞는 개인정보처리방침을 입력합니다.</textarea>
+                            <div class="agr_area">
+                                <p><span class="ps">(필수)</span> 개인정보취급방침 내용에 동의합니다. </p>
+                                <input type=radio value=1 name="agreess" id="agree" >&nbsp;<label for="agree">동의함</label>
+                                <input type=radio value=1 name="agreess" id="no_agree">&nbsp;<label for="no_agree">동의안함</label>
+                            </div>
+                        </td>
+                    </tr>
+                                    </tbody>
             </table>
-        </div>
-        <div class="pagination-wrapper">
-                    <ul class="pagination"></ul>
-                </div>
-                
+        </div>    
+
         <div class="btn_area">
-            <ul class="adm_btns">
-                                                            </ul>
-                    </div>
-
+            <input type="submit" value="작성완료" id="btn_submit" accesskey="s" class="btn_type01 comp_btn">
+        </div>
     </form>
+</section>
 
-</div>
+<script>
+function Num_ck(obj) { 
+    var val = obj.value; 
+    if(isNaN(val)) { 
+        alert("숫자만 입력해 주세요"); 
+        obj.value = val.replace(/[^0-9]/gi, ''); 
+    }  
+}
 
+function fwrite_submit(f){
+        
+    if (!$("#agree").is(":checked")) {
+        alert("개인정보취급방침의 내용에 동의하셔야 작성가능 합니다.");
+        return false;
+    }
+        
+    var wr_content_editor_data = oEditors.getById['wr_content'].getIR();
+oEditors.getById['wr_content'].exec('UPDATE_CONTENTS_FIELD', []);
+if(jQuery.inArray(document.getElementById('wr_content').value.toLowerCase().replace(/^\s*|\s*$/g, ''), ['&nbsp;','<p>&nbsp;</p>','<p><br></p>','<div><br></div>','<p></p>','<br>','']) != -1){document.getElementById('wr_content').value='';}
+if (!wr_content_editor_data || jQuery.inArray(wr_content_editor_data.toLowerCase(), ['&nbsp;','<p>&nbsp;</p>','<p><br></p>','<p></p>','<br>']) != -1) { alert("내용을 입력해 주십시오."); oEditors.getById['wr_content'].exec('FOCUS'); return false; }
 
-        </div><!-- sh_content -->
+    var subject = "";
+    var content = "";
+    $.ajax({
+        url: g5_bbs_url+"/ajax.filter",
+        type: "POST",
+        data: {
+            "subject": f.wr_subject.value,
+            "content": f.wr_content.value
+        },
+        dataType: "json",
+        async: false,
+        cache: false,
+        success: function(data, textStatus) {
+            subject = data.subject;
+            content = data.content;
+        }
+    });
+
+    if (subject) {
+        alert("제목에 금지단어('"+subject+"')가 포함되어있습니다");
+        f.wr_subject.focus();
+        return false;
+    }
+
+    if (content) {
+        alert("내용에 금지단어('"+content+"')가 포함되어있습니다");
+        if (typeof(ed_wr_content) != "undefined")
+            ed_wr_content.returnFalse();
+        else
+            f.wr_content.focus();
+        return false;
+    }
+
+    if (document.getElementById("char_count")) {
+        if (char_min > 0 || char_max > 0) {
+            var cnt = parseInt(check_byte("wr_content", "char_count"));
+            if (char_min > 0 && char_min > cnt) {
+                alert("내용은 "+char_min+"글자 이상 쓰셔야 합니다.");
+                return false;
+            }
+            else if (char_max > 0 && char_max < cnt) {
+                alert("내용은 "+char_max+"글자 이하로 쓰셔야 합니다.");
+                return false;
+            }
+        }
+    }
+
+    if (!chk_captcha()) return false;
+
+    return true;
+}
+</script>        </div><!-- sh_content -->
    
 	</div><!-- sh_container_wrapper --> 
 </div><!-- sh_container -->
@@ -433,5 +451,3 @@ $(function() {
 </body>
 <script src=""></script>
 </html>
-
-<!-- 사용스킨 : sh_basic_res -->

@@ -6,14 +6,14 @@
 <meta name="format-detection" content="telephone=no">
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>문의사항 목록 | NeoBH</title>
+<title>오시는 길 | NeoBH</title>
 <link rel="shortcut icon" type="image/x-icon" href="/sh_img/hd/top_menu/balhea_logo_black.png">
 <link rel="stylesheet" href="../css/default.css">
 <link rel="stylesheet" href="../sh_img/js/aos.css">
 <link rel="stylesheet" href="../sh_img/hd/top_menu/style.css">
 <link rel="stylesheet" href="../sh_img/hd/aside/style.css">
 <link rel="stylesheet" href="../sh_img/hd/sub_main_banner/style.css">
-<link rel="stylesheet" href="../skin/board/sh_basic_res/sh_style.css">
+<link rel="stylesheet" href="../skin/board/sh_map_res/sh_style.css">
 <link rel="stylesheet" href="../css/user.css">
 <link rel="stylesheet" href="../css/page_style.css">
 <style>
@@ -169,7 +169,7 @@ var g5_bbs_url   = "";
 var g5_is_member = "";
 var g5_is_admin  = "";
 var g5_is_mobile = "";
-var g5_bo_table  = "table43";
+var g5_bo_table  = "table21";
 var g5_sca       = "";
 var g5_editor    = "smarteditor2";
 var g5_cookie_domain = "";
@@ -196,8 +196,8 @@ AOS.init();
 	<!-- 상단 시작 { -->
 	<div id="sh_hd">	
         <div class="sh_lnb_bg"></div>
-		<h1 id="hd_h1">문의사항 1 페이지</h1>
-		<div id="skip_to_container"><a href="board%3Fbo_table=table43.html#sh_container">본문 바로가기</a></div>
+		<h1 id="hd_h1">경기 부천시 원미구 신흥로 223 신중동역 랜드마크 푸르지오 시티 101동 오피스 49층 > 오시는 길</h1>
+		<div id="skip_to_container"><a href="bo_table21.html#sh_container">본문 바로가기</a></div>
 				<div id="sh_hd_wrapper">
 			
 <div id="app-sub-menu"></div>
@@ -214,120 +214,114 @@ AOS.init();
     <ul>
     	<li><a href="/">홈</a></li>
                 <li >
-            <a href="board%3Fbo_table=table42.html">공지사항</a>
+            <a href="../sh_page/page6.html">인사말</a>
         </li>
-        <li>
-            <a href="board%3Fbo_table=table45.html">뉴스</a>
+                <li >
+            <a href="../sh_page/page7.html">회사연혁</a>
+        </li>
+        <li><a href="/sh_page/page13.html">인증서</a></li>
+                <li >
+            <a href="../sh_page/page8.html">조직도</a>
         </li>
                 <li class='on'>
-            <a href="board%3Fbo_table=table44.html">채용</a>
+            <a href="bo_table21.html">오시는 길</a>
         </li>
             </ul>
 </div></div>
 			
 <div id="shSubBnr">
-	<p><span>소식</span></p>
-    <div class="bg" data-aos="fade-in" data-aos-duration="800" style="background-image:url(../sh_img/hd/sub_main_banner/bg_14.jpg);"></div>
+	<p><span>오시는 길</span></p>
+    <div class="bg" data-aos="fade-in" data-aos-duration="800" style="background-image:url(../sh_img/hd/sub_main_banner/bg_10.jpg);"></div>
 </div>
 
 <script>
 $(document).ready(function(){
     $('#shSubBnr p span').delay(0).animate({"bottom":"0","opacity":"1"},600);
 });
-</script>            <div id="sh_content">
+</script>            <div id="sh_content2">
 					
 
-<div id="sh_bo_list">
+<div id="sh_map_v">
+    <div class="map_div">
+        <div class="tit_area">
+            <span>ADDRESS</span>
+            <p>본사 : 김포시 고촌읍 전호로 32 1동,2동</p>
+                        <p>전화 : 031-987-3069</p>
+        </div>
 
-        
-    <div class="list_top">
-		        <fieldset id="sh_bo_sch">
-            <legend>게시물 검색</legend>
-            <form name="fsearch" method="get">
-            <input type="hidden" name="bo_table" value="table43">
-            <input type="hidden" name="sca" value="">
-            <input type="hidden" name="sop" value="and">
-            <label for="sfl" class="sound_only">검색대상</label>
-            <select name="sfl" id="sfl">
-                <option value="wr_subject">제목</option>
-                <option value="wr_content">내용</option>
-                <option value="wr_subject||wr_content">제목+내용</option>
-                <option value="wr_name,1">글쓴이</option>
-            </select>
-            <label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
-            <input type="text" name="stx" value="" required id="stx" class="sch_input" size="25" maxlength="20">
-            <input type="image" src="../img/sh_search.png" alt="검색" name="submit" value="submit" />
-            </form>
-        </fieldset>        
+        <div id="sh_iframe_wrap">
+            <!-- * 카카오맵 - 지도퍼가기 -->
+            <!-- 1. 지도 노드 -->
+            <div id="daumRoughmapContainer1742170136603" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+            <!--
+                2. 설치 스크립트
+                * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+            -->
+            <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+            <!-- 3. 실행 스크립트 -->
+            <script charset="UTF-8">
+                new daum.roughmap.Lander({
+                    "timestamp" : "1742170136603",
+                    "key" : "2nchp",
+                    "mapWidth" : "640",
+                    "mapHeight" : "360"
+                }).render();
+            </script>
+        </div>
     </div>
 
-    <form name="fboardlist" id="fboardlist" action="" onsubmit="return fboardlist_submit(this);" method="post">
-        <input type="hidden" name="bo_table" value="table43">
-        <input type="hidden" name="sfl" value="">
-        <input type="hidden" name="stx" value="">
-        <input type="hidden" name="spt" value="">
-        <input type="hidden" name="sca" value="">
-        <input type="hidden" name="sst" value="wr_num, wr_reply">
-        <input type="hidden" name="sod" value="">
-        <input type="hidden" name="page" value="1">
-        <input type="hidden" name="sw" value="">
-
-        <div id="sh_list_tbl" class="sh_tbl_common">
-            <table cellpadding="0" cellspacing="0">
-                <caption class="sound_only">문의사항 목록</caption>
-                <thead>
-                    <tr>
-                        <th class="num" scope="col">No</th>
-                        <th scope="col">제목</th>
-                        <th class="name"scope="col">작성자</th>
-                        <th scope="col">등록일</th>
-                    </tr>
-                </thead>
-                <tbody>
-                                        <tr class="">
-                                                <td class="num">
-                        2                        </td>
-                        
-                        <td class="subject" style="padding-left:10px">
-                            <div>
-                                    
-                                <a href="board%3Fbo_table=table43&amp;wr_id=2.html">
-                                                                        디자인 시안에서만 결정하는 경우 중복되는 사이트가 많지 않을까요?                                </a>
-                                                            </div>
-                        </td>
-                        <td class="name sv_use"><span class="sv_member">최고관리자</span></td>
-                        <td class="datetime">12-05</td>
-                    </tr>
-                                        <tr class="">
-                                                <td class="num">
-                        1                        </td>
-                        
-                        <td class="subject" style="padding-left:10px">
-                            <div>
-                                    
-                                <a href="board%3Fbo_table=table43&amp;wr_id=1.html">
-                                                                        무료 홈페이지 제작 어떻게 가능한가요?                                </a>
-                                                            </div>
-                        </td>
-                        <td class="name sv_use"><span class="sv_member">최고관리자</span></td>
-                        <td class="datetime">12-05</td>
-                    </tr>
-                                                        </tbody>
-            </table>
+    <div class="map_div">
+        <div class="tit_area">
+            <span>ADDRESS</span>
+            <p>AI 연구동 : 서울특별시 강남구 언주로87길6 901호</p>
+            <p>전화 : 010-5182-9660</p>
         </div>
-                
-        <div class="pagination-wrapper">
-                    <ul class="pagination"></ul>
-                </div>
-        <div class="btn_area">
-            <ul class="adm_btns">
-                                                            </ul>
-            <a href="write%3Fbo_table=table44.html" class="btn_type01 w_btn">글쓰기</a>        </div>
 
-    </form>
+        <div id="sh_iframe_wrap">
+            <!-- * 카카오맵 - 지도퍼가기 -->
+            <!-- 1. 지도 노드 -->
+            <div id="daumRoughmapContainer1742170220915" class="root_daum_roughmap root_daum_roughmap_landing"></div>
 
+            <!-- 3. 실행 스크립트 -->
+            <script charset="UTF-8">
+                new daum.roughmap.Lander({
+                    "timestamp" : "1742170220915",
+                    "key" : "2nchq",
+                    "mapWidth" : "640",
+                    "mapHeight" : "360"
+                }).render();
+            </script>
+        </div>
+    </div>
+
+
+    <div class="map_div">
+        <div class="tit_area">
+            <span>ADDRESS</span>
+            <p>영업팀 : 수원시 영통구 대학4로17 에이스광교타워 1차 3층 314-1호</p>
+            <p>전화 : 010-8161-0164</p>
+        </div>
+
+        <div id="sh_iframe_wrap">
+            <!-- * 카카오맵 - 지도퍼가기 -->
+            <!-- 1. 지도 노드 -->
+            <div id="daumRoughmapContainer1760950103931" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+            <!-- 3. 실행 스크립트 -->
+            <script charset="UTF-8">
+                new daum.roughmap.Lander({
+                    "timestamp" : "1760950103931",
+                    "key" : "2ckd4ghnai4u",
+                    "mapWidth" : "640",
+                    "mapHeight" : "360"
+                }).render();
+            </script>
+        </div>
+    </div>
+            
 </div>
-
 
         </div><!-- sh_content -->
    
@@ -397,4 +391,4 @@ $(function() {
 <script src=""></script>
 </html>
 
-<!-- 사용스킨 : sh_basic_res -->
+<!-- 사용스킨 : sh_map_res -->

@@ -6,14 +6,14 @@
 <meta name="format-detection" content="telephone=no">
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>오시는 길 | NeoBH</title>
+<title>공지사항 | NeoBH</title>
 <link rel="shortcut icon" type="image/x-icon" href="/sh_img/hd/top_menu/balhea_logo_black.png">
 <link rel="stylesheet" href="../css/default.css">
 <link rel="stylesheet" href="../sh_img/js/aos.css">
 <link rel="stylesheet" href="../sh_img/hd/top_menu/style.css">
 <link rel="stylesheet" href="../sh_img/hd/aside/style.css">
 <link rel="stylesheet" href="../sh_img/hd/sub_main_banner/style.css">
-<link rel="stylesheet" href="../skin/board/sh_map_res/sh_style.css">
+<link rel="stylesheet" href="../skin/board/sh_basic_res/sh_style.css">
 <link rel="stylesheet" href="../css/user.css">
 <link rel="stylesheet" href="../css/page_style.css">
 <style>
@@ -169,7 +169,7 @@ var g5_bbs_url   = "";
 var g5_is_member = "";
 var g5_is_admin  = "";
 var g5_is_mobile = "";
-var g5_bo_table  = "table21";
+var g5_bo_table  = "table42";
 var g5_sca       = "";
 var g5_editor    = "smarteditor2";
 var g5_cookie_domain = "";
@@ -184,6 +184,7 @@ var g5_cookie_domain = "";
 <script src="../sh_img/js/feather.min.js"></script>
 <script src="../sh_img/js/aos.js"></script>
 <script src="../sh_img/hd/top_menu/script.js"></script>
+<script src="../js/viewimageresize.js"></script>
 </head>
 <body>
 
@@ -192,12 +193,109 @@ var g5_cookie_domain = "";
 <script>
 AOS.init();
 </script>
+<script>
+    let sharedUrl = "";
+    // URL에서 파라미터를 추출하는 함수
+    function getQueryParams() {
+        const params = new URLSearchParams(window.location.search);
+        const param1 = params.get('param1'); // param1 값을 가져옴
+        return { param1 };
+    }
+
+    function goToNotice() {
+        const params = getQueryParams();
+        window.open("about:blank").location.href = `${sharedUrl}`;
+    }
+
+    function escapeHTML(str) {
+        return str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;')
+            .replace(/\n/g, "<br />");
+    }
+
+    function formatFileSize(bytes) {
+        if (bytes >= 1048576) return (bytes / 1048576).toFixed(1) + ' MB';
+        if (bytes >= 1024) return (bytes / 1024).toFixed(1) + ' KB';
+        return bytes + ' B';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const params = getQueryParams();
+        axios.get(`https://api-dev.balhea.kr/homebe/api/notice/posts/${params.param1}`)
+        .then(response => {
+            const params = getQueryParams();
+            document.querySelector("#sh_bo_v .tit").textContent = `${escapeHTML(response.data.haTitle)}`;
+            document.getElementById('date').insertAdjacentHTML('afterend', `${response.data.haCreateDt}`);
+            document.getElementById('update').insertAdjacentHTML('afterend', `${response.data.haUpdateeDt}`);
+            document.getElementById('view').insertAdjacentHTML('afterend', `${response.data.haViews}`);
+            sharedUrl = response.data.haPostUrl;
+
+            // 이미지 출력
+            const imgBox = document.getElementById('bo_v_img');
+            imgBox.innerHTML = '';
+            if(response.data.haImageUrls && response.data.haImageUrls.length > 0) {
+                response.data.haImageUrls.forEach(src => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = "";
+                    img.style.maxWidth = '100%';
+                    img.style.marginBottom = '10px';
+                    imgBox.appendChild(img);
+                });
+            };
+
+            // 텍스트 출력 (XSS 방지 + 줄바꿈 처리)
+            const text = response.data.haText;
+            if(text) {
+                document.getElementById('bo_v_text').innerHTML = `${escapeHTML(text)}`;
+            }
+
+            // 첨부파일 출력
+            const fileBox = document.getElementById('bo_v_file');
+            fileBox.innerHTML = ''; // 기존 내용 초기화
+
+            if(response.data.haAttachmentsUrls && response.data.haAttachmentsUrls.length > 0) {
+                const heading = document.createElement('h4');
+                heading.textContent = '첨부파일';
+                fileBox.appendChild(heading);
+
+                const ul = document.createElement('ul');
+
+                response.data.haAttachmentsUrls.forEach(file => {
+                    const li = document.createElement('li');
+
+                    const a = document.createElement('a');
+                    a.href = file.url;
+                    a.download = file.name;
+                    a.textContent = `📎 ${file.name} `;
+
+                    const span = document.createElement('span');
+                    span.textContent = `(${formatFileSize(file.size || 0)})`;
+                    span.style.color = 'gray';
+                    span.style.fontSize = '0.9em';
+
+                    a.appendChild(span);
+                    li.appendChild(a);
+                    ul.appendChild(li);
+                });
+                fileBox.appendChild(ul);
+            }
+        })
+        .catch(error => {
+            console.error('데이터 로드 실패:', error);
+        });
+    });
+</script>
 <div id="sh_wrapper">
 	<!-- 상단 시작 { -->
 	<div id="sh_hd">	
         <div class="sh_lnb_bg"></div>
-		<h1 id="hd_h1">경기 부천시 원미구 신흥로 223 신중동역 랜드마크 푸르지오 시티 101동 오피스 49층 > 오시는 길</h1>
-		<div id="skip_to_container"><a href="board%3Fbo_table=table21.html#sh_container">본문 바로가기</a></div>
+		<h1 id="hd_h1">공지사항</h1>
+		<div id="skip_to_container"><a href="bo_table42.html#sh_container">본문 바로가기</a></div>
 				<div id="sh_hd_wrapper">
 			
 <div id="app-sub-menu"></div>
@@ -213,117 +311,73 @@ AOS.init();
 <div id="shSnb">
     <ul>
     	<li><a href="/">홈</a></li>
-                <li >
-            <a href="../sh_page/page6.html">인사말</a>
-        </li>
-                <li >
-            <a href="../sh_page/page7.html">회사연혁</a>
-        </li>
-        <li><a href="/sh_page/page13.html">인증서</a></li>
-                <li >
-            <a href="../sh_page/page8.html">조직도</a>
-        </li>
                 <li class='on'>
-            <a href="board%3Fbo_table=table21.html">오시는 길</a>
+            <a href="bo_table42.html">공지사항</a>
+        </li>
+        <li>
+            <a href="bo_table45.html">뉴스</a>
+        </li>
+                <li >
+            <a href="bo_table44.html">채용</a>
         </li>
             </ul>
 </div></div>
 			
 <div id="shSubBnr">
-	<p><span>오시는 길</span></p>
-    <div class="bg" data-aos="fade-in" data-aos-duration="800" style="background-image:url(../sh_img/hd/sub_main_banner/bg_10.jpg);"></div>
+	<p><span>소식</span></p>
+    <div class="bg" data-aos="fade-in" data-aos-duration="800" style="background-image:url(../sh_img/hd/sub_main_banner/bg_14.jpg);"></div>
 </div>
 
 <script>
 $(document).ready(function(){
     $('#shSubBnr p span').delay(0).animate({"bottom":"0","opacity":"1"},600);
 });
-</script>            <div id="sh_content2">
+</script>            <div id="sh_content">
 					
 
-<div id="sh_map_v">
-    <div class="map_div">
-        <div class="tit_area">
-            <span>ADDRESS</span>
-            <p>본사 : 김포시 고촌읍 전호로 32 1동,2동</p>
-                        <p>전화 : 031-987-3069</p>
-        </div>
-
-        <div id="sh_iframe_wrap">
-            <!-- * 카카오맵 - 지도퍼가기 -->
-            <!-- 1. 지도 노드 -->
-            <div id="daumRoughmapContainer1742170136603" class="root_daum_roughmap root_daum_roughmap_landing"></div>
-
-            <!--
-                2. 설치 스크립트
-                * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
-            -->
-            <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
-
-            <!-- 3. 실행 스크립트 -->
-            <script charset="UTF-8">
-                new daum.roughmap.Lander({
-                    "timestamp" : "1742170136603",
-                    "key" : "2nchp",
-                    "mapWidth" : "640",
-                    "mapHeight" : "360"
-                }).render();
-            </script>
-        </div>
+<section id="sh_bo_v">
+	<p class="tit"></p>
+    
+    <div class="info">
+    	<p><b>작성자</b><span class="sv_member">관리자</span></p>
+        <ul>
+            <li><b id="date">등록일</b></li>		
+            <li><b id="update">수정일</b></li>		
+            <li><b id="view">조회</b></li>
+        </ul>
     </div>
-
-    <div class="map_div">
-        <div class="tit_area">
-            <span>ADDRESS</span>
-            <p>AI 연구동 : 서울특별시 강남구 언주로87길6 901호</p>
-            <p>전화 : 010-5182-9660</p>
-        </div>
-
-        <div id="sh_iframe_wrap">
-            <!-- * 카카오맵 - 지도퍼가기 -->
-            <!-- 1. 지도 노드 -->
-            <div id="daumRoughmapContainer1742170220915" class="root_daum_roughmap root_daum_roughmap_landing"></div>
-
-            <!-- 3. 실행 스크립트 -->
-            <script charset="UTF-8">
-                new daum.roughmap.Lander({
-                    "timestamp" : "1742170220915",
-                    "key" : "2nchq",
-                    "mapWidth" : "640",
-                    "mapHeight" : "360"
-                }).render();
-            </script>
-        </div>
+    
+	<ul class="bo_ul">
+                                 
+        	</ul>
+    
+    <div id="bo_v_atc" class="bo_cont">
+        <p class="sound_only">본문</p>
+        <div id="bo_v_img"></div>
+        <div id="bo_v_text"></div>
+        <div id="bo_v_file"></div>
     </div>
+    
+	    <!-- <ul class="v_page">
+        <li><span><i class="fa fa-angle-up"></i></span><a href="bo_table42.html">하반기 결산 안내</a></li>            </ul> -->
+    
+    <div class="btn_area">
+                <ul class="left">
+                    <li><button class="btn_line" onclick="goToNotice()">뉴스 바로가기</button></li>
+                                </ul>
+        <ul class="right">
+            <li><a href="bo_table42.html" class="btn_line"> 목록</a></li>
+			                    </ul>
+            </div>
+    
+</section>
 
-
-    <div class="map_div">
-        <div class="tit_area">
-            <span>ADDRESS</span>
-            <p>영업팀 : 수원시 영통구 대학4로17 에이스광교타워 1차 3층 314-1호</p>
-            <p>전화 : 010-8161-0164</p>
-        </div>
-
-        <div id="sh_iframe_wrap">
-            <!-- * 카카오맵 - 지도퍼가기 -->
-            <!-- 1. 지도 노드 -->
-            <div id="daumRoughmapContainer1760950103931" class="root_daum_roughmap root_daum_roughmap_landing"></div>
-
-            <!-- 3. 실행 스크립트 -->
-            <script charset="UTF-8">
-                new daum.roughmap.Lander({
-                    "timestamp" : "1760950103931",
-                    "key" : "2ckd4ghnai4u",
-                    "mapWidth" : "640",
-                    "mapHeight" : "360"
-                }).render();
-            </script>
-        </div>
-    </div>
-            
-</div>
-
-        </div><!-- sh_content -->
+<script>
+$(function() {
+    // 이미지 리사이즈
+    $("#bo_v_atc").viewimageresize();
+});
+</script>        </div><!-- sh_content -->
    
 	</div><!-- sh_container_wrapper --> 
 </div><!-- sh_container -->
@@ -391,4 +445,4 @@ $(function() {
 <script src=""></script>
 </html>
 
-<!-- 사용스킨 : sh_map_res -->
+<!-- 사용스킨 : sh_basic_res -->

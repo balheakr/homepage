@@ -6,7 +6,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>무료 홈페이지 제작 어떻게 가능한가요? > 문의사항 | NeoBH</title>
+<title>채용 목록 | NeoBH</title>
 <link rel="shortcut icon" type="image/x-icon" href="/sh_img/hd/top_menu/balhea_logo_black.png">
 <link rel="stylesheet" href="../css/default.css">
 <link rel="stylesheet" href="../sh_img/js/aos.css">
@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="../skin/board/sh_basic_res/sh_style.css">
 <link rel="stylesheet" href="../css/user.css">
 <link rel="stylesheet" href="../css/page_style.css">
+<link rel="stylesheet" href="/css/pagination.css">
 <style>
 @import url(https://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 @import url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
@@ -169,7 +170,7 @@ var g5_bbs_url   = "";
 var g5_is_member = "";
 var g5_is_admin  = "";
 var g5_is_mobile = "";
-var g5_bo_table  = "table43";
+var g5_bo_table  = "table44";
 var g5_sca       = "";
 var g5_editor    = "smarteditor2";
 var g5_cookie_domain = "";
@@ -184,7 +185,6 @@ var g5_cookie_domain = "";
 <script src="../sh_img/js/feather.min.js"></script>
 <script src="../sh_img/js/aos.js"></script>
 <script src="../sh_img/hd/top_menu/script.js"></script>
-<script src="../js/viewimageresize.js"></script>
 </head>
 <body>
 
@@ -197,8 +197,8 @@ AOS.init();
 	<!-- 상단 시작 { -->
 	<div id="sh_hd">	
         <div class="sh_lnb_bg"></div>
-		<h1 id="hd_h1">무료 홈페이지 제작 어떻게 가능한가요? > 문의사항</h1>
-		<div id="skip_to_container"><a href="board%3Fbo_table=table43&amp;wr_id=1.html#sh_container">본문 바로가기</a></div>
+		<h1 id="hd_h1">사내소식 1 페이지</h1>
+		<div id="skip_to_container"><a href="bo_table44.html#sh_container">본문 바로가기</a></div>
 				<div id="sh_hd_wrapper">
 			
 <div id="app-sub-menu"></div>
@@ -214,20 +214,20 @@ AOS.init();
 <div id="shSnb">
     <ul>
     	<li><a href="/">홈</a></li>
-                <li >
-            <a href="board%3Fbo_table=table42.html">공지사항</a>
+        <li >
+            <a href="bo_table42.html">공지사항</a>
         </li>
         <li>
-            <a href="board%3Fbo_table=table45.html">뉴스</a>
+            <a href="bo_table45.html">뉴스</a>
         </li>
                 <li class='on'>
-            <a href="board%3Fbo_table=table44.html">채용</a>
+            <a href="bo_table44.html">채용</a>
         </li>
             </ul>
 </div></div>
 			
 <div id="shSubBnr">
-	<p><span>소식</span></p>
+	<p><span>채용</span></p>
     <div class="bg" data-aos="fade-in" data-aos-duration="800" style="background-image:url(../sh_img/hd/sub_main_banner/bg_14.jpg);"></div>
 </div>
 
@@ -238,51 +238,130 @@ $(document).ready(function(){
 </script>            <div id="sh_content">
 					
 
-<section id="sh_bo_v">
-	<p class="tit">
-		        무료 홈페이지 제작 어떻게 가능한가요?	</p>
-    
-    <div class="info">
-    	<p><b>작성자</b><span class="sv_member">최고관리자</span></p>
-        <ul>
-            <li><b>등록일</b> 22-12-05</li>		
-            <li><b>조회</b>86회</li>
-        </ul>
-    </div>
-    
-	<ul class="bo_ul">
-                                 
-        	</ul>
-    
-    <div id="bo_v_atc" class="bo_cont">
-        <p class="sound_only">본문</p>
+<div id="sh_bo_list">
+
         
-		<div id="bo_v_img">
+    <!-- <div class="list_top">
+		        <fieldset id="sh_bo_sch">
+            <legend>게시물 검색</legend>
+            <form name="fsearch" method="get">
+            <input type="hidden" name="bo_table" value="table44">
+            <input type="hidden" name="sca" value="">
+            <input type="hidden" name="sop" value="and">
+            <label for="sfl" class="sound_only">검색대상</label>
+            <select name="sfl" id="sfl">
+                <option value="wr_subject">제목</option>
+                <option value="wr_content">내용</option>
+                <option value="wr_subject||wr_content">제목+내용</option>
+                <option value="wr_name,1">글쓴이</option>
+            </select>
+            <label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
+            <input type="text" name="stx" value="" required id="stx" class="sch_input" size="25" maxlength="20">
+            <input type="image" src="../img/sh_search.png" alt="검색" name="submit" value="submit" />
+            </form>
+        </fieldset>        
+    </div> -->
+
+    <form name="fboardlist" id="fboardlist" action="" onsubmit="return fboardlist_submit(this);" method="post">
+        <input type="hidden" name="bo_table" value="table44">
+        <input type="hidden" name="sfl" value="">
+        <input type="hidden" name="stx" value="">
+        <input type="hidden" name="spt" value="">
+        <input type="hidden" name="sca" value="">
+        <input type="hidden" name="sst" value="wr_num, wr_reply">
+        <input type="hidden" name="sod" value="">
+        <input type="hidden" name="page" value="1">
+        <input type="hidden" name="sw" value="">
+
+        <div id="sh_list_tbl" class="sh_tbl_common">
+            <table cellpadding="0" cellspacing="0">
+                <caption class="sound_only">채용 목록</caption>
+                <thead>
+                    <tr>
+                        <th class="num" scope="col">No</th>
+                        <th scope="col">제목</th>
+                        <th scope="col">조회수</th>
+                        <th class="name"scope="col">작성자</th>
+                        <th scope="col">등록일</th>
+                    </tr>
+                </thead>
+                <tbody class="test_list"></tbody>
+                <script type="module">
+                    import axios from 'https://cdn.jsdelivr.net/npm/axios@1.6.8/+esm';
+                    import { initPagination } from '/js/pagination.js';
+
+                    function escapeHTML(str) {
+                        return str
+                            .replace(/&/g, '&amp;')
+                            .replace(/</g, '&lt;')
+                            .replace(/>/g, '&gt;')
+                            .replace(/"/g, '&quot;')
+                            .replace(/'/g, '&#039;')
+                            .replace(/\n/g, "<br />");
+                    }
+
+                    function formatFileSize(bytes) {
+                        if (bytes >= 1048576) return (bytes / 1048576).toFixed(1) + ' MB';
+                        if (bytes >= 1024) return (bytes / 1024).toFixed(1) + ' KB';
+                        return bytes + ' B';
+                    }
+
+                    document.addEventListener('DOMContentLoaded', function() {
+                        axios.get(`https://api-dev.balhea.kr/homebe/api/recruit/posts`)
+                        .then(response => {
+                            if(response.data.content.length != 0) {
+                                initPagination({
+                                    data: response.data.content,
+                                    containerSelector: '.test_list',
+                                    paginationSelector: '.pagination',
+                                    itemsPerPage: 10,
+                                    pageGroupSize: 5,
+                                    useLocalStorage: true,
+                                    localStorageKey: 'lastPage-table44',
+                                    renderItem: (data) => `
+                                        <tr>
+                                            <td style="text-align: center;width: 8vw">${data.haSn}</td>
+                                            <td style="padding: 10px 20px;min-width: 30vw"><a href="/bbs/board?bo_table=table44_detail.html?param1=${data.haSn}">${escapeHTML(data.haTitle)}</a></td>
+                                            <td style="text-align: center;width: 8vw">${data.haViews}</td>
+                                            <td style="text-align: center;width: 10vw">${data.haWriterName}</td>
+                                            <td style="text-align: center;width: 12vw">${data.hn_create_dt}</td>
+                                        </tr>
+                                    `
+                                });
+                            } else {
+                                const tr = document.createElement('tr');
+                                const td = document.createElement('td');
+                                td.colSpan = 5;
+                                td.style.textAlign = 'center';
+                                td.textContent = '조회된 목록이 없습니다.';
+                                tr.appendChild(td);
+                                document.querySelector('.test_list').appendChild(tr);
+                            }
+                        })
+                        .catch(error => {
+                            console.error('데이터 로드 실패:', error);
+                            const tr = document.createElement('tr');
+                            const td = document.createElement('td');
+                            td.colSpan = 5;
+                            td.style.textAlign = 'center';
+                            td.textContent = '조회된 목록이 없습니다.';
+                            tr.appendChild(td);
+                            document.querySelector('.test_list').appendChild(tr);
+                        });
+                    });
+                </script>
+            </table>
+        </div>
+        <div class="pagination-wrapper">
+            <ul class="pagination"></ul>
+        </div>
+
+    </form>
+
 </div>
-		<p>현대이지웹의 무료제작으로 등록된 모든 홈페이지는 무료 제작이 가능합니다.</p><p>사이트제작의 앞선 기술로 사이트 수정 및 세팅이 빠르고 정확합니다.<br /></p><p>고급형 부터 무료형까지 모든 사이트는 웹호스팅+도메인(1년 150,000원)가격이 필수 입니다.<br /></p><p>현대이지웹에서는 고객님들의 기업 성격에 맞는 디자인을 선택해주시면 로고, 문구, 내용, 제품안내 등 을 수정하여 납품합니다.<br /></p><p>현대이지웹에서는 웹호스팅 가격으로 수입창출을 합니다.<br /></p><p>* 타 기업의 무료제작 후 비싼 호스팅 및 관리비용이 아닌 거품없는 저렴한 가격으로 제공합니다.<br /></p><p><br /></p><p>웹호스팅이란?<br /></p><p>제작이 끝난 홈페이지의 모든 이미지 내용들은 서버라는 컴퓨터에 저장이 되어야만 전국 전세계 어디서든 볼수 있습니다. <br /></p><p>이 서버라는 컴퓨터의 저장공간 임대 비용을 웹호스팅 이라합니다.<br /></p>    </div>
 
-        
-            
-    
-	    <ul class="v_page">
-        <li><span><i class="fa fa-angle-up"></i></span><a href="board%3Fbo_table=table43&amp;wr_id=2.html">디자인 시안에서만 결정하는 경우 중복되는 사이트가 많지 않을까요?</a></li>            </ul>
-    
-    <div class="btn_area">
-                <ul class="left">
-                                </ul>
-        <ul class="right">
-            <li><a href="board%3Fbo_table=table43.html" class="btn_line"> 목록</a></li>
-			                    </ul>
-            </div>
-    
-</section>
 
-<script>
-$(function() {
-    // 이미지 리사이즈
-    $("#bo_v_atc").viewimageresize();
-});
-</script>        </div><!-- sh_content -->
+        </div><!-- sh_content -->
    
 	</div><!-- sh_container_wrapper --> 
 </div><!-- sh_container -->

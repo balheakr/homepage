@@ -6,7 +6,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>공지사항 | NeoBH</title>
+<title>채용 | NeoBH</title>
 <link rel="shortcut icon" type="image/x-icon" href="/sh_img/hd/top_menu/balhea_logo_black.png">
 <link rel="stylesheet" href="../css/default.css">
 <link rel="stylesheet" href="../sh_img/js/aos.css">
@@ -169,7 +169,7 @@ var g5_bbs_url   = "";
 var g5_is_member = "";
 var g5_is_admin  = "";
 var g5_is_mobile = "";
-var g5_bo_table  = "table42";
+var g5_bo_table  = "table44";
 var g5_sca       = "";
 var g5_editor    = "smarteditor2";
 var g5_cookie_domain = "";
@@ -202,7 +202,7 @@ AOS.init();
         return { param1 };
     }
 
-    function goToNotice() {
+    function goToRecruit() {
         const params = getQueryParams();
         window.open("about:blank").location.href = `${sharedUrl}`;
     }
@@ -225,7 +225,7 @@ AOS.init();
 
     document.addEventListener('DOMContentLoaded', function() {
         const params = getQueryParams();
-        axios.get(`https://api-dev.balhea.kr/homebe/api/notice/posts/${params.param1}`)
+        axios.get(`https://api-dev.balhea.kr/homebe/api/recruit/posts/${params.param1}`)
         .then(response => {
             const params = getQueryParams();
             document.querySelector("#sh_bo_v .tit").textContent = `${escapeHTML(response.data.haTitle)}`;
@@ -294,8 +294,8 @@ AOS.init();
 	<!-- 상단 시작 { -->
 	<div id="sh_hd">	
         <div class="sh_lnb_bg"></div>
-		<h1 id="hd_h1">공지사항</h1>
-		<div id="skip_to_container"><a href="board%3Fbo_table=table42.html#sh_container">본문 바로가기</a></div>
+		<h1 id="hd_h1">채용</h1>
+		<div id="skip_to_container"><a href="bo_table44.html#sh_container">본문 바로가기</a></div>
 				<div id="sh_hd_wrapper">
 			
 <div id="app-sub-menu"></div>
@@ -311,14 +311,14 @@ AOS.init();
 <div id="shSnb">
     <ul>
     	<li><a href="/">홈</a></li>
-                <li class='on'>
-            <a href="board%3Fbo_table=table42.html">공지사항</a>
+                <li>
+            <a href="bo_table42.html">공지사항</a>
         </li>
         <li>
-            <a href="board%3Fbo_table=table45.html">뉴스</a>
+            <a href="bo_table45.html">뉴스</a>
         </li>
-                <li >
-            <a href="board%3Fbo_table=table44.html">채용</a>
+                <li class='on'>
+            <a href="bo_table44.html">채용</a>
         </li>
             </ul>
 </div></div>
@@ -359,14 +359,14 @@ $(document).ready(function(){
     </div>
     
 	    <!-- <ul class="v_page">
-        <li><span><i class="fa fa-angle-up"></i></span><a href="board%3Fbo_table=table42.html">하반기 결산 안내</a></li>            </ul> -->
+        <li><span><i class="fa fa-angle-up"></i></span><a href="bo_table44.html">하반기 결산 안내</a></li>            </ul> -->
     
     <div class="btn_area">
                 <ul class="left">
-                    <li><button class="btn_line" onclick="goToNotice()">뉴스 바로가기</button></li>
+                    <li><button class="btn_line" onclick="goToRecruit()">채용 바로가기</button></li>
                                 </ul>
         <ul class="right">
-            <li><a href="board%3Fbo_table=table42.html" class="btn_line"> 목록</a></li>
+            <li><a href="bo_table44.html" class="btn_line"> 목록</a></li>
 			                    </ul>
             </div>
     

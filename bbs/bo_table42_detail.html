@@ -231,7 +231,7 @@ AOS.init();
             const params = getQueryParams();
             document.querySelector("#sh_bo_v .tit").textContent = `${escapeHTML(response.data.haTitle)}`;
             document.getElementById('date').insertAdjacentHTML('afterend', `${response.data.haCreateDt.slice(0,10)}`);
-            document.getElementById('update').insertAdjacentHTML('afterend', `${response.data.haUpdateeDt.slice(0,10) || ""}`);
+            document.getElementById('update').insertAdjacentHTML('afterend', `${response.data.haUpdateeDt?.slice(0,10) || ""}`);
             document.getElementById('view').insertAdjacentHTML('afterend', `${response.data.haViews}`);
             sharedUrl = response.data.haPostUrl;
 
@@ -325,7 +325,7 @@ AOS.init();
 </div></div>
 			
 <div id="shSubBnr">
-	<p><span>소식</span></p>
+	<p><span>공지사항</span></p>
     <div class="bg" data-aos="fade-in" data-aos-duration="800" style="background-image:url(../sh_img/hd/sub_main_banner/bg_14.jpg);"></div>
 </div>
 

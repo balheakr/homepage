@@ -306,7 +306,7 @@ $(document).ready(function(){
                     }
 
                     document.addEventListener('DOMContentLoaded', function() {
-                        axios.get(`https://api-dev.balhea.kr/homebe/post/news`)
+                        axios.get(`https://api-dev.balhea.kr/homebe/api/news/posts`)
                         .then(response => {
                             if(response.data.content.length != 0) {
                                 initPagination({

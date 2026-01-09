@@ -31,6 +31,7 @@
 .p6 .cont .sign span{padding-left:5px;font-size:26px;color:#333;font-family:'Nanum Pen Script'}
 
 /* 회사 연혁 */
+.p7{position:relative;width:80%;min-height:500px;margin:0 auto;font-family:'notokr-medium';}
 .p7 .tit_area span{padding-bottom:10px}
 .p7 .tit_area p{font-size:24px}
 .p7 .history{padding:15px 0 0 35px;margin-left:30px;border-left:1px dashed #e1e1e1}
@@ -41,8 +42,10 @@
 .p7 .history dl dd span{float:left;padding-right:20px;color:#333;font-family:'notokr-medium'}
 
 /* 조직도 */
-.p8{position:relative;width:80%;min-height:500px;margin:0 auto;background:url(../sh_page/img/ceo.png) no-repeat;font-family:'notokr-medium';background-size: contain;}
-.p8 ul{display: none;}
+.p8{position:relative;width:80%;min-height:500px;margin:0 auto;font-family:'notokr-medium';}
+.p8 .img_area{margin-bottom:30px;text-align:center}
+.p8 .img_area img{margin: 40px auto;width: 80%;max-width: 800px;}
+.p8 .bg{display: none;}
 .p8 li{position:absolute;padding:10px 0;width:123px;height:20px;line-height:20px;color:#222;text-align:center;background-color:#f2f2f2;box-sizing:content-box!important}
 .p8 .ceo{top:20px;left:338px;width:144px ;height:30px;background-color:#7e5f4b;font-size:17px;line-height:30px;color:#fff}
 .p8 .b_1{top:101px;left:185px;color:#fff;background-color:#a1a1a1}
@@ -187,6 +190,7 @@
 }
 
 /* 제품 소개 */
+.p12{position:relative;width:80%;min-height:500px;margin:0 auto;font-family:'notokr-medium';}
 .p12 .img_area{margin-bottom:30px;text-align:center;}
 .p12 .img_area li{display:inline-block;position:relative;width:18.6%;padding:50px 0;margin:0 5px 15px;border:1px solid #e1e1e1}
 .p12 .img_area li p{font-size:18px;color:#333;font-family:'notokr-medium'} 
@@ -199,11 +203,12 @@
 .p12 .txt_area li b{font-weight:normal;color:#222;text-decoration:underline}
 
 /* 인증서 */
+.p13{position:relative;width:80%;min-height:500px;margin:0 auto;font-family:'notokr-medium';}
 .p13 .img_area{margin-bottom:30px;text-align:center}
 .p13 .img_area li{display:inline-block;position:relative;width:18.6%;padding:50px 0;margin:0 5px 15px;border:1px solid #e1e1e1}
 .p13 .img_area li p{font-size:18px;color:#333;font-family:'notokr-medium'} 
 .p13 .img_area li:before{display:block;content:"";position:absolute;left:0;top:56px;width:8px;height:14px;background-color:#ddd}
-.p13 .img_area img{margin: 40px auto;width: 80%;max-width: 800px;}
+.p13 .img_area img{margin: 40px auto;width: 40%;max-width: 400px;}
 .p13 .txt_area{padding-left:15px}
 .p13 .txt_area li{overflow:hidden;margin-bottom:50px}
 .p13 .txt_area li p{margin-bottom:15px;padding-bottom:15px;border-bottom:1px dashed #e1e1e1;font-size:20px;color:#222;font-family:'notokr-medium'}

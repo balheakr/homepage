@@ -8,6 +8,7 @@
 
 /* 로고 */
 #shGnb .sh_logo{position:relative;z-index:20}
+#shGnb .sh_logo img{max-width: 140px}
 
 /* 대분류  */
 #shGnb .sh_nav{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:max-content}
@@ -34,6 +35,7 @@
 /* 로고 */
 #m_logo{position:relative}
 #m_logo a{display:inline-block}
+#m_logo img{max-width: 140px;}
 /* 상단 버튼 및 오픈메뉴 */
 #m_navBtn{position:absolute;top:12px;right:15px;z-index:5;width:30px;height:30px;align-content: center;}
 #m_navBtn span{display:block;position:relative;top:50%;transform:translateY(-50%);width:100%;height:2px}

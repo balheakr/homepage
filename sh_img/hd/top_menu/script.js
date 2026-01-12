@@ -1,7 +1,7 @@
 ﻿$(document).ready(function(){
 	$(".sh_nav").mouseenter(function(){
 		$("#shGnb.main").addClass("on");
- 		$("#shGnb.main .sh_logo img").attr("src","/sh_img/hd/top_menu/balhea_logo_black.png");
+ 		$("#shGnb.main .sh_logo img").attr("src","/sh_img/hd/top_menu/NEO-BH_RGB_White.png");
 	 	$(".sh_lnb_s").fadeIn(200);
 		$(".sh_lnb_bg").fadeIn(200);	
 	}).mouseleave(function(){

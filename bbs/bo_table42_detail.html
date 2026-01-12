@@ -229,7 +229,7 @@ AOS.init();
         axios.get(`https://api-dev.balhea.kr/homebe/api/notice/posts/${params.param1}`)
         .then(response => {
             const params = getQueryParams();
-            document.querySelector("#sh_bo_v .tit").textContent = `${escapeHTML(response.data.haTitle)}`;
+            document.querySelector("#sh_bo_v .tit").textContent = `${response.data.haTitle}`;
             document.getElementById('date').insertAdjacentHTML('afterend', `${response.data.haCreateDt.slice(0,10)}`);
             document.getElementById('update').insertAdjacentHTML('afterend', `${response.data.haUpdateDt?.slice(0,10) || ""}`);
             document.getElementById('view').insertAdjacentHTML('afterend', `${response.data.haViews}`);

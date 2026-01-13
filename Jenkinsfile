@@ -64,7 +64,7 @@ pipeline {
 
                 # 4) ZIP 아티팩트 업로드
                 curl -s --data-binary @release.zip \
-                -H "Authorization: token ${PORTAL_FE_RELEASE_TOKEN}" \
+                -H "Authorization: Bearer ${PORTAL_FE_RELEASE_TOKEN}" \
                 -H "Content-Type: application/zip" \
                 "${FULL_URL}?name=release.zip"
             '''

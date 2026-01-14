@@ -290,6 +290,7 @@ $(document).ready(function(){
                 <script type="module">
                     import axios from 'https://cdn.jsdelivr.net/npm/axios@1.6.8/+esm';
                     import { initPagination } from '/js/pagination.js';
+                    import api from '/js/api.js';
 
                     function escapeHTML(str) {
                         return str
@@ -308,7 +309,7 @@ $(document).ready(function(){
                     }
 
                     document.addEventListener('DOMContentLoaded', function() {
-                        axios.get(`https://api-dev.balhea.kr/homebe/api/notice/posts`)
+                        api.get(`/notice/posts`)
                         .then(response => {
                             if(response.data.length != 0) {
                                 initPagination({

@@ -195,6 +195,8 @@ var g5_cookie_domain = "";
 AOS.init();
 </script>
 <script>
+    import api from '/js/api.js';
+
     let sharedUrl = "";
     // URL에서 파라미터를 추출하는 함수
     function getQueryParams() {
@@ -226,7 +228,7 @@ AOS.init();
 
     document.addEventListener('DOMContentLoaded', function() {
         const params = getQueryParams();
-        axios.get(`https://api-dev.balhea.kr/homebe/api/notice/posts/${params.param1}`)
+        api.get(`/notice/posts/${params.param1}`)
         .then(response => {
             const params = getQueryParams();
             document.querySelector("#sh_bo_v .tit").textContent = `${response.data.haTitle}`;

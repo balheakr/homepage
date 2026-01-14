@@ -250,50 +250,33 @@ $(document).ready(function(){
             <table cellpadding="0" cellspacing="0" summary="문의하기 글쓰기">
                 <caption class="sound_only">문의하기 글쓰기</caption>
                 <tbody>
-                                                            <tr>
-                        <th><label for="wr_name">이름</label></th>
-                        <td><input type="text" name="wr_name" value="" id="wr_name" required class="sh_input required" placeholder="이름"></td>
+                    <tr>
+                        <th><label for="wr_company">회사명</label></th>
+                        <td><input type="text" name="wr_company" value="" id="wr_company" required class="sh_input required" placeholder="회사명"></td>
+                        <th><label for="wr_name">성함</label></th>
+                        <td><input type="text" name="wr_name" value="" id="wr_name" required class="sh_input required" placeholder="성함"></td>
                     </tr>         
                     <tr>
                         <th><label for="sh_phone">연락처</label></th>
                         <td><input type="text" required class="sh_input required" name="sh_phone" id="sh_phone" maxlength="12" value="" placeholder="연락처" onkeyup='Num_ck(this);'></td>
-                    </tr>
-                                        <tr>
                         <th><label for="wr_email">이메일</label></th>
                         <td><input type="text" name="wr_email" value="" id="wr_email" class="sh_input email required" placeholder="이메일" maxlength="100"></td>
                     </tr>
-                    
-                                        
-                                        
-                                                            <tr>
+                    <tr>
                         <th><label for="wr_subject">제목<strong class="sound_only">필수</strong></label></th>
-                        <td><input type="text" name="wr_subject" value="" id="wr_subject" required class="sh_input full_input required" maxlength="255"></td>
+                        <td colspan=3><input type="text" name="wr_subject" value="" id="wr_subject" required class="sh_input full_input required" maxlength="255"></td>
                     </tr>
                     <tr>
                         <th><label for="wr_content">내용<strong class="sound_only">필수</strong></label></th>
-                        <td class="wr_content"><span class="sound_only">웹에디터 시작</span>
+                        <td class="wr_content" colspan=3><span class="sound_only">웹에디터 시작</span>
 <script src="../plugin/editor/smarteditor2/js/service/HuskyEZCreator.js"></script>
 <script src="../plugin/editor/smarteditor2/config.js"></script>
 <textarea id="wr_content" name="wr_content" class="smarteditor2" maxlength="65536" style="width:100%;height:300px"></textarea>
 <span class="sound_only">웹 에디터 끝</span></td>
                     </tr>
-                                                            <tr>
-                        <th>파일 #1</th>
-                        <td>
-                            <label for="sh_file1" class="sound_only">파일 #1</label>
-                            <input type="file" name="bf_file[]" title="파일첨부 1 : 용량 1,048,576 바이트 이하만 업로드 가능" class="frm_file sh_input" id="sh_file1">
-                                                    </td>
-                    </tr>
-                                        <tr>
-                        <th>파일 #2</th>
-                        <td>
-                            <label for="sh_file2" class="sound_only">파일 #2</label>
-                            <input type="file" name="bf_file[]" title="파일첨부 2 : 용량 1,048,576 바이트 이하만 업로드 가능" class="frm_file sh_input" id="sh_file2">
-                                                    </td>
-                    </tr>
-                                                            <tr>
-                        <td colspan="2">
-                            <label for="privacy" class="sound_only">개인정보취급방침</label>
+                    <tr>
+                        <th><label for="privacy">개인정보취급방침</label></th>
+                        <td colspan="3">
                             <textarea readonly class="sh_input txtarea privacy" id="privacy">해당 홈페이지에 맞는 개인정보처리방침을 입력합니다.</textarea>
                             <div class="agr_area">
                                 <p><span class="ps">(필수)</span> 개인정보취급방침 내용에 동의합니다. </p>

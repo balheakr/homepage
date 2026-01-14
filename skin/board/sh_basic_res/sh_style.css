@@ -121,13 +121,15 @@ a.btn_line{display:inline-block;vertical-align:top;width:75px;height:55px;border
 /* 라이트 */
 #sh_write_tbl label{font-size:15px}
 #sh_write_tbl th{width:16%;padding:10px 0;line-height:1.6;background-color:#f5f6f8}
-#sh_write_tbl td{padding:10px 0 10px 10px}
+#sh_write_tbl td{padding:10px 0}
 #sh_write_tbl .cate_wrap{display:inline-block;position:relative;min-width:181px;padding-left:10px;border-radius:2px;border:1px solid #e1e1e1}
 #sh_write_tbl .cate_wrap:after{content:"\f107";position:absolute;right:10px;top:6px;font-size:15px;font-family:'fontawesome'}
 #sh_write_tbl .sh_select{min-width:160px;height:40px;border:none;font-size:15px;color:#777;-webkit-appearance:none;-moz-appearance:none;appearance:none;font-family:'notokr-regular'}
 #sh_write_tbl .sh_select:focus, #sh_write_tbl .sh_select:active{border:none!important}
-#sh_write_tbl .sh_input{height:40px;padding:0 20px 0 12px;border:1px solid #e1e1e1;border-radius:2px;font-size:15px;color:#777;font-family:'notokr-regular'}
+#sh_write_tbl .sh_input{height:40px;padding:0 20px 0 12px;border:1px solid #e1e1e1;border-radius:2px;font-size:15px;color:#777;font-family:'notokr-regular';margin-left: 10px;}
 #sh_write_tbl .sh_input:focus, #sh_write_tbl .sh_input:active{border:1px solid #e1e1e1!important;outline:none}
+#sh_write_tbl .sh_input.full_input{width: 50%;}
+#sh_write_tbl .sh_input.txtarea{margin: 0;}
 #sh_write_tbl .frm_address{margin-top:5px}
 #sh_write_tbl .zip_btn{width:125px;height:40px;margin-left:2px;border:none;border-radius:2px;font-size:14px;color:#fff;background-color:#555;font-family:'notokr-medium'}
 #sh_write_tbl .read{background-color:#f5f6f8}

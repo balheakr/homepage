@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     GITHUB_OWNER = 'balheakr'
-    GITHUB_REPO  = 'homepage-v2'
+    GITHUB_REPO  = 'homepage'
     RELEASE_TAG  = "v${env.BUILD_NUMBER}"
     RELEASE_NAME = "Release ${env.BUILD_NUMBER}"
     RELEASE_BODY = "자동 배포 릴리즈\n빌드 번호: ${env.BUILD_NUMBER}"
@@ -11,7 +11,7 @@ pipeline {
 
   stages {
     stage('Archive ZIP') {
-      when { branch 'main' }
+      when { branch 'neo/main' }
       steps {
         sh '''
           zip -r release.zip . -x "*.git*" "Jenkinsfile" "*.DS_Store" "admin/*"
@@ -20,7 +20,7 @@ pipeline {
     }
 
     stage('Create GitHub Release') {
-      when { branch 'main' }
+      when { branch 'neo/main' }
       steps {
         withCredentials([string(credentialsId: 'portal_fe_release_token', variable: 'PORTAL_FE_RELEASE_TOKEN')]) {
             sh '''
@@ -28,7 +28,7 @@ pipeline {
                 REPO="${GITHUB_OWNER}/${GITHUB_REPO}"
                 TAG="${RELEASE_TAG}"
                 
-                curl -i https://api.github.com/repos/balheakr/homepage-v2 \
+                curl -i https://api.github.com/repos/balheakr/homepage \
                   -H "Authorization: Bearer ${PORTAL_FE_RELEASE_TOKEN}" \
                   -H "Accept: application/vnd.github+json"
 
@@ -37,7 +37,9 @@ pipeline {
                 const data = {
                     tag_name: process.env.RELEASE_TAG,
                     name:     process.env.RELEASE_NAME,
-                    body:     process.env.RELEASE_BODY
+                    body:     process.env.RELEASE_BODY,
+                    target_commitish: "renew/main"
+
                 };
                 console.log(JSON.stringify(data));
                 ' > payload.json

@@ -1,3 +1,5 @@
+import axios from 'https://cdn.jsdelivr.net/npm/axios@1.6.8/+esm';
+
 function getApiBaseUrl() {
     const host = window.location.hostname;
   

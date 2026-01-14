@@ -4,7 +4,7 @@ pipeline {
   environment {
     GITHUB_OWNER = 'balheakr'
     GITHUB_REPO  = 'homepage'
-    RELEASE_TAG  = "v${env.BUILD_NUMBER}"
+    RELEASE_TAG  = "neo-v${env.BUILD_NUMBER}"
     RELEASE_NAME = "Release ${env.BUILD_NUMBER}"
     RELEASE_BODY = "자동 배포 릴리즈\n빌드 번호: ${env.BUILD_NUMBER}"
   }

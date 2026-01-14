@@ -38,7 +38,7 @@ pipeline {
                     tag_name: process.env.RELEASE_TAG,
                     name:     process.env.RELEASE_NAME,
                     body:     process.env.RELEASE_BODY,
-                    target_commitish: "renew/main"
+                    target_commitish: "neo/main"
 
                 };
                 console.log(JSON.stringify(data));

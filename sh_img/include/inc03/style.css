@@ -12,7 +12,7 @@
 #inc03 .latest li .img span{position:absolute;left:0;top:0;z-index:1;width:40px;height:40px;font-size:15px;font-weight:700;line-height:40px;color:#fff;text-align:center;background:#FF5C00;font-family:'poppins',sans-serif}
 #inc03 .latest li .cont{padding-left:35px;color:#777}
 #inc03 .latest li .cont span{font-size:14px;font-weight:600;color:#FF5C00}
-#inc03 .latest li .cont p{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin:5px 0 15px;font-size:19px;font-weight:700;color:#111}
+#inc03 .latest li .cont a{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin:5px 0 15px;font-size:19px;font-weight:700;color:#111}
 #inc03 .latest li .cont div{width:70%;word-break:keep-all}
 #inc03 .bnr_wrap{position:relative;padding-bottom:80px}
 #inc03 .bnr_wrap:before{display:block;content:"";position:absolute;bottom:0;left:0;width:100%;height:280px;background:#121614}
@@ -50,7 +50,7 @@
 #inc03 .latest li .img{height:110px}
 #inc03 .latest li .cont{padding:0 0 0 20px}
 #inc03 .latest li .cont span{font-size:13px}
-#inc03 .latest li .cont p{margin-bottom:5px;font-size:16px}
+#inc03 .latest li .cont a{margin-bottom:5px;font-size:16px}
 #inc03 .bnr{justify-content:flex-start;height:300px}
 #inc03 .bnr .txt{padding:0 0 40px 30px}
 #inc03 .bnr .txt p{margin-bottom:20px;font-size:22px}

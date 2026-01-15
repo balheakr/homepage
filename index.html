@@ -418,8 +418,7 @@ $(function() {
             </div>
         </div>
         <ul class="latest" data-aos="fade-left">
-						
-            <li><a href="/bbs/bo_table42.html">
+            <!-- <li><a href="/bbs/bo_table42.html">
                 <div class="img" style="background-image:url(data/file/table42/thumb-1935566034_I9LWKE8O_7f1fe9eba3f67508ff2b903e7b04c89abb4536b3_250x.jpg)"></div>
                 <div class="cont">
                     <span>2023-08-23</span>
@@ -435,8 +434,59 @@ $(function() {
                     <p>하반기 결산 안내</p>
                     <div>우리 기업의 투명한 운영을 위하여 매 분기 결산 내역을 공개합니다.</div>
                 </div>
-            </a></li>
-			        </ul>
+            </a></li> -->
+        </ul>
+        <script type="module">
+            import axios from 'https://cdn.jsdelivr.net/npm/axios@1.6.8/+esm';
+            import { initPagination } from '/js/pagination.js';
+            import api from '/js/api.js';
+
+            function escapeHTML(str) {
+                return str
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#039;')
+                    .replace(/\n/g, "<br />");
+            }
+
+            function formatFileSize(bytes) {
+                if (bytes >= 1048576) return (bytes / 1048576).toFixed(1) + ' MB';
+                if (bytes >= 1024) return (bytes / 1024).toFixed(1) + ' KB';
+                return bytes + ' B';
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                api.get(`/news/posts`)
+                .then(response => {
+                    if(response.data.length != 0) {
+                        initPagination({
+                            data: response.data,
+                            containerSelector: '.latest',
+                            paginationSelector: '.pagination',
+                            itemsPerPage: 10,
+                            pageGroupSize: 5,
+                            useLocalStorage: true,
+                            localStorageKey: 'lastPage-index',
+                            renderItem: (data) => `
+                                <li>
+                                    <a href="/bbs/bo_table42.html">
+                                        <div class="cont">
+                                            <span>${data.haCreateDt.slice(0,10)}</span>
+                                            <a href="/bbs/bo_table42_detail.html?param1=${data.haSn}">${escapeHTML(data.haTitle)}</a>
+                                        </div>
+                                    </a>
+                                </li>
+                            `
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('데이터 로드 실패:', error);
+                });
+            });
+        </script>
     </div>
     <div class="bnr_wrap">
         <div class="bnr" data-aos="fade-left">

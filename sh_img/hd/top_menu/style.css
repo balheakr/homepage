@@ -20,7 +20,7 @@
 /* 소분류 */
 #shGnb .sh_lnb_s{display:none;position:absolute;left:50%;transform:translateX(-50%);min-width:100%;width:max-content;min-height:145px}
 #shGnb .sh_lnb_s li a{display:block;line-height:1.8;text-align:center;color:#999;transition:all .2s}
-#shGnb .sh_lnb_s li a:hover{color:var(--primary)}
+#shGnb .sh_lnb_s li a:hover{color:#FF5C00}
 
 /* sns */
 #shGnb .sh_tip{margin-left:auto}
@@ -40,7 +40,7 @@
 #m_navBtn{position:absolute;top:12px;right:15px;z-index:5;width:30px;height:30px;align-content: center;}
 #m_navBtn span{display:block;position:relative;top:50%;transform:translateY(-50%);width:100%;height:2px}
 #m_navBtn span:before, #m_navBtn span:after{display:block;content:"";position:absolute;top:-6px;width:30px;height:2px;background-color:#222;-webkit-transition:all .1s;transition:all .1s}
-#m_navBtn span:after{top:6px;width:16px;right:0;background-color:var(--primary)}
+#m_navBtn span:after{top:6px;width:16px;right:0;background-color:#FF5C00}
 #m_navBtn.on{position:fixed}
 #m_navBtn.on span:before{top:0;right:-4px;transform:rotate(45deg)}
 #m_navBtn.on span:after{top:0;right:-4px;width:30px;transform:rotate(-45deg);background-color:#222}

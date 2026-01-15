@@ -171,7 +171,7 @@ var g5_is_admin  = "";
 var g5_is_mobile = "";
 var g5_bo_table  = "table44";
 var g5_sca       = "";
-var g5_editor    = "smarteditor2";
+var g5_editor    = "";
 var g5_cookie_domain = "";
 </script>
 <script src="../js/jquery-1.8.3.min.js"></script>
@@ -184,6 +184,7 @@ var g5_cookie_domain = "";
 <script src="../sh_img/js/feather.min.js"></script>
 <script src="../sh_img/js/aos.js"></script>
 <script src="../sh_img/hd/top_menu/script.js"></script>
+<script src="../js/api.js"></script>
 </head>
 <body>
 
@@ -268,11 +269,9 @@ $(document).ready(function(){
                     </tr>
                     <tr>
                         <th><label for="wr_content">내용<strong class="sound_only">필수</strong></label></th>
-                        <td class="wr_content" colspan=3><span class="sound_only">웹에디터 시작</span>
-<script src="../plugin/editor/smarteditor2/js/service/HuskyEZCreator.js"></script>
-<script src="../plugin/editor/smarteditor2/config.js"></script>
-<textarea id="wr_content" name="wr_content" class="smarteditor2" maxlength="65536" style="width:100%;height:300px"></textarea>
-<span class="sound_only">웹 에디터 끝</span></td>
+                        <td class="wr_content" colspan=3>
+                        <textarea id="wr_content" name="wr_content" class="wr_content" maxlength="65536" style="width:100%;height:300px"></textarea>
+                        </td>
                     </tr>
                     <tr>
                         <th><label for="privacy">개인정보취급방침</label></th>
@@ -296,76 +295,124 @@ $(document).ready(function(){
 </section>
 
 <script>
-function Num_ck(obj) { 
-    var val = obj.value; 
-    if(isNaN(val)) { 
-        alert("숫자만 입력해 주세요"); 
-        obj.value = val.replace(/[^0-9]/gi, ''); 
-    }  
-}
+    function Num_ck(obj) { 
+        var val = obj.value; 
+        if(isNaN(val)) { 
+            alert("숫자만 입력해 주세요"); 
+            obj.value = val.replace(/[^0-9]/gi, ''); 
+        }  
+    }
 
-function fwrite_submit(f){
-        
-    if (!$("#agree").is(":checked")) {
+    function fwrite_submit(f){
+            
+        if (!$("#agree").is(":checked")) {
         alert("개인정보취급방침의 내용에 동의하셔야 작성가능 합니다.");
         return false;
     }
-        
-    var wr_content_editor_data = oEditors.getById['wr_content'].getIR();
-oEditors.getById['wr_content'].exec('UPDATE_CONTENTS_FIELD', []);
-if(jQuery.inArray(document.getElementById('wr_content').value.toLowerCase().replace(/^\s*|\s*$/g, ''), ['&nbsp;','<p>&nbsp;</p>','<p><br></p>','<div><br></div>','<p></p>','<br>','']) != -1){document.getElementById('wr_content').value='';}
-if (!wr_content_editor_data || jQuery.inArray(wr_content_editor_data.toLowerCase(), ['&nbsp;','<p>&nbsp;</p>','<p><br></p>','<p></p>','<br>']) != -1) { alert("내용을 입력해 주십시오."); oEditors.getById['wr_content'].exec('FOCUS'); return false; }
 
-    var subject = "";
-    var content = "";
+    // 1) 필수값 체크
+    const company = (f.wr_company.value || "").trim();
+    const name    = (f.wr_name.value || "").trim();
+    const phone   = (f.sh_phone.value || "").trim();
+    const email   = (f.wr_email.value || "").trim();
+    const subject = (f.wr_subject.value || "").trim();
+    const content = (f.wr_content.value || "").trim();
+
+    if (!company) { alert("회사명을 입력해 주세요."); f.wr_company.focus(); return false; }
+    if (!name)    { alert("성함을 입력해 주세요."); f.wr_name.focus(); return false; }
+    if (!phone)   { alert("연락처를 입력해 주세요."); f.sh_phone.focus(); return false; }
+    if (!email)   { alert("이메일을 입력해 주세요."); f.wr_email.focus(); return false; }
+    if (!subject) { alert("제목을 입력해 주세요."); f.wr_subject.focus(); return false; }
+    if (!content) { alert("내용을 입력해 주세요."); f.wr_content.focus(); return false; }
+
+    // 2) (선택) 간단 이메일 형식 체크
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRe.test(email)) {
+        alert("이메일 형식이 올바르지 않습니다.");
+        f.wr_email.focus();
+        return false;
+    }
+
+    // 3) (기존) 금지어 필터 호출 유지 (g5 ajax.filter)
+    //    주의: g5_bbs_url, jq, jQuery가 있어야 동작합니다.
+    let badSubject = "";
+    let badContent = "";
     $.ajax({
-        url: g5_bbs_url+"/ajax.filter",
+        url: g5_bbs_url + "/ajax.filter",
         type: "POST",
-        data: {
-            "subject": f.wr_subject.value,
-            "content": f.wr_content.value
-        },
+        data: { subject, content },
         dataType: "json",
         async: false,
         cache: false,
-        success: function(data, textStatus) {
-            subject = data.subject;
-            content = data.content;
+        success: function (data) {
+        badSubject = data.subject;
+        badContent = data.content;
         }
     });
 
-    if (subject) {
-        alert("제목에 금지단어('"+subject+"')가 포함되어있습니다");
+    if (badSubject) {
+        alert("제목에 금지단어('" + badSubject + "')가 포함되어있습니다");
         f.wr_subject.focus();
         return false;
     }
-
-    if (content) {
-        alert("내용에 금지단어('"+content+"')가 포함되어있습니다");
-        if (typeof(ed_wr_content) != "undefined")
-            ed_wr_content.returnFalse();
-        else
-            f.wr_content.focus();
+    if (badContent) {
+        alert("내용에 금지단어('" + badContent + "')가 포함되어있습니다");
+        f.wr_content.focus();
         return false;
     }
 
-    if (document.getElementById("char_count")) {
-        if (char_min > 0 || char_max > 0) {
-            var cnt = parseInt(check_byte("wr_content", "char_count"));
-            if (char_min > 0 && char_min > cnt) {
-                alert("내용은 "+char_min+"글자 이상 쓰셔야 합니다.");
-                return false;
-            }
-            else if (char_max > 0 && char_max < cnt) {
-                alert("내용은 "+char_max+"글자 이하로 쓰셔야 합니다.");
-                return false;
-            }
-        }
+    // 4) (기존) 캡차 체크 유지
+    if (typeof chk_captcha === "function") {
+        if (!chk_captcha()) return false;
     }
 
-    if (!chk_captcha()) return false;
+    // 5) payload 구성
+    const payload = {
+        uid: f.uid?.value || null,
+        bo_table: f.bo_table?.value || null,
+        wr_id: f.wr_id?.value || null,
 
-    return true;
+        company,
+        name,
+        phone,
+        email,
+        subject,
+        content,
+
+        agreedPrivacy: true,
+        userAgent: navigator.userAgent
+    };
+
+    // 6) 중복 제출 방지
+    const btn = document.getElementById("btn_submit");
+    if (btn) {
+        btn.disabled = true;
+        btn.value = "전송 중...";
+    }
+
+    // 7) axios 전송 (API 경로는 서버에 맞게 수정)
+    api.post("/", payload)
+        .then(function () {
+            alert("문의가 정상적으로 접수되었습니다.");
+            try { f.reset(); } catch (e) {}
+        })
+        .catch(function (err) {
+            const msg =
+                err?.response?.data?.message ||
+                err?.response?.data?.error ||
+                err?.message ||
+                "전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.";
+            alert(msg);
+            console.error(err);
+        })
+        .finally(function () {
+            if (btn) {
+                btn.disabled = false;
+                btn.value = "작성완료";
+            }
+        });
+
+    return false;
 }
 </script>        </div><!-- sh_content -->
    

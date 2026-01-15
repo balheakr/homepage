@@ -19,7 +19,7 @@
 #mainVisual .main_txt{display:flex;flex-flow:column;position:absolute;left:6.5%;bottom:240px;z-index:101;font-size:18px;font-weight:500;color:#fff;font-family:'Pretendard'}
 #mainVisual .main_txt span{font-weight:600;font-family:'poppins',sans-serif}
 #mainVisual .main_txt p{margin:50px 0 45px;font-size:65px;font-weight:700;line-height:1.2;white-space:pre-line;font-family:'poppins',sans-serif}
-#mainVisual .main_txt p b{color:var(--primary)}
+#mainVisual .main_txt p b{color:#FF5C00}
 
 @media(max-width:1230px){
 #mainVisual{height:800px;min-height:auto}	

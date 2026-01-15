@@ -11,7 +11,7 @@
 #inc01 ul li.img03{background-image:url('img/sec01_img3.jpg')}
 #inc01 ul li.img04{background-image:url('img/sec01_img4.jpg')}
 #inc01 ul li a{display:block;height:100%;}
-#inc01 ul li a:before{content:"";display:block;position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(0deg, #47e6a681, #000000a8);transition:all .3s;opacity:0}
+#inc01 ul li a:before{content:"";display:block;position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(0deg, #FF5C00, #000000a8);transition:all .3s;opacity:0}
 #inc01 ul li .info{position:relative;z-index:1;display:flex;flex-flow:column;height:100%;padding:50px 40px;font-size:15px;color:#fff}
 #inc01 ul li .info p{font-size:28px;font-weight:600}
 #inc01 ul li .info span{margin-top:8px;font-size:14px;font-weight:600;font-family:'Poppins',sans-serif}

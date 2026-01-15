@@ -29,7 +29,7 @@ a.btn_line{display:inline-block;vertical-align:top;width:75px;height:55px;border
 .sh_tbl_common td{border-bottom:1px solid #e1e1e1;font-size:14px;color:#777}
 
 /* -------- 뷰 시작 [s] */
-#sh_map_v{font-size:15px;letter-spacing:-.3px;line-height:1.8;color:#666;font-family:'notokr-regular'}
+/* #sh_map_v{font-size:15px;letter-spacing:-.3px;line-height:1.8;color:#666;font-family:'notokr-regular'}
 #sh_map_v .tit_area{text-align:center;color:#222;font-family:'notokr-medium'}
 #sh_map_v .tit_area:after{display:block;content:"";width:40px;height:1px;margin:20px auto 30px;background-color:#ddd}
 #sh_map_v .tit_area span{display:inline-block;margin-bottom:10px;font-size:13px;font-weight:600;color:#0054a6;letter-spacing:.3px;font-family:'Poppins'}
@@ -41,17 +41,45 @@ a.btn_line{display:inline-block;vertical-align:top;width:75px;height:55px;border
 #sh_map_v .info dt{position:absolute;top:0;left:0;width:100px;height:100px;border-radius:50%;text-align:center;line-height:100px;background-color:#0054a6}
 #sh_map_v .info dd{min-height:100px;padding-left:30px;line-height:1.7}
 #sh_map_v .info dd p{margin-bottom:10px;font-size:16px;color:#222;font-family:'notokr-bold'}
-#sh_map_v .info dd span{display:block;margin-top:10px;color:#222;font-family:'notokr-medium'}
+#sh_map_v .info dd span{display:block;margin-top:10px;color:#222;font-family:'notokr-medium'} */
 
 /* 본문 */
-#sh_iframe_wrap{overflow:hidden;padding:0 50px;display: flex;justify-content: center;}
+/* #sh_iframe_wrap{overflow:hidden;padding:0 50px;display: flex;justify-content: center;}
 #sh_iframe{overflow:hidden;width:100%;border:1px solid #e1e1e1}
 #sh_map_v .bo_cont{width:calc(100% - 100px);margin:0 auto;padding:30px 0;margin-bottom:30px;border-bottom:1px solid #e1e1e1}
 #sh_map_v .map_div{display: inline-block;width: 500px;}
-#sh_map_v .map_div .cont{display: none;}
+#sh_map_v .map_div .cont{display: none;} */
 
+/* 신규 지도 탭 */
+/* 전체 래퍼 */
+#sh_map_v.mapTabs {max-width: 1165px;margin: 0 auto;}
+/* 탭 네비 */
+.mapTabs__nav {display: flex;gap: 8px;align-items: center;padding: 14px 16px;background: #fff;border: 1px solid #e5e5e5;border-bottom: none;}
+/* 탭 버튼 */
+.mapTabs__tab {appearance: none;border: 0;background: transparent;padding: 10px 18px;border-radius: 14px;font-family:'notokr-medium';font-weight: 700;font-size:15px;cursor: pointer;color: #333;}
+.mapTabs__tab.is-active {background: #f3c400;color: #111;}
+/* 패널 */
+.mapTabs__panel {background: #fff;border: 1px solid #e5e5e5;padding: 16px;}
+/* 기존 내용 간격 */
+#sh_map_v .tit_area {margin-bottom: 12px;}
+#sh_map_v .sh_iframe_wrap {width: 100%;overflow:hidden;padding:0;display:block;}
+#sh_map_v .sh_iframe_wrap .cont {display: none;}
+#sh_map_v .map_div{display:block;width:100%;}
+/* roughmap이 들어갈 박스 */
+#sh_map_v .root_daum_roughmap {width: 100%;}
 /* 버튼 */
 #sh_map_v .btn_area{text-align:center}
+/* 하단 정보 박스 */
+#sh_map_v .mapInfo{margin-top: 14px;border: 1px solid #e1e1e1;background: #fff;}
+#sh_map_v .mapInfo__row{display: flex;align-items: flex-start;gap: 10px;margin: 0;padding: 12px 14px;border-top: 1px solid #eee;}
+#sh_map_v .mapInfo__row:first-child{border-top: 0;}
+#sh_map_v .mapInfo__icon{width: 24px;min-width: 24px;text-align: center;line-height: 1.2;color: #222;font-size: 16px;}
+#sh_map_v .mapInfo__text{margin: 0;color: #222;font-size: 15px;line-height: 1.6;font-family: 'notokr-medium';}
+#sh_map_v .mapInfo__sep{display: inline-block;margin: 0 8px;color: #bbb;}
+/* 모바일 대응 */
+@media (max-width: 768px){
+    #sh_map_v .mapInfo__text{font-size: 14px;}
+}
 /* -------- 뷰 끝 [e] */
 
 /* -------- 리스트 시작 [s] */

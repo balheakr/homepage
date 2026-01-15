@@ -9,7 +9,7 @@ body{background:#fff;font-size:0.81em;font-family:'pretendard'}
 h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'}
 #device_change{width:50%;border:1px solid #666;font-size:3.5em;box-shadow:none} 
 
-:root{#FF5C00}
+:root{--primary:#FF5C00}
 .dft_btn{border:none;background:none;font-family:'pretendard'}
 
 /* =========================== HEADER */

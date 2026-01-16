@@ -229,7 +229,7 @@ AOS.init();
 
     document.addEventListener('DOMContentLoaded', function() {
         const params = getQueryParams();
-        api.get(`/recruit/posts/${params.param1}`)
+        api.get(`/news/posts/${params.param1}`)
         .then(response => {
             const params = getQueryParams();
             document.querySelector("#sh_bo_v .tit").textContent = `${response.data.haTitle}`;

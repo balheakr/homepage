@@ -297,12 +297,12 @@ $(document).ready(function(){
 
 <script src="https://www.google.com/recaptcha/api.js?render=6Lf4mEwsAAAAAGviSOit7KmJcMF9x-o9Fh9C3XOp"></script>
 <script>
-    recaptcha.ready(function() {
-    recaptcha.execute('6Lf4mEwsAAAAAGviSOit7KmJcMF9x-o9Fh9C3XOp', {action: 'send'}).then(function(token) {
-        document.getElementById("GoogleCaptchaToken").value = token; // 토큰 가져오기
-        sendMail(); // 메일보내기
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6Lf4mEwsAAAAAGviSOit7KmJcMF9x-o9Fh9C3XOp', {action: 'send'}).then(function(token) {
+            document.getElementById("GoogleCaptchaToken").value = token; // 토큰 가져오기
+            sendMail(); // 메일보내기
 
-    });
+        });
     });
     const data ={
         recaptchaToken: $("#GoogleCaptchaToken").val() 
@@ -349,19 +349,12 @@ $(document).ready(function(){
 
     // 3) payload 구성
     const payload = {
-        uid: f.uid?.value || null,
-        bo_table: f.bo_table?.value || null,
-        wr_id: f.wr_id?.value || null,
-
-        company,
-        name,
-        phone,
-        email,
-        subject,
-        content,
-
-        agreedPrivacy: true,
-        userAgent: navigator.userAgent
+        "company": company,
+        "name": name,
+        "contact": phone,
+        "mail": email,
+        "title": subject,
+        "content": content
     };
 
     // 4) 중복 제출 방지

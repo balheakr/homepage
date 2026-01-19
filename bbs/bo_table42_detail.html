@@ -262,23 +262,23 @@ AOS.init();
             const fileBox = document.getElementById('bo_v_file');
             fileBox.innerHTML = ''; // 기존 내용 초기화
 
-            if(response.data.haAttachmentsUrls && response.data.haAttachmentsUrls.length > 0) {
+            if(response.data.files && response.data.files.length > 0) {
                 const heading = document.createElement('h4');
                 heading.textContent = '첨부파일';
                 fileBox.appendChild(heading);
 
                 const ul = document.createElement('ul');
 
-                response.data.haAttachmentsUrls.forEach(file => {
+                response.data.files.forEach(file => {
                     const li = document.createElement('li');
 
                     const a = document.createElement('a');
-                    a.href = file.url;
-                    a.download = file.name;
-                    a.textContent = `📎 ${file.name} `;
+                    a.href = file.hfPath;
+                    a.download = file.hfName;
+                    a.textContent = `📎 ${file.hfName} `;
 
                     const span = document.createElement('span');
-                    span.textContent = `(${formatFileSize(file.size || 0)})`;
+                    span.textContent = `(${formatFileSize(file.hfSize || 0)})`;
                     span.style.color = 'gray';
                     span.style.fontSize = '0.9em';
 

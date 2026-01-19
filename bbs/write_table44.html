@@ -314,8 +314,6 @@ $(document).ready(function(){
     }
 
     function fwrite_submit(f){
-        console.log("api:", window.api);
-        console.log("baseURL:", window.api?.defaults?.baseURL);
         if (!$("#agree").is(":checked")) {
             alert("개인정보취급방침의 내용에 동의하셔야 작성가능 합니다.");
             return false;
@@ -357,8 +355,6 @@ $(document).ready(function(){
                     "recaptchaToken": token
                 };
 
-                console.log(payload)
-
                 // 4) 중복 제출 방지
                 const btn = document.getElementById("btn_submit");
                 if (btn) {
@@ -367,27 +363,26 @@ $(document).ready(function(){
                 }
 
                 // 5) axios 전송 (API 경로는 서버에 맞게 수정)
-                // api.post("/send", payload)
-                //     .then(function () {
-                //         alert("문의가 정상적으로 접수되었습니다.");
-                //         try { f.reset(); } catch (e) {}
-                //     })
-                //     .catch(function (err) {
-                //         const msg =
-                //             err?.response?.data?.message ||
-                //             err?.response?.data?.error ||
-                //             err?.message ||
-                //             "전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.";
-                //         alert(msg);
-                //         console.error(err);
-                //     })
-                //     .finally(function () {
-                //         if (btn) {
-                //             btn.disabled = false;
-                //             btn.value = "작성완료";
-                //         }
-                //     });
-
+                api.post("/send", payload)
+                    .then(function () {
+                        alert("문의가 정상적으로 접수되었습니다.");
+                        try { f.reset(); } catch (e) {}
+                    })
+                    .catch(function (err) {
+                        const msg =
+                            err?.response?.data?.message ||
+                            err?.response?.data?.error ||
+                            err?.message ||
+                            "전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.";
+                        alert(msg);
+                        console.error(err);
+                    })
+                    .finally(function () {
+                        if (btn) {
+                            btn.disabled = false;
+                            btn.value = "작성완료";
+                        }
+                    });
             });
         });
 

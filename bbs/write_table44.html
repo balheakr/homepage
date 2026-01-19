@@ -248,7 +248,7 @@ $(document).ready(function(){
         <input type="hidden" name="sst" value="">
         <input type="hidden" name="sod" value="">
         <input type="hidden" name="page" value="">
-        <input type="hidden" id="GoogleCaptchaToken" name="GoogleCaptchaToken">
+        <div class="g-recaptcha" data-sitekey="6Lf4mEwsAAAAAGviSOit7KmJcMF9x-o9Fh9C3XOp"></div>
                 <input type="hidden" value="html1" name="html">        <div id="sh_write_tbl" class="sh_tbl_common">
             <table cellpadding="0" cellspacing="0" summary="고객문의 글쓰기">
                 <caption class="sound_only">고객문의 글쓰기</caption>
@@ -302,7 +302,7 @@ $(document).ready(function(){
         fwrite_submit(this);
     });
 </script>
-<script src="https://www.google.com/recaptcha/api.js?render=6Lf4mEwsAAAAAGviSOit7KmJcMF9x-o9Fh9C3XOp">
+<script src="https://www.google.com/recaptcha/api.js" async defer>
 </script>
 <script>
     function Num_ck(obj) { 
@@ -342,49 +342,47 @@ $(document).ready(function(){
             return false;
         }
 
-        grecaptcha.ready(function() {
-            grecaptcha.execute('6Lf4mEwsAAAAAGviSOit7KmJcMF9x-o9Fh9C3XOp', {action: 'send'}).then(function(token) {
-                // 3) payload 구성
-                const payload = {
-                    "company": company,
-                    "name": name,
-                    "contact": phone,
-                    "mail": email,
-                    "title": subject,
-                    "content": content,
-                    "recaptchaToken": token
-                };
+        const recaptchaToken = grecaptcha.getResponse();
 
-                // 4) 중복 제출 방지
-                const btn = document.getElementById("btn_submit");
+        // 3) payload 구성
+        const payload = {
+            "company": company,
+            "name": name,
+            "contact": phone,
+            "mail": email,
+            "title": subject,
+            "content": content,
+            "recaptchaToken": recaptchaToken
+        };
+
+        // 4) 중복 제출 방지
+        const btn = document.getElementById("btn_submit");
+        if (btn) {
+            btn.disabled = true;
+            btn.value = "전송 중...";
+        }
+
+        // 5) axios 전송 (API 경로는 서버에 맞게 수정)
+        api.post("/send", payload)
+            .then(function () {
+                alert("문의가 정상적으로 접수되었습니다.");
+                try { f.reset(); } catch (e) {}
+            })
+            .catch(function (err) {
+                const msg =
+                    err?.response?.data?.message ||
+                    err?.response?.data?.error ||
+                    err?.message ||
+                    "전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.";
+                alert(msg);
+                console.error(err);
+            })
+            .finally(function () {
                 if (btn) {
-                    btn.disabled = true;
-                    btn.value = "전송 중...";
+                    btn.disabled = false;
+                    btn.value = "작성완료";
                 }
-
-                // 5) axios 전송 (API 경로는 서버에 맞게 수정)
-                api.post("/send", payload)
-                    .then(function () {
-                        alert("문의가 정상적으로 접수되었습니다.");
-                        try { f.reset(); } catch (e) {}
-                    })
-                    .catch(function (err) {
-                        const msg =
-                            err?.response?.data?.message ||
-                            err?.response?.data?.error ||
-                            err?.message ||
-                            "전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.";
-                        alert(msg);
-                        console.error(err);
-                    })
-                    .finally(function () {
-                        if (btn) {
-                            btn.disabled = false;
-                            btn.value = "작성완료";
-                        }
-                    });
             });
-        });
 
         return false;
     }

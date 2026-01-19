@@ -302,8 +302,19 @@ $(document).ready(function(){
         fwrite_submit(this);
     });
 </script>
+<script>
+    window.__recaptchaReady = false;
+  
+    function onRecaptchaLoad() {
+      window.__recaptchaReady = true;
+    }
+</script>
 
-<script src="https://www.google.com/recaptcha/api.js?render=6Lf4mEwsAAAAAGviSOit7KmJcMF9x-o9Fh9C3XOp"></script>
+<script
+    src="https://www.google.com/recaptcha/api.js?render=6Lf4mEwsAAAAAGviSOit7KmJcMF9x-o9Fh9C3XOp&onload=onRecaptchaLoad"
+    async
+    defer>
+</script>
 <script>
     function Num_ck(obj) { 
         var val = obj.value; 

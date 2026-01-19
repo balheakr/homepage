@@ -184,7 +184,7 @@ var g5_cookie_domain = "";
 <script src="../sh_img/js/feather.min.js"></script>
 <script src="../sh_img/js/aos.js"></script>
 <script src="../sh_img/hd/top_menu/script.js"></script>
-<script src="../js/api.js"></script>
+<script type="module" src="/js/api.js"></script>
 </head>
 <body>
 
@@ -296,8 +296,8 @@ $(document).ready(function(){
 
 <script src="https://www.google.com/recaptcha/api.js?render=6Lf4mEwsAAAAAGviSOit7KmJcMF9x-o9Fh9C3XOp"></script>
 <script>
-    grecaptcha.ready(function() {
-    grecaptcha.execute('6Lf4mEwsAAAAAGviSOit7KmJcMF9x-o9Fh9C3XOp', {action: 'send'}).then(function(token) {
+    recaptcha.ready(function() {
+    recaptcha.execute('6Lf4mEwsAAAAAGviSOit7KmJcMF9x-o9Fh9C3XOp', {action: 'send'}).then(function(token) {
         document.getElementById("GoogleCaptchaToken").value = token; // 토큰 가져오기
         sendMail(); // 메일보내기
 

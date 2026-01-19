@@ -186,6 +186,7 @@ var g5_cookie_domain = "";
 <script src="/sh_img/js/aos.js"></script>
 <script src="/sh_img/hd/top_menu/script.js"></script>
 <script src="/js/swiper/swiper.min.js"></script>
+<script type="module" src="../js/api.js"></script>
 </head>
 <body>
 
@@ -440,8 +441,7 @@ $(function() {
         <script type="module">
             import axios from 'https://cdn.jsdelivr.net/npm/axios@1.6.8/+esm';
             import { initPagination } from '/js/pagination.js';
-            import api from '/js/api.js';
-
+            
             function escapeHTML(str) {
                 return str
                     .replace(/&/g, '&amp;')

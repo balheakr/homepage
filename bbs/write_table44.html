@@ -236,7 +236,7 @@ $(document).ready(function(){
 <section id="sh_bo_w">
     <h2 class="sound_only">고객문의 글쓰기</h2>
 
-    <form name="fwrite" id="fwrite" action="" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off">
+    <form name="fwrite" id="fwrite" action="/send" onsubmit="return fwrite_submit(this);" method="post" enctype="application/x-www-form-urlencoded" autocomplete="off">
         <input type="hidden" name="uid" value="2026010214324882">
         <input type="hidden" name="w" value="">
         <input type="hidden" name="bo_table" value="table44">

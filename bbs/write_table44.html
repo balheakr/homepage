@@ -298,18 +298,6 @@ $(document).ready(function(){
 
 <script src="https://www.google.com/recaptcha/api.js?render=6Lf4mEwsAAAAAGviSOit7KmJcMF9x-o9Fh9C3XOp"></script>
 <script>
-    grecaptcha.ready(function() {
-        grecaptcha.execute('6Lf4mEwsAAAAAGviSOit7KmJcMF9x-o9Fh9C3XOp', {action: 'send'}).then(function(token) {
-            document.getElementById("GoogleCaptchaToken").value = token; // 토큰 가져오기
-            sendMail(); // 메일보내기
-
-        });
-    });
-    const data ={
-        recaptchaToken: $("#GoogleCaptchaToken").val() 
-    };
-</script>
-<script>
     function Num_ck(obj) { 
         var val = obj.value; 
         if(isNaN(val)) { 
@@ -321,74 +309,81 @@ $(document).ready(function(){
     function fwrite_submit(f){
             
         if (!$("#agree").is(":checked")) {
-        alert("개인정보취급방침의 내용에 동의하셔야 작성가능 합니다.");
-        return false;
-    }
+            alert("개인정보취급방침의 내용에 동의하셔야 작성가능 합니다.");
+            return false;
+        }
 
-    // 1) 필수값 체크
-    const company = (f.wr_company.value || "").trim();
-    const name    = (f.wr_name.value || "").trim();
-    const phone   = (f.sh_phone.value || "").trim();
-    const email   = (f.wr_email.value || "").trim();
-    const subject = (f.wr_subject.value || "").trim();
-    const content = (f.wr_content.value || "").trim();
+        // 1) 필수값 체크
+        const company = (f.wr_company.value || "").trim();
+        const name    = (f.wr_name.value || "").trim();
+        const phone   = (f.sh_phone.value || "").trim();
+        const email   = (f.wr_email.value || "").trim();
+        const subject = (f.wr_subject.value || "").trim();
+        const content = (f.wr_content.value || "").trim();
 
-    if (!company) { alert("회사명을 입력해 주세요."); f.wr_company.focus(); return false; }
-    if (!name)    { alert("성함을 입력해 주세요."); f.wr_name.focus(); return false; }
-    if (!phone)   { alert("연락처를 입력해 주세요."); f.sh_phone.focus(); return false; }
-    if (!email)   { alert("이메일을 입력해 주세요."); f.wr_email.focus(); return false; }
-    if (!subject) { alert("제목을 입력해 주세요."); f.wr_subject.focus(); return false; }
-    if (!content) { alert("내용을 입력해 주세요."); f.wr_content.focus(); return false; }
+        if (!company) { alert("회사명을 입력해 주세요."); f.wr_company.focus(); return false; }
+        if (!name)    { alert("성함을 입력해 주세요."); f.wr_name.focus(); return false; }
+        if (!phone)   { alert("연락처를 입력해 주세요."); f.sh_phone.focus(); return false; }
+        if (!email)   { alert("이메일을 입력해 주세요."); f.wr_email.focus(); return false; }
+        if (!subject) { alert("제목을 입력해 주세요."); f.wr_subject.focus(); return false; }
+        if (!content) { alert("내용을 입력해 주세요."); f.wr_content.focus(); return false; }
 
-    // 2) (선택) 간단 이메일 형식 체크
-    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRe.test(email)) {
-        alert("이메일 형식이 올바르지 않습니다.");
-        f.wr_email.focus();
-        return false;
-    }
+        // 2) (선택) 간단 이메일 형식 체크
+        const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRe.test(email)) {
+            alert("이메일 형식이 올바르지 않습니다.");
+            f.wr_email.focus();
+            return false;
+        }
 
-    // 3) payload 구성
-    const payload = {
-        "company": company,
-        "name": name,
-        "contact": phone,
-        "mail": email,
-        "title": subject,
-        "content": content
-    };
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6Lf4mEwsAAAAAGviSOit7KmJcMF9x-o9Fh9C3XOp', {action: 'send'}).then(function(token) {
+                document.getElementById("GoogleCaptchaToken").value = token; // 토큰 가져오기
+                // 3) payload 구성
+                const payload = {
+                    "company": company,
+                    "name": name,
+                    "contact": phone,
+                    "mail": email,
+                    "title": subject,
+                    "content": content,
+                    "recaptchaToken": $("#GoogleCaptchaToken").val()
+                };
 
-    // 4) 중복 제출 방지
-    const btn = document.getElementById("btn_submit");
-    if (btn) {
-        btn.disabled = true;
-        btn.value = "전송 중...";
-    }
+                // 4) 중복 제출 방지
+                const btn = document.getElementById("btn_submit");
+                if (btn) {
+                    btn.disabled = true;
+                    btn.value = "전송 중...";
+                }
 
-    // 5) axios 전송 (API 경로는 서버에 맞게 수정)
-    api.post("/send", payload)
-        .then(function () {
-            alert("문의가 정상적으로 접수되었습니다.");
-            try { f.reset(); } catch (e) {}
-        })
-        .catch(function (err) {
-            const msg =
-                err?.response?.data?.message ||
-                err?.response?.data?.error ||
-                err?.message ||
-                "전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.";
-            alert(msg);
-            console.error(err);
-        })
-        .finally(function () {
-            if (btn) {
-                btn.disabled = false;
-                btn.value = "작성완료";
-            }
+                // 5) axios 전송 (API 경로는 서버에 맞게 수정)
+                api.post("/send", payload)
+                    .then(function () {
+                        alert("문의가 정상적으로 접수되었습니다.");
+                        try { f.reset(); } catch (e) {}
+                    })
+                    .catch(function (err) {
+                        const msg =
+                            err?.response?.data?.message ||
+                            err?.response?.data?.error ||
+                            err?.message ||
+                            "전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.";
+                        alert(msg);
+                        console.error(err);
+                    })
+                    .finally(function () {
+                        if (btn) {
+                            btn.disabled = false;
+                            btn.value = "작성완료";
+                        }
+                    });
+
+            });
         });
 
-    return false;
-}
+        return false;
+    }
 </script>        </div><!-- sh_content -->
    
 	</div><!-- sh_container_wrapper --> 

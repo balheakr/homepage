@@ -330,6 +330,11 @@ $(document).ready(function(){
             return false;
         }
 
+        if (!window.__recaptchaReady || typeof grecaptcha === "undefined") {
+            alert("보안 로딩 중입니다. 잠시 후 다시 시도해 주세요.");
+            return false;
+        }
+
         // 1) 필수값 체크
         const company = (f.wr_company.value || "").trim();
         const name    = (f.wr_name.value || "").trim();

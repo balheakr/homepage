@@ -9,6 +9,18 @@ pipeline {
     RELEASE_BODY = "자동 배포 릴리즈\n빌드 번호: ${env.BUILD_NUMBER}"
   }
 
+  stage('Replace cache busting') {
+    when { branch 'neo/main' }
+    steps {
+      sh '''
+        echo "Inject BUILD_NUMBER=${BUILD_NUMBER}"
+
+        find . -name "*.html" -type f -print0 | \
+        xargs -0 sed -i "s/__BUILD__/${BUILD_NUMBER}/g"
+      '''
+    }
+  }
+
   stages {
     stage('Archive ZIP') {
       when { branch 'neo/main' }

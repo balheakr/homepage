@@ -307,7 +307,8 @@ $(document).ready(function(){
     }
 
     function fwrite_submit(f){
-            
+        console.log("api:", window.api);
+        console.log("baseURL:", window.api?.defaults?.baseURL);
         if (!$("#agree").is(":checked")) {
             alert("개인정보취급방침의 내용에 동의하셔야 작성가능 합니다.");
             return false;
@@ -348,6 +349,8 @@ $(document).ready(function(){
                     "content": content,
                     "recaptchaToken": token
                 };
+
+                console.log(payload)
 
                 // 4) 중복 제출 방지
                 const btn = document.getElementById("btn_submit");

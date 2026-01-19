@@ -360,26 +360,26 @@ $(document).ready(function(){
                 }
 
                 // 5) axios 전송 (API 경로는 서버에 맞게 수정)
-                api.post("/send", payload)
-                    .then(function () {
-                        alert("문의가 정상적으로 접수되었습니다.");
-                        try { f.reset(); } catch (e) {}
-                    })
-                    .catch(function (err) {
-                        const msg =
-                            err?.response?.data?.message ||
-                            err?.response?.data?.error ||
-                            err?.message ||
-                            "전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.";
-                        alert(msg);
-                        console.error(err);
-                    })
-                    .finally(function () {
-                        if (btn) {
-                            btn.disabled = false;
-                            btn.value = "작성완료";
-                        }
-                    });
+                // api.post("/send", payload)
+                //     .then(function () {
+                //         alert("문의가 정상적으로 접수되었습니다.");
+                //         try { f.reset(); } catch (e) {}
+                //     })
+                //     .catch(function (err) {
+                //         const msg =
+                //             err?.response?.data?.message ||
+                //             err?.response?.data?.error ||
+                //             err?.message ||
+                //             "전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.";
+                //         alert(msg);
+                //         console.error(err);
+                //     })
+                //     .finally(function () {
+                //         if (btn) {
+                //             btn.disabled = false;
+                //             btn.value = "작성완료";
+                //         }
+                //     });
 
             });
         });

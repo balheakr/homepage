@@ -6,7 +6,7 @@ function getApiBaseUrl() {
     if (host.includes('dev')) {
       return 'https://api-dev.balhea.kr/homebe/api';
     }
-    return 'https://api.balhea.kr/homebe/api';
+    return 'https://api.neobh.kr/homebe/api';
 }
 
 const api = axios.create({

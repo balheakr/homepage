@@ -294,6 +294,19 @@ $(document).ready(function(){
     </form>
 </section>
 
+<script src="https://www.google.com/recaptcha/api.js?render=6Lf4mEwsAAAAAGviSOit7KmJcMF9x-o9Fh9C3XOp"></script>
+<script>
+    grecaptcha.ready(function() {
+    grecaptcha.execute('6Lf4mEwsAAAAAGviSOit7KmJcMF9x-o9Fh9C3XOp', {action: 'send'}).then(function(token) {
+        document.getElementById("GoogleCaptchaToken").value = token; // 토큰 가져오기
+        sendMail(); // 메일보내기
+
+    });
+    });
+    const data ={
+        recaptchaToken: $("#GoogleCaptchaToken").val() 
+    };
+</script>
 <script>
     function Num_ck(obj) { 
         var val = obj.value; 
@@ -358,7 +371,7 @@ $(document).ready(function(){
     }
 
     // 5) axios 전송 (API 경로는 서버에 맞게 수정)
-    api.post("/", payload)
+    api.post("/send", payload)
         .then(function () {
             alert("문의가 정상적으로 접수되었습니다.");
             try { f.reset(); } catch (e) {}

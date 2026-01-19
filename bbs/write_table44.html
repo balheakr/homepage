@@ -338,7 +338,6 @@ $(document).ready(function(){
 
         grecaptcha.ready(function() {
             grecaptcha.execute('6Lf4mEwsAAAAAGviSOit7KmJcMF9x-o9Fh9C3XOp', {action: 'send'}).then(function(token) {
-                document.getElementById("GoogleCaptchaToken").value = token; // 토큰 가져오기
                 // 3) payload 구성
                 const payload = {
                     "company": company,
@@ -347,7 +346,7 @@ $(document).ready(function(){
                     "mail": email,
                     "title": subject,
                     "content": content,
-                    "recaptchaToken": $("#GoogleCaptchaToken").val()
+                    "recaptchaToken": token
                 };
 
                 // 4) 중복 제출 방지

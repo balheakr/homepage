@@ -187,7 +187,7 @@ var g5_cookie_domain = "";
 <script src="../js/viewimageresize.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios@1.6.8/dist/axios.min.js"></script>
-<script src="../js/api.js"></script>
+<script type="module" src="../js/api.js"></script>
 </head>
 <body>
 
@@ -197,7 +197,7 @@ var g5_cookie_domain = "";
 AOS.init();
 </script>
 <script type="module">
-    
+    import api from '/js/api.js';
     
     let sharedUrl = "";
     // URL에서 파라미터를 추출하는 함수

@@ -302,18 +302,7 @@ $(document).ready(function(){
         fwrite_submit(this);
     });
 </script>
-<script>
-    window.__recaptchaReady = false;
-  
-    function onRecaptchaLoad() {
-      window.__recaptchaReady = true;
-    }
-</script>
-
-<script
-    src="https://www.google.com/recaptcha/api.js?render=6Lf4mEwsAAAAAGviSOit7KmJcMF9x-o9Fh9C3XOp&onload=onRecaptchaLoad"
-    async
-    defer>
+<script src="https://www.google.com/recaptcha/api.js?render=6Lf4mEwsAAAAAGviSOit7KmJcMF9x-o9Fh9C3XOp">
 </script>
 <script>
     function Num_ck(obj) { 
@@ -327,11 +316,6 @@ $(document).ready(function(){
     function fwrite_submit(f){
         if (!$("#agree").is(":checked")) {
             alert("개인정보취급방침의 내용에 동의하셔야 작성가능 합니다.");
-            return false;
-        }
-
-        if (!window.__recaptchaReady || typeof grecaptcha === "undefined") {
-            alert("보안 로딩 중입니다. 잠시 후 다시 시도해 주세요.");
             return false;
         }
 

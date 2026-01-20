@@ -57,7 +57,7 @@ a.btn_line{display:inline-block;vertical-align:top;width:75px;height:55px;border
 .mapTabs__nav {display: flex;gap: 8px;align-items: center;padding: 14px 16px;background: #fff;border: 1px solid #e5e5e5;border-bottom: none;}
 /* 탭 버튼 */
 .mapTabs__tab {appearance: none;border: 0;background: transparent;padding: 10px 18px;border-radius: 14px;font-family:'notokr-medium';font-weight: 700;font-size:15px;cursor: pointer;color: #333;}
-.mapTabs__tab.is-active {background: #f3c400;color: #111;}
+.mapTabs__tab.is-active {background: #FF5C00;color: #ffffff;}
 /* 패널 */
 .mapTabs__panel {background: #fff;border: 1px solid #e5e5e5;padding: 16px;}
 /* 기존 내용 간격 */

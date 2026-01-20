@@ -186,6 +186,7 @@ var g5_cookie_domain = "";
 <script src="/sh_img/js/aos.js?v=__BUILD__"></script>
 <script src="/sh_img/hd/top_menu/script.js?v=__BUILD__"></script>
 <script src="/js/swiper/swiper.min.js?v=__BUILD__"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.6.8/dist/axios.min.js?v=__BUILD__"></script>
 <script type="module" src="../js/api.js?v=__BUILD__"></script>
 </head>
 <body>
@@ -257,24 +258,24 @@ $(function(){
         $(this).parent('li').addClass('active');
         e.preventDefault();
     });
-    // $(window).on('scroll',function(){
-    //     findPosition();	
-	// });
-    // function findPosition(){
-    //     $('section').each(function(){
-    //         if( ($(this).offset().top - $(window).scrollTop() ) < 500){
-    //             $('#navbar').removeClass();
-	// 			link.parent('li').removeClass('active');
-	// 			$('#navbar').find('[data-scroll="'+ $(this).attr('id') +'"]').parent('li').addClass('active');
-	// 			$('#navbar').addClass($(this).attr('id'));
-	// 		}
-    //     });
-    //     if($("#sh_ft").offset().top - $(window).scrollTop() < 700){
-    //         $('#navbar').removeClass();
-    //         $('#navbar').addClass('section02');
-    //     }
-    // }
-    // findPosition()
+    $(window).on('scroll',function(){
+        findPosition();	
+	});
+    function findPosition(){
+        $('section').each(function(){
+            if( ($(this).offset().top - $(window).scrollTop() ) < 500){
+                $('#navbar').removeClass();
+				link.parent('li').removeClass('active');
+				$('#navbar').find('[data-scroll="'+ $(this).attr('id') +'"]').parent('li').addClass('active');
+				$('#navbar').addClass($(this).attr('id'));
+			}
+        });
+        if($("#sh_ft").offset().top - $(window).scrollTop() < 700){
+            $('#navbar').removeClass();
+            $('#navbar').addClass('section02');
+        }
+    }
+    findPosition()
 });
 </script>
 
@@ -333,7 +334,7 @@ var mainSwiper = new Swiper(".main_slide", {
                     	<div class="info">
     	                    <p>공공 조달 운영 솔루션</p>
                             <span>PUBLIC PROCUREMENT SOLUTION</span>
-	                        <div>발해는 공공,산업 분야의 디지털 전환을 선도하는 기업으로서 신회성 높은 솔루션과 기술 역량을 통해 다양한 현장을 지원하고 있습니다. 차별화된 품질과 신속한 기술 대응으로 고객 만족을 약속드립니다.</div>
+	                        <div>NEO BH는 공공,산업 분야의 디지털 전환을 선도하는 기업으로서 신회성 높은 솔루션과 기술 역량을 통해 다양한 현장을 지원하고 있습니다. 차별화된 품질과 신속한 기술 대응으로 고객 만족을 약속드립니다.</div>
                         </div>
                     </a>
                 </li>	      
@@ -342,7 +343,7 @@ var mainSwiper = new Swiper(".main_slide", {
                     	<div class="info">
     	                    <p>산업 안전 관리 솔루션</p>
                             <span>SMART SAFETY MANAGEMENT SOLUTION</span>
-	                        <div>발해는 공공·산업 분야의 디지털 전환을 선도하는 기업으로서 신회성 높은 솔루션과 기술 역량을 통해 다양한 현장을 지원하고 있습니다. 차별화된 품질과 신속한 기술 대응으로 고객 만족을 약속드립니다.</div>
+	                        <div>NEO BH는 공공·산업 분야의 디지털 전환을 선도하는 기업으로서 신회성 높은 솔루션과 기술 역량을 통해 다양한 현장을 지원하고 있습니다. 차별화된 품질과 신속한 기술 대응으로 고객 만족을 약속드립니다.</div>
                         </div>
                     </a>
                 </li>	   
@@ -351,7 +352,7 @@ var mainSwiper = new Swiper(".main_slide", {
                     	<div class="info">
     	                    <p>AI·데이터 지원 솔루션</p>
                             <span>AI & DATA INSIGHT SOLUTION</span>
-	                        <div>발해는 공공,산업 분야의 디지털 전환을 선도하는 기업으로서 신회성 높은 솔루션과 기술 역량을 통해 다양한 현장을 지원하고 있습니다. 차별화된 품질과 신속한 기술 대응으로 고객 만족을 약속드립니다.</div>
+	                        <div>NEO BH는 공공,산업 분야의 디지털 전환을 선도하는 기업으로서 신회성 높은 솔루션과 기술 역량을 통해 다양한 현장을 지원하고 있습니다. 차별화된 품질과 신속한 기술 대응으로 고객 만족을 약속드립니다.</div>
                         </div>
                     </a>
                 </li>	
@@ -360,7 +361,7 @@ var mainSwiper = new Swiper(".main_slide", {
                     	<div class="info">
     	                    <p>공공 맞춤 제작 솔루션</p>
                             <span>CUSTOM PUBLIC MANUFACTURING</span>
-	                        <div>샘플은 산업용로봇 국내시장 점유율 1위로서 국내 산업용 로봇 시장을 선도하고 있습니다. 차별화된 품질과 A/S대응 으로 고객만족을 약속드립니다.</div>
+	                        <div>NEO BH는 공공,산업 분야의 디지털 전환을 선도하는 기업으로서 신회성 높은 솔루션과 기술 역량을 통해 다양한 현장을 지원하고 있습니다. 차별화된 품질과 신속한 기술 대응으로 고객 만족을 약속드립니다.</div>
                         </div>
                     </a>
                 </li>	

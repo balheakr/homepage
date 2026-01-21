@@ -127,6 +127,7 @@ export function initPagination({
 }
 
 export function initServerPagination({
+    forceFirstPage = true,
     fetchPage,                 // (page) => Promise<{ items, totalPages }>
     containerSelector = '.test_list',
     paginationSelector = '.pagination',
@@ -142,6 +143,9 @@ export function initServerPagination({
     const storedPage = useLocalStorage ? parseInt(localStorage.getItem(localStorageKey), 10) : null;
   
     let currentPage = urlPage || storedPage || defaultPage;
+    if (forceFirstPage) {
+        currentPage = 1;
+    }
     let totalPages = 1;
   
     function updateURL(page) {

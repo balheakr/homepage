@@ -174,8 +174,8 @@ export function initServerPagination({
       $pagination.innerHTML = '';
   
       const currentGroup = Math.floor((currentPage - 1) / pageGroupSize);
-      const startPage = currentGroup * pageGroupSize + 1;
-      const endPage = Math.min(startPage + pageGroupSize - 1, totalPages);
+      const startPage = currentGroup * pageGroupSize;
+      const endPage = Math.min(startPage + pageGroupSize, totalPages);
   
       const makeBtn = (html, disabled, onClick, className) => {
         const li = document.createElement('li');

@@ -125,4 +125,134 @@ export function initPagination({
     renderList();
     renderPagination();
 }
+
+export function initServerPagination({
+    fetchPage,                 // (page) => Promise<{ items, totalPages }>
+    containerSelector = '.test_list',
+    paginationSelector = '.pagination',
+    itemsPerPage = 10,
+    pageGroupSize = 5,
+    renderItem = () => '',
+    defaultPage = 1,
+    useLocalStorage = false,
+    localStorageKey = 'lastPage'
+  }) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlPage = parseInt(urlParams.get('page'), 10);
+    const storedPage = useLocalStorage ? parseInt(localStorage.getItem(localStorageKey), 10) : null;
   
+    let currentPage = urlPage || storedPage || defaultPage;
+    let totalPages = 1;
+  
+    function updateURL(page) {
+      const url = new URL(window.location);
+      url.searchParams.set('page', page);
+      history.replaceState(null, '', url.toString());
+  
+      if (useLocalStorage) localStorage.setItem(localStorageKey, page);
+    }
+  
+    function renderEmpty(message = '조회된 목록이 없습니다.') {
+      const tbody = document.querySelector(containerSelector);
+      tbody.innerHTML = '';
+      const tr = document.createElement('tr');
+      const td = document.createElement('td');
+      td.colSpan = 6;
+      td.style.textAlign = 'center';
+      td.textContent = message;
+      tr.appendChild(td);
+      tbody.appendChild(tr);
+    }
+  
+    function renderList(items) {
+      const tbody = document.querySelector(containerSelector);
+      tbody.innerHTML = items.map(renderItem).join('');
+    }
+  
+    function renderPagination() {
+      const $pagination = document.querySelector(paginationSelector);
+      $pagination.innerHTML = '';
+  
+      const currentGroup = Math.floor((currentPage - 1) / pageGroupSize);
+      const startPage = currentGroup * pageGroupSize + 1;
+      const endPage = Math.min(startPage + pageGroupSize - 1, totalPages);
+  
+      const makeBtn = (html, disabled, onClick, className) => {
+        const li = document.createElement('li');
+        li.innerHTML = html;
+        li.style.cursor = disabled ? 'default' : 'pointer';
+        if (disabled) li.className = className ? `${className} disabled` : 'disabled';
+        else li.className = className || '';
+        if (!disabled) li.onclick = onClick;
+        return li;
+      };
+  
+      // «« first
+      $pagination.appendChild(makeBtn(
+        '<img src="/img/btn_first.gif" alt="맨앞으로" />',
+        currentPage <= 1,
+        () => goToPage(1)
+      ));
+  
+      // « prev group
+      $pagination.appendChild(makeBtn(
+        '<img src="/img/btn_prev.gif" alt="앞으로" />',
+        startPage <= 1,
+        () => goToPage(startPage - 1)
+      ));
+  
+      // page numbers
+      for (let i = startPage; i <= endPage; i++) {
+        const li = document.createElement('li');
+        li.textContent = i;
+        li.className = (i === currentPage) ? 'active' : '';
+        li.style.cursor = 'pointer';
+        li.onclick = () => goToPage(i);
+        $pagination.appendChild(li);
+      }
+  
+      // » next group
+      $pagination.appendChild(makeBtn(
+        '<img src="/img/btn_next.gif" alt="뒤로" />',
+        endPage >= totalPages,
+        () => goToPage(endPage + 1)
+      ));
+  
+      // »» last
+      $pagination.appendChild(makeBtn(
+        '<img src="/img/btn_end.gif" alt="맨뒤로" />',
+        currentPage >= totalPages,
+        () => goToPage(totalPages)
+      ));
+    }
+  
+    async function load(page) {
+      updateURL(page);
+  
+      try {
+        const { items, totalPages: tp } = await fetchPage(page);
+        totalPages = Math.max(1, parseInt(tp, 10) || 1);
+        currentPage = Math.min(Math.max(1, page), totalPages);
+  
+        if (!items || items.length === 0) {
+          renderEmpty('조회된 목록이 없습니다.');
+        } else {
+          renderList(items);
+        }
+        renderPagination();
+      } catch (e) {
+        console.error(e);
+        renderEmpty('데이터 로드 실패');
+        totalPages = 1;
+        currentPage = 1;
+        renderPagination();
+      }
+    }
+  
+    function goToPage(page) {
+      load(page);
+    }
+  
+    // 최초 로드
+    load(currentPage);
+}  

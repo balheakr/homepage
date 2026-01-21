@@ -198,7 +198,7 @@ export function initServerPagination({
       $pagination.appendChild(makeBtn(
         '<img src="/img/btn_prev.gif" alt="앞으로" />',
         startPage < 1 || currentPage == startPage,
-        () => goToPage(startPage)
+        () => goToPage(currentPage - 1)
       ));
   
       // page numbers
@@ -215,7 +215,7 @@ export function initServerPagination({
       $pagination.appendChild(makeBtn(
         '<img src="/img/btn_next.gif" alt="뒤로" />',
         endPage > totalPages || currentPage == endPage,
-        () => goToPage(endPage)
+        () => goToPage(currentPage + 1)
       ));
   
       // »» last

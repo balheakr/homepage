@@ -174,8 +174,8 @@ export function initServerPagination({
       $pagination.innerHTML = '';
   
       const currentGroup = Math.floor((currentPage - 1) / pageGroupSize);
-      const startPage = currentGroup * pageGroupSize;
-      const endPage = Math.min(startPage + pageGroupSize, totalPages);
+      const startPage = currentGroup * pageGroupSize + 1;
+      const endPage = Math.min(startPage + pageGroupSize - 1, totalPages);
   
       const makeBtn = (html, disabled, onClick, className) => {
         const li = document.createElement('li');
@@ -197,7 +197,7 @@ export function initServerPagination({
       // « prev group
       $pagination.appendChild(makeBtn(
         '<img src="/img/btn_prev.gif" alt="앞으로" />',
-        startPage < 1,
+        startPage < 1 || currentPage == startPage,
         () => goToPage(startPage)
       ));
   
@@ -214,7 +214,7 @@ export function initServerPagination({
       // » next group
       $pagination.appendChild(makeBtn(
         '<img src="/img/btn_next.gif" alt="뒤로" />',
-        endPage > totalPages,
+        endPage > totalPages || currentPage == endPage,
         () => goToPage(endPage)
       ));
   

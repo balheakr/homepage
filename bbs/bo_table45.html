@@ -318,7 +318,7 @@ $(document).ready(function(){
                           const size = 10;
                   
                           const res = await api.get('/news/posts', {
-                            params: { page, size }
+                            params: { page }
                           });
                   
                           // 1) 권장 응답 형태: { items, totalPages }

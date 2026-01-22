@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/* #shSnb div{display:flex} */
+#shSnb div{display:flex}
 #shSnb div li{margin:20px 0;}
 #shSnb div li:before{display:inline-block;content:"-";width:1px;height:13px;margin:0 20px;}
 #shSnb div li a{font-size:20px;font-weight:500;color:#999}

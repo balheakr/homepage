@@ -52,7 +52,7 @@ a.btn_line{display:inline-block;vertical-align:top;width:75px;height:55px;border
 
 /* 신규 지도 탭 */
 /* 전체 래퍼 */
-#sh_map_v.mapTabs {max-width: 1165px;margin: 0 auto;}
+#sh_map_v.mapTabs {max-width: 1165px;margin: 0 auto;width: -webkit-fill-available;}
 /* 탭 네비 */
 .mapTabs__nav {display: flex;gap: 8px;align-items: center;padding: 14px 16px;background: #fff;border: 1px solid #e5e5e5;border-bottom: none;}
 /* 탭 버튼 */

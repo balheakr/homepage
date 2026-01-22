@@ -200,7 +200,7 @@ AOS.init();
 	<div id="sh_hd">	
         <div class="sh_lnb_bg"></div>
 		<h1 id="hd_h1">사내소식 1 페이지</h1>
-		<div id="skip_to_container"><a href="bo_table44.html#sh_container">본문 바로가기</a></div>
+		<div id="skip_to_container"><a href="/bbs/bo_table44.html#sh_container">본문 바로가기</a></div>
 				<div id="sh_hd_wrapper">
 			
 <div id="app-sub-menu"></div>
@@ -212,21 +212,6 @@ AOS.init();
 	<div id="sh_container">
 		<div id="sh_container_wrapper" class='sub'>
 			            <!-- 콘텐츠영역 -->
-            <div id="sh_aside">
-<div id="shSnb">
-    <ul>
-    	<li><a href="/">홈</a></li>
-        <!-- <li >
-            <a href="bo_table42.html">공지사항</a>
-        </li> -->
-        <li>
-            <a href="bo_table45.html">뉴스</a>
-        </li>
-                <li class='on'>
-            <a href="bo_table44.html">채용</a>
-        </li>
-            </ul>
-</div></div>
 			
 <div id="shSubBnr">
 	<p><span>채용</span></p>
@@ -238,7 +223,24 @@ $(document).ready(function(){
     $('#shSubBnr p span').delay(0).animate({"bottom":"0","opacity":"1"},600);
 });
 </script>            <div id="sh_content">
-					
+    <div id="sh_aside">
+        <div id="shSnb">
+            <div>
+                <ul>
+                    <li><a href="/">홈</a></li>
+                            <!-- <li>
+                        <a href="/bbs/bo_table42.html">공지사항</a>
+                    </li> -->
+                    <li>
+                        <a href="/bbs/bo_table45.html">뉴스</a>
+                    </li>
+                            <li class='on'>
+                        <a href="/bbs/bo_table44.html">채용</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
 <div id="sh_bo_list">
 
@@ -301,6 +303,17 @@ $(document).ready(function(){
                         .replace(/'/g, '&#039;')
                         .replace(/\n/g, "<br />");
                     }
+
+                    function isPastDate(dateStr) {
+                        // dateStr: "2026-01-21" 또는 "2026-01-21T10:30:00"
+                        const today = new Date();
+                        today.setHours(0, 0, 0, 0);
+
+                        const target = new Date(dateStr);
+                        target.setHours(0, 0, 0, 0);
+
+                        return target < today;
+                    }
                   
                     document.addEventListener('DOMContentLoaded', function () {
                       initServerPagination({
@@ -341,7 +354,7 @@ $(document).ready(function(){
                             <td style="text-align:center;width:5vw">${data.rowNum}</td>
                             <td style="padding:10px 20px;min-width:30vw">
                               <a href="/bbs/bo_table44_detail.html?param1=${data.haSn}">
-                                ${escapeHTML(data.haTitle)}
+                                ${isPastDate(data.haEndDt) ? escapeHTML(data.haTitle)+" "+"(마감)" : data.haTitle}
                               </a>
                             </td>
                             <td style="text-align:center;width:5vw">${data.haViewCnt}</td>

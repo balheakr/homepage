@@ -227,12 +227,23 @@ AOS.init();
         return bytes + ' B';
     }
 
+    function isPastDate(dateStr) {
+        // dateStr: "2026-01-21" 또는 "2026-01-21T10:30:00"
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const target = new Date(dateStr);
+        target.setHours(0, 0, 0, 0);
+
+        return target < today;
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
         const params = getQueryParams();
         api.get(`/news/posts/${params.param1}`)
         .then(response => {
             const params = getQueryParams();
-            document.querySelector("#sh_bo_v .tit").textContent = `${response.data.haTitle}`;
+            document.querySelector("#sh_bo_v .tit").textContent = `${isPastDate(response.data.haEndDt) ? escapeHTML(response.data.haTitle)+" "+"(마감)" : response.data.haTitle}`;
             document.getElementById('date').insertAdjacentHTML('afterend', `${response.data.haCreateDt.slice(0,10)}`);
             document.getElementById('update').insertAdjacentHTML('afterend', `${response.data.haUpdateDt?.slice(0,10) || ""}`);
             document.getElementById('view').insertAdjacentHTML('afterend', `${response.data.haViewCnt}`);
@@ -299,7 +310,7 @@ AOS.init();
 	<div id="sh_hd">	
         <div class="sh_lnb_bg"></div>
 		<h1 id="hd_h1">채용</h1>
-		<div id="skip_to_container"><a href="bo_table44.html#sh_container">본문 바로가기</a></div>
+		<div id="skip_to_container"><a href="/bbs/bo_table44.html#sh_container">본문 바로가기</a></div>
 				<div id="sh_hd_wrapper">
 			
 <div id="app-sub-menu"></div>
@@ -316,13 +327,13 @@ AOS.init();
     <ul>
     	<li><a href="/">홈</a></li>
                 <!-- <li>
-            <a href="bo_table42.html">공지사항</a>
+            <a href="/bbs/bo_table42.html">공지사항</a>
         </li> -->
         <li>
-            <a href="bo_table45.html">뉴스</a>
+            <a href="/bbs/bo_table45.html">뉴스</a>
         </li>
                 <li class='on'>
-            <a href="bo_table44.html">채용</a>
+            <a href="/bbs/bo_table44.html">채용</a>
         </li>
             </ul>
 </div></div>
@@ -363,14 +374,14 @@ $(document).ready(function(){
     </div>
     
 	    <!-- <ul class="v_page">
-        <li><span><i class="fa fa-angle-up"></i></span><a href="bo_table44.html">하반기 결산 안내</a></li>            </ul> -->
+        <li><span><i class="fa fa-angle-up"></i></span><a href="/bbs/bo_table44.html">하반기 결산 안내</a></li>            </ul> -->
     
     <div class="btn_area">
                 <ul class="left">
                     <!-- <li><a class="btn_line" onclick="sharedUrl ? goToRecruit() : ''">원문</a></li> -->
                                 </ul>
         <ul class="right">
-            <li><a href="bo_table44.html" class="btn_line"> 목록</a></li>
+            <li><a href="/bbs/bo_table44.html" class="btn_line"> 목록</a></li>
 			                    </ul>
             </div>
     

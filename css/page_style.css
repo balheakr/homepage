@@ -62,11 +62,11 @@
 .p8 .b_10{top:353px;left:601px;border:1px solid #e1e1e1}
 
 /* 홈페이지 제작 */
-.p10 .img_area{margin-bottom:30px;text-align:center}
+.p10 .img_area{margin-bottom:30px;}
 .p10 .img_area li{display:inline-block;position:relative;width:18.6%;padding:50px 0;margin:0 5px 15px;border:1px solid #e1e1e1}
 .p10 .img_area li p{font-size:18px;color:#333;font-family:'notokr-medium'} 
 .p10 .img_area li:before{display:block;content:"";position:absolute;left:0;top:56px;width:8px;height:14px;background-color:#ddd}
-.p10 .img_area img{margin: 40px auto;width: 80%;max-width: 800px;}
+.p10 .img_area img{margin: 40px auto;width: 80%;}
 .p10 .txt_area li{font-size:30px;overflow:hidden;margin-bottom:50px}
 .p10 .txt_area li span{font-weight: 900;color: #FF5C00;}
 .p10 .txt_area li p .num{display:inline-block;width:40px;height:40px;margin-right:10px;border-radius:40px;font-size:16px;color:#fff;text-align:center;line-height:40px;font-family:'notokr-medium'}

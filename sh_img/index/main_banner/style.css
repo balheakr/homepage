@@ -5,9 +5,9 @@
 /* 스와이퍼 */
 #mainVisual .main_slide{width:100%;height:100%}
 #mainVisual ul li{width:100%;height:100%;background:center no-repeat;background-size:cover}
-#mainVisual ul li.bg01{background-image:url('main01.jpg')}
-#mainVisual ul li.bg02{background-image:url('main02.jpg')}
-#mainVisual ul li.bg03{background-image:url('main03.jpg')}
+#mainVisual ul li.bg01{background-image:url('main01.jpeg')}
+#mainVisual ul li.bg02{background-image:url('main02.jpeg')}
+#mainVisual ul li.bg03{background-image:url('main03.jpeg')}
 #mainVisual .pager{position:absolute;left:50%;bottom:70px;z-index:101;transform:translateX(-50%);width:max-content}
 #mainVisual .pager span{opacity:.3;position:relative;width:29px;height:29px;margin:0 5px;background-color:transparent;transition:all .3s}
 #mainVisual .pager span.on{opacity:1}

@@ -6,10 +6,10 @@
 #inc01 .sh_cont_box .txt_group p{white-space:pre-line;margin:10px 0 40px}
 #inc01 .sh_cont_box .more_btn{position:absolute;right:70px;bottom:0}
 #inc01 .slide_wrap{margin-top:100px;padding-left:calc((100% - 1320px) / 2)}
-#inc01 ul li{position:relative;width:500px;height:600px;background:url('img/sec01_img1.jpg') center no-repeat}
-#inc01 ul li.img02{background-image:url('img/sec01_img2.jpg')}
-#inc01 ul li.img03{background-image:url('img/sec01_img3.jpg')}
-#inc01 ul li.img04{background-image:url('img/sec01_img4.jpg')}
+#inc01 ul li{position:relative;width:500px;height:600px;background:url('img/sec01_img1.jpeg') center no-repeat}
+#inc01 ul li.img02{background-image:url('img/sec01_img2.jpeg')}
+#inc01 ul li.img03{background-image:url('img/sec01_img3.jpeg')}
+#inc01 ul li.img04{background-image:url('img/sec01_img4.jpeg')}
 #inc01 ul li a{display:block;height:100%;}
 #inc01 ul li a:before{content:"";display:block;position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(0deg, #FF5C00, #000000a8);transition:all .3s;opacity:0}
 #inc01 ul li .info{position:relative;z-index:1;display:flex;flex-flow:column;height:100%;padding:50px 40px;font-size:15px;color:#fff}

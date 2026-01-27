@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
 .sh_cont_box .more_btn:hover{color:#fff;background:#FF5C00}
 }
 /* =========================== SNB */
-#sh_aside{position:relative;width:420px;margin:0;z-index:25;font-family:'pretendard'}
+#sh_aside{position:relative;min-width:420px;margin:0;z-index:25;font-family:'pretendard'}
 
 /* =========================== NAV */
 #navbar{position:fixed;z-index:999;top:50%;left:40px;transform:translateY(-50%)}

@@ -6,4 +6,4 @@
 #shSnb div li a{font-size:20px;font-weight:500;color:#999}
 #shSnb div li.on a{position:relative;color:#FF5C00}
 #shSnb div li.on a:after{display:block;content:"";position:absolute;left:0;width:100%;height:4px;background:#FF5C00}
-#shSnb div li.add{margin-left: 20px;}
+#shSnb div li.add{padding-left: 20px;}

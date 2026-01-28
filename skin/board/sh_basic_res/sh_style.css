@@ -56,7 +56,7 @@ a.btn_line{display:inline-block;vertical-align:top;width:75px;height:55px;border
 .sh_tbl_common td{border-bottom:1px solid #e1e1e1;font-size:14px;color:#777}
 
 /* -------- 리스트 시작 [s] */
-#sh_bo_list{min-width:83%;font-size:15px;letter-spacing:-.3px;line-height:1.8;color:#666;font-family:'notokr-regular'}
+#sh_bo_list{margin-left: 2%;min-width:83%;font-size:15px;letter-spacing:-.3px;line-height:1.8;color:#666;font-family:'notokr-regular'}
 
 /* 게시판 분류 type1 */
 #bo_cate_ul_box{margin-bottom:30px;padding-left:1px}

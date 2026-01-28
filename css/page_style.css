@@ -9,7 +9,7 @@
 #pageCm .pg_bgcolor{background-color:#333}
 
 /* 공통 */
-#pageCm{margin-left:8%;padding-bottom:50px;position:relative;font-size:15px;letter-spacing:-.3px;line-height:1.8;color:#777;font-family:'notokr-regular'}
+#pageCm{padding-bottom:50px;position:relative;font-size:15px;letter-spacing:-.3px;line-height:1.8;color:#777;font-family:'notokr-regular'}
 #pageCm .tit_area{margin-bottom:25px;color:#aaa;letter-spacing:-.8px;font-family:'notokr-light'}
 #pageCm .tit_area span{display:inline-block;font-size:14px;letter-spacing:2px;text-transform:uppercase;font-family:'notokr-bold'}
 #pageCm .tit_area.t_center span:after{display:block;content:"";width:1px;height:30px;margin:12px auto;background-color:#d1d1d1}
@@ -64,10 +64,14 @@
 
 /* 홈페이지 제작 */
 /* .p10 .img_area{margin-bottom:30px;} */
+/* .p10{text-align: center;} */
 .p10 .img_area li{display:inline-block;position:relative;width:18.6%;padding:50px 0;margin:0 5px 15px;border:1px solid #e1e1e1}
 .p10 .img_area li p{font-size:18px;color:#333;font-family:'notokr-medium'} 
 .p10 .img_area li:before{display:block;content:"";position:absolute;left:0;top:56px;width:8px;height:14px;background-color:#ddd}
 .p10 .img_area img{margin: 40px auto;width: 60%;}
+.p10 .img_area{padding-left: 10%;text-align: left;}
+.p10 .tit_area{padding-left: 10%;text-align: left;}
+.p10 .txt_area{padding-left: 10%;text-align: left;}
 .p10 .txt_area li{font-size:20px;overflow:hidden;margin-bottom:20px}
 .p10 .txt_area li span{font-weight: 900;color: #FF5C00;}
 .p10 .txt_area li p .num{display:inline-block;width:40px;height:40px;margin-right:10px;border-radius:40px;font-size:16px;color:#fff;text-align:center;line-height:40px;font-family:'notokr-medium'}

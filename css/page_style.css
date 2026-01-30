@@ -253,8 +253,8 @@
 .p18 .img_area li:before{display:block;content:"";position:absolute;left:0;top:56px;width:8px;height:14px;background-color:#ddd}
 .p18 .img_area img{margin: 40px auto;width: 60%;}
 .p18 .img_area{padding-left: 10%;text-align: left;}
-.p18 .tit_area{padding-left: 10%;text-align: left;}
-.p18 .txt_area{padding-left: 10%;text-align: left;}
+.p18 .tit_area{padding-left: 0%;text-align: left;}
+.p18 .txt_area{padding-left: 0%;text-align: left;}
 .p18 .txt_area li{font-size:20px;overflow:hidden;margin-bottom:20px}
 .p18 .txt_area li span{font-weight: 900;color: #FF5C00;}
 .p18 .txt_area li p .num{display:inline-block;width:40px;height:40px;margin-right:10px;border-radius:40px;font-size:16px;color:#fff;text-align:center;line-height:40px;font-family:'notokr-medium'}

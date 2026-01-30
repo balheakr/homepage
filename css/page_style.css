@@ -15,13 +15,14 @@
 #pageCm .tit_area.t_center span:after{display:block;content:"";width:1px;height:30px;margin:12px auto;background-color:#d1d1d1}
 #pageCm .tit_area p{font-size:40px;line-height:1.4}
 #pageCm .tit_area span{font-size:40px;line-height:1.4}
+#pageCm .tit_area strong{color:#222}
 #pageCm .t_center{padding:30px; text-align:center}
 #pageCm .t_center p{word-break:keep-all}
 #pageCm .c_black{color:#333}
 #pageCm strong{font-weight:normal;font-family:'notokr-bold'}
 #pageCm .stit_area{font-size:17px;line-height:1.6}
 #pageCm .stit_area h4{padding-bottom:15px;font-size:29px;font-weight:normal;line-height:1.4;font-family:'notokr-regular'}
-#pageCm img{width: 60%;padding-left: 10%;}
+#pageCm img{width: 75%}
 
 /* 사업영역 */
 #obtain, #manufacture, #ai, #product{width: -webkit-fill-available;}
@@ -37,6 +38,7 @@
 /* 회사 연혁 */
 .p7{width: -webkit-fill-available;position:relative;width:80%;min-height:500px;margin-left: 20%;font-family:'notokr-medium';}
 .p7 .tit_area span{padding-bottom:10px}
+.p7 .tit_area span .span{color: #aaa;font-weight: normal;}
 .p7 .tit_area p{font-size:24px}
 .p7 .history{padding:15px 0 0 35px;margin-left:30px;border-left:1px dashed #e1e1e1}
 .p7 .history dl{margin:0 30% 35px 10px;padding-bottom:30px;border-bottom:1px dashed #e1e1e1}
@@ -72,8 +74,8 @@
 .p10 .img_area li:before{display:block;content:"";position:absolute;left:0;top:56px;width:8px;height:14px;background-color:#ddd}
 .p10 .img_area img{margin: 40px auto;width: 60%;}
 .p10 .img_area{padding-left: 10%;text-align: left;}
-.p10 .tit_area{padding-left: 19%;text-align: left;}
-.p10 .txt_area{padding-left: 19%;text-align: left;}
+.p10 .tit_area{padding-left: 10%;text-align: left;}
+.p10 .txt_area{padding-left: 10%;text-align: left;}
 .p10 .txt_area li{font-size:16px;overflow:hidden;margin-bottom:20px}
 .p10 .txt_area li span{font-weight: 900;color: #FF5C00;}
 .p10 .txt_area li p .num{display:inline-block;width:40px;height:40px;margin-right:10px;border-radius:40px;font-size:16px;color:#fff;text-align:center;line-height:40px;font-family:'notokr-medium'}

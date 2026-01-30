@@ -204,6 +204,7 @@ var g5_cookie_domain = "";
 <script src="/js/swiper/swiper.min.js?v=__BUILD__"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios@1.6.8/dist/axios.min.js?v=__BUILD__"></script>
 <script type="module" src="../js/api.js?v=__BUILD__"></script>
+<script src="/js/i18n.js" defer></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -260,10 +261,10 @@ AOS.init();
 
 <nav id="navbar">
     <ul class="nav-menu">
-        <li><a data-scroll="mainbanner" href="/#mainbanner">메인</a></li>
-        <li><a data-scroll="section01" href="/#section01">사업영역</a></li>
+        <li><a data-scroll="mainbanner" href="/#mainbanner" data-i18n="side.nav.main"></a></li>
+        <li><a data-scroll="section01" href="/#section01" data-i18n="nav.business"></a></li>
         <!-- <li><a data-scroll="section02" href="/#section02">제품</a></li> -->
-        <li><a data-scroll="section03" href="/#section03">뉴스</a></li>
+        <li><a data-scroll="section03" href="/#section03" data-i18n="nav.news"></a></li>
     </ul>
 </nav> 
 <script>
@@ -301,10 +302,14 @@ $(function(){
 <section id="mainbanner">
 <div id="mainVisual">
 	<div class="main_txt" data-aos="fade-in">
-		<span data-aos="fade-left">NEO BH</span>
-        <p data-aos="fade-right">신뢰받는 조달 솔루션
-		<b>지속 가능한 물류 혁신</b></p>
-        NEO BH는 지속 가능한 운영 체계와 전문성을 기반으로 고객과 함께 성장합니다.
+        <span data-aos="fade-left" data-i18n="home.brand"></span>
+      
+        <p data-aos="fade-right">
+          <span data-i18n="home.headline"></span>
+          <b data-i18n="home.headlineBold"></b>
+        </p>
+      
+        <span data-i18n="home.desc"></span>
     </div>
 	<div class="swiper main_slide">
 		<ul class="swiper-wrapper">
@@ -337,12 +342,14 @@ var mainSwiper = new Swiper(".main_slide", {
 	<section id="section01">
 <article id="inc01">
 	<div class="sh_cont_box" data-aos="fade-left">
-		<p class="s_tit">사업영역</p>
+		<p class="s_tit" data-i18n="nav.business"></p>
 		<div class="txt_group">
-			<p>신뢰 가능한 공공조달과 전문 솔루션으로
-            지속 가능한 가치를 제공합니다.</p>
-			기술 혁신과 솔루션으로 지속가능한 성장을 실현하는 글로벌 기업
-			<a href="/sh_page/page10.html" class="more_btn">자세히 보기<i data-feather="arrow-right"></i></a>
+			<p data-i18n="business.headline" data-i18n-html="true"></p>
+			<span data-i18n="business.desc"></span>
+            <a href="/sh_page/page10.html" class="more_btn">
+                <span data-i18n="common.more"></span>
+                <i data-feather="arrow-right"></i>
+            </a>
 		</div>
     </div>
     <div class="slide_wrap" data-aos="fade-left">
@@ -351,36 +358,36 @@ var mainSwiper = new Swiper(".main_slide", {
                 <li class="swiper-slide">
                 	<a href="/sh_page/page10.html">
                     	<div class="info">
-    	                    <p>공공 영역 물품 조달</p>
+    	                    <p data-i18n="nav.obtain"></p>
                             <span>PUBLIC SECTOR PROCUREMENT</span>
-	                        <div>NEO BH는 단순한 물품 공급을 넘어 공공기관의 업무 효율 향상과 행정 서비스 개선에 기여하는 신뢰받는 조달 파트너를 지향합니다. 지속 가능한 조달 체계를 통해 공공과 민간이 함께 성장하는 선순환 구조를 만들어갑니다.</div>
+	                        <div data-i18n="obtain.desc"></div>
                         </div>
                     </a>
                 </li>	      
                 <li class="swiper-slide img02">
                 	<a href="/sh_page/page10.html">
                     	<div class="info">
-    	                    <p>공공 영역 기자재 제조</p>
+                            <p data-i18n="nav.manufacturing"></p>
                             <span>EQUIPMENT / INDUSTRIAL EQUIPMENT MANUFACTURING</span>
-	                        <div>NEO BH는 단순 제조를 넘어 공공기관이 요구하는 품질, 일정, 책임을 충족하는 제조 파트너로서 지속적인 협력 관계를 구축하고 있습니다. 축적된 제작 경험과 안정적인 생산 역량을 기반으로 공공 인프라의 신뢰성과 지속성을 함께 만들어갑니다.</div>
+	                        <div data-i18n="manufacturing.desc"></div>
                         </div>
                     </a>
                 </li>	   
                 <li class="swiper-slide img03">
                 	<a href="/sh_page/page10.html">
                     	<div class="info">
-    	                    <p>AI 솔루션 개발(MRO&SRM)</p>
+                            <p data-i18n="nav.ai"></p>
                             <span>AI-DRIVEN MRO & SRM SOLUTIONS</span>
-	                        <div>NEO BH는 단순 시스템 구축을 넘어 공공조달 업무 전반의 효율성과 투명성을 높이는 운영 파트너로서의 역할을 지향합니다. 현장 중심의 이해와 기술 역량을 결합하여 공공조달 환경에 실질적으로 도움이 되는 AI 솔루션을 제공합니다.</div>
+	                        <div data-i18n="ai.desc"></div>
                         </div>
                     </a>
                 </li>	
                 <li class="swiper-slide img04">
                 	<a href="/sh_page/page10.html">
                     	<div class="info">
-    	                    <p>글로벌 안전 솔루션 사업</p>
+                            <p data-i18n="nav.safety"></p>
                             <span>GLOBAL SAFETY / FALL PROTECTION SOLUTIONS</span>
-	                        <div>NEO BH는 단일 제품에 국한되지 않고 산업 안전 전반을 아우르는 솔루션 사업을 목표로 글로벌 시장을 염두에 둔 사업 구조를 구축하고 있습니다. 현장 중심의 이해와 사업 운영 경험을 바탕으로 지속 가능한 글로벌 안전 솔루션 파트너로 성장해 나가고자 합니다.</div>
+	                        <div data-i18n="safety.desc"></div>
                         </div>
                     </a>
                 </li>	
@@ -432,11 +439,14 @@ $(function() {
 <article id="inc03">
 	<div class="inner">
         <div class="sh_cont_box" data-aos="fade-left">
-            <p class="s_tit">뉴스</p>
+            <p class="s_tit" data-i18n="nav.news"></p>
             <div class="txt_group">
-                <p>신뢰 기반의 조달 솔루션으로<br>미래를 준비하는 기업</p>
-                고객들에게 필요한 정보를 신뢰성 있게 제공합니다
-                <a href="/bbs/bo_table45.html" class="more_btn">자세히 보기<i data-feather="arrow-right"></i></a>
+                <p data-i18n="news.headline" data-i18n-html="true"></p>
+                <span data-i18n="news.desc"></span>
+                <a href="/sh_page/page10.html" class="more_btn">
+                    <span data-i18n="common.more"></span>
+                    <i data-feather="arrow-right"></i>
+                </a>
             </div>
         </div>
         <ul class="latest" data-aos="fade-left">
@@ -512,10 +522,8 @@ $(function() {
     <div class="bnr_wrap">
         <div class="bnr" data-aos="fade-left">
             <div class="txt">
-                <p>NEO BH, 공공영역 물품 공급 혁신을 위한
-                조달 솔루션 협력 확대</p>
-                <div>NEO BH는 공공 조달 분야에서 검증된 공급 역량으로 
-                기관의 업무 효율화에 기여하고 있습니다.</div>
+                <p data-i18n="wrap.headline" data-i18n-html="true"></p>
+                <div data-i18n="wrap.desc" data-i18n-html="true"></div>
             </div>
         </div>
     </div>

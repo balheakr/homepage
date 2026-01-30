@@ -29,6 +29,12 @@
 #shGnb .sh_tip li a{margin-left:15px;font-size:14px;color:#fff;font-family:'Poppins'}
 #shGnb.on .sh_tip li a{color:#222}
 #shGnb.sub .sh_tip li a{color:#222}
+#shGnb .sh_tip button {padding: 4px 10px;border: 1px solid #fff;background: transparent;cursor: pointer;opacity: 0.5;font-weight:500;color:#fff}
+#shGnb .sh_tip button.active {opacity: 1;background-color: #FF5C00;font-weight: 600;color:#fff}
+#shGnb .sh_tip button:hover {opacity: 0.8;}
+#shGnb.sub .sh_tip button {padding: 4px 10px;border: 1px solid #ddd;background: transparent;cursor: pointer;opacity: 0.5;color:#000}
+#shGnb.sub .sh_tip button.active {opacity: 1;background-color: #FF5C00;font-weight: 600;color:#fff}
+#shGnb.sub .sh_tip button:hover {opacity: 0.8;}
 
 /* 반응형 메뉴 [s] */
 #topmenuM{display:none;position:relative;width:100%;padding:15px;line-height:1.8;background-color:#fff;font-family:'notokr-regular'}	

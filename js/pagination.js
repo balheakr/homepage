@@ -141,6 +141,7 @@ export function initServerPagination({
     const urlParams = new URLSearchParams(window.location.search);
     const urlPage = parseInt(urlParams.get('page'), 10);
     const storedPage = useLocalStorage ? parseInt(localStorage.getItem(localStorageKey), 10) : null;
+    const lang = window.localStorage.getItem('lang');
   
     let currentPage = urlPage || storedPage || defaultPage;
     if (forceFirstPage) {
@@ -156,7 +157,7 @@ export function initServerPagination({
       if (useLocalStorage) localStorage.setItem(localStorageKey, page);
     }
   
-    function renderEmpty(message = '조회된 목록이 없습니다.') {
+    function renderEmpty(message = lang == 'ko' ? '조회된 목록이 없습니다.' : "No listings have been searched.") {
       const tbody = document.querySelector(containerSelector);
       tbody.innerHTML = '';
       const tr = document.createElement('tr');
@@ -239,14 +240,14 @@ export function initServerPagination({
         currentPage = Math.min(Math.max(1, page), totalPages);
   
         if (!items || items.length === 0) {
-          renderEmpty('조회된 목록이 없습니다.');
+          renderEmpty(lang == 'ko' ? '조회된 목록이 없습니다.' : "No listings have been searched.");
         } else {
           renderList(items);
         }
         renderPagination();
       } catch (e) {
         console.error(e);
-        renderEmpty('데이터 로드 실패');
+        renderEmpty(lang == 'ko' ? '데이터 로드 실패' : "Failed to load data");
         totalPages = 1;
         currentPage = 1;
         renderPagination();

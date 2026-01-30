@@ -25,7 +25,11 @@
         const attr = el.getAttribute("data-i18n-attr");
   
         if (attr) {
-          el.setAttribute(attr, value);
+          if (attr === "value" && (el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement)) {
+            el.value = value;                 // ✅ 핵심
+          } else {
+            el.setAttribute(attr, value);
+          }
         } else if (isHtml) {
           el.innerHTML = value; // ⚠ 신뢰된 문자열만
         } else {

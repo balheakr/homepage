@@ -22,7 +22,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="format-detection" content="telephone=no">
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>고객문의 글쓰기 | NEO BH</title>
+<title data-i18n="title.write44"></title>
 <link rel="shortcut icon" type="image/x-icon" href="/sh_img/hd/top_menu/favicon_128x128.png">
 <link rel="stylesheet" href="../css/default.css?v=__BUILD__">
 <link rel="stylesheet" href="../sh_img/js/aos.css?v=__BUILD__">
@@ -241,7 +241,7 @@ AOS.init();
 </div></div> -->
 			
 <div id="shSubBnr">
-	<p><span>고객문의</span></p>
+	<p><span data-i18n="nav.inquiry"></span></p>
     <div class="bg" data-aos="fade-in" data-aos-duration="800" style="background-image:url(../sh_img/hd/sub_main_banner/bg_17.jpeg);"></div>
 </div>
 
@@ -271,35 +271,41 @@ $(document).ready(function(){
                 <caption class="sound_only">고객문의 글쓰기</caption>
                 <tbody>
                     <tr>
-                        <th><label for="wr_company">회사명</label></th>
-                        <td><input type="text" name="wr_company" value="" id="wr_company" required class="sh_input required" placeholder="회사명"></td>
-                        <th><label for="wr_name">성함(담당자)</label></th>
-                        <td><input type="text" name="wr_name" value="" id="wr_name" required class="sh_input required" placeholder="성함"></td>
+                        <th><label for="wr_company" data-i18n="inquiry.company"></label></th>
+                        <td><input type="text" name="wr_company" value="" id="wr_company" required class="sh_input required" data-i18n="inquiry.company" data-i18n-attr="placeholder"></td>
+                        <th><label for="wr_name" data-i18n="inquiry.name"></label></th>
+                        <td><input type="text" name="wr_name" value="" id="wr_name" required class="sh_input required" data-i18n="name.placeholder" data-i18n-attr="placeholder"></td>
                     </tr>         
                     <tr>
-                        <th><label for="sh_phone">연락처</label></th>
-                        <td><input type="text" required class="sh_input required" name="sh_phone" id="sh_phone" maxlength="12" value="" placeholder="연락처" onkeyup='Num_ck(this);'></td>
-                        <th><label for="wr_email">이메일</label></th>
-                        <td><input type="text" name="wr_email" value="" id="wr_email" class="sh_input email required" placeholder="이메일" maxlength="100"></td>
+                        <th><label for="sh_phone" data-i18n="inquiry.phone">연락처</label></th>
+                        <td><input type="text" required class="sh_input required" name="sh_phone" id="sh_phone" maxlength="12" value="" data-i18n="inquiry.phone" data-i18n-attr="placeholder" onkeyup='Num_ck(this);'></td>
+                        <th><label for="wr_email" data-i18n="inquiry.email">이메일</label></th>
+                        <td><input type="text" name="wr_email" value="" id="wr_email" class="sh_input email required" data-i18n="inquiry.email" data-i18n-attr="placeholder" maxlength="100"></td>
                     </tr>
                     <tr>
-                        <th><label for="wr_subject">제목<strong class="sound_only">필수</strong></label></th>
+                        <th><label for="wr_subject" data-i18n="inquiry.title"><strong class="sound_only">필수</strong></label></th>
                         <td colspan=3><input type="text" name="wr_subject" value="" id="wr_subject" required class="sh_input full_input required" maxlength="255"></td>
                     </tr>
                     <tr>
-                        <th><label for="wr_content">내용<strong class="sound_only">필수</strong></label></th>
+                        <th><label for="wr_content" data-i18n="inquiry.body"><strong class="sound_only">필수</strong></label></th>
                         <td class="wr_content" colspan=3>
                         <textarea id="wr_content" name="wr_content" class="wr_content required" required maxlength="65536" style="width:100%;height:300px"></textarea>
                         </td>
                     </tr>
                     <tr>
-                        <th><label for="privacy">개인정보취급방침</label></th>
+                        <th><label for="privacy" data-i18n="inquiry.privacy"></label></th>
                         <td colspan="3">
-                            <textarea readonly class="sh_input txtarea privacy" id="privacy">해당 홈페이지에 맞는 개인정보처리방침을 입력합니다.</textarea>
+                            <textarea
+                                readonly
+                                class="sh_input txtarea privacy"
+                                id="privacy"
+                                data-i18n="inquiry.privacy.body"
+                                data-i18n-attr="value">
+                            </textarea>
                             <div class="agr_area">
-                                <p><span class="ps">(필수)</span> 개인정보취급방침 내용에 동의합니다. </p>
-                                <input type=radio value=1 name="agreess" id="agree" >&nbsp;<label for="agree">동의함</label>
-                                <input type=radio value=1 name="agreess" id="no_agree">&nbsp;<label for="no_agree">동의안함</label>
+                                <p><span class="ps" data-i18n="inquiry.privacy.check1"></span> <p data-i18n="inquiry.privacy.check2"></p> </p>
+                                <input type=radio value=1 name="agreess" id="agree" >&nbsp;<label for="agree" data-i18n="inquiry.privacy.aggree"></label>
+                                <input type=radio value=1 name="agreess" id="no_agree">&nbsp;<label for="no_agree" data-i18n="inquiry.privacy.disaggree"></label>
                             </div>
                         </td>
                     </tr>
@@ -309,7 +315,7 @@ $(document).ready(function(){
 
         <div class="btn_area">
             <div class="g-recaptcha" data-sitekey="6Lf4mEwsAAAAAGviSOit7KmJcMF9x-o9Fh9C3XOp"></div>
-            <input type="submit" value="작성완료" id="btn_submit" accesskey="s" class="btn_type01 comp_btn">
+            <input type="submit" data-i18n="inquiry.button" data-i18n-attr="value" id="btn_submit" accesskey="s" class="btn_type01 comp_btn">
         </div>
     </form>
 </section>

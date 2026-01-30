@@ -22,7 +22,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="format-detection" content="telephone=no">
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>채용 목록 | NEO BH</title>
+<title data-i18n="title.table44"></title>
 <link rel="shortcut icon" type="image/x-icon" href="/sh_img/hd/top_menu/favicon_128x128.png">
 <link rel="stylesheet" href="../css/default.css?v=__BUILD__">
 <link rel="stylesheet" href="../sh_img/js/aos.css?v=__BUILD__">
@@ -234,7 +234,7 @@ AOS.init();
 			            <!-- 콘텐츠영역 -->
 			
 <div id="shSubBnr">
-	<p><span>채용</span></p>
+	<p><span data-i18n="nav.recruit"></span></p>
     <div class="bg" data-aos="fade-in" data-aos-duration="800" style="background-image:url(../sh_img/hd/sub_main_banner/bg_16_up.png);background-position: center 90%;"></div>
 </div>
 
@@ -251,10 +251,10 @@ $(document).ready(function(){
                         <a href="/bbs/bo_table42.html">공지사항</a>
                     </li> -->
                     <li>
-                        <a href="/bbs/bo_table45.html">뉴스</a>
+                        <a href="/bbs/bo_table45.html" data-i18n="nav.news"></a>
                     </li>
                             <li class='on'>
-                        <a href="/bbs/bo_table44.html">채용</a>
+                        <a href="/bbs/bo_table44.html" data-i18n="nav.recruit"></a>
                     </li>
                 </ul>
             </div>
@@ -302,11 +302,11 @@ $(document).ready(function(){
                 <thead>
                     <tr>
                         <th class="num" scope="col" style="width: 5vw">No</th>
-                        <th scope="col" style="min-width: 30vw">제목</th>
-                        <th scope="col" style="width: 5vw">조회수</th>
-                        <th class="name"scope="col" style="width: 6vw">작성자</th>
-                        <th scope="col" style="width: 8vw">등록일</th>
-                        <th scope="col" style="width: 8vw">수정일</th>
+                        <th scope="col" style="min-width: 30vw" data-i18n="news.title"></th>
+                        <th scope="col" style="width: 5vw" data-i18n="news.views"></th>
+                        <th class="name"scope="col" style="width: 6vw" data-i18n="news.writer"></th>
+                        <th scope="col" style="width: 8vw" data-i18n="news.createdDt"></th>
+                        <th scope="col" style="width: 8vw" data-i18n="news.modifiedDt"></th>
                     </tr>
                 </thead>
                 <tbody class="test_list"></tbody>
@@ -349,7 +349,9 @@ $(document).ready(function(){
                           // 서버가 0-based면 page-1로 바꾸세요.
                           const size = 10;
                   
-                          const res = await api.get('/recruit/posts', {
+                          const lang = window.localStorage.getItem('lang');
+
+                          const res = await api.get(lang == "ko" ? '/recruit/posts' : '/recruit/posts/en', {
                             params: { page }
                           });
                   

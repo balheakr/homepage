@@ -22,7 +22,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="format-detection" content="telephone=no">
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>뉴스 | NEO BH</title>
+<title data-i18n="title.table45.detail"></title>
 <link rel="shortcut icon" type="image/x-icon" href="/sh_img/hd/top_menu/favicon_128x128.png">
 <link rel="stylesheet" href="../css/default.css?v=__BUILD__">
 <link rel="stylesheet" href="../sh_img/js/aos.css?v=__BUILD__">
@@ -249,7 +249,8 @@ AOS.init();
 
     document.addEventListener('DOMContentLoaded', function() {
         const params = getQueryParams();
-        api.get(`/news/posts/${params.param1}`)
+        const lang = window.localStorage.getItem('lang');
+        api.get(lang == "ko" ? `/news/posts/${params.param1}` : `/news/posts/en/${params.param1}`)
         .then(response => {
             const params = getQueryParams();
             document.querySelector("#sh_bo_v .tit").textContent = `${response.data.haTitle}`;
@@ -333,7 +334,7 @@ AOS.init();
 			            <!-- 콘텐츠영역 -->
 			
 <div id="shSubBnr">
-	<p><span>뉴스</span></p>
+	<p><span data-i18n="nav.news"></span></p>
     <div class="bg" data-aos="fade-in" data-aos-duration="800" style="background-image:url(../sh_img/hd/sub_main_banner/bg_14.jpg);"></div>
 </div>
 
@@ -350,10 +351,10 @@ $(document).ready(function(){
                         <a href="/bbs/bo_table42.html">공지사항</a>
                     </li> -->
                     <li class='on'>
-                        <a href="/bbs/bo_table45.html">뉴스</a>
+                        <a href="/bbs/bo_table45.html" data-i18n="nav.news"></a>
                     </li>
                             <li >
-                        <a href="/bbs/bo_table44.html">채용</a>
+                        <a href="/bbs/bo_table44.html" data-i18n="nav.recruit"></a>
                     </li>
                 </ul>
             </div>
@@ -365,11 +366,11 @@ $(document).ready(function(){
 	<p class="tit"></p>
     
     <div class="info">
-    	<p><b>작성자</b><span class="sv_member">관리자</span></p>
+    	<p><b data-i18n="news.writer"></b><span class="sv_member" data-i18n="news.manager"></span></p>
         <ul>
-            <li><b id="date">등록일</b></li>		
-            <li><b id="update">수정일</b></li>		
-            <li><b id="view">조회</b></li>
+            <li><b id="date" data-i18n="news.createdDt"></b></li>		
+            <li><b id="update" data-i18n="news.modifiedDt"></b></li>		
+            <li><b id="view" data-i18n="news.views"></b></li>
         </ul>
     </div>
     
@@ -392,7 +393,7 @@ $(document).ready(function(){
                     <!-- <li><a class="btn_line" onclick="sharedUrl ? goToNews() : ''">원문</a></li> -->
                                 </ul>
         <ul class="right">
-            <li><a href="/bbs/bo_table45.html" class="btn_line"> 목록</a></li>
+            <li><a href="/bbs/bo_table45.html" class="btn_line" data-i18n="nav.list"></a></li>
 			                    </ul>
             </div>
     

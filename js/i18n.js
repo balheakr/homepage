@@ -76,5 +76,6 @@
     });
   
     // (선택) 메뉴바를 나중에 로드한 뒤에도 번역 적용할 때 쓰라고 노출
-    window.applyI18n = applyI18n;
+    window.i18n = window.i18n || {};
+    window.i18n.refresh = () => applyI18n(document);
 })();  

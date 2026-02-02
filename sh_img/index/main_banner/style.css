@@ -32,7 +32,7 @@
 }
 @media(max-width:768px){
 #mainVisual{height:500px}
-#mainVisual .main_txt{left:30px;bottom:140px;line-height:1.6;word-break:keep-all}
+#mainVisual .main_txt{left:30px;bottom:100px;line-height:1.6;word-break:keep-all}
 #mainVisual .main_txt p{font-size:42px;word-break:keep-all}
 }
 @media(max-width:480px){

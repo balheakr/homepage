@@ -25,7 +25,6 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
 /* =========================== SNB */
 #sh_aside{position:relative;min-width:270px;margin:0;z-index:25;font-family:'pretendard'}
 #sh_aside_com{position:relative;min-width:120px;margin:0;z-index:25;font-family:'pretendard'}
-
 /* =========================== NAV */
 #navbar{position:fixed;z-index:999;top:50%;left:40px;transform:translateY(-50%)}
 #navbar.mainbanner{opacity:0}
@@ -177,7 +176,12 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
 .sh_cont_box .txt_group p{font-size:24px}	
 .sh_cont_box .more_btn{width:135px;height:48px;padding:0 15px 0 20px}
 .sh_cont_box .more_btn svg{width:18px;height:18px}
-#sh_content{min-height:350px}
+#sh_content{display: block}
+#sh_content #sh_aside_com{display: none;}
+#sh_content2 {padding: 0}
+#sh_content2 #sh_aside_com{display: none;}
+#sh_map_v.mapTabs{margin-left: 0;}
+#sh_content3 {padding: 0}
 #fix_tel{display:block}
 #sh_ft_btns{display:block}
 #sh_ft{font-size:13px;line-height:1.5}
@@ -185,5 +189,11 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
 #sh_ft .ft_logo img{max-width:50%}
 #sh_ft .copy{flex-wrap:wrap;padding:10px 20px;font-size:12px}
 #sh_ft .copy .links a+a{margin-left:15px}
+}
+@media (max-width:480px){
+    .p10 .img_area, .p10 .tit_area, .p10 .txt_area{padding-left: 0 !important;}
+    .p10 .img_area img{width: 100% !important;}
+    .p18{margin-left: 0 !important;}
+    .p18 img{width: 100% !important;}
 }
 /* 반응형 [e] */

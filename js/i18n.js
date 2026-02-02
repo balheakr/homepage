@@ -1,5 +1,7 @@
 (function () {
     const I18N = { lang: "ko", dict: {} };
+    let readyResolve;
+    const ready = new Promise((res) => (readyResolve = res));
   
     async function loadLocale(lang) {
       const res = await fetch(`/locales/${lang}.json`, { cache: "no-store" });
@@ -38,6 +40,7 @@
       });
   
       document.documentElement.lang = I18N.lang;
+      updateLangButtons(I18N.lang);
     }
 
     function updateLangButtons(lang) {
@@ -67,6 +70,7 @@
       const saved = localStorage.getItem("lang");
       const browserLang = navigator.language.startsWith("ko") ? "ko" : "en";
       await setLanguage(saved || browserLang);
+      readyResolve();
     });
 
     document.addEventListener("click", (e) => {
@@ -78,4 +82,10 @@
     // (선택) 메뉴바를 나중에 로드한 뒤에도 번역 적용할 때 쓰라고 노출
     window.i18n = window.i18n || {};
     window.i18n.refresh = () => applyI18n(document);
+    window.i18n = {
+      ready,                 // 컴포넌트 로더가 await 할 것
+      setLanguage,           // 언어 변경
+      refresh: (root) => applyI18n(root || document), // 특정 영역만 재적용 가능
+      getLang: () => I18N.lang
+    };  
 })();  

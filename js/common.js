@@ -774,6 +774,8 @@ async function injectPartial(selector, url) {
     if (!res.ok) throw new Error(`Failed to load ${url}: ${res.status}`);
   
     host.innerHTML = await res.text();
+    await window.i18n.ready;
+    window.i18n.refresh(host);
 }
   
 document.addEventListener("DOMContentLoaded", async () => {
@@ -792,6 +794,8 @@ async function injectMenu(selector, url) {
     if (!res.ok) throw new Error(`Failed to load ${url}: ${res.status}`);
   
     host.innerHTML = await res.text();
+    await window.i18n.ready;
+    window.i18n.refresh(host);
 }
   
 document.addEventListener("DOMContentLoaded", async () => {
@@ -810,6 +814,8 @@ async function injectSubMenu(selector, url) {
     if (!res.ok) throw new Error(`Failed to load ${url}: ${res.status}`);
   
     host.innerHTML = await res.text();
+    await window.i18n.ready;
+    window.i18n.refresh(host);
 }
   
 document.addEventListener("DOMContentLoaded", async () => {

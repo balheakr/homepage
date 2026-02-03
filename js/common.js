@@ -2,6 +2,29 @@
 var errmsg = "";
 var errfld = null;
 
+$(function enforceWww() {
+    // 로컬 개발 환경은 제외
+    const host = window.location.hostname;
+    if (host === 'localhost' || host === '127.0.0.1') return;
+  
+    // 이미 www면 종료
+    if (host.startsWith('www.')) return;
+  
+    // 특정 도메인만 적용하고 싶으면 여기에 화이트리스트
+    // 예: neobh.kr만 www.neobh.kr로 강제
+    const allowed = ['neobh.kr']; // 필요시 추가: ['neobh.kr', 'example.com']
+    if (!allowed.includes(host)) return;
+  
+    const newHost = 'www.' + host;
+    const { protocol, pathname, search, hash } = window.location;
+  
+    // protocol 유지(https/http)
+    const newUrl = protocol + '//' + newHost + pathname + search + hash;
+  
+    // replace로 히스토리 오염 방지
+    window.location.replace(newUrl);
+});
+
 // 필드 검사
 function check_field(fld, msg)
 {

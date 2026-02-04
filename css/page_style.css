@@ -265,4 +265,4 @@
 .p18 .txt_area li .em{font-weight: 900;color: #FF5C00;}
 .p18 .txt_area li p .num{display:inline-block;width:40px;height:40px;margin-right:10px;border-radius:40px;font-size:16px;color:#fff;text-align:center;line-height:40px;font-family:'notokr-medium'}
 .p18 .txt_area li b{font-weight:normal;color:#222;text-decoration:underline}
-.p18 .txt_area .box_btn{background-color: #FF5C00;color: #fff;padding: 0 20px;border-radius: 30px;height: 60px;}
+.p18 .txt_area .box_btn{display:flex;width:fit-content;background-color: #FF5C00;color: #fff;padding: 0 20px;border-radius: 30px;height: 60px;align-items: center;}

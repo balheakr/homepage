@@ -14,6 +14,14 @@
         vars[k] != null ? vars[k] : `{${k}}`
       );
     }
+
+    function applyLinksByLang(root = document) {
+      const lang = I18N.lang || 'ko';
+      root.querySelectorAll('a[data-href-ko], a[data-href-en]').forEach(a => {
+        const next = a.getAttribute(`data-href-${lang}`);
+        if (next) a.setAttribute('href', next);
+      });
+    }
   
     function applyI18n(root = document, vars = {}) {
       root.querySelectorAll("[data-i18n]").forEach((el) => {
@@ -41,6 +49,7 @@
   
       document.documentElement.lang = I18N.lang;
       updateLangButtons(I18N.lang);
+      applyLinksByLang(root);
     }
 
     function updateLangButtons(lang) {

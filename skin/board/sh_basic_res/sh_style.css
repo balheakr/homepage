@@ -116,7 +116,7 @@ a.btn_line{display:inline-block;vertical-align:top;width:75px;height:55px;border
 /* -------- 리스트 끝 [e] */
 
 /* -------- 글쓰기 시작 [s] */
-#sh_bo_w{font-size:15px;letter-spacing:-.3px;line-height:1.8;color:#666;font-family:'notokr-regular'}
+#sh_bo_w{font-size:15px;letter-spacing:-.3px;line-height:1.8;color:#666;font-family:'notokr-regular';margin:0 8vw}
 
 /* 라이트 */
 #sh_write_tbl label{font-size:15px}

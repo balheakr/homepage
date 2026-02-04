@@ -247,7 +247,7 @@ export function initServerPagination({
         renderPagination();
       } catch (e) {
         console.error(e);
-        renderEmpty(lang == 'ko' ? '데이터 로드 실패' : "Failed to load data");
+        renderEmpty(lang == 'ko' ? '조회된 목록이 없습니다.' : "No listings have been searched.");
         totalPages = 1;
         currentPage = 1;
         renderPagination();

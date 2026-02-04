@@ -188,7 +188,7 @@
     "inquiry.title": "Title",
     "inquiry.body": "Content",
     "inquiry.privacy": "The policy of handling personal information",
-    "inquiry.privacy.body": "■ Consent to Collection and Use of Personal Information\n\nBalhea collects and uses personal information for the following purposes:\n\n1) Purpose of collection: Handling inquiries and providing consultation\n2) Items collected: Name, contact number, email address\n3) Retention period: One year after the inquiry has been processed",
+    "inquiry.privacy.body": "■ Consent to Collection and Use of Personal Information\n\n① Purpose of collection: Receiving and processing customer inquiries and responding to inquiries\n② Items collected: Company name, name of person in charge, email, contact information, and inquiries\n③ Retention period: One year after the inquiry has been processed\n\n※ You have the right to refuse to consent to the collection and use of personal information, but if you do not agree, you may be restricted from accepting inquiries.",
     "inquiry.privacy.check1": "(Required)",
     "inquiry.privacy.check2": "I agree with the privacy policy.",
     "inquiry.privacy.aggree": "Agreed",

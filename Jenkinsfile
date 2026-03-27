@@ -10,6 +10,18 @@ pipeline {
   }
 
   stages {
+    stage('Replace cache busting') {
+      when { branch 'main' }
+      steps {
+        sh '''
+          echo "Inject BUILD_NUMBER=${BUILD_NUMBER}"
+
+          find . -name "*.html" -type f -print0 | \
+          xargs -0 sed -i "s/__BUILD__/${BUILD_NUMBER}/g"
+        '''
+      }
+    }
+    
     stage('Archive ZIP') {
       when { branch 'main' }
       steps {

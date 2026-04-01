@@ -14,7 +14,7 @@ $(function enforceWww() {
     const CANONICAL_HOST = 'www.neobh.kr';
   
     // 이미 정규 도메인이면 종료
-    if (hostname === CANONICAL_HOST) return;
+    if (hostname === CANONICAL_HOST && protocol === 'https:') return;
   
     const newUrl =
         protocol + '//' +

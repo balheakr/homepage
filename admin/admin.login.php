@@ -22,10 +22,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <title>발해에프유테크</title>
 <!--<link rel="shortcut icon" type="image/x-icon" href="/img/logo.png">-->
-<link rel="stylesheet" href="/css/default.css">
-<link rel="stylesheet" href="/admin/css/admin_mode.css">
-<link rel="stylesheet" href="/css/user.css">
-<link rel="stylesheet" href="/css/page_style.css">
+<link rel="stylesheet" href="/css/default.css?v=__BUILD__">
+<link rel="stylesheet" href="/admin/css/admin_mode.css?v=__BUILD__">
+<link rel="stylesheet" href="/css/user.css?v=__BUILD__">
+<link rel="stylesheet" href="/css/page_style.css?v=__BUILD__">
 <style>
 @import url(https://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 @import url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
@@ -159,7 +159,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	font-style: normal;
 }
 </style><!--[if lte IE 8]>
-<script src="/js/html5.js"></script>
+<script src="/js/html5.js?v=__BUILD__"></script>
 <![endif]-->
 <script>
 // 자바스크립트에서 사용하는 전역변수 선언
@@ -173,13 +173,13 @@ var g5_sca       = "";
 var g5_editor    = "";
 var g5_cookie_domain = "";
 </script>
-<script src="/js/jquery-1.8.3.min.js"></script>
-<script src="/js/jquery-ui.js"></script>
-<script src="/js/jquery.menu.js"></script>
-<script src="/js/common.js"></script>
-<script src="/js/wrest.js"></script>
-<script src="/js/placeholders.min.js"></script>
-<link rel="stylesheet" href="/js/font-awesome/css/font-awesome.min.css">
+<script src="/js/jquery-1.8.3.min.js?v=__BUILD__"></script>
+<script src="/js/jquery-ui.js?v=__BUILD__"></script>
+<script src="/js/jquery.menu.js?v=__BUILD__"></script>
+<script src="/js/common.js?v=__BUILD__"></script>
+<script src="/js/wrest.js?v=__BUILD__"></script>
+<script src="/js/placeholders.min.js?v=__BUILD__"></script>
+<link rel="stylesheet" href="/js/font-awesome/css/font-awesome.min.css?v=__BUILD__">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -189,7 +189,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <meta charset="utf-8">
 <!-- placeholder 익스 하위버전 대응 -->
 <!--[if lte IE 9]>
-<script src="/js/placeholders.min.js"></script>
+<script src="/js/placeholders.min.js?v=__BUILD__"></script>
 <![endif]-->
 
 <div id="sh_adm_login">

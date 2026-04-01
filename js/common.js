@@ -3,7 +3,7 @@ var errmsg = "";
 var errfld = null;
 
 // 리다이렉팅 코드
-$(function enforceWww() {
+function enforceWww() {
     const { hostname, pathname, search, hash } = window.location;
 
     const protocol = location.protocol === 'http:' ? 'https:' : window.location.protocol;
@@ -25,7 +25,7 @@ $(function enforceWww() {
   
     // 히스토리 남기지 않고 강제 이동
     window.location.replace(newUrl);
-});
+};
 
 // 필드 검사
 function check_field(fld, msg)

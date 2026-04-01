@@ -1,8 +1,0 @@
-@charset "utf-8";
-
-#sh_snb{display: table;overflow:hidden;margin:0 auto;padding-right:18px}
-#sh_snb li{float:left;margin-left:3px}
-#sh_snb li a{display:block;position:relative;height:60px;padding:0 28px;font-size:14px;line-height:59px;color:#222;letter-spacing:-.2px;-webkit-transition:all .3s;transition:all .3s}
-#sh_snb li a:after{display:block;content:"";position:absolute;bottom:0;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);width:0;height:1px;background-color:var(--primary)}
-#sh_snb li.snb_on a{color:var(--primary); font-family:'notokr-medium'}
-#sh_snb li.snb_on a:after{width:100%}

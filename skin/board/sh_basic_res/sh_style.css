@@ -8,7 +8,7 @@ input[type=text]:focus,input[type=text]:active, input[type=password]:focus, text
 input[type=submit]:focus{outline:none}
 input[type=submit]{border:none}
 button:focus,button:active{outline:none}
-.required, textarea.required{background-image:url(../../member/sh_basic/require.png)!important}
+/* .required, textarea.required{background-image:url(../../member/sh_basic/require.png)!important} */
 
 /* 관리자 버튼 */
 .sh_adm_btn{width:85px;height:38px;border-radius:2px;border:1px solid #ffd8e1;font-size:13.5px;line-height:36px;color:#ff567f;letter-spacing:-.7px;background-color:#fff7f9;-webkit-transition:all .2s;transition:all .2s;font-family:'notokr-medium'}
@@ -50,13 +50,21 @@ a.btn_line{display:inline-block;vertical-align:top;width:75px;height:55px;border
 .pg_start:hover, .pg_end:hover{background-color:#f6f6f6}
 
 /* 테이블 공통 */
-.sh_tbl_common{width:100%;border-top:1px solid #555}
-.sh_tbl_common table{width:100%}
-.sh_tbl_common th{border-bottom:1px solid #e1e1e1;font-size:15px;font-weight:normal;color:#222;font-family:'notokr-medium'} 
+.sh_tbl_common{width:100%;border-top:2px solid #FF5C00; }
+.sh_tbl_common table{width:100%; min-width: 640px;}
+.sh_tbl_common th{border-bottom:1px solid #e1e1e1;font-size:15px;font-weight:600;color:#222; border-right: 1px solid #efefef;} 
+.sh_tbl_common th:last-child{border-right:none}
 .sh_tbl_common td{border-bottom:1px solid #e1e1e1;font-size:14px;color:#777}
+.sh_tbl_common thead tr{
+    background: #f6f6f6;
+    border-bottom: 1px solid #ccc;
+}
+.tb_scroll{
+    overflow-x: auto;
+}
 
 /* -------- 리스트 시작 [s] */
-#sh_bo_list{margin-left: 2%;min-width:83%;font-size:15px;letter-spacing:-.3px;line-height:1.8;color:#666;font-family:'notokr-regular'}
+#sh_bo_list{/*margin-left: 2%;*/min-width:100%;font-size:15px;letter-spacing:-.3px;line-height:1.8;color:#666; width: 100%;}
 
 /* 게시판 분류 type1 */
 #bo_cate_ul_box{margin-bottom:30px;padding-left:1px}
@@ -88,7 +96,7 @@ a.btn_line{display:inline-block;vertical-align:top;width:75px;height:55px;border
 /* 리스트 */
 #sh_list_tbl tbody tr:hover{background-color:#fafafa}
 #sh_list_tbl .bo_notice:hover{background-color:#f5f6f8}
-#sh_list_tbl th{height:60px} 
+#sh_list_tbl th{/*height:60px*/ padding: 14px;} 
 #sh_list_tbl td{height:60px}
 #sh_list_tbl td.num{width:10%;text-align:center}
 #sh_list_tbl td.num .fa-bell-o{color:#0054a6}
@@ -120,20 +128,58 @@ a.btn_line{display:inline-block;vertical-align:top;width:75px;height:55px;border
 
 /* 라이트 */
 #sh_write_tbl label{font-size:15px}
-#sh_write_tbl th{width:16%;padding:10px 0;line-height:1.6;background-color:#f5f6f8}
+/* #sh_write_tbl th{width:16%;padding:10px 0;line-height:1.6;background-color:#f5f6f8} */
+#sh_write_tbl th{
+    border-bottom: 1px solid #ddd;
+    color: #333;
+    width: 200px;
+    padding: 12px;
+    vertical-align: middle;
+    border-right: none;
+    font-weight: 500;
+    line-height: 1.4em;
+    font-size: 1.075rem;
+    text-align: center;
+    background: #fafafa;
+}
+.sh_tbl_common table tbody tr th strong{
+    color: tomato;
+}
+
 #sh_write_tbl td{padding:10px 0}
 #sh_write_tbl .cate_wrap{display:inline-block;position:relative;min-width:181px;padding-left:10px;border-radius:2px;border:1px solid #e1e1e1}
 #sh_write_tbl .cate_wrap:after{content:"\f107";position:absolute;right:10px;top:6px;font-size:15px;font-family:'fontawesome'}
 #sh_write_tbl .sh_select{min-width:160px;height:40px;border:none;font-size:15px;color:#777;-webkit-appearance:none;-moz-appearance:none;appearance:none;font-family:'notokr-regular'}
 #sh_write_tbl .sh_select:focus, #sh_write_tbl .sh_select:active{border:none!important}
-#sh_write_tbl .sh_input{height:40px;padding:0 20px 0 12px;border:1px solid #e1e1e1;border-radius:2px;font-size:15px;color:#777;font-family:'notokr-regular';margin-left: 10px;}
+/* #sh_write_tbl .sh_input{height:40px;padding:0 20px 0 12px;border:1px solid #e1e1e1;border-radius:2px;font-size:15px;color:#777;font-family:'notokr-regular';margin-left: 10px;} */
+#sh_write_tbl .sh_input{
+    border: 1px solid #ccc;
+    height: 40px;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-left: 15px;
+}
 #sh_write_tbl .sh_input:focus, #sh_write_tbl .sh_input:active{border:1px solid #e1e1e1!important;outline:none}
 #sh_write_tbl .sh_input.full_input{width: 50%;}
 #sh_write_tbl .sh_input.txtarea{margin: 0;}
 #sh_write_tbl .frm_address{margin-top:5px}
 #sh_write_tbl .zip_btn{width:125px;height:40px;margin-left:2px;border:none;border-radius:2px;font-size:14px;color:#fff;background-color:#555;font-family:'notokr-medium'}
 #sh_write_tbl .read{background-color:#f5f6f8}
-#sh_write_tbl textarea, #sh_write_tbl .txtarea{width:100%;height:100px;padding:12px;border:1px solid #e1e1e1;border-radius:2px; box-shadow:none}
+#sh_write_tbl textarea, #sh_write_tbl .txtarea{
+    height:100px;
+    padding:12px;
+    box-shadow:none; 
+    border: none;
+    background: #fff !important;
+    margin-left: 15px !important;
+    width: 98%;
+    font-size: 15px !important;
+    font-weight: 300;
+}
+#sh_write_tbl .wr_content textarea{
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+}
 #sh_write_tbl textarea:focus, #sh_write_tbl textarea:active{border:1px solid #e1e1e1!important}
 #sh_write_tbl .frm_file{height:auto;padding:0;font-size:14px}
 #sh_write_tbl .ps{font-size:14px;color:#ff567f}

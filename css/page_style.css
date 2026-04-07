@@ -22,15 +22,43 @@
 #pageCm strong{font-weight:normal;font-family:'notokr-bold'}
 #pageCm .stit_area{font-size:17px;line-height:1.6}
 #pageCm .stit_area h4{padding-bottom:15px;font-size:29px;font-weight:normal;line-height:1.4;font-family:'notokr-regular'}
-#pageCm img{width: 75%}
+#pageCm img{width: 100%; height: 420px;}
 
 /* 사업영역 */
 #obtain, #manufacture, #ai, #product{width: -webkit-fill-available;}
 
 /* 대표 인사말 */
 .p6{width: -webkit-fill-available;text-align:center;}
-.p6 .cont_area{padding-top:310px;background:url(../sh_page/img/p6_img.jpg) top center no-repeat}
-.p6 .cont{padding-top:50px;width:90%;margin:0 auto;background-color:#fff}
+.p6 .cont_area{
+    padding: 310px 0;
+    background:url(../sh_page/img/p6_img.jpg) top center no-repeat; background-size: 100%;
+    position: relative;
+}
+.p6 .cont_area .greetingcont_wrap{
+    position: absolute;
+    top: 44%;
+}
+.p6 .cont{
+    position: absolute;
+    width:90%;
+    margin:0 auto;
+    background-color:#fff; 
+    text-align: start; 
+    padding: 3rem; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: relative;
+}
+.p6 .cont::after{
+    position: absolute;
+    content: "";
+    top: 55%;
+    right: 5%;
+    background: url(../sh_page/img/logo_symbol.png) no-repeat;
+    background-size: 100px 100px;
+    width: 100px;
+    height: 100px;
+    opacity: 0.4;
+}
 .p6 .cont .st{padding-bottom:10px;font-size:22px;letter-spacing:-.8px;color:#333;font-family:'notokr-medium'}
 .p6 .cont .sign{color:#333;font-family:'notokr-bold'}
 .p6 .cont .sign span{padding-left:5px;font-size:26px;color:#333;font-family:'Nanum Pen Script'}
@@ -73,9 +101,9 @@
 .p10 .img_area li p{font-size:18px;color:#333;font-family:'notokr-medium'} 
 .p10 .img_area li:before{display:block;content:"";position:absolute;left:0;top:56px;width:8px;height:14px;background-color:#ddd}
 .p10 .img_area img{margin: 40px auto;width: 60%;}
-.p10 .img_area{padding-left: 10%;text-align: left;}
-.p10 .tit_area{padding-left: 10%;text-align: left;}
-.p10 .txt_area{padding-left: 10%;text-align: left;}
+.p10 .img_area{/*padding-left: 10%;*/text-align: left;}
+.p10 .tit_area{/*padding-left: 10%;*/text-align: center;}
+.p10 .txt_area{/*padding-left: 10%;*/text-align: left;}
 .p10 .txt_area li{font-size:16px;overflow:hidden;margin-bottom:20px}
 .p10 .txt_area li .em{font-weight: 900;color: #FF5C00;}
 .p10 .txt_area li p .num{display:inline-block;width:40px;height:40px;margin-right:10px;border-radius:40px;font-size:16px;color:#fff;text-align:center;line-height:40px;font-family:'notokr-medium'}
@@ -266,3 +294,392 @@
 .p18 .txt_area li p .num{display:inline-block;width:40px;height:40px;margin-right:10px;border-radius:40px;font-size:16px;color:#fff;text-align:center;line-height:40px;font-family:'notokr-medium'}
 .p18 .txt_area li b{font-weight:normal;color:#222;text-decoration:underline}
 .p18 .txt_area .box_btn{display:flex;width:fit-content;background-color: #FF5C00;color: #fff;padding: 0 20px;border-radius: 30px;height: 60px;align-items: center;}
+
+/* 사업영역 */
+.p10 .img_area.business.business_01{
+    background: url(/sh_page/img/sub_business01.png) no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 420px;
+    position: relative;
+}
+.p10 .img_area.business.business_02{
+    background: url(/sh_page/img/sub_business02.png) no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 420px;
+    position: relative;
+}
+.p10 .img_area.business.business_03{
+    background: url(/sh_page/img/sub_business03.png) no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 420px;
+    position: relative;
+}
+.p10 .img_area.business.business_04{
+    background: url(/sh_page/img/sub_business04.png) no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 420px;
+    position: relative;
+}
+.p10 .img_area.business.business_05{
+    background: url(/sh_page/img/sub_business05.png) no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 420px;
+    position: relative;
+}
+.p10 .img_area.business.business_01 img,
+.p10 .img_area.business.business_02 img,
+.p10 .img_area.business.business_03 img,
+.p10 .img_area.business.business_04 img,
+.p10 .img_area.business.business_05 img{
+    width: 100%;
+    height: 100%;
+}
+.p10 .img_area.business .imgbox{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+.p10 .img_area.business .imgbox img{
+    width: 150px !important;
+    height: 150px !important;
+    opacity: 0.5;
+    object-fit: cover;
+}
+.p10 .img_area{
+    margin-top: 5rem;
+}
+.p10 .img_area.business .sub_titbox{
+    position: absolute;
+    top: 53%;
+    right: 6%;
+    text-align: right;
+    width: fit-content;
+}
+.p10 .img_area.business .sub_titbox div{
+    font-size: 19px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    margin-bottom: 0;
+}
+.p10 .img_area.business .sub_titbox div span{
+    width: 100%;
+    display: contents;
+    line-height: normal;
+}
+.p10 .img_area.business .sub_titbox div .em{
+    color: #fff;
+}
+.p10 .txt_area.titbox{
+    position: absolute;
+    text-align: center;
+    display: block;
+    top: 6%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+.p10 .txt_area.titbox.business_05tit{
+    margin-top: 1.5rem;
+}
+.p10 .txt_area.titbox li span{
+    font-size: 24px;
+    color: #1A1A1B;
+}
+.p10 .txt_area.sub_iconbox{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    margin-top: 5rem;
+}
+.p10 .txt_area.sub_iconbox li{
+    width: calc(100% / 3 - 1rem);
+    border: 1px solid #ddd;
+    padding: 2rem;
+    margin-bottom: 0;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.p10 .txt_area.sub_iconbox li .em{
+    font-size: 20px;
+    text-align: center;
+    display: block;
+}
+.p10 .txt_area.sub_iconbox li .iconwrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 0;
+}
+.p10 .txt_area.sub_iconbox li .iconwrap img{
+    width: 65px !important;
+    height: 65px !important;
+}
+.p10 .txt_area.sub_iconbox.business02_icon li .iconwrap.icon04 img{
+    width: 52px !important;
+    height: 64px !important;
+}
+.p10 .txt_area.sub_iconbox.business02_icon li .iconwrap.icon05 img{
+    width: 65px !important;
+    height: 53px !important;
+}
+.p10 .txt_area.sub_iconbox.business02_icon li .iconwrap.icon06 img{
+    width: 65px !important;
+    height: 45px !important;
+}
+.p10 .txt_area.sub_iconbox.business03_icon li .iconwrap.icon07 img{
+    width: 65px !important;
+    height: 49px !important;
+}
+.p10 .txt_area.sub_iconbox.business03_icon li .iconwrap.icon08 img{
+    width: 65px !important;
+    height: 57px !important;
+}
+.p10 .txt_area.sub_iconbox.business04_icon li .iconwrap.icon10 img{
+    width: 65px !important;
+    height: 52px !important;
+}
+.p10 .txt_area.sub_iconbox.business04_icon li .iconwrap.icon11 img{
+    width: 65px !important;
+    height: 65px !important;
+}
+.p10 .txt_area.sub_iconbox.business04_icon li .iconwrap.icon12 img{
+    width: 65px !important;
+    height: 52px !important;
+}
+
+
+/* 사업영역 반응형 */
+@media (max-width:1024px){
+    #pageCm .tit_area p{
+        font-size: 32px;
+    }
+    .p10 .txt_area.titbox li span{
+        font-size: 20px;
+        margin-top: -1rem;
+    }
+    .p10 .txt_area.titbox li {
+        margin-top: -1rem;
+    }
+    .p10 .txt_area.sub_titbox li{
+        font-size: 16px;
+    }
+    .p10 .txt_area.sub_iconbox li .em{
+        font-size: 18px;
+    }
+    .p10 .txt_area.sub_iconbox li .txtwrap {
+        text-align: justify;
+    }
+    .p10 .txt_area.sub_iconbox{
+        flex-wrap: wrap;
+    }
+    .p10 .txt_area.sub_iconbox li{
+        width: 100%;
+        flex: auto;
+    }
+    .p10 .img_area.business .sub_titbox{
+        top: 37%;
+    }
+    .p10 .img_area.business .imgbox img{
+        width: 110px !important;
+        height: 110px !important;
+    }
+    .p10 .img_area.business.business_01,
+    .p10 .img_area.business.business_02,
+    .p10 .img_area.business.business_03,
+    .p10 .img_area.business.business_04{
+        height: 300px
+    }
+}
+@media (max-width:840px){
+    #pageCm .tit_area p{
+        font-size: 28px;
+    }
+    .p10 .img_area.business .sub_titbox{
+        top: 50%;
+        right: 0%;
+        padding: 1rem;
+    }
+    .p10 .img_area.business .imgbox{
+        top: -3%;
+        left: 3%;
+    }
+    .p10 .img_area.business .sub_titbox div{
+        font-size: 16px;
+    }
+    #pageCm img{
+        height: 270px;
+    }
+    .p10 .txt_area.sub_iconbox{
+        margin-top: 1rem;
+    }
+
+}
+@media (max-width:640px){
+    .p10 .img_area.business{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .p10 .img_area.business .imgbox img{
+        width: 80px !important;
+        height: 80px !important;
+    }
+    .p10 .img_area.business .sub_titbox{
+        top: 74%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: start;
+    }
+    .p10 .txt_area.titbox{
+        top: 4%;
+    }
+    #pageCm .tit_area p{
+        font-size: 26px;
+    }
+    .p10 .txt_area.titbox li span{
+        font-size: 18px;
+        line-height: normal;
+    }
+    .mt_none{
+        display: none;
+    }
+    .p10 .txt_area.sub_iconbox li .iconwrap{
+        margin: 2rem 0;
+    }
+    #pageCm{
+        margin-bottom: 0;
+    }
+    .p10 .img_area.business .sub_titbox{
+        margin-top: -1rem;
+        width: 100%;
+    }
+
+}
+@media (max-width:480px){
+    .p10 .img_area.business .sub_titbox div{
+        font-size: 15px;
+    }
+    .p10 .img_area.business .sub_titbox{
+        width: 90%;
+        padding: 0;
+        margin-top: -2rem;
+    }
+    .p10 .img_area{
+        margin-top: 6rem;
+    }
+}
+
+/* 인사말 */
+.greeting_tit{
+    position: relative;
+    font-size: 50px;
+    color: #000;
+    font-weight: 300;
+    line-height: 70px;
+    padding-bottom: 50px;
+    margin: 70px 0 50px 0;
+    letter-spacing: -.5px;
+    text-align: start;
+    font-family: 'pretendard';
+}
+.greeting_tit::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    border-bottom: #ebebeb 1px dashed;
+}
+.greeting_tit::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+     width: 100px;
+    border-bottom: #FF5C00 1px solid;
+}
+.greeting_tit p strong{
+    color: #FF5C00;
+}
+.greeting_tit .abso_gtxt{
+    position: absolute;
+    top: -2px;
+    right: 0;
+    font-size: 101px;
+    color: #EFEFEF;
+    font-weight: 700;
+    font-style: italic;
+    font-family: 'Poppins';
+    z-index: -1;
+    opacity: .5;
+}
+@media(max-width:1200px){
+    .p6 .cont_area .greetingcont_wrap{
+        top: 33%;
+    }
+    .p6 .cont_area{
+        padding: 310px 0 200px 0;
+    }
+}
+@media(max-width:1024px){
+    .greeting_tit{
+        font-size: 40px;
+    }
+    .greeting_tit .abso_gtxt{
+        font-size: 80px;
+    }
+}
+@media(max-width:840px){
+    .greeting_tit{
+        font-size: 32px;
+        line-height: normal;
+    }
+    .greeting_tit .abso_gtxt{
+        font-size: 55px;
+        top: -25px;
+    }
+    .p6 .cont .st{
+        font-size: 20px;
+    }
+    .p6 .cont .sign span{
+        font-size: 20px;
+    }
+    .p6 .cont_area .greetingcont_wrap{
+        top: 20%;
+    }
+}
+@media(max-width:640px){
+    .greeting_tit{
+        font-size: 26px;
+        margin: 40px 0 50px 0;
+    }
+    .greeting_tit .abso_gtxt{
+        font-size: 45px;
+        top: -25px;
+    }
+    .p6 .cont{
+        padding: 1.5rem;
+    }
+    .p6 .cont .st{
+        font-size: 18px;
+    }
+    .p6 .cont .sign span{
+        font-size: 20px;
+    }
+    .p6 .cont_area .greetingcont_wrap{
+        top: 12%;
+    }
+}
+@media(max-width:400px){
+    .p6 .cont_area{
+        padding: 310px 0 250px 0;
+    }
+}

@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 #shSubBnr{position:relative}
-#shSubBnr p{overflow:hidden;position:relative;z-index:1;width:1320px;margin:80px auto 0;font-size:46px;font-weight:600;color:#222;font-family:'pretendard'}
+#shSubBnr p{overflow:hidden;position:absolute;z-index:1;width:100%;margin:0 auto;font-size:46px;font-weight:600;color:#fff;font-family:'pretendard'; text-align: center; top: 56%; left: 50%; transform: translate(-50%, -50%); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);}
 #shSubBnr p span{opacity:0;position:relative;bottom:-46px}
 #shSubBnr .bg{height:350px;margin-top:-15px;background:center no-repeat;background-size:cover}
 

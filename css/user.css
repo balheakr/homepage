@@ -52,12 +52,27 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
 /* =========================== CONTAINER */
 #sh_container{position:relative;z-index:10;width:100%}
 #sh_container_wrapper.sub{padding-top:50px}
-#sh_content{display: flex;position:relative;z-index:4;/* width:1200px; */min-height:580px;margin:0 auto;padding:70px 250px; }
-#sh_content2{display: flex;position:relative;z-index:4;/* width:1200px; */min-height:580px;margin:0 auto;padding:70px 90px; }
-#sh_content3{position:relative;z-index:4;/* width:1200px; */min-height:580px;margin:0 auto;padding:70px 20px; }
+#sh_content{display: flex;position:relative;z-index:4;/* width:1200px; */min-height:580px;margin:0 auto;padding:100px 250px; }
+#sh_content2{
+    display: flex;
+    position:relative;
+    z-index:4;
+    /* width:1200px; */
+    min-height:580px;
+    margin:0 auto;
+    padding:70px 90px; 
+    align-items: center;
+    justify-content: center;
+}
+#sh_content3{position:relative;z-index:4; /*min-width:1300px;*/ min-height:580px;margin:0 auto;padding:70px 20px; }
 @media(max-width:1850px){
     #sh_content3{
         padding:70px 0px; 
+    }
+}
+@media (max-width: 1024px){
+    #sh_content2{
+        padding: 70px 32px;
     }
 }
 

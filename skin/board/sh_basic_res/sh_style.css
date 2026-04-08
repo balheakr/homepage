@@ -26,7 +26,24 @@ a.sh_adm_btn{display:block;text-align:center}
 a.btn_cancel{border-radius:3px;font-size:14px}
 
 /* 버튼 공통 */
-.btn_type01{display:inline-block;width:180px;height:55px;margin:0 auto;border-radius:2px;font-size:15px;color:#fff;text-align:center;line-height:55px;background-color:#FF5C00;-webkit-transition:all .2s;transition:all .2s;font-family:'notokr-medium'}
+.btn_type01{
+    display:inline-block;
+    width:180px;
+    height:55px;
+    margin:0 auto;
+    border-radius:2px;
+    font-size:15px;
+    color:#fff;
+    text-align:center;
+    line-height:55px;
+    background-color:#FF5C00;
+    -webkit-transition:all .2s;
+    transition:all .2s;
+    font-family:'pretendard'
+}
+.btn_type01.inquery_btn{
+    margin-top: 1rem;
+}
 .btn_type01:hover{background-color:#ff7d32}
 a.cancel_btn{display:inline-block;vertical-align:top;width:75px;height:55px;border:none;border-radius:2px;font-size:15px;text-align:center;color:#fff;line-height:55px;background-color:#bbb;font-family:'notokr-medium'}
 a.btn_normal{display:inline-block;vertical-align:top;width:75px;height:55px;border:none;border-radius:2px;font-size:15px;text-align:center;color:#fff;line-height:55px;background-color:#bbb;font-family:'notokr-medium'}
@@ -61,6 +78,21 @@ a.btn_line{display:inline-block;vertical-align:top;width:75px;height:55px;border
 }
 .tb_scroll{
     overflow-x: auto;
+}
+.sh_tbl_common.sh_tbl_inquery{
+    width: 1300px;
+    margin: 0 auto;
+    border-top:2px solid #FF5C00; 
+}
+#sh_bo_w .btn_area.inquery_btnwrap{
+    width: 1300px;
+    margin: 20px auto;
+}
+@media (max-width:1600px){
+    .sh_tbl_common.sh_tbl_inquery,
+    #sh_bo_w .btn_area.inquery_btnwrap{
+        width: 100%;
+    }
 }
 
 /* -------- 리스트 시작 [s] */

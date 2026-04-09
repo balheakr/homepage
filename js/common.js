@@ -9,7 +9,7 @@ $(function enforceWww() {
     const protocol = location.protocol === 'http:' ? 'https:' : window.location.protocol;
   
     // 로컬 개발 환경 제외
-    if (hostname === 'localhost' || hostname === '127.0.0.1') return;
+    if (hostname === 'localhost' || hostname === '127.0.0.1' || hostname === 'www-dev.neobh.kr') return;
   
     const CANONICAL_HOST = 'www.neobh.kr';
   

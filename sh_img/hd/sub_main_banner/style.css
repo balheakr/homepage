@@ -1,7 +1,7 @@
 @charset "utf-8";
 
-#shSubBnr{position:relative}
-#shSubBnr p{overflow:hidden;position:relative;z-index:1;width:1320px;margin:80px auto 0;font-size:46px;font-weight:600;color:#222;font-family:'pretendard'}
+#shSubBnr{position:relative; z-index: 1;}
+#shSubBnr p{overflow:hidden;position:absolute;z-index:1;width:100%;margin:0 auto;font-size:46px;font-weight:600;color:#fff;font-family:'pretendard'; text-align: center; top: 56%; left: 50%; transform: translate(-50%, -50%); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);word-break: keep-all;}
 #shSubBnr p span{opacity:0;position:relative;bottom:-46px}
 #shSubBnr .bg{height:350px;margin-top:-15px;background:center no-repeat;background-size:cover}
 
@@ -12,6 +12,11 @@
 #shSubBnr{background:#111}
 #shSubBnr p{position:absolute;left:50%;top:50%;z-index:10;transform:translate(-50%,-50%);width:max-content;margin:0;font-size:32px;color:#fff}	
 #shSubBnr .bg{opacity:.65;height:260px}
+}
+@media(max-width:840px){
+    #shSubBnr p{
+        width: 450px;
+    }
 }
 @media(max-width:480px){
 #shSubBnr{background:#fff}

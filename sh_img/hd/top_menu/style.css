@@ -1,10 +1,31 @@
 @charset "utf-8";
 
-#shGnb{display:flex;align-items:center;position:relative;width:100%;height:90px;padding:0 6.5%}
+#shGnb{display:flex;align-items:center;position:relative;width:100%;height:90px;padding:0 6.5%; border-bottom: 1px solid #ddd;}
 #shGnb.blur{backdrop-filter:blur(15px);background:rgba(0,0,0,.5);transition:background .2s}
 #shGnb.blur.on{backdrop-filter:blur(0);background-color:transparent}
 #shGnb.sub{background:#fff}
 .sh_lnb_bg{display:none;position:absolute;top:0;left:0;width:100%;height:220px;background-color:#fff}
+
+.sh_nav > li {
+  position: relative;
+}
+.sh_nav .sh_lnb_s {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transition: 0.3s;
+  z-index: 999;
+}
+.sh_nav > li:hover .sh_lnb_s {
+  opacity: 1;
+  visibility: visible;
+}
+.sh_nav .sh_lnb_s li{
+    border-bottom: 1px solid #e1e1e1;
+    padding: 14px 10px;
+}
 
 /* 로고 */
 #shGnb .sh_logo{position:relative;z-index:20}
@@ -12,14 +33,14 @@
 
 /* 대분류  */
 #shGnb .sh_nav{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:max-content}
-#shGnb .sh_nav > li{float:left;position:relative;padding:0 25px;line-height:70px}
+#shGnb .sh_nav > li{float:left;position:relative;padding:0 25px;line-height:70px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; width: 170px;}
 #shGnb .sh_nav > li > a{display:block;font-size:18px;font-weight:500;color:#fff;transition:all .2s}
 #shGnb.on .sh_nav > li > a{color:#222}
 #shGnb.sub .sh_nav > li > a{color:#222}
 
 /* 소분류 */
-#shGnb .sh_lnb_s{display:none;position:absolute;left:50%;transform:translateX(-50%);min-width:100%;width:max-content;min-height:145px}
-#shGnb .sh_lnb_s li a{display:block;line-height:1.8;text-align:center;color:#999;transition:all .2s}
+#shGnb .sh_lnb_s{/*display:none;*/ position:absolute;left:50%;transform:translateX(-50%);min-width:100%;width:max-content; background-color: #fff; top: 115%; width: 170px; cursor: pointer; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);}
+#shGnb .sh_lnb_s li a{display:block;line-height:normal;text-align:center;color:#999;transition:all .2s}
 #shGnb .sh_lnb_s li a:hover{color:#FF5C00}
 
 /* sns */
@@ -51,7 +72,7 @@
 #m_navBtn.on span:before{top:0;right:-4px;transform:rotate(45deg)}
 #m_navBtn.on span:after{top:0;right:-4px;width:30px;transform:rotate(-45deg);background-color:#222}
 #navWrap{display:none;position:fixed;left:0;top:0;z-index:4;width:100%;height:100%;background-color:rgba(0,0,0,.7)}
-#navWrap .inner{overflow-y:scroll;opacity:0;position:fixed;right:-40px;top:0;z-index:6;min-width:300px;width:75%;height:100%;padding:60px 0;background-color:#fff;-webkit-transition:all .1s;transition:all .1s}
+#navWrap .inner{overflow-y:scroll;opacity:0;position:fixed;right:-16px !important;top:0;z-index:6;min-width:300px;width:75%;height:100%;padding:60px 0;background-color:#fff;-webkit-transition:all .1s;transition:all .1s}
 #navWrap.on .inner{opacity:1;right:0;-webkit-transition:all .4s;transition:all .4s}
 #navWrap .inner:before, #navWrap .inner:after{opacity:0;display:block;position:fixed;top:0;right:-40px;z-index:1;content:"";min-width:300px;width:70%;height:60px;background-color:#fff;-webkit-transition:all .1s;transition:all .1s}
 #navWrap .inner:after{top:auto;bottom:0}

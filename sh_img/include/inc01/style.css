@@ -186,6 +186,21 @@
   transition: transform 0.6s ease;
   z-index: 0;
 }
+.introduce_wrap .introduce::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 92, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+.introduce_wrap .introduce.introduce_01:hover::after,
+.introduce_wrap .introduce.introduce_02:hover::after,
+.introduce_wrap .introduce.introduce_03:hover::after,
+.introduce_wrap .introduce.introduce_04:hover::after {
+  opacity: 1;
+}
 .introduce_wrap .introduce.introduce_01:hover::before,
 .introduce_wrap .introduce.introduce_02:hover::before,
 .introduce_wrap .introduce.introduce_03:hover::before,
@@ -234,6 +249,7 @@
     text-align: center;
     color: #fff;
     border-radius: 30px;
+    cursor: pointer;
 }
 .introduce_wrap .introduce .btn_wrap a:hover{
     background: #FF5C00;

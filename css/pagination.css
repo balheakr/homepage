@@ -15,7 +15,7 @@
     cursor: pointer;
 }
 .pagination li.active {
-    background: #FF5C00;
+    background: #333;
     color: white;
 }
 .pagination li.disabled {

@@ -5,10 +5,9 @@
 /* 스와이퍼 */
 #mainVisual .main_slide{width:100%;height:100%}
 #mainVisual ul li{width:100%;height:100%;background:center no-repeat;background-size:cover}
-#mainVisual ul li.bg01{background-image:url('mainvisual_01.png')}
-#mainVisual ul li.bg02{background-image:url('mainvisual_02.png')}
-#mainVisual ul li.bg03{background-image:url('mainvisual_03.png')}
-#mainVisual ul li.bg04{background-image:url('mainvisual_04.png')}
+#mainVisual ul li.bg01{background-image:url('main01.jpeg')}
+#mainVisual ul li.bg02{background-image:url('main02.jpeg')}
+#mainVisual ul li.bg03{background-image:url('main03.jpeg')}
 #mainVisual .pager{position:absolute;left:50%;bottom:70px;z-index:101;transform:translateX(-50%);width:max-content}
 #mainVisual .pager span{opacity:.3;position:relative;width:29px;height:29px;margin:0 5px;background-color:transparent;transition:all .3s}
 #mainVisual .pager span.on{opacity:1}
@@ -17,65 +16,25 @@
 #mainVisual .pager span:after{display:block;content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:7px;height:7px;border-radius:50%;background:#fff}
 
 /* 텍스트 */
-#mainVisual .main_txt{display:flex;flex-flow:column;position:absolute;left:50%;top:50%;z-index:101;font-size:18px;font-weight:500;color:#fff;font-family:'Pretendard'; transform: translate(-50%, -50%); text-shadow: 0px 0px 6px rgb(0 0 0 / 40%); text-align: center; width: 100%;}
-#mainVisual .main_txt span{font-weight:400;font-family:'poppins',sans-serif; font-size: 52px;}
-#mainVisual .main_txt p{margin:50px 0 13px 0 ;font-size:65px;font-weight:700;line-height:1.2;white-space:pre-line;font-family:'poppins',sans-serif}
-#mainVisual .main_txt p b{color:#FFF; font-weight: 600;}
-#mainVisual .main_txt .main_subtxt{
-    font-size: 36px;
-}
+#mainVisual .main_txt{display:flex;flex-flow:column;position:absolute;left:6.5%;bottom:240px;z-index:101;font-size:18px;font-weight:500;color:#fff;font-family:'Pretendard'}
+#mainVisual .main_txt span{font-weight:600;font-family:'poppins',sans-serif}
+#mainVisual .main_txt p{margin:50px 0 45px;font-size:65px;font-weight:700;line-height:1.2;white-space:pre-line;font-family:'poppins',sans-serif}
+#mainVisual .main_txt p b{color:#FF5C00}
 
 @media(max-width:1230px){
 #mainVisual{height:800px;min-height:auto}	
-#mainVisual .main_txt span{
-    font-size: 42px;
-}
-#mainVisual .main_txt p{
-    font-size: 52px;
-}
-#mainVisual .main_txt .main_subtxt{
-    font-size: 24px;
-}
 }
 @media(max-width:1024px){
 #mainVisual{height:600px}
-#mainVisual .main_txt{font-size:16px}
+#mainVisual .main_txt{bottom:200px;font-size:16px}
 #mainVisual .main_txt p{margin:30px 0;font-size:48px}
 #mainVisual .pager{bottom:30px}
-#mainVisual .main_txt span{
-    font-size: 38px;
-}
-#mainVisual .main_txt p{
-    margin: 10px 0;
-}
-#mainVisual .main_txt .main_subtxt{
-    font-size: 20px;
-}
 }
 @media(max-width:768px){
 #mainVisual{height:500px}
-#mainVisual .main_txt{line-height:1.6;word-break:keep-all; padding: 0 2rem;}
+#mainVisual .main_txt{left:30px;bottom:100px;line-height:1.6;word-break:keep-all}
 #mainVisual .main_txt p{font-size:42px;word-break:keep-all}
-#mainVisual .main_txt span{
-    font-size: 30px;
-}
-#mainVisual .main_txt p{
-    font-size: 36px;
-}
-#mainVisual .main_txt .main_subtxt{
-    font-size: 18px;
-}
-
 }
 @media(max-width:480px){
 #mainVisual .main_txt p{font-size:38px}	
-#mainVisual .main_txt span{
-    font-size: 24px;
-}
-#mainVisual .main_txt p{
-    font-size: 32px;
-}
-#mainVisual .main_txt .main_subtxt{
-    font-size: 16px;
-}
 }

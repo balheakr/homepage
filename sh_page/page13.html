@@ -266,96 +266,15 @@ $(document).ready(function(){
 
 <div id="pageCm" class="p13">
 
-	<div class="tit_area">
+	<div class="tit_area t_left">
     	<!-- <span class="pg_color">production</span> -->
         <p class="c_black"><strong class="pg_color" data-i18n="nav.certification"></strong></p>
     </div>
 
-    <!-- <ul class="img_area">
+    <ul class="img_area">
         <img src="/sh_page/img/lap_certificate.png" alt="연구소 인증서"/>
         <img src="/sh_page/img/system_certificate.jpg" alt="품질경영시스템 인증서"/>
-    </ul> -->
-
-    <div class="certification_wrap">
-        <!-- 컨텐츠 -->
-        <section class="cert-wrap">
-            <div class="inner">
-                <div class="cert-list">
-                    <a href="#" class="cert-item" data-img="/sh_page/img/lap_certificate.png">
-                        <img src="/sh_page/img/lap_certificate.png" alt="인증서1" />
-                    </a>
-                    <a href="#" class="cert-item" data-img="/sh_page/img/system_certificate.jpg">
-                        <img src="/sh_page/img/system_certificate.jpg" alt="인증서2" />
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 레이어 팝업 -->
-        <div class="layer-popup">
-            <div class="popup-bg"></div>
-
-            <div class="popup-box">
-                <button class="popup-close" type="button">✕</button>
-                <img src="" alt="확대 이미지" id="popupImg" />
-            </div>
-        </div>   
-        <script>
-            const certItems = document.querySelectorAll('.cert-item');
-            const layerPopup = document.querySelector('.layer-popup');
-            const popupImg = document.getElementById('popupImg');
-            const popupClose = document.querySelector('.popup-close');
-            const popupBg = document.querySelector('.popup-bg');
-
-            let scrollY = 0;
-
-            certItems.forEach(function(item) {
-                item.addEventListener('click', function(e) {
-                e.preventDefault();
-
-                const imgSrc = this.getAttribute('data-img');
-                popupImg.setAttribute('src', imgSrc);
-
-                // 현재 스크롤 위치 저장
-                scrollY = window.scrollY;
-
-                // body 고정
-                document.body.style.position = 'fixed';
-                document.body.style.top = `-${scrollY}px`;
-                document.body.style.left = '0';
-                document.body.style.right = '0';
-                document.body.style.width = '100%';
-
-                layerPopup.classList.add('on');
-                });
-            });
-
-            function closePopup() {
-                layerPopup.classList.remove('on');
-                popupImg.setAttribute('src', '');
-
-                // body 원상복구
-                document.body.style.position = '';
-                document.body.style.top = '';
-                document.body.style.left = '';
-                document.body.style.right = '';
-                document.body.style.width = '';
-
-                // 스크롤 위치 복원
-                window.scrollTo(0, scrollY);
-            }
-
-            popupClose.addEventListener('click', closePopup);
-            popupBg.addEventListener('click', closePopup);
-
-            // ESC 닫기 추가 (보너스)
-            window.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                closePopup();
-                }
-            });
-        </script>
-    </div>
+    </ul>
 
 </div>
 

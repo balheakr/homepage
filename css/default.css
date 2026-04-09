@@ -348,7 +348,7 @@ box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
 .empty_list {padding:20px 0 !important;color:#666;text-align:center}
 
 /* 필수입력 */
-.required, textarea.required {background-image:url('../img/require.png')  !important;background-repeat:no-repeat   !important;background-position:right top  !important;}
+.required, textarea.required {/*background-image:url('../img/require.png')  !important;*/background-repeat:no-repeat   !important;background-position:right 44%  !important;}
 
 /* 테이블 항목별 정의 */
 .td_board {width:80px;text-align:center}

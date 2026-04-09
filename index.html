@@ -303,20 +303,21 @@ $(function(){
 <section id="mainbanner">
 <div id="mainVisual">
 	<div class="main_txt" data-aos="fade-in">
-        <span data-aos="fade-left" data-i18n="home.brand"></span>
+        <span  data-i18n="home.brand"></span>
       
-        <p data-aos="fade-right">
+        <p>
           <span data-i18n="home.headline"></span>
           <b data-i18n="home.headlineBold"></b>
         </p>
       
-        <span data-i18n="home.desc"></span>
+        <span data-i18n="home.desc" class="main_subtxt"></span>
     </div>
 	<div class="swiper main_slide">
 		<ul class="swiper-wrapper">
 			<li class="swiper-slide bg01"></li>
 			<li class="swiper-slide bg02"></li>
 			<li class="swiper-slide bg03"></li>
+            <li class="swiper-slide bg04"></li>
 		</ul>
 		<div class="pager"></div>
 	</div>
@@ -342,63 +343,73 @@ var mainSwiper = new Swiper(".main_slide", {
 <div id="sh_section">
 	<section id="section01">
 <article id="inc01">
-	<div class="sh_cont_box" data-aos="fade-left">
+	<div class="sh_cont_box">
 		<p class="s_tit" data-i18n="nav.business"></p>
 		<div class="txt_group">
 			<p data-i18n="business.headline" data-i18n-html="true"></p>
-			<span data-i18n="business.desc"></span>
-            <a href="/sh_page/page10.html" class="more_btn">
-                <span data-i18n="common.more"></span>
-                <i data-feather="arrow-right"></i>
-            </a>
+			<span class="business_subtit" data-i18n="business.desc"></span>
 		</div>
     </div>
-    <div class="slide_wrap" data-aos="fade-left">
-        <div class="swiper-container inc01_slide">
-            <ul class="swiper-wrapper">
-                <li class="swiper-slide">
-                	<a href="/sh_page/page10.html">
-                    	<div class="info">
-    	                    <p data-i18n="nav.obtain"></p>
-                            <span>PUBLIC SECTOR PROCUREMENT</span>
-	                        <div data-i18n="obtain.desc"></div>
-                        </div>
-                    </a>
-                </li>	      
-                <li class="swiper-slide img02">
-                	<a href="/sh_page/page10.html">
-                    	<div class="info">
-                            <p data-i18n="nav.manufacturing"></p>
-                            <span>EQUIPMENT / INDUSTRIAL EQUIPMENT MANUFACTURING</span>
-	                        <div data-i18n="manufacturing.desc"></div>
-                        </div>
-                    </a>
-                </li>	   
-                <li class="swiper-slide img03">
-                	<a href="/sh_page/page10.html">
-                    	<div class="info">
-                            <p data-i18n="nav.ai"></p>
-                            <span>AI-DRIVEN MRO & SRM SOLUTIONS</span>
-	                        <div data-i18n="ai.desc"></div>
-                        </div>
-                    </a>
-                </li>	
-                <li class="swiper-slide img04">
-                	<a href="/sh_page/page10.html">
-                    	<div class="info">
-                            <p data-i18n="nav.safety"></p>
-                            <span>GLOBAL SAFETY / FALL PROTECTION SOLUTIONS</span>
-	                        <div data-i18n="safety.desc"></div>
-                        </div>
-                    </a>
-                </li>	
-            </ul>
-            <div class="nav_btn">        
-                <button class="next dft_btn"><i data-feather="arrow-right"></i></button>
+    
+    <section class="business_wrap">
+        <div class="business business01">
+            <div class="business_img aos-item aos-init aos-animate" data-aos="fade-right" data-aos-delay="400">
+            </div>
+            <div class="business_con aos-item aos-init aos-animate" data-aos="fade-left" data-aos-delay="400">
+                <div class="tit">
+                    <h6>PUBLIC SECTOR PROCUREMENT</h6>
+                    <h5 data-i18n="nav.obtain.strong" data-i18n-html="true"></h5>
+                </div>
+                <p data-i18n="obtain.desc.strong" data-i18n-html="true"></p>
+                <div class="btn_wrap">
+                    <a href="/sh_page/page10.html" class="btn_more">View More</a>
+                </div>
             </div>
         </div>
-    </div>
-
+        <div class="business business02">
+            <div class="business_con aos-item aos-init aos-animate" data-aos="fade-right" data-aos-delay="400">
+                <div class="tit">
+                    <h6>EQUIPMENT / INDUSTRIAL EQUIPMENT MANUFACTURING</h6>
+                    <h5 data-i18n="nav.manufacturing.strong" data-i18n-html="true"></h5>
+                </div>
+                <p data-i18n="manufacturing.desc.strong" data-i18n-html="true"></p>
+                <div class="btn_wrap">
+                    <a href="/sh_page/page15.html" class="btn_more">View More</a>
+                </div>
+                
+            </div>
+            <div class="business_img aos-item aos-init aos-animate" data-aos="fade-left" data-aos-delay="400">
+            </div>
+        </div>
+        <div class="business business03">
+            <div class="business_img aos-item aos-init aos-animate" data-aos="fade-right" data-aos-delay="400">
+            </div>
+            <div class="business_con aos-item aos-init aos-animate" data-aos="fade-left" data-aos-delay="400">
+                <div class="tit">
+                    <h6>AI-DRIVEN MRO & SRM SOLUTIONS</h6> 
+                    <h5 data-i18n="nav.ai.strong" data-i18n-html="true"></h5>
+                </div>
+                <p data-i18n="ai.desc.strong" data-i18n-html="true"></p>
+                <div class="btn_wrap">
+                    <a href="/sh_page/page16.html" class="btn_more">View More</a>
+                </div>
+            </div>
+        </div>
+        <div class="business business04">
+            <div class="business_con aos-item aos-init aos-animate" data-aos="fade-right" data-aos-delay="400">
+                <div class="tit">
+                    <h6>GLOBAL SAFETY / FALL PROTECTION SOLUTIONS</h6>
+                    <h5 data-i18n="nav.safety.strong" data-i18n-html="true"></h5>
+                </div>
+                <p data-i18n="safety.desc.strong" data-i18n-html="true"></p>
+                <div class="btn_wrap">
+                    <a href="/sh_page/page17.html" class="btn_more">View More</a>
+                </div>
+            </div>
+            <div class="business_img aos-item aos-init aos-animate" data-aos="fade-left" data-aos-delay="400">
+            </div>
+        </div>
+    </section>
 </article>
 
 <script> 
@@ -439,19 +450,63 @@ $(function() {
      <section id="section03">
 <article id="inc03">
 	<div class="inner">
-        <div class="sh_cont_box" data-aos="fade-left">
-            <p class="s_tit" data-i18n="nav.news"></p>
+        <div class="sh_cont_box">
+            <p class="s_tit" data-i18n="nav.introduction"></p>
             <div class="txt_group">
                 <p data-i18n="news.headline" data-i18n-html="true"></p>
-                <span data-i18n="news.desc"></span>
-                <a href="/sh_page/page10.html" class="more_btn">
+                <span class="business_subtit" data-i18n="news.desc"></span>
+                <!-- <a href="/sh_page/page10.html" class="more_btn">
                     <span data-i18n="common.more"></span>
                     <i data-feather="arrow-right"></i>
-                </a>
+                </a> -->
             </div>
         </div>
-        <ul class="latest" data-aos="fade-left">
-            <!-- <li><a href="/bbs/bo_table42.html">
+
+        <section class="introduce_wrap">
+            <div class="introduce introduce_01">
+                <div class="imgbox"></div>
+                <div class="txtbox">
+                    <h5 data-i18n="introduction.headline" data-i18n-html="true"></h5>
+                    <p data-i18n="introduction.headline.desc" data-i18n-html="true"></p>
+                </div>
+                <div class="btn_wrap">
+                    <a href="/sh_page/page6.html">view more</a>
+                </div>
+            </div>
+            <div class="introduce introduce_02">
+                <div class="imgbox"></div>
+                <div class="txtbox">
+                    <h5 data-i18n="introduction.history" data-i18n-html="true"></h5>
+                    <p data-i18n="introduction.history.desc" data-i18n-html="true"></p>
+                </div>
+                <div class="btn_wrap">
+                    <a href="/sh_page/page6.html">view more</a>
+                </div>
+            </div>
+            <div class="introduce introduce_03">
+                <div class="imgbox"></div>
+                <div class="txtbox">
+                    <h5 data-i18n="introduction.certification" data-i18n-html="true"></h5>
+                    <p data-i18n="introduction.certification.desc" data-i18n-html="true"></p>
+                </div>
+                <div class="btn_wrap">
+                    <a href="/sh_page/page13.html">view more</a>
+                </div>
+            </div>
+            <div class="introduce introduce_04">
+                <div class="imgbox"></div>
+                <div class="txtbox">
+                    <h5 data-i18n="introduction.organization" data-i18n-html="true"></h5>
+                    <p data-i18n="introduction.organization.desc" data-i18n-html="true"></p>
+                </div>
+                <div class="btn_wrap">
+                    <a href="/sh_page/page8.html">view more</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- <ul class="latest" data-aos="fade-left">
+            <li><a href="/bbs/bo_table42.html">
                 <div class="img" style="background-image:url(data/file/table42/thumb-1935566034_I9LWKE8O_7f1fe9eba3f67508ff2b903e7b04c89abb4536b3_250x.jpg)"></div>
                 <div class="cont">
                     <span>2023-08-23</span>
@@ -467,8 +522,8 @@ $(function() {
                     <p>하반기 결산 안내</p>
                     <div>우리 기업의 투명한 운영을 위하여 매 분기 결산 내역을 공개합니다.</div>
                 </div>
-            </a></li> -->
-        </ul>
+            </a></li>
+        </ul> -->
         <script type="module">
             import axios from 'https://cdn.jsdelivr.net/npm/axios@1.6.8/+esm';
             import { initPagination } from '/js/pagination.js?v=__BUILD__';
@@ -520,14 +575,14 @@ $(function() {
             });
         </script>
     </div>
-    <div class="bnr_wrap">
+    <!-- <div class="bnr_wrap">
         <div class="bnr" data-aos="fade-left">
             <div class="txt">
                 <p data-i18n="wrap.headline" data-i18n-html="true"></p>
                 <div data-i18n="wrap.desc" data-i18n-html="true"></div>
             </div>
         </div>
-    </div>
+    </div> -->
 </article>
 </section>
 </div>
@@ -539,8 +594,8 @@ $(function() {
 
 <div id="sh_ft_btns">
    	<div class="btns">
-		        <a class="tel" href="tel:0319873069"><i class="fa fa-phone"></i>031-987-3069</a>
-            </div>
+		<a class="tel" href="tel:0319873069"><i class="fa fa-phone"></i>031-987-3069</a>
+    </div>
 </div>
 <a id="fix_tel" href="tel:0319873069"><i class="fa fa-phone"></i></a>
 <script>

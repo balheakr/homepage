@@ -15,18 +15,31 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
 
 /* =========================== MAIN */
 #sh_section{overflow:hidden;position:relative;;font-size:15px;line-height:1.6;color:#777;font-family:'pretendard'}
-.sh_cont_box .s_tit{width:95px;text-align: center;padding-bottom:5px;font-size:22px;font-weight:700;color:#111;border-bottom:5px solid #FF5C00}
+.sh_cont_box .s_tit{text-align: center;padding-bottom:5px;font-size:32px;font-weight:700;color:#111; position: relative; padding-top: 3rem;}
+.sh_cont_box .s_tit::after{
+    content: "";
+    position: absolute;
+    top: 34%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 52px;
+    height: 5px;
+    background: #FF5C00;
+}
 .sh_cont_box .txt_group{position:relative;font-size:17px;color:#888;word-break:keep-all}
-.sh_cont_box .txt_group p{font-size:45px;font-weight:700;line-height:1.3;color:#111;word-break:keep-all}
+.sh_cont_box .txt_group p{font-size:38px;font-weight:500;line-height:1.3;color:#111;word-break:keep-all; margin: 10px 0 !important;}
 .sh_cont_box .more_btn{display:flex;align-items:center;justify-content:space-between;width:186px;height:60px;padding:0 28px 0 35px;font-size:15px;font-weight:600;border-radius:30px;background:#f2f2f2;transition:all .2s}
 @media(hover:hover){
 .sh_cont_box .more_btn:hover{color:#fff;background:#FF5C00}
 }
+
+
+
 /* =========================== SNB */
-#sh_aside{position:relative;min-width:270px;margin:0;z-index:25;font-family:'pretendard'}
-#sh_aside_com{position:relative;min-width:120px;margin:0;z-index:25;font-family:'pretendard'}
+#sh_aside{display: none; position:relative;min-width:270px;margin:0;z-index:25;font-family:'pretendard'}
+#sh_aside_com{display: none;position:relative;min-width:120px;margin:0;z-index:25;font-family:'pretendard'}
 /* =========================== NAV */
-#navbar{position:fixed;z-index:999;top:50%;left:40px;transform:translateY(-50%)}
+#navbar{display: none; position:fixed;z-index:999;top:50%;left:40px;transform:translateY(-50%)}
 #navbar.mainbanner{opacity:0}
 #navbar li{position:relative;transition:all .3s}
 #navbar li+li{margin-top:25px}
@@ -39,9 +52,29 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
 /* =========================== CONTAINER */
 #sh_container{position:relative;z-index:10;width:100%}
 #sh_container_wrapper.sub{padding-top:50px}
-#sh_content{display: flex;position:relative;z-index:4;/* width:1200px; */min-height:580px;margin:0 auto;padding:70px 90px; }
-#sh_content2{display: flex;position:relative;z-index:4;/* width:1200px; */min-height:580px;margin:0 auto;padding:70px 90px; }
-#sh_content3{position:relative;z-index:4;/* width:1200px; */min-height:580px;margin:0 auto;padding:70px 90px; }
+#sh_content{display: flex;position:relative;z-index:4;/* width:1200px; */min-height:580px;margin:0 auto;padding:100px 250px; }
+#sh_content2{
+    display: flex;
+    position:relative;
+    z-index:4;
+    /* width:1200px; */
+    min-height:580px;
+    margin:0 auto;
+    padding:70px 90px; 
+    align-items: center;
+    justify-content: center;
+}
+#sh_content3{position:relative;z-index:4; /*min-width:1300px;*/ min-height:580px;margin:0 auto;padding:70px 20px; }
+@media(max-width:1850px){
+    #sh_content3{
+        padding:70px 0px; 
+    }
+}
+@media (max-width: 1024px){
+    #sh_content2{
+        padding: 70px 32px;
+    }
+}
 
 /* =========================== FOOTER */
 #toTop{pointer-events:none;opacity:0;cursor:pointer;position:fixed;right:30px;bottom:10%;z-index:101;display:flex;width:65px;height:65px;margin-bottom:-50px;border-radius:100%;background:#fff;transition:all .2s;box-shadow:2px 2px 18px rgba(0, 0, 0, .1)}
@@ -55,7 +88,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
 #sh_ft .ft_nav li+li:before{display:inline-block;content:"";width:1px;height:12px;margin:0 25px;background:rgba(255,255,255,.2)}
 #sh_ft .ft_nav li a{opacity:.4;font-size:16px;color:#fff;transition:all .2s}
 #sh_ft .inner{display:flex;align-items:flex-start;padding:90px calc((100% - 1320px) / 2);border-top:1px solid rgba(255,255,255,.15)}
-#sh_ft .ft_logo{margin-top:10px;opacity:.4}
+#sh_ft .ft_logo{opacity:.4}
 #sh_ft .ft_logo img{max-width:200px}
 #sh_ft .info{margin-left:80px}
 #sh_ft .info p{margin-bottom:15px;font-size:18px;font-weight:700;font-family:'Play'}
@@ -112,6 +145,9 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
 @media (max-width:1600px){
 #navbar{left:25px}
 #navbar li a{font-size:14px}
+#sh_content{
+    padding: 70px 2rem;
+}
 }
 @media (max-width:1520px){
 #navbar{display:none}
@@ -127,7 +163,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
 .sh_cont_box .more_btn{width:150px;height:52px;padding:0 20px 0 28px}
 .sh_cont_box .more_btn svg{width:20px;height:20px}
 #sh_container_wrapper.sub{padding:0}
-#sh_content{margin:0 auto;padding:40px 0 0;border:none}
+#sh_content{margin:0 auto;padding:40px 2rem;border:none}
 #sh_aside{display:none}
 #sh_hd{position:relative}
 #sh_container{margin:0}
@@ -139,7 +175,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
 #sh_ft .ft_nav li+li:before{margin:0 10px}
 #sh_ft .inner{padding:60px 30px;flex-wrap:wrap}
 #sh_ft .ft_logo{width:100%}
-#sh_ft .info{width:70%;margin:20px 0 0;padding-right:30px}
+#sh_ft .info{/*width:70%;*/margin:20px 0 0;padding-right:30px}
 #sh_ft .cs{width:30%}
 }
 @media (max-width:768px){
@@ -197,3 +233,60 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
     .p18 img{width: 100% !important;}
 }
 /* 반응형 [e] */
+
+/* 리뉴얼 반응형 */
+@media(max-width:1450px){
+    .sh_cont_box .s_tit{
+        font-size: 24px;
+    }
+    .sh_cont_box .s_tit::after{
+        width: 40px;
+    }
+    .sh_cont_box .txt_group p{
+        font-size: 34px;
+    }
+    .business_subtit{
+        font-size: 22px
+    }
+}
+@media(max-width:1200px){
+    #sh_ft .cs .info{
+        margin-top: 0;
+    }
+    #sh_ft .cs .info ul{
+        margin-left: 0;
+    }
+}
+@media(max-width:1024px){
+    .sh_cont_box .s_tit{
+        font-size: 20px;
+    }
+    .sh_cont_box .s_tit::after{
+        width: 40px;
+        top: 44%;
+    }
+    .sh_cont_box .txt_group p{
+        font-size: 30px;
+        margin: 5px 0 !important;
+    }
+    .business_subtit{
+        font-size: 20px
+    }
+}
+@media(max-width:640px){
+    .sh_cont_box .s_tit{
+        font-size: 16px;
+    }
+    .sh_cont_box .s_tit::after{
+        width: 30px;
+        height: 3px;
+        top: 50%;
+    }
+    .business_subtit{
+        font-size: 18px;
+    }
+    #inc01 .sh_cont_box .txt_group p,
+    #inc03 .sh_cont_box .txt_group p{
+        font-size: 24px;
+    }
+}

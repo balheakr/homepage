@@ -357,7 +357,7 @@ $(document).ready(function(){
 
                           const lang = window.localStorage.getItem('lang');
                   
-                          const res = await api.get(lang == "ko" ? '/news/posts' : '/news/posts/en', {
+                          const res = await api.get('/news/posts', {
                             params: { page }
                           });
                   

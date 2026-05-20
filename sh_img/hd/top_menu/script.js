@@ -1,12 +1,12 @@
 ﻿$(document).ready(function(){
 	$(".sh_nav").mouseenter(function(){
 		$("#shGnb.main").addClass("on");
- 		$("#shGnb.main .sh_logo img").attr("src","/sh_img/hd/top_menu/NEO-BH_RGB_White.png");
+ 		$("#shGnb.main .sh_logo img").attr("src","/sh_img/hd/top_menu/NEO-BH_RGB_White.webp");
 	 	$(".sh_lnb_s").fadeIn(200);
 		$(".sh_lnb_bg").fadeIn(200);	
 	}).mouseleave(function(){
 		$("#shGnb.main").removeClass("on");
-     	$("#shGnb.main .sh_logo img").attr("src","/sh_img/hd/top_menu/logo.png");
+     	$("#shGnb.main .sh_logo img").attr("src","/sh_img/hd/top_menu/logo.webp");
 		$('.sh_lnb_s').stop().fadeOut(200);
 	  	$('.sh_lnb_bg').stop().fadeOut(200);
 	});

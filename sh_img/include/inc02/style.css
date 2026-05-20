@@ -15,7 +15,7 @@
 #inc02 .box_wrap .box_btn{
     position: absolute;left: 40px;bottom: 40px;
     padding: 12px 28px;background: rgba(0, 0, 0, 0);color: #fff;
-    font-size: 16px;font-family: 'notokr-medium';text-decoration: none;
+    font-size: 16px;font-family: 'Pretendard', sans-serif;text-decoration: none;
     border-radius: 4px;transition: background .3s ease;
 }
 #inc02 ul{position:relative;display:flex;justify-content:space-between;padding:28px}
@@ -23,7 +23,7 @@
 #inc02 ul li:first-child{width:70%}
 #inc02 ul li.menu-item a:first-child{background:#FF5C00;transition:all .8s cubic-bezier(0.22, 1, 0.36, 1)}
 #inc02 ul li a{display:flex;flex-flow:column;justify-content:center;align-items:center;height:300px;color:#fff}
-#inc02 ul li span{margin:35px 0 10px;font-size:15px;font-weight:600;font-family:'poppins',sans-serif}  
+#inc02 ul li span{margin:35px 0 10px;font-size:15px;font-weight:600;font-family: 'Pretendard', sans-serif;}  
 #inc02 ul li p{font-size:22px;font-weight:700;color:#fff}
 
 @media(hover:hover){

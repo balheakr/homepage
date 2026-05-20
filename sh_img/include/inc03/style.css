@@ -9,7 +9,7 @@
 #inc03 .latest li{width:50%} 
 #inc03 .latest li a{display:flex;align-items:center}
 #inc03 .latest li .img{position:relative;width:250px;height:172px;background:no-repeat center;background-size:cover}
-#inc03 .latest li .img span{position:absolute;left:0;top:0;z-index:1;width:40px;height:40px;font-size:15px;font-weight:700;line-height:40px;color:#fff;text-align:center;background:#FF5C00;font-family:'poppins',sans-serif}
+#inc03 .latest li .img span{position:absolute;left:0;top:0;z-index:1;width:40px;height:40px;font-size:15px;font-weight:700;line-height:40px;color:#fff;text-align:center;background:#FF5C00;font-family: 'Pretendard', sans-serif;}
 #inc03 .latest li .cont{padding-left:35px;color:#777}
 #inc03 .latest li .cont span{font-size:14px;font-weight:600;color:#FF5C00}
 #inc03 .latest li .cont a{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin:5px 0 15px;font-size:19px;font-weight:700;color:#111}

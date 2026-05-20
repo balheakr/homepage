@@ -1,5 +1,4 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');/* regular-400, medium-500, semibold-600, bold-700 */ 
 
 *{-webkit-text-size-adjust:none}
@@ -26,7 +25,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
     height: 5px;
     background: #FF5C00;
 }
-.sh_cont_box .txt_group{position:relative;font-size:17px;color:#888;word-break:keep-all}
+.sh_cont_box .txt_group{position:relative;font-size:17px;color:#555;word-break:keep-all}
 .sh_cont_box .txt_group p{font-size:38px;font-weight:500;line-height:1.3;color:#111;word-break:keep-all; margin: 10px 0 !important;}
 .sh_cont_box .more_btn{display:flex;align-items:center;justify-content:space-between;width:186px;height:60px;padding:0 28px 0 35px;font-size:15px;font-weight:600;border-radius:30px;background:#f2f2f2;transition:all .2s}
 @media(hover:hover){
@@ -44,7 +43,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
 #navbar li{position:relative;transition:all .3s}
 #navbar li+li{margin-top:25px}
 #navbar li:before{opacity:0;display:block;content:"";position:absolute;left:-15px;top:9px;width:5px;height:5px;border-radius:50%;background:#FF5C00;transition:all .3s}
-#navbar li a{font-size:15px;font-weight:600;color:#111;transition:all .3s;font-family:'Poppins'}
+#navbar li a{font-size:15px;font-weight:600;color:#111;transition:all .3s;font-family: 'Pretendard', sans-serif;}
 #navbar li.active:before{opacity:1}
 #navbar li.active a{color:#FF5C00!important}
 #navbar.section02 li a{color:#fff}
@@ -80,7 +79,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
 #toTop{pointer-events:none;opacity:0;cursor:pointer;position:fixed;right:30px;bottom:10%;z-index:101;display:flex;width:65px;height:65px;margin-bottom:-50px;border-radius:100%;background:#fff;transition:all .2s;box-shadow:2px 2px 18px rgba(0, 0, 0, .1)}
 #toTop svg{margin:auto;color:#000}
 #toTop.on{pointer-events:auto;opacity:1;margin-bottom:0}
-#sh_ft{position:relative;font-size:14px;color:rgba(255,255,255,.4);line-height:2;background:#121614;font-family:'pretendard'}
+#sh_ft{position:relative;font-size:14px;color:#555;line-height:2;background:#121614;font-family:'pretendard'}
 #sh_ft .ft_nav{display:flex;justify-content:space-between;align-items:center;max-width:1320px;margin:0 auto;padding-right:15px;height:105px}
 #sh_ft .ft_nav > a{display:flex;justify-content:center;align-items:center;height:100%;width:260px;font-size:18px;font-weight:600;color:#fff;background-color:#FF5C00}
 #sh_ft .ft_nav > a svg{width:20px;height:20px;margin-left:8px}
@@ -89,10 +88,10 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
 #sh_ft .ft_nav li a{opacity:.4;font-size:16px;color:#fff;transition:all .2s}
 #sh_ft .inner{display:flex;align-items:flex-start;padding:90px calc((100% - 1320px) / 2);border-top:1px solid rgba(255,255,255,.15)}
 #sh_ft .ft_logo{opacity:.4}
-#sh_ft .ft_logo img{max-width:200px}
+#sh_ft .ft_logo img{max-width:200px; width: 200px; height: auto;}
 #sh_ft .info{margin-left:80px}
-#sh_ft .info p{margin-bottom:15px;font-size:18px;font-weight:700;font-family:'Play'}
-#sh_ft .cs{margin-left:auto;font-family:'poppins',sans-serif}
+#sh_ft .info p{margin-bottom:15px;font-size:18px;font-weight:700;font-family: 'Pretendard', sans-serif}
+#sh_ft .cs{margin-left:auto;font-family: 'Pretendard', sans-serif}
 #sh_ft .cs span{font-size:15px;font-weight:600;color:#fff}
 #sh_ft .cs p{margin-bottom:10px;font-size:26px;font-weight:700;color:#FF5C00}
 #sh_ft .copy{display:flex;padding:10px calc((100% - 1320px) / 2);background-color:rgba(0,0,0,.3)}
@@ -101,8 +100,8 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
 #sh_ft .copy .links a+a{margin-left:30px}
 #sh_ft .cs .info{overflow:hidden;margin-left: 0px;}
 #sh_ft .cs .info > *{float:left}
-#sh_ft .cs .info p{font-size:26px;font-weight:600;line-height:40px;color:#FF5C00;font-family:'Poppins'}
-#sh_ft .cs .info ul{margin-left:40px;font-size:14px;font-weight:300;line-height:1.5;color:rgba(255,255,255,.4);font-family:'Poppins'}
+#sh_ft .cs .info p{font-size:26px;font-weight:600;line-height:40px;color:#FF5C00;font-family: 'Pretendard', sans-serif}
+#sh_ft .cs .info ul{margin-left:40px;font-size:14px;font-weight:300;line-height:1.5;color:rgba(255,255,255,.4);font-family: 'Pretendard', sans-serif}
 @media(hover:hover){
 #toTop:hover{box-shadow:4px 4px 18px rgba(0, 0, 0, .15)}
 #sh_ft .ft_nav li a:hover{opacity:1}
@@ -120,24 +119,24 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
 }
 
 /* 반응형 사이트맵 공통 */
-#sh_site_map{position:relative;width:100%;font-family:'notokr-regular'}
+#sh_site_map{position:relative;width:100%;font-family: 'Pretendard', sans-serif}
 #sh_site_map:after{display:block;content:"";visibility:hidden;clear:both}
 #sh_site_map > div{width:31%;float:left;margin:0 1%}
 #sh_site_map > div:nth-of-type(3n){margin-right:0}
-#sh_site_map .sh_site_map_title{padding:10px 15px;border-bottom:2px solid #333;font-size:17px;font-weight:normal;text-align:center;color:#222;font-family:'notokr-bold'}
+#sh_site_map .sh_site_map_title{padding:10px 15px;border-bottom:2px solid #333;font-size:17px;font-weight:normal;text-align:center;color:#222;font-family: 'Pretendard', sans-serif}
 #sh_site_map ul{padding:0 15px 15px}
 #sh_site_map .sh_site_map_box{min-height:205px;padding:17px 20px;border:1px solid #e1e1e1;border-top:none;font-size:14px;color:#333;line-height:40px}
 #sh_site_map .sh_site_map_box li{border-bottom:1px dotted #ccc}
 #sh_site_map .sh_site_map_box li:last-child{border:none}
 
 /* 반응형 하단 버튼 공통 */
-#fix_tel{opacity:0;display:none;position:fixed;right:15px;bottom:20px;z-index:101;width:65px;height:65px;margin-right:-10px;border-radius:50%;font-size:30px;text-align:center;line-height:65px;color:#fff;background-color:#00b68f;box-shadow:5px 5px 5px rgba(0,0,0,.2);-webkit-transition:all .2s;transition:all .2s}
+#fix_tel{opacity:0;display:none;position:fixed;right:15px;bottom:20px;z-index:101;width:65px;height:65px;margin-right:-10px;border-radius:50%;font-size:30px;text-align:center;line-height:65px;color:#fff;/*background-color:#00b68f;*/background-color:#FF5C00;box-shadow:5px 5px 5px rgba(0,0,0,.2);-webkit-transition:all .2s;transition:all .2s}
 #fix_tel.active{opacity:1;margin-right:0}
 #sh_ft_btns{display:none;padding:15px}
 #sh_ft_btns .btns{overflow:hidden}
 #sh_ft_btns .row2 a{width:50%}
-#sh_ft_btns a{float:left;display:block;width:100%;height:55px;font-size:16px;line-height:55px;color:#fff;text-align:center;background:#121614;font-family:'notokr-bold'}
-#sh_ft_btns a.tel{font-size:18px;font-weight:700;letter-spacing:0;font-family:'Poppins'}
+#sh_ft_btns a{float:left;display:block;width:100%;height:55px;font-size:16px;line-height:55px;color:#fff;text-align:center;background:#121614;font-family: 'Pretendard', sans-serif;}
+#sh_ft_btns a.tel{font-size:18px;font-weight:700;letter-spacing:0;font-family: 'Pretendard', sans-serif;}
 #sh_ft_btns a i{padding-right:5px;font-size:18px}
 #sh_ft_btns a.kakao{font-weight:normal;color:#402325;background-color:#ffe500}
 

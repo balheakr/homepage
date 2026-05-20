@@ -29,7 +29,7 @@
 
 /* 로고 */
 #shGnb .sh_logo{position:relative;z-index:20}
-#shGnb .sh_logo img{max-width: 140px}
+#shGnb .sh_logo img{max-width: 140px; width: 140px; height: auto;}
 
 /* 대분류  */
 #shGnb .sh_nav{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:max-content}
@@ -47,7 +47,7 @@
 #shGnb .sh_tip{margin-left:auto}
 #shGnb .sh_tip{display:flex;align-items:center}
 #shGnb .sh_tip li+li{margin-left:14px;border-left:1px solid rgba(255,255,255,.4);line-height:10px}
-#shGnb .sh_tip li a{margin-left:15px;font-size:14px;color:#fff;font-family:'Poppins'}
+#shGnb .sh_tip li a{margin-left:15px;font-size:14px;color:#fff;font-family: 'Pretendard', sans-serif}
 #shGnb.on .sh_tip li a{color:#222}
 #shGnb.sub .sh_tip li a{color:#222}
 #shGnb .sh_tip button {padding: 4px 10px;border: 1px solid #fff;background: transparent;cursor: pointer;opacity: 0.5;font-weight:500;color:#fff}
@@ -58,7 +58,7 @@
 #shGnb.sub .sh_tip button:hover {opacity: 0.8;}
 
 /* 반응형 메뉴 [s] */
-#topmenuM{display:none;position:relative;width:100%;padding:15px;line-height:1.8;background-color:#fff;font-family:'notokr-regular'}	
+#topmenuM{display:none;position:relative;width:100%;padding:15px;line-height:1.8;background-color:#fff;font-family: 'Pretendard', sans-serif}	
 /* 로고 */
 #m_logo{position:relative}
 #m_logo a{display:inline-block}
@@ -82,8 +82,8 @@
 #navWrap .user_tip li{display:inline-block}
 #navWrap .user_tip li+li{margin-left:10px}
 /* 대분류 */
-#topmenuM .m_lnb .m_bmenu{display:block;position:relative;width:100%;height:52px;padding:0 20px;border:none;border-bottom:1px solid #ddd;background:none;font-size:16px;line-height:52px;color:#222;text-align:left;font-family:'Noto Sans KR';font-weight:500}
-#topmenuM .m_lnb .m_bmenu:after{float:right;content:"\f107";font-family:'fontawesome'}
+#topmenuM .m_lnb .m_bmenu{display:block;position:relative;width:100%;height:52px;padding:0 20px;border:none;border-bottom:1px solid #ddd;background:none;font-size:16px;line-height:52px;color:#222;text-align:left;font-family: 'Pretendard', sans-serif;font-weight:500}
+#topmenuM .m_lnb .m_bmenu:after{float:right;content:"\f107";font-family: 'Font Awesome 5 Free';font-weight:900}
 #topmenuM .m_lnb .m_bmenu.on:after{content:"\f106"}
 #topmenuM .sh_tip{text-align: center;margin-top: 10px;}
 #topmenuM .sh_tip button {padding: 4px 10px;border: 1px solid #ddd;background: transparent;cursor: pointer;opacity: 0.5;color:#000}

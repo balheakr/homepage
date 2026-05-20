@@ -1,7 +1,5 @@
 @charset "utf-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');/* regular-400, medium-500, semibold-600, bold-700 */ 
 
 *{-webkit-text-size-adjust:none}
@@ -33,7 +31,7 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
 #navbar li{position:relative;transition:all .3s}
 #navbar li+li{margin-top:25px}
 #navbar li:before{opacity:0;display:block;content:"";position:absolute;left:-15px;top:9px;width:5px;height:5px;border-radius:50%;background:#FF5C00;transition:all .3s}
-#navbar li a{font-size:15px;font-weight:600;color:#111;transition:all .3s;font-family:'Poppins'}
+#navbar li a{font-size:15px;font-weight:600;color:#111;transition:all .3s;font-family: 'Pretendard', sans-serif;}
 #navbar li.active:before{opacity:1}
 #navbar li.active a{color:#FF5C00!important}
 #navbar.section02 li a{color:#fff}
@@ -57,8 +55,8 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
 #sh_ft .inner{display:flex;align-items:flex-start;padding:90px calc((100% - 1320px) / 2);border-top:1px solid rgba(255,255,255,.15)}
 #sh_ft .ft_logo{margin-top:10px;opacity:.4}
 #sh_ft .info{margin-left:80px}
-#sh_ft .info p{margin-bottom:15px;font-size:18px;font-weight:700;font-family:'Play'}
-#sh_ft .cs{margin-left:auto;font-family:'poppins',sans-serif}
+#sh_ft .info p{margin-bottom:15px;font-size:18px;font-weight:700;font-family: 'Pretendard', sans-serif;}
+#sh_ft .cs{margin-left:auto;font-family: 'Pretendard', sans-serif;}
 #sh_ft .cs span{font-size:15px;font-weight:600;color:#fff}
 #sh_ft .cs p{margin-bottom:10px;font-size:26px;font-weight:700;color:#FF5C00}
 #sh_ft .copy{display:flex;padding:10px calc((100% - 1320px) / 2);background-color:rgba(0,0,0,.3)}
@@ -76,8 +74,8 @@ h1, h2, h3, h4, h5, h6, input, button, textarea, select{font-family:'pretendard'
 #sh_ft_btns{display:none;padding:15px}
 #sh_ft_btns .btns{overflow:hidden}
 #sh_ft_btns .row2 a{width:50%}
-#sh_ft_btns a{float:left;display:block;width:100%;height:55px;font-size:16px;line-height:55px;color:#fff;text-align:center;background:#121614;font-family:'Noto Sans KR'}
-#sh_ft_btns a.tel{font-size:18px;font-weight:700;letter-spacing:0;font-family:'Poppins'}
+#sh_ft_btns a{float:left;display:block;width:100%;height:55px;font-size:16px;line-height:55px;color:#fff;text-align:center;background:#121614;font-family: 'Pretendard', sans-serif;}
+#sh_ft_btns a.tel{font-size:18px;font-weight:700;letter-spacing:0;font-family: 'Pretendard', sans-serif;}
 #sh_ft_btns a i{padding-right:5px;font-size:18px}
 #sh_ft_btns a.kakao{font-weight:normal;color:#402325;background-color:#ffe500}
 

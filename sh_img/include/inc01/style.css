@@ -14,7 +14,7 @@
 #inc01 ul li a:before{content:"";display:block;position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(0deg, #FF5C00, #000000a8);transition:all .3s;opacity:0}
 #inc01 ul li .info{position:relative;z-index:1;display:flex;flex-flow:column;height:100%;padding:50px 40px;font-size:15px;color:#fff}
 #inc01 ul li .info p{font-size:28px;font-weight:600}
-#inc01 ul li .info span{margin-top:8px;font-size:14px;font-weight:600;font-family:'Poppins',sans-serif}
+#inc01 ul li .info span{margin-top:8px;font-size:14px;font-weight:600;font-family: 'Pretendard', sans-serif;}
 #inc01 ul li .info div{opacity:0;margin-top:auto;word-break:keep-all;transition:all .2s}
 #inc01 .nav_btn{position:absolute;top:50%;right:75px;z-index:101;transform:translateY(-50%)}
 #inc01 .nav_btn button{cursor:pointer;width:68px;height:68px;padding-top:3px;border-radius:50%;color:#fff;background:rgba(0,0,0,.6);transition:all .3s}
@@ -38,7 +38,7 @@
 .business_wrap .business .tit {
     margin: 0;
 }
-.business_wrap .business .tit h6{
+.business_wrap .business .tit span{
     font-size: 20px;
     color: #1A1A1B;
     font-weight: 300;
@@ -59,19 +59,19 @@
     height: 450px; */
 }
 .business_wrap .business.business01 .business_img {
-    background: url(img/business_01.png) no-repeat center;
+    background: url(img/business_01.webp) no-repeat center;
     background-size: cover;
 }
 .business_wrap .business.business02 .business_img {
-    background: url(img/business_02.png) no-repeat center;
+    background: url(img/business_02.webp) no-repeat center;
     background-size: cover;
 }
 .business_wrap .business.business03 .business_img {
-    background: url(img/business_03.png) no-repeat center;
+    background: url(img/business_03.webp) no-repeat center;
     background-size: cover;
 }
 .business_wrap .business.business04 .business_img {
-    background: url(img/business_04.png) no-repeat center;
+    background: url(img/business_04.webp) no-repeat center;
     background-size: cover;
 }
 .business_wrap .business_con {
@@ -143,7 +143,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url('../inc01/img/introduce_01.png') center / cover no-repeat;
+  background: url('../inc01/img/introduce_01.webp') center / cover no-repeat;
   transition: transform 0.6s ease;
   z-index: 0;
 }
@@ -156,7 +156,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url('../inc01/img/introduce_02.png') center / cover no-repeat;
+  background: url('../inc01/img/introduce_02.webp') center / cover no-repeat;
   transition: transform 0.6s ease;
   z-index: 0;
 }
@@ -169,7 +169,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url('../inc01/img/introduce_03.png') center / cover no-repeat;
+  background: url('../inc01/img/introduce_03.webp') center / cover no-repeat;
   transition: transform 0.6s ease;
   z-index: 0;
 }
@@ -182,7 +182,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url('../inc01/img/introduce_04.png') center / cover no-repeat;
+  background: url('../inc01/img/introduce_04.webp') center / cover no-repeat;
   transition: transform 0.6s ease;
   z-index: 0;
 }
@@ -276,7 +276,7 @@
         width: 470px;
         height: 300px;
     }
-    .business_wrap .business .tit h6{
+    .business_wrap .business .tit span{
         font-size: 16px;
     }
     .business_wrap .business .tit h5{
@@ -321,7 +321,7 @@
     .business_wrap .business_con{
         width: 45%;
     }
-    .business_wrap .business .tit h6{
+    .business_wrap .business .tit span{
         font-size: 14px;
     }
     .business_wrap .business .tit h5{
@@ -389,7 +389,7 @@
         width: 100%;
         height: 200px;
     }
-    .business_wrap .business .tit h6{
+    .business_wrap .business .tit span{
         font-size: 12px;
     }
     .business_wrap .business .tit h5{

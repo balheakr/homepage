@@ -1333,3 +1333,277 @@
         gap: 2rem;
     }
 }
+
+/* 주요 공급 물품 */
+.p10 .txt_area.titbox.catalog-titbox{
+    position: static;
+    transform: none;
+}
+.p10 .txt_area.titbox.catalog-titbox li{
+    margin-top: 2rem;
+    line-height: normal;
+}
+.p10 .txt_area.titbox.catalog-titbox li span{
+    font-size: 20px;
+}
+ .catalog-section {
+    max-width: 1405px;
+    margin: 0 auto;
+    padding-top: 1rem;
+    color: #1A1A1B;
+}
+.catalog-card {
+    display: flex;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    background: #fefefe;
+}
+.catalog-thumb {
+    width: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.catalog-thumb img {
+    width: 300px !important;
+    height: auto !important;
+    border: 1px solid #ddd;
+}
+.catalog-info {
+    flex: 1;
+    padding: 30px;
+}
+.catalog-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+.catalog-tags span {
+    padding: 6px 13px;
+    border-radius: 999px;
+    background: #fff0e3;
+    color: #FF5C00;
+    font-weight: 600;
+    font-size: 13px;
+}
+.catalog-info h2 {
+    margin: 0 0 14px;
+    font-size: 26px;
+    font-weight: 500;
+}
+.catalog-info p {
+    font-size: 17px;
+    color: #405168;
+    line-height: normal;
+}
+.catalog-info dl {
+    margin-top: 30px;
+    font-size: 18px;
+    background: #efefef;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.catalog-info dl .line-cont{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.catalog-info dl .line-cont:last-child{
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.catalog-info dl .line-cont .cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.catalog-info dl .line-cont .cont img{
+    height: auto !important;
+}
+.catalog-info dl .line-cont:nth-child(1) .cont img{
+    width: 14px !important;
+}
+.catalog-info dl .line-cont:nth-child(2) .cont img{
+    width: 13px !important;
+}
+.catalog-info dl .line-cont:nth-child(3) .cont img{
+    width: 16px !important;
+}
+.catalog-info dt {
+    color: #515151;
+    font-size: 15px;
+    width: 130px;
+}
+.catalog-info dd {
+    margin: 0;
+    font-weight: 500;
+    font-size: 15px;
+}
+.catalog-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 36px;
+}
+.catalog-buttons button,
+.catalog-buttons a {
+    width: 130px;
+    height: 48px;
+    border: 0;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.catalog-buttons button {
+    background: #555;
+    color: #fff;
+}
+.catalog-buttons a {
+    background: #FF5C00;
+    color: #fff;
+}
+.catalog-preview {
+    display: none;
+    margin-top: 32px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    background: #fff;
+}
+.catalog-preview.active {
+    display: block;
+}
+.preview-title {
+    padding: 36px 44px;
+}
+.preview-title h3 {
+    font-size: 26px;
+    font-weight: 500;
+}
+.preview-title p {
+    margin: 0;
+    color: #64748b;
+    font-size: 17px;
+}
+.preview-header {
+    background: #555;
+    color: #fff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 500;
+}
+.preview-viewer {
+    padding: 44px;
+    background: #efefef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+.preview-viewer img {
+    width: 560px !important;
+    height: auto !important;
+    max-width: 100%;
+    background: #fff;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
+}
+.preview-viewer button {
+    width: 45px;
+    height: 45px;
+    border: 0;
+    border-radius: 50%;
+    background: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.preview-thumbs {
+    display: flex;
+    gap: 12px;
+    padding: 24px 36px;
+    overflow-x: auto;
+}
+.preview-thumbs button {
+    border: 2px solid transparent;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+.preview-thumbs button.active {
+    border-color: #FF5C00;
+}
+.preview-thumbs img {
+    width: 90px !important;
+    height: auto !important;
+    display: block;
+    border: 1px solid #ddd;
+}
+@media (max-width: 1024px) {
+    .catalog-tags span{
+        font-size: 10px;
+    }
+    .catalog-info h2{
+        font-size: 20px;
+    }
+    .catalog-info p{
+        font-size: 15px;
+    }
+    .catalog-info dt{
+        font-size: 14px;
+    }
+    .catalog-info dd{
+        font-size: 14px;
+    }
+    .catalog-buttons button, 
+    .catalog-buttons a{
+        width: 115px;
+        height: 40px;
+        font-size: 12px;
+    }
+    .preview-title{
+        padding: 30px;
+    }
+    .preview-title h3{
+        font-size: 20px;
+    }
+    .preview-title p{
+        font-size: 15px;
+    }
+    .preview-header{
+        padding: 20px 30px;
+        font-size: 14px;
+    }
+    .catalog-card{
+        flex-wrap: wrap;
+    }
+    .catalog-thumb{
+        width: 100%;
+        padding: 1rem;
+    }
+    .catalog-info{
+        width: 100%;
+    }
+}
+@media (max-width: 640px) {
+    .p10 .txt_area.titbox.catalog-titbox li span{
+        font-size: 18px;
+    }
+}

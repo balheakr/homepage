@@ -46,12 +46,13 @@
 /* sns */
 #shGnb .sh_tip{margin-left:auto}
 #shGnb .sh_tip{display:flex;align-items:center}
+#shGnb .sh_tip li{margin: 0 !important; padding: 0;}
 #shGnb .sh_tip li+li{margin-left:14px;border-left:1px solid rgba(255,255,255,.4);line-height:10px}
 #shGnb .sh_tip li a{margin-left:15px;font-size:14px;color:#fff;font-family: 'Pretendard', sans-serif}
 #shGnb.on .sh_tip li a{color:#222}
 #shGnb.sub .sh_tip li a{color:#222}
 #shGnb .sh_tip button {padding: 4px 10px;border: 1px solid #fff;background: transparent;cursor: pointer;opacity: 0.5;font-weight:500;color:#fff}
-#shGnb .sh_tip button.active {opacity: 1;background-color: #FF5C00;font-weight: 600;color:#fff}
+#shGnb .sh_tip button.active {opacity: 1; /*background-color: #FF5C00;*/font-weight: 600;color:#fff; background-color: #d94f00;}
 #shGnb .sh_tip button:hover {opacity: 0.8;}
 #shGnb.sub .sh_tip button {padding: 4px 10px;border: 1px solid #ddd;background: transparent;cursor: pointer;opacity: 0.5;color:#000}
 #shGnb.sub .sh_tip button.active {opacity: 1;background-color: #FF5C00;font-weight: 600;color:#fff}

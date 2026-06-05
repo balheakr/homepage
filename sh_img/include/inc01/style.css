@@ -43,12 +43,12 @@
     color: #1A1A1B;
     font-weight: 300;
 }
-.business_wrap .business .tit h5{
+.business_wrap .business .tit div{
     font-size: 44px;
     font-weight: 500;
     color: #1A1A1B;
 }
-.business_wrap .business .tit h5 strong{
+.business_wrap .business .tit div strong{
     color: #FF5C00;
 }
 .business_wrap .business .business_img {
@@ -279,7 +279,7 @@
     .business_wrap .business .tit span{
         font-size: 16px;
     }
-    .business_wrap .business .tit h5{
+    .business_wrap .business .tit div{
         font-size: 40px;
     }
     .business_wrap .business_con p{
@@ -324,7 +324,7 @@
     .business_wrap .business .tit span{
         font-size: 14px;
     }
-    .business_wrap .business .tit h5{
+    .business_wrap .business .tit div{
         font-size: 34px;
     }
     .business_wrap .business_con p{
@@ -392,7 +392,7 @@
     .business_wrap .business .tit span{
         font-size: 12px;
     }
-    .business_wrap .business .tit h5{
+    .business_wrap .business .tit div{
         font-size: 28px;
     }
     .business_wrap .business_con .btn_more{

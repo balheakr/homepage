@@ -1,7 +1,7 @@
 <div class="site-footer">
     <div id="sh_ft">
         <div class="inner">
-            <div class="ft_logo"><img src="../sh_img/hd/top_menu/NEO-BH_RGB_White.webp" alt="NEO BH" /></div>
+            <div class="ft_logo"><img src="../sh_img/hd/top_menu/NEO-BH_RGB_White.webp" alt="NEO BH" width="700" height="265" /></div>
             <div class="info" data-i18n="footer.address" data-i18n-html="true"></div>
             <div class="cs">
                 <span>Contact us</span>
@@ -18,32 +18,59 @@
     <script>
         $(function(){
             var link = $('#navbar a');
-            link.on('click',function(e){
-                var target = $($(this).attr('href')); 
-                $('html, body').animate({
-                    scrollTop: target.offset().top
-                },600);
+            link.on('click', function(e){
+                var target = $($(this).attr('href'));
+
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 600);
+                }
+
                 $(this).parent('li').addClass('active');
                 e.preventDefault();
             });
-            $(window).on('scroll',function(){
-                findPosition();	
-            });
-            function findPosition(){
-                $('section').each(function(){
-                    if( ($(this).offset().top - $(window).scrollTop() ) < 500){
-                        $('#navbar').removeClass();
-                        link.parent('li').removeClass('active');
-                        $('#navbar').find('[data-scroll="'+ $(this).attr('id') +'"]').parent('li').addClass('active');
-                        $('#navbar').addClass($(this).attr('id'));
-                    }
-                });
-                if($("#sh_ft").offset().top - $(window).scrollTop() < 700){
-                    $('#navbar').removeClass();
-                    $('#navbar').addClass('section02');
+            let ticking = false;
+
+            $(window).on('scroll', function(){
+                if (!ticking) {
+                    window.requestAnimationFrame(function(){
+                        findPosition();
+                        ticking = false;
+                    });
+
+                    ticking = true;
                 }
+            });
+
+            findPosition();
+
+            function findPosition(){
+
+            const scrollTop = $(window).scrollTop();
+
+            $('section').each(function(){
+
+                if( ($(this).offset().top - scrollTop) < 500){
+                    $('#navbar').removeClass();
+                    link.parent('li').removeClass('active');
+                    $('#navbar')
+                        .find('[data-scroll="'+ $(this).attr('id') +'"]')
+                        .parent('li')
+                        .addClass('active');
+
+                    $('#navbar').addClass($(this).attr('id'));
+                }
+
+            });
+
+            const $footer = $("#sh_ft");
+
+            if ($footer.length && $footer.offset().top - scrollTop < 700) {
+                $('#navbar').removeClass();
+                $('#navbar').addClass('section02');
             }
-            findPosition()
+        }
         });
     </script>
 </div>

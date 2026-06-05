@@ -52,7 +52,7 @@ var g5_editor    = "";
 var g5_cookie_domain = "";
 </script>
 <script src="/js/jquery-1.8.3.min.js?v=__BUILD__"></script>
-<script src="/js/jquery-ui.js?v=__BUILD__"></script>
+<!-- <script src="/js/jquery-ui.js?v=__BUILD__"></script> -->
 <script src="/js/jquery.menu.js?v=__BUILD__"></script>
 <script src="/js/common.js?v=__BUILD__"></script>
 <script src="/js/wrest.js?v=__BUILD__"></script>
@@ -78,7 +78,7 @@ AOS.init();
 </script>
 <div id="sh_wrapper">
 	<!-- 상단 시작 { -->
-	<div id="sh_hd">	
+	<header id="sh_hd">	
         <div class="sh_lnb_bg"></div>
 		<h1 id="hd_h1">NEO BH</h1>
 		<div id="skip_to_container"><a href="/#sh_container">본문 바로가기</a></div>
@@ -110,16 +110,16 @@ AOS.init();
             <div id="app-menu"></div>
         </div>
         <!-- } 팝업레이어 끝 -->		
-    </div>
+    </header>
 </div>
 	<!-- } 상단 끝 -->
     
 	<!-- 콘텐츠 시작 { -->
-	<div id="sh_container">
+	<main id="sh_container">
 		<div id="sh_container_wrapper" >
 					
 
-<nav id="navbar">
+<nav id="navbar" aria-label="페이지 섹션 이동">
     <ul class="nav-menu">
         <li><a data-scroll="mainbanner" href="/#mainbanner" data-i18n="side.nav.main"></a></li>
         <li><a data-scroll="section01" href="/#section01" data-i18n="nav.business"></a></li>
@@ -130,32 +130,43 @@ AOS.init();
 <script>
 $(function(){
     var link = $('#navbar a');
+
     link.on('click',function(e){
-        var target = $($(this).attr('href')); 
-        $('html, body').animate({
-            scrollTop: target.offset().top
-        },600);
+        var target = $($(this).attr('href'));
+
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top
+            },600);
+        }
+
         $(this).parent('li').addClass('active');
         e.preventDefault();
     });
+
     $(window).on('scroll',function(){
-        findPosition();	
-	});
+        findPosition();
+    });
+
+    findPosition();
+
     function findPosition(){
         $('section').each(function(){
             if( ($(this).offset().top - $(window).scrollTop() ) < 500){
                 $('#navbar').removeClass();
-				link.parent('li').removeClass('active');
-				$('#navbar').find('[data-scroll="'+ $(this).attr('id') +'"]').parent('li').addClass('active');
-				$('#navbar').addClass($(this).attr('id'));
-			}
+                link.parent('li').removeClass('active');
+                $('#navbar').find('[data-scroll="'+ $(this).attr('id') +'"]').parent('li').addClass('active');
+                $('#navbar').addClass($(this).attr('id'));
+            }
         });
-        if($("#sh_ft").offset().top - $(window).scrollTop() < 700){
+
+        const $footer = $("#sh_ft");
+
+        if ($footer.length && $footer.offset().top - $(window).scrollTop() < 700) {
             $('#navbar').removeClass();
             $('#navbar').addClass('section02');
         }
     }
-    findPosition()
 });
 </script>
 
@@ -172,12 +183,26 @@ $(function(){
         <span data-i18n="home.desc" class="main_subtxt"></span>
     </div>
 	<div class="swiper main_slide">
-		<ul class="swiper-wrapper">
+		<!-- <ul class="swiper-wrapper">
 			<li class="swiper-slide bg01"></li>
 			<li class="swiper-slide bg02"></li>
 			<li class="swiper-slide bg03"></li>
             <li class="swiper-slide bg04"></li>
-        </ul>
+        </ul> -->
+        <div class="swiper-wrapper">
+			<div class="swiper-slide bg01">
+                <img src="./sh_img/index/main_banner/mainvisual_01.webp" alt="메인 비주얼 이미지01" width="1920" height="940" fetchpriority="high">
+            </div>
+			<div class="swiper-slide bg02">
+                <img src="./sh_img/index/main_banner/mainvisual_02.webp" alt="메인 비주얼 이미지02" width="1920" height="940" loading="lazy">
+            </div>
+			<div class="swiper-slide bg03">
+                <img src="./sh_img/index/main_banner/mainvisual_03.webp" alt="메인 비주얼 이미지03" width="1920" height="940" loading="lazy">
+            </div>
+            <div class="swiper-slide bg04">
+                <img src="./sh_img/index/main_banner/mainvisual_04.webp" alt="메인 비주얼 이미지04" width="1920" height="940" loading="lazy">
+            </div>
+        </div>
 		<div class="pager"></div>
 	</div>
 </div>
@@ -201,92 +226,92 @@ var mainSwiper = new Swiper(".main_slide", {
 
 <div id="sh_section">
 	<section id="section01">
-<article id="inc01">
-	<div class="sh_cont_box">
-		<p class="s_tit" data-i18n="nav.business"></p>
-		<div class="txt_group">
-			<p data-i18n="business.headline" data-i18n-html="true"></p>
-			<span class="business_subtit" data-i18n="business.desc"></span>
-		</div>
-    </div>
-    
-    <section class="business_wrap">
-        <div class="business business01">
-            <div class="business_img aos-item aos-init aos-animate" data-aos="fade-right" data-aos-delay="400">
-            </div>
-            <div class="business_con aos-item aos-init aos-animate" data-aos="fade-left" data-aos-delay="400">
-                <div class="tit">
-                    <span>PUBLIC SECTOR PROCUREMENT</span>
-                    <h5 data-i18n="nav.obtain.strong" data-i18n-html="true"></h5>
-                </div>
-                <p data-i18n="obtain.desc.strong" data-i18n-html="true"></p>
-                <div class="btn_wrap">
-                    <a href="/sh_page/page10.html" class="btn_more">View More</a>
+        <article id="inc01">
+            <div class="sh_cont_box">
+                <p class="s_tit" data-i18n="nav.business"></p>
+                <div class="txt_group">
+                    <p data-i18n="business.headline" data-i18n-html="true"></p>
+                    <span class="business_subtit" data-i18n="business.desc"></span>
                 </div>
             </div>
-        </div>
-        <div class="business business02">
-            <div class="business_con aos-item aos-init aos-animate" data-aos="fade-right" data-aos-delay="400">
-                <div class="tit">
-                    <span>EQUIPMENT / INDUSTRIAL EQUIPMENT MANUFACTURING</span>
-                    <h5 data-i18n="nav.manufacturing.strong" data-i18n-html="true"></h5>
+            
+            <section class="business_wrap">
+                <div class="business business01">
+                    <div class="business_img aos-item aos-init aos-animate" data-aos="fade-right" data-aos-delay="400">
+                    </div>
+                    <div class="business_con aos-item aos-init aos-animate" data-aos="fade-left" data-aos-delay="400">
+                        <div class="tit">
+                            <span>PUBLIC SECTOR PROCUREMENT</span>
+                            <div data-i18n="nav.obtain.strong" data-i18n-html="true"></div>
+                        </div>
+                        <p data-i18n="obtain.desc.strong" data-i18n-html="true"></p>
+                        <div class="btn_wrap">
+                            <a href="/sh_page/page10.html" class="btn_more">View More</a>
+                        </div>
+                    </div>
                 </div>
-                <p data-i18n="manufacturing.desc.strong" data-i18n-html="true"></p>
-                <div class="btn_wrap">
-                    <a href="/sh_page/page15.html" class="btn_more">View More</a>
+                <div class="business business02">
+                    <div class="business_con aos-item aos-init aos-animate" data-aos="fade-right" data-aos-delay="400">
+                        <div class="tit">
+                            <span>EQUIPMENT / INDUSTRIAL EQUIPMENT MANUFACTURING</span>
+                            <div data-i18n="nav.manufacturing.strong" data-i18n-html="true"></div>
+                        </div>
+                        <p data-i18n="manufacturing.desc.strong" data-i18n-html="true"></p>
+                        <div class="btn_wrap">
+                            <a href="/sh_page/page15.html" class="btn_more">View More</a>
+                        </div>
+                        
+                    </div>
+                    <div class="business_img aos-item aos-init aos-animate" data-aos="fade-left" data-aos-delay="400">
+                    </div>
                 </div>
-                
-            </div>
-            <div class="business_img aos-item aos-init aos-animate" data-aos="fade-left" data-aos-delay="400">
-            </div>
-        </div>
-        <div class="business business03">
-            <div class="business_img aos-item aos-init aos-animate" data-aos="fade-right" data-aos-delay="400">
-            </div>
-            <div class="business_con aos-item aos-init aos-animate" data-aos="fade-left" data-aos-delay="400">
-                <div class="tit">
-                    <span>AI-DRIVEN MRO & SRM SOLUTIONS</span>
-                    <h5 data-i18n="nav.ai.strong" data-i18n-html="true"></h5>
+                <div class="business business03">
+                    <div class="business_img aos-item aos-init aos-animate" data-aos="fade-right" data-aos-delay="400">
+                    </div>
+                    <div class="business_con aos-item aos-init aos-animate" data-aos="fade-left" data-aos-delay="400">
+                        <div class="tit">
+                            <span>AI-DRIVEN MRO & SRM SOLUTIONS</span>
+                            <div data-i18n="nav.ai.strong" data-i18n-html="true"></div>
+                        </div>
+                        <p data-i18n="ai.desc.strong" data-i18n-html="true"></p>
+                        <div class="btn_wrap">
+                            <a href="/sh_page/page16.html" class="btn_more">View More</a>
+                        </div>
+                    </div>
                 </div>
-                <p data-i18n="ai.desc.strong" data-i18n-html="true"></p>
-                <div class="btn_wrap">
-                    <a href="/sh_page/page16.html" class="btn_more">View More</a>
+                <div class="business business04">
+                    <div class="business_con aos-item aos-init aos-animate" data-aos="fade-right" data-aos-delay="400">
+                        <div class="tit">
+                            <span>GLOBAL SAFETY / FALL PROTECTION SOLUTIONS</span>
+                            <div data-i18n="nav.safety.strong" data-i18n-html="true"></div>
+                        </div>
+                        <p data-i18n="safety.desc.strong" data-i18n-html="true"></p>
+                        <div class="btn_wrap">
+                            <a href="/sh_page/page17.html" class="btn_more">View More</a>
+                        </div>
+                    </div>
+                    <div class="business_img aos-item aos-init aos-animate" data-aos="fade-left" data-aos-delay="400">
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="business business04">
-            <div class="business_con aos-item aos-init aos-animate" data-aos="fade-right" data-aos-delay="400">
-                <div class="tit">
-                    <span>GLOBAL SAFETY / FALL PROTECTION SOLUTIONS</span>
-                    <h5 data-i18n="nav.safety.strong" data-i18n-html="true"></h5>
-                </div>
-                <p data-i18n="safety.desc.strong" data-i18n-html="true"></p>
-                <div class="btn_wrap">
-                    <a href="/sh_page/page17.html" class="btn_more">View More</a>
-                </div>
-            </div>
-            <div class="business_img aos-item aos-init aos-animate" data-aos="fade-left" data-aos-delay="400">
-            </div>
-        </div>
+            </section>
+        </article>
+
+        <script> 
+        var swiper = new Swiper("#inc01 .inc01_slide", {
+            loop: true,
+            speed:800,
+            pagination: false,
+            slidesPerView: 'auto', 
+            centeredSlides: false,
+            spaceBetween : 0,
+            pagination: false,
+            navigation: {
+                nextEl: '#inc01 .nav_btn .next'
+            }
+        });
+        </script>
+
     </section>
-</article>
-
-<script> 
-var swiper = new Swiper("#inc01 .inc01_slide", {
-	loop: true,
-	speed:800,
-	pagination: false,
-	slidesPerView: 'auto', 
-    centeredSlides: false,
-	spaceBetween : 0,
-	pagination: false,
-	navigation: {
-		nextEl: '#inc01 .nav_btn .next'
-	}
-});
-</script>
-
-</section>
 	<!-- <section id="section02">
 <article id="inc02">
     <div class="sh_cont_box" data-aos="fade-left">
@@ -307,148 +332,148 @@ $(function() {
 });
 </script></section> -->
      <section id="section03">
-<article id="inc03">
-	<div class="inner">
-        <div class="sh_cont_box">
-            <p class="s_tit" data-i18n="nav.introduction"></p>
-            <div class="txt_group">
-                <p data-i18n="news.headline" data-i18n-html="true"></p>
-                <span class="business_subtit" data-i18n="news.desc"></span>
-                <!-- <a href="/sh_page/page10.html" class="more_btn">
-                    <span data-i18n="common.more"></span>
-                    <i data-feather="arrow-right"></i>
-                </a> -->
-            </div>
-        </div>
+        <article id="inc03">
+            <div class="inner">
+                <div class="sh_cont_box">
+                    <p class="s_tit" data-i18n="nav.introduction"></p>
+                    <div class="txt_group">
+                        <p data-i18n="news.headline" data-i18n-html="true"></p>
+                        <span class="business_subtit" data-i18n="news.desc"></span>
+                        <!-- <a href="/sh_page/page10.html" class="more_btn">
+                            <span data-i18n="common.more"></span>
+                            <i data-feather="arrow-right"></i>
+                        </a> -->
+                    </div>
+                </div>
 
-        <section class="introduce_wrap">
-            <div class="introduce introduce_01">
-                <div class="imgbox"></div>
-                <div class="txtbox">
-                    <h5 data-i18n="introduction.headline" data-i18n-html="true"></h5>
-                    <p data-i18n="introduction.headline.desc" data-i18n-html="true"></p>
-                </div>
-                <div class="btn_wrap">
-                    <a href="/sh_page/page6.html">view more</a>
-                </div>
-            </div>
-            <div class="introduce introduce_02">
-                <div class="imgbox"></div>
-                <div class="txtbox">
-                    <h5 data-i18n="introduction.history" data-i18n-html="true"></h5>
-                    <p data-i18n="introduction.history.desc" data-i18n-html="true"></p>
-                </div>
-                <div class="btn_wrap">
-                    <a href="/sh_page/page7.html">view more</a>
-                </div>
-            </div>
-            <div class="introduce introduce_03">
-                <div class="imgbox"></div>
-                <div class="txtbox">
-                    <h5 data-i18n="introduction.certification" data-i18n-html="true"></h5>
-                    <p data-i18n="introduction.certification.desc" data-i18n-html="true"></p>
-                </div>
-                <div class="btn_wrap">
-                    <a href="/sh_page/page13.html">view more</a>
-                </div>
-            </div>
-            <div class="introduce introduce_04">
-                <div class="imgbox"></div>
-                <div class="txtbox">
-                    <h5 data-i18n="introduction.organization" data-i18n-html="true"></h5>
-                    <p data-i18n="introduction.organization.desc" data-i18n-html="true"></p>
-                </div>
-                <div class="btn_wrap">
-                    <a href="/sh_page/page8.html">view more</a>
-                </div>
-            </div>
-        </section>
+                <section class="introduce_wrap">
+                    <div class="introduce introduce_01">
+                        <div class="imgbox"></div>
+                        <div class="txtbox">
+                            <h5 data-i18n="introduction.headline" data-i18n-html="true"></h5>
+                            <p data-i18n="introduction.headline.desc" data-i18n-html="true"></p>
+                        </div>
+                        <div class="btn_wrap">
+                            <a href="/sh_page/page6.html">view more</a>
+                        </div>
+                    </div>
+                    <div class="introduce introduce_02">
+                        <div class="imgbox"></div>
+                        <div class="txtbox">
+                            <h5 data-i18n="introduction.history" data-i18n-html="true"></h5>
+                            <p data-i18n="introduction.history.desc" data-i18n-html="true"></p>
+                        </div>
+                        <div class="btn_wrap">
+                            <a href="/sh_page/page7.html">view more</a>
+                        </div>
+                    </div>
+                    <div class="introduce introduce_03">
+                        <div class="imgbox"></div>
+                        <div class="txtbox">
+                            <h5 data-i18n="introduction.certification" data-i18n-html="true"></h5>
+                            <p data-i18n="introduction.certification.desc" data-i18n-html="true"></p>
+                        </div>
+                        <div class="btn_wrap">
+                            <a href="/sh_page/page13.html">view more</a>
+                        </div>
+                    </div>
+                    <div class="introduce introduce_04">
+                        <div class="imgbox"></div>
+                        <div class="txtbox">
+                            <h5 data-i18n="introduction.organization" data-i18n-html="true"></h5>
+                            <p data-i18n="introduction.organization.desc" data-i18n-html="true"></p>
+                        </div>
+                        <div class="btn_wrap">
+                            <a href="/sh_page/page8.html">view more</a>
+                        </div>
+                    </div>
+                </section>
 
-        <!-- <ul class="latest" data-aos="fade-left">
-            <li><a href="/bbs/bo_table42.html">
-                <div class="img" style="background-image:url(data/file/table42/thumb-1935566034_I9LWKE8O_7f1fe9eba3f67508ff2b903e7b04c89abb4536b3_250x.jpg)"></div>
-                <div class="cont">
-                    <span>2023-08-23</span>
-                    <p>모바일서비스로봇 대리점 모집 공고</p>
-                    <div>샤이닝에서 모바일서비스로봇 대리점 모집을 하고 있습니다.</div>
-                </div>
-            </a></li>
-						
-            <li><a href="/bbs/bo_table42.html">
-                <div class="img" style="background-image:url(data/file/table42/thumb-1935566034_3uwIdcgU_3001292fe59120c14d9137692840c3a9fbe6fd01_250x.jpg)"></div>
-                <div class="cont">
-                    <span>2022-12-06</span>
-                    <p>하반기 결산 안내</p>
-                    <div>우리 기업의 투명한 운영을 위하여 매 분기 결산 내역을 공개합니다.</div>
-                </div>
-            </a></li>
-        </ul> -->
-        <script type="module">
-            import axios from 'https://cdn.jsdelivr.net/npm/axios@1.6.8/+esm';
-            import { initPagination } from '/js/pagination.js?v=__BUILD__';
-            
-            function escapeHTML(str) {
-                return str
-                    .replace(/&/g, '&amp;')
-                    .replace(/</g, '&lt;')
-                    .replace(/>/g, '&gt;')
-                    .replace(/"/g, '&quot;')
-                    .replace(/'/g, '&#039;')
-                    .replace(/\n/g, "<br />");
-            }
-
-            function formatFileSize(bytes) {
-                if (bytes >= 1048576) return (bytes / 1048576).toFixed(1) + ' MB';
-                if (bytes >= 1024) return (bytes / 1024).toFixed(1) + ' KB';
-                return bytes + ' B';
-            }
-
-            document.addEventListener('DOMContentLoaded', function() {
-                api.get(`/news/posts`)
-                .then(response => {
-                    if(response.data.length != 0) {
-                        initPagination({
-                            data: response.data.slice(0,2),
-                            containerSelector: '.latest',
-                            paginationSelector: '.pagination',
-                            itemsPerPage: 10,
-                            pageGroupSize: 5,
-                            useLocalStorage: true,
-                            localStorageKey: 'lastPage-index',
-                            renderItem: (data) => `
-                                <li>
-                                    <a href="/bbs/bo_table42.html">
-                                        <div class="cont">
-                                            <span>${data.haCreateDt.slice(0,10)}</span>
-                                            <a href="/bbs/bo_table42_detail.html?param1=${data.haSn}">${escapeHTML(data.haTitle)}</a>
-                                        </div>
-                                    </a>
-                                </li>
-                            `
-                        });
+                <!-- <ul class="latest" data-aos="fade-left">
+                    <li><a href="/bbs/bo_table42.html">
+                        <div class="img" style="background-image:url(data/file/table42/thumb-1935566034_I9LWKE8O_7f1fe9eba3f67508ff2b903e7b04c89abb4536b3_250x.jpg)"></div>
+                        <div class="cont">
+                            <span>2023-08-23</span>
+                            <p>모바일서비스로봇 대리점 모집 공고</p>
+                            <div>샤이닝에서 모바일서비스로봇 대리점 모집을 하고 있습니다.</div>
+                        </div>
+                    </a></li>
+                                
+                    <li><a href="/bbs/bo_table42.html">
+                        <div class="img" style="background-image:url(data/file/table42/thumb-1935566034_3uwIdcgU_3001292fe59120c14d9137692840c3a9fbe6fd01_250x.jpg)"></div>
+                        <div class="cont">
+                            <span>2022-12-06</span>
+                            <p>하반기 결산 안내</p>
+                            <div>우리 기업의 투명한 운영을 위하여 매 분기 결산 내역을 공개합니다.</div>
+                        </div>
+                    </a></li>
+                </ul> -->
+                <script type="module">
+                    import axios from 'https://cdn.jsdelivr.net/npm/axios@1.6.8/+esm';
+                    import { initPagination } from '/js/pagination.js?v=__BUILD__';
+                    
+                    function escapeHTML(str) {
+                        return str
+                            .replace(/&/g, '&amp;')
+                            .replace(/</g, '&lt;')
+                            .replace(/>/g, '&gt;')
+                            .replace(/"/g, '&quot;')
+                            .replace(/'/g, '&#039;')
+                            .replace(/\n/g, "<br />");
                     }
-                })
-                .catch(error => {
-                    console.error('데이터 로드 실패:', error);
-                });
-            });
-        </script>
-    </div>
-    <!-- <div class="bnr_wrap">
-        <div class="bnr" data-aos="fade-left">
-            <div class="txt">
-                <p data-i18n="wrap.headline" data-i18n-html="true"></p>
-                <div data-i18n="wrap.desc" data-i18n-html="true"></div>
+
+                    function formatFileSize(bytes) {
+                        if (bytes >= 1048576) return (bytes / 1048576).toFixed(1) + ' MB';
+                        if (bytes >= 1024) return (bytes / 1024).toFixed(1) + ' KB';
+                        return bytes + ' B';
+                    }
+
+                    document.addEventListener('DOMContentLoaded', function() {
+                        api.get(`/news/posts`)
+                        .then(response => {
+                            if(response.data.length != 0) {
+                                initPagination({
+                                    data: response.data.slice(0,2),
+                                    containerSelector: '.latest',
+                                    paginationSelector: '.pagination',
+                                    itemsPerPage: 10,
+                                    pageGroupSize: 5,
+                                    useLocalStorage: true,
+                                    localStorageKey: 'lastPage-index',
+                                    renderItem: (data) => `
+                                        <li>
+                                            <a href="/bbs/bo_table42.html">
+                                                <div class="cont">
+                                                    <span>${data.haCreateDt.slice(0,10)}</span>
+                                                    <a href="/bbs/bo_table42_detail.html?param1=${data.haSn}">${escapeHTML(data.haTitle)}</a>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    `
+                                });
+                            }
+                        })
+                        .catch(error => {
+                            console.error('데이터 로드 실패:', error);
+                        });
+                    });
+                </script>
             </div>
-        </div>
-    </div> -->
-</article>
-</section>
+            <!-- <div class="bnr_wrap">
+                <div class="bnr" data-aos="fade-left">
+                    <div class="txt">
+                        <p data-i18n="wrap.headline" data-i18n-html="true"></p>
+                        <div data-i18n="wrap.desc" data-i18n-html="true"></div>
+                    </div>
+                </div>
+            </div> -->
+        </article>
+    </section>
 </div>
 
    
 	</div><!-- sh_container_wrapper --> 
-</div><!-- sh_container -->
+    </main><!-- sh_container -->
 <!-- } 콘텐츠 끝 -->
 
 <div id="sh_ft_btns">
@@ -467,7 +492,7 @@ $(window).on("scroll",function(){
 });
 </script> 
 
-<div id="app-footer"></div>
+<footer id="app-footer"></footer>
     
     <div id="toTop">
         <i data-feather="arrow-up"></i>

@@ -10,10 +10,10 @@
 #mainVisual ul li.bg02{background-image:url('mainvisual_02.webp')}
 #mainVisual ul li.bg03{background-image:url('mainvisual_03.webp')}
 #mainVisual ul li.bg04{background-image:url('mainvisual_04.webp')} */
-/* #mainVisual .swiper-wrapper .bg01{background-image:url('mainvisual_01.webp')}
+#mainVisual .swiper-wrapper .bg01{background-image:url('mainvisual_01.webp')}
 #mainVisual .swiper-wrapper .bg02{background-image:url('mainvisual_02.webp')}
 #mainVisual .swiper-wrapper .bg03{background-image:url('mainvisual_03.webp')}
-#mainVisual .swiper-wrapper .bg04{background-image:url('mainvisual_04.webp')} */
+#mainVisual .swiper-wrapper .bg04{background-image:url('mainvisual_04.webp')}
 #mainVisual .pager{position:absolute;left:50%;bottom:70px;z-index:101;transform:translateX(-50%);width:max-content}
 #mainVisual .pager span{opacity:.3;position:relative;width:29px;height:29px;margin:0 5px;background-color:transparent;transition:all .3s}
 #mainVisual .pager span.on{opacity:1}

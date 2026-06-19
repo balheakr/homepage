@@ -59,9 +59,9 @@ var g5_cookie_domain = "";
 <script src="/js/placeholders.min.js?v=__BUILD__" defer></script>
 <link rel="stylesheet" href="/js/font-awesome/css/font-awesome.min.css?v=__BUILD__">
 <script src="/sh_img/js/feather.min.js?v=__BUILD__" defer></script>
-<script src="/sh_img/js/aos.js?v=__BUILD__"></script>
+<script src="/sh_img/js/aos.js?v=__BUILD__" defer></script>
 <script src="/sh_img/hd/top_menu/script.js?v=__BUILD__" defer></script>
-<script src="/js/swiper/swiper.min.js?v=__BUILD__"></script>
+<script src="/js/swiper/swiper.min.js?v=__BUILD__" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/axios@1.6.8/dist/axios.min.js"></script>
 <script type="module" src="../js/api.js?v=__BUILD__"></script>
 <script src="/js/i18n.js?v=__BUILD__"></script>
@@ -74,7 +74,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- } -->
 <script>
-AOS.init();
+window.addEventListener('DOMContentLoaded', function () {
+  AOS.init();
+});
 </script>
 <div id="sh_wrapper">
 	<!-- 상단 시작 { -->
@@ -200,18 +202,20 @@ $(function(){
 </div>
 
 <script>
-var mainSwiper = new Swiper(".main_slide", {
-	loop:true,
-	speed:800,
-	pagination: {
-		el: "#mainVisual .pager",
-		bulletActiveClass: 'on',
-		clickable: true
-	},
-	autoplay: {
-		delay: 3200,
-		disableOnInteraction: false,
-	},
+window.addEventListener('DOMContentLoaded', function () {
+  var mainSwiper = new Swiper(".main_slide", {
+    loop: true,
+    speed: 800,
+    pagination: {
+      el: "#mainVisual .pager",
+      bulletActiveClass: 'on',
+      clickable: true
+    },
+    autoplay: {
+      delay: 3200,
+      disableOnInteraction: false
+    }
+  });
 });
 </script>
 </section>

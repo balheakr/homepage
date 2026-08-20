@@ -2,7 +2,7 @@ function getApiBaseUrl() {
     const host = window.location.hostname;
   
     if (host.includes('dev')) {
-      return 'https://api-dev.balhea.kr/homebe/api';
+      return 'https://api-dev.neobh.kr/homebe/api';
     }
     return 'https://api.neobh.kr/homebe/api';
 }

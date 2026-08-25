@@ -63,6 +63,8 @@ var g5_cookie_domain = "";
 <script src="https://cdn.jsdelivr.net/npm/axios@1.6.8/dist/axios.min.js"></script>
 <script type="module" src="../js/api.js?v=__BUILD__"></script>
 <script src="/js/i18n.js?v=__BUILD__" defer></script>
+<!-- reCAPTCHA Enterprise (score based) -->
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6Lc_0pUtAAAAADdTL3J5v2D6dATsPCq4Cx5QBLW8"></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -332,7 +334,6 @@ $(document).ready(function(){
         </div>    
 
         <div class="btn_area inquery_btnwrap">
-            <div class="g-recaptcha" data-sitekey="6Lc_0pUtAAAAADdTL3J5v2D6dATsPCq4Cx5QBLW8"></div>
             <input type="submit" data-i18n="inquiry.button" data-i18n-attr="value" id="btn_submit" accesskey="s" class="btn_type01 comp_btn inquery_btn">
         </div>
     </form>
@@ -344,8 +345,12 @@ $(document).ready(function(){
         fwrite_submit(this);
     });
 </script>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>
+    // reCAPTCHA Enterprise 설정 (head 의 enterprise.js?render= 값과 반드시 동일해야 함)
+    const RECAPTCHA_SITE_KEY = "6Lc_0pUtAAAAADdTL3J5v2D6dATsPCq4Cx5QBLW8";
+    // 서버(assessment)에서 검증하는 action 값과 반드시 동일해야 함
+    const RECAPTCHA_ACTION = "INQUIRY";
+
     function Num_ck(obj) { 
         var val = obj.value; 
         if(isNaN(val)) { 
@@ -383,47 +388,58 @@ $(document).ready(function(){
             return false;
         }
 
-        const recaptchaToken = grecaptcha.getResponse();
-
-        // 3) payload 구성
-        const payload = {
-            "company": company,
-            "name": name,
-            "contact": phone,
-            "mail": email,
-            "title": subject,
-            "content": content,
-            "recaptchaToken": recaptchaToken
-        };
-
-        // 4) 중복 제출 방지
+        // 3) 중복 제출 방지
         const btn = document.getElementById("btn_submit");
         if (btn) {
             btn.disabled = true;
             btn.value = "전송 중...";
         }
 
-        // 5) axios 전송 (API 경로는 서버에 맞게 수정)
-        api.post("/send", payload)
-            .then(function () {
-                alert("문의가 정상적으로 접수되었습니다.");
-                try { f.reset(); } catch (e) {}
-            })
-            .catch(function (err) {
-                const msg =
-                    err?.response?.data?.message ||
-                    err?.response?.data?.error ||
-                    err?.message ||
-                    "전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.";
-                alert(msg);
-                console.error(err);
-            })
-            .finally(function () {
-                if (btn) {
-                    btn.disabled = false;
-                    btn.value = "작성완료";
-                }
-            });
+        function restoreBtn() {
+            if (btn) {
+                btn.disabled = false;
+                btn.value = "작성완료";
+            }
+        }
+
+        // 4) reCAPTCHA Enterprise 토큰 발급 후 전송
+        if (typeof grecaptcha === "undefined" || !grecaptcha.enterprise) {
+            alert("보안 인증(reCAPTCHA) 로딩에 실패했습니다. 새로고침 후 다시 시도해 주세요.");
+            restoreBtn();
+            return false;
+        }
+
+        grecaptcha.enterprise.ready(function () {
+            grecaptcha.enterprise
+                .execute(RECAPTCHA_SITE_KEY, { action: RECAPTCHA_ACTION })
+                .then(function (recaptchaToken) {
+                    const payload = {
+                        "company": company,
+                        "name": name,
+                        "contact": phone,
+                        "mail": email,
+                        "title": subject,
+                        "content": content,
+                        "recaptchaToken": recaptchaToken
+                    };
+
+                    // 5) axios 전송 (API 경로는 서버에 맞게 수정)
+                    return api.post("/send", payload).then(function () {
+                        alert("문의가 정상적으로 접수되었습니다.");
+                        try { f.reset(); } catch (e) {}
+                    });
+                })
+                .catch(function (err) {
+                    const msg =
+                        err?.response?.data?.message ||
+                        err?.response?.data?.error ||
+                        err?.message ||
+                        "전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.";
+                    alert(msg);
+                    console.error(err);
+                })
+                .finally(restoreBtn);
+        });
 
         return false;
     }

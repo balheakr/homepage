@@ -1,3 +1,16 @@
+/**
+ * @file        pagination.js
+ * @brief       목록 페이지네이션 렌더링 및 URL 쿼리 동기화
+ * @author      LEEHYEONHO (owen0414@neobh.kr)
+ * @date        2026-08-27
+ *
+ * Copyright (c) 2026 NeoBH. All rights reserved.
+ *
+ * WARNING: This corporate source code is the intellectual property of NeoBH.
+ * Unauthorized copying, distribution, or modification of this file,
+ * via any medium is strictly prohibited. Proprietary and confidential.
+ */
+
 export function initPagination({
     data = [],
     containerSelector = '.test_list',

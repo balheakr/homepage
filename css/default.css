@@ -1,4 +1,16 @@
 @charset "utf-8";
+/**
+ * @file        default.css
+ * @brief       전역 초기화 및 기본 레이아웃 스타일
+ * @author      LEEHYEONHO (owen0414@neobh.kr)
+ * @date        2026-08-27
+ *
+ * Copyright (c) 2026 NeoBH. All rights reserved.
+ *
+ * WARNING: This corporate source code is the intellectual property of NeoBH.
+ * Unauthorized copying, distribution, or modification of this file,
+ * via any medium is strictly prohibited. Proprietary and confidential.
+ */
 
 /* 초기화 */
 html {overflow-y:scroll}

@@ -1,4 +1,16 @@
 @charset "utf-8";
+/**
+ * @file        sh_common.css
+ * @brief       사이트 공통 레이아웃 및 웹폰트 스타일
+ * @author      LEEHYEONHO (owen0414@neobh.kr)
+ * @date        2026-08-27
+ *
+ * Copyright (c) 2026 NeoBH. All rights reserved.
+ *
+ * WARNING: This corporate source code is the intellectual property of NeoBH.
+ * Unauthorized copying, distribution, or modification of this file,
+ * via any medium is strictly prohibited. Proprietary and confidential.
+ */
 
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');/* regular-400, medium-500, semibold-600, bold-700 */ 
 

@@ -1,3 +1,16 @@
+/**
+ * @file        viewimageresize.js
+ * @brief       게시글 본문 이미지 자동 리사이즈
+ * @author      LEEHYEONHO (owen0414@neobh.kr)
+ * @date        2026-08-27
+ *
+ * Copyright (c) 2026 NeoBH. All rights reserved.
+ *
+ * WARNING: This corporate source code is the intellectual property of NeoBH.
+ * Unauthorized copying, distribution, or modification of this file,
+ * via any medium is strictly prohibited. Proprietary and confidential.
+ */
+
 (function($) {
     $.fn.viewimageresize = function(selector)
     {

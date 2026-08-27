@@ -1,3 +1,15 @@
+/**
+ * @file        Jenkinsfile
+ * @brief       homepage 정적 사이트 빌드/릴리즈 파이프라인 정의
+ * @author      LEEHYEONHO (owen0414@neobh.kr)
+ * @date        2026-08-27
+ *
+ * Copyright (c) 2026 NeoBH. All rights reserved.
+ *
+ * WARNING: This corporate source code is the intellectual property of NeoBH.
+ * Unauthorized copying, distribution, or modification of this file,
+ * via any medium is strictly prohibited. Proprietary and confidential.
+ */
 pipeline {
   agent any
 

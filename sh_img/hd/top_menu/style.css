@@ -1,4 +1,16 @@
 @charset "utf-8";
+/**
+ * @file        style.css
+ * @brief       상단 GNB 메뉴 및 모바일 메뉴 스타일
+ * @author      LEEHYEONHO (owen0414@neobh.kr)
+ * @date        2026-08-27
+ *
+ * Copyright (c) 2026 NeoBH. All rights reserved.
+ *
+ * WARNING: This corporate source code is the intellectual property of NeoBH.
+ * Unauthorized copying, distribution, or modification of this file,
+ * via any medium is strictly prohibited. Proprietary and confidential.
+ */
 
 #shGnb{display:flex;align-items:center;position:relative;width:100%;height:90px;padding:0 6.5%; border-bottom: 1px solid #ddd;}
 #shGnb.blur{backdrop-filter:blur(15px);background:rgba(0,0,0,.5);transition:background .2s}

@@ -1,3 +1,16 @@
+/**
+ * @file        common.js
+ * @brief       전역 공통 스크립트. www 강제 이동, 폼 필드 검증 및 공통 유틸
+ * @author      LEEHYEONHO (owen0414@neobh.kr)
+ * @date        2026-08-27
+ *
+ * Copyright (c) 2026 NeoBH. All rights reserved.
+ *
+ * WARNING: This corporate source code is the intellectual property of NeoBH.
+ * Unauthorized copying, distribution, or modification of this file,
+ * via any medium is strictly prohibited. Proprietary and confidential.
+ */
+
 // 전역 변수
 var errmsg = "";
 var errfld = null;

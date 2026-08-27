@@ -1,4 +1,16 @@
 @charset "utf-8";
+/**
+ * @file        sh_style.css
+ * @brief       갤러리형 게시판 스킨 02 스타일
+ * @author      LEEHYEONHO (owen0414@neobh.kr)
+ * @date        2026-08-27
+ *
+ * Copyright (c) 2026 NeoBH. All rights reserved.
+ *
+ * WARNING: This corporate source code is the intellectual property of NeoBH.
+ * Unauthorized copying, distribution, or modification of this file,
+ * via any medium is strictly prohibited. Proprietary and confidential.
+ */
 
 /* 공통 */
 button{border:none}

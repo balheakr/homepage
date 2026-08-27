@@ -1,4 +1,16 @@
 @charset "utf-8";
+/**
+ * @file        style.css
+ * @brief       메인 section03(기업소개) 스타일
+ * @author      LEEHYEONHO (owen0414@neobh.kr)
+ * @date        2026-08-27
+ *
+ * Copyright (c) 2026 NeoBH. All rights reserved.
+ *
+ * WARNING: This corporate source code is the intellectual property of NeoBH.
+ * Unauthorized copying, distribution, or modification of this file,
+ * via any medium is strictly prohibited. Proprietary and confidential.
+ */
 
 #inc03 .inner{/*max-width:1320px;margin:160px auto 80px;*/ background: #f1f1f1;}
 #inc03 .sh_cont_box{padding-bottom:85px; padding-top: 90px ;/*border-bottom:1px solid #e1e1e1*/}

@@ -1,4 +1,16 @@
 @charset "utf-8";
+/**
+ * @file        style.css
+ * @brief       메인 section02 스타일(현재 index.html 에서 미사용)
+ * @author      LEEHYEONHO (owen0414@neobh.kr)
+ * @date        2026-08-27
+ *
+ * Copyright (c) 2026 NeoBH. All rights reserved.
+ *
+ * WARNING: This corporate source code is the intellectual property of NeoBH.
+ * Unauthorized copying, distribution, or modification of this file,
+ * via any medium is strictly prohibited. Proprietary and confidential.
+ */
 
 #inc02{padding:150px 0 180px;text-align:center;background:url('img/inc02_bg.jpg') center no-repeat;background-size:cover}
 #inc02 .sh_cont_box{margin-bottom:90px}

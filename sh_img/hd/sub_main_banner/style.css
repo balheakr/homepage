@@ -1,4 +1,16 @@
 @charset "utf-8";
+/**
+ * @file        style.css
+ * @brief       서브 페이지 상단 배너 스타일
+ * @author      LEEHYEONHO (owen0414@neobh.kr)
+ * @date        2026-08-27
+ *
+ * Copyright (c) 2026 NeoBH. All rights reserved.
+ *
+ * WARNING: This corporate source code is the intellectual property of NeoBH.
+ * Unauthorized copying, distribution, or modification of this file,
+ * via any medium is strictly prohibited. Proprietary and confidential.
+ */
 
 #shSubBnr{position:relative; z-index: 1;}
 #shSubBnr p{overflow:hidden;position:absolute;z-index:1;width:100%;margin:0 auto;font-size:46px;font-weight:600;color:#fff;font-family: 'Pretendard', sans-serif; text-align: center; top: 56%; left: 50%; transform: translate(-50%, -50%); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);word-break: keep-all;}

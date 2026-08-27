@@ -1,3 +1,16 @@
+/**
+ * @file        script.js
+ * @brief       상단 메뉴 및 모바일 내비게이션 열기/닫기 동작
+ * @author      LEEHYEONHO (owen0414@neobh.kr)
+ * @date        2026-08-27
+ *
+ * Copyright (c) 2026 NeoBH. All rights reserved.
+ *
+ * WARNING: This corporate source code is the intellectual property of NeoBH.
+ * Unauthorized copying, distribution, or modification of this file,
+ * via any medium is strictly prohibited. Proprietary and confidential.
+ */
+
 ﻿$(document).ready(function(){
 	$(".sh_nav").mouseenter(function(){
 		$("#shGnb.main").addClass("on");
